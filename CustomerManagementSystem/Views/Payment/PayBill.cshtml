@@ -1,11 +1,11 @@
-﻿
+﻿@model CMS.ViewModels.Payment.PayBillsVM
+@using CMS.Localization;
+
 @{
-    ViewBag.Title = "PayBill";
+    ViewBag.Title = Common.OnlinePayBill;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
-    <!--begin::Dashboard-->
-    <!--begin::Content-->
     <div class="flex-row-fluid ">
         <!--begin::Card-->
         <div class="card card-custom card-stretch">
@@ -13,179 +13,160 @@
             <div class="card-header py-3">
                 <div class="card-title align-items-start flex-column">
                     <h3 class="card-label font-weight-bolder text-dark">
-                        Online Fatura Ödeme
+                        @Common.OnlinePayBill
                     </h3>
                     <span class="text-muted font-weight-bold font-size-sm mt-1">
-                        Ödemeleriniz
-                        için güvenli ödeme sayfası
+                        @Common.SecurePaymentPage
                     </span>
                 </div>
                 <div class="card-toolbar">
-                    <a href="kayitlikart-odeme.html"
+                    <a href="@Url.Action("RegisteredCards","Payment")"
                        class="btn btn-sm btn-light-primary font-weight-bold mr-2">
-                        Kayıtlı
-                        Kart İle Ödeme
+                        @Common.PayWithRegisteredCard
                     </a>
-                    <a href="otomatik-odeme.html"
+                    <a href="@Url.Action("PaymentInstruction","Payment")"
                        class="btn btn-sm btn-light-info font-weight-bold mr-2">
-                        Otomatik
-                        Ödeme Talimatı
+                        @Common.AutomaticPaymentInstruction
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <p>
-        <!--end::Header-->
-        <!--begin::Container-->
-        <!--begin: Wizard-->
-        <!--begin: Wizard Body-->
+    <p></p>
+    @using (Ajax.BeginForm("PayBill", "Payment", new AjaxOptions { HttpMethod = "POST", OnComplete = "PayBillResult" }))
+    {
+        @Html.AntiForgeryToken()
         <div class="card card-custom card-shadowless rounded-top-0">
             <div class="card-body p-0">
                 <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
                     <div class="col-xl-12 col-xxl-7">
-                        <!--begin: Wizard Form-->
-                        <!--begin: Wizard Step 2-->
+
                         <div class="row">
-
                             <div class="fv-plugins-message-container"></div>
-
-
                             <div class="fv-plugins-message-container"></div>
                         </div>
-                        <!--end::Input-->
                         <h4 class="mb-10 font-weight-bold text-dark">
-                            Kart Bilgilerini Giriniz
+                            @Common.SetCardInfoes
                         </h4>
                         <div class="row">
                             <div class="col-xl-6">
-                                <!--begin::Input-->
                                 <div class="form-group fv-plugins-icon-container">
-                                    <label>Kart Sahibi Adı</label>
-                                    <input type="text"
-                                           class="form-control form-control-solid form-control-lg"
-                                           name="ccname" placeholder="Adı Soyadı">
+                                    <label>@Html.DisplayNameFor(m => m.CCFullName)</label>
+                                    @Html.EditorFor(m => m.CCFullName, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-solid form-control-lg", @placeholder = Common.FullName } })
                                     <span class="form-text text-muted">
-                                        Lütfen kart üzerinde
-                                        yazın Ad ve Soyad giriniz
+                                        @Common.SetCardFullName
                                     </span>
-                                    <div class="fv-plugins-message-container"></div>
+                                    <div class="fv-plugins-message-container">
+                                        @Html.ValidationMessageFor(m => m.CCFullName)
+                                    </div>
                                 </div>
-                                <!--end::Input-->
                             </div>
                             <div class="col-xl-6">
-                                <!--begin::Input-->
                                 <div class="form-group fv-plugins-icon-container">
-                                    <label>Kart Numarası</label>
-                                    <input type="text"
-                                           class="form-control form-control-solid form-control-lg"
-                                           name="ccnumber" placeholder="Kart Numarası">
+                                    <label>@Html.DisplayNameFor(m => m.CCNumber)</label>
+                                    @Html.EditorFor(m => m.CCNumber, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Common.CardNumber, @autocomplete = "off" } })
                                     <span class="form-text text-muted">
-                                        Lütfen kart numarasını
-                                        yazınız
+                                        @Common.SetCardNumber
                                     </span>
                                     <div class="fv-plugins-message-container"></div>
                                 </div>
-                                <!--end::Input-->
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-4">
                                 <!--begin::Input-->
                                 <div class="form-group fv-plugins-icon-container">
-                                    <label>Son Kullanım Tarihi (AY) </label>
-                                    <select class="form-control form-control-solid form-control-lg"
-                                            name="billing_card_exp_month">
-                                        <option value="">Ay Seçin</option>
-                                        <option value="01">1</option>
-                                        <option value="02">2</option>
-                                        <option value="03">3</option>
-                                        <option value="04">4</option>
-                                        <option value="05">5</option>
-                                        <option value="06">6</option>
-                                        <option value="07">7</option>
-                                        <option value="08">8</option>
-                                        <option value="09">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
+                                    <label>@Html.DisplayNameFor(m => m.ExpirationMonthId)</label>
+                                    @Html.DropDownListFor(m => m.ExpirationMonthId, Model.ExpirationMonthDate, Common.ChooseMonth, new { @class = "form-control form-control-solid form-control-lg" })
                                     <span class="form-text text-muted">
-                                        Lütfen Kartınızın Son
-                                        Kullanma Ayını girin.
+                                        @Common.SetCardExpirationMonth
                                     </span>
                                     <div class="fv-plugins-message-container"></div>
                                 </div>
-                                <!--end::Input-->
                             </div>
                             <div class="col-xl-4">
-                                <!--begin::Input-->
                                 <div class="form-group fv-plugins-icon-container">
-                                    <label>Son Kullanım Tarihi (YIL)</label>
-                                    <select class="form-control form-control-solid form-control-lg"
-                                            name="billing_card_exp_year">
-                                        <option value="">Yıl Seçin</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2026">2026</option>
-                                    </select>
+                                    <label>@Html.DisplayNameFor(m => m.ExpirationYearId)</label>
+                                    @Html.DropDownListFor(m => m.ExpirationYearId, Model.ExpirationYearDate, Common.ChooseYear, new { @class = "form-control form-control-solid form-control-lg" })
                                     <span class="form-text text-muted">
-                                        Lütfen Kartınızın Son
-                                        Kullanma Yılını girin.
+                                        @Common.SetCardExpirationYear
                                     </span>
                                     <div class="fv-plugins-message-container"></div>
                                 </div>
-                                <!--end::Input-->
                             </div>
                             <div class="col-xl-4">
                                 <div class="form-group fv-plugins-icon-container has-success">
-                                    <label>Kart Güvenlik Kodu</label>
-                                    <input type="password"
-                                           class="form-control form-control-solid form-control-lg"
-                                           name="cccvv" placeholder="Güvenlik Kodu">
+                                    <label>@Html.DisplayNameFor(m => m.CreditSecureCode) </label>
+                                    @Html.PasswordFor(m => m.CreditSecureCode, new { @class = "form-control form-control-solid form-control-lg", @placeholder = "CVV" })
                                     <span class="form-text text-muted">
-                                        3 Haneli Güvenlik Kodunu
-                                        girin.
+                                        @Common.SetCardSecureCode
                                     </span>
                                     <div class="fv-plugins-message-container"></div>
                                 </div>
                             </div>
                         </div>
-                        <!--end: Wizard Step 2-->
-
                         <div class="info-box ">
-                            Güvenliğiniz sebebi ile ödeme işleminiz
-                            <strong>3D secure</strong> ile gerçekleşecektir.
+                            @Html.Raw(Common.PaymentSecureDescription)
                         </div>
-                        <!--end: Wizard Step 3-->
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="d-flex justify-content-between border-top mt-5 pt-3">
                                     <div class="mr-1"></div>
                                     <div>
-                                        <button type="reset" class="btn btn-light-primary font-weight-bold">
-                                            İptal
+                                        <button onclick="window.location.href = '/Payment/Bills';" type="reset" class="btn btn-light-primary font-weight-bold">
+                                            @Common.Cancel
                                         </button>
-                                        <button type="button" class="btn btn-danger font-weight-bold" id="kt_sweetalert_yonlendirme1">
-                                            Gönder
+                                        <button type="submit" class="btn btn-danger font-weight-bold">
+                                            @Common.Send
                                         </button>
-
                                     </div>
                                 </div>
-                                <!--end: Wizard Actions-->
                                 <div></div>
                                 <div></div>
-                                <!--end: Wizard Form-->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--end: Wizard Bpdy-->
         </div>
+    }
 
 </div>
+@section scripts{
+    @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
+    <script>
+        function PayBillResult(data, status) {
+            try {
+                if (status == "success") {
+                    var response = data.responseJSON;
+                    if (!response.valid) {
+                        swal.fire({
+                            title: 'Lütfen bekleyiniz',
+                            text: 'Doğrulama için yönlendiriliyorsunuz',
+                            timer: 3000,
+                            onOpen: function () {
+                                Swal.showLoading()
+                            }
+                        }).then((result) => {
+                            $('button').each(function (e) {
+                                $(this).attr("disabled", "disabled");
+                            });
+                            window.location.href = "/";
+                        });
+                    }
+                    else {
+                        swal.fire({
+                            icon: 'error',
+                            title: '',
+                            text: response.valid,
+                            confirmButtonText: 'Tamam'
+                        })
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
+
+        }
+    </script>
+}

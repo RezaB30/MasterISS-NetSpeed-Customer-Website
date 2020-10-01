@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@using CMS.Localization;
 
 <html lang="tr">
 <!--begin::Head-->
@@ -6,7 +7,7 @@
 <head>
     <base href="">
     <meta charset="utf-8" />
-    <title>Online İşlemler | Netspeed</title>
+    <title>@Common.HeadTitle</title>
     <meta name="description" content="Updates and statistics" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="https://netspeed.com.tr" />
@@ -15,15 +16,11 @@
     @Styles.Render("~/Content/css")
     <link rel="shortcut icon" href="/assets/media/logos/favicon.ico" />
 </head>
-<!--end::Head-->
-<!--begin::Body-->
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
-    <!--begin::Main-->
-    <!--begin::Header Mobile-->
+
     <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
         <div class="d-flex align-items-center">
-            <!--begin::Logo-->
             <a href="/" class="mr-7">
                 <img alt="Logo" src="/assets/media/logos/logo-letter-5.png" class="max-h-30px" />
             </a>
@@ -37,11 +34,9 @@
                 <button class="btn p-1 ml-0" id="kt_quick_actions_toggle" data-toggle="tooltip" data-placement="right"
                         data-container="body" data-boundary="window" title="" data-original-title="">
                     <span class="svg-icon svg-icon-xl">
-                        <!--begin::Svg Icon | path:assets/media/svg/icons/General/User.svg-->
-                        <div class="btn btn-icon btn-dropdown btn-lg mr-1">
-                            <div class="btn btn-icon btn-dropdown btn-lg mr-1 pulse pulse-white">
+                        <span class="btn btn-icon btn-dropdown btn-lg mr-1">
+                            <span class="btn btn-icon btn-dropdown btn-lg mr-1 pulse pulse-white">
                                 <span class="svg-icon svg-icon-xl svg-icon-info">
-                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                          width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,17 +46,13 @@
                                                   fill="#000000" opacity="0.3"></path>
                                         </g>
                                     </svg>
-                                    <!--end::Svg Icon-->
                                 </span>
                                 <span class="pulse-ring"> </span>
-
-                            </div>
+                            </span>
+                        </span>
+                    </span>
                 </button>
-
-                <!--begin::Dropdown-->
                 <div class="dropdown-menu p-0 m-3 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
-
-                    <!--begin:Nav-->
                     <div class="row row-paddingless">
 
                     </div>
@@ -90,20 +81,12 @@
         </div>
         <!--end::Toolbar-->
     </div>
-
-    </div>
-    <!--end::Toolbar-->
-    </div>
-
-
-
-
     <div id="kt_quick_actions" class="offcanvas offcanvas-left p-10 offcanvas-off">
         <!--begin::Header-->
         <div class="offcanvas-header d-flex align-items-center justify-content-between pb-10" kt-hidden-height="56"
              style="">
             <h3 class="font-weight-bold m-0">
-                Hızlı İşlemler
+                @Common.QuickActions
             </h3>
             <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_actions_close">
                 <i class="ki ki-close icon-xs text-muted"></i>
@@ -115,11 +98,10 @@
             <div class="row gutter-b">
                 <!--begin::Item-->
                 <div class="col-6">
-                    <a href="fatura-odeme.html"
+                    <a href="@Url.Action("Bills","Payment")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-light m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Shopping\Credit-card.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                              width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
                                     <rect fill="#000000" opacity="0.3" x="2" y="5" width="20" height="14" rx="2" />
@@ -129,17 +111,16 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Fatura Ödeme</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.PayingBills</span>
                     </a>
                 </div>
                 <!--end::Item-->
                 <!--begin::Item-->
                 <div class="col-6">
-                    <a href="destek.html"
+                    <a href="@Url.Action("SupportRequests","Support")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Communication\Chat6.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                             width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
                                     <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
@@ -152,19 +133,17 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Destek Talebi</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.SupportRequest</span>
                     </a>
                 </div>
-                <!--end::Item-->
             </div>
             <div class="row gutter-b">
                 <!--begin::Item-->
                 <div class="col-6">
-                    <a href="belgelerim.html"
+                    <a href="@Url.Action("Documents","Home")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Files\File.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <polygon points="0 0 24 0 24 24 0 24" />
                                     <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z"
@@ -173,19 +152,15 @@
                                     <rect fill="#000000" x="6" y="15" width="5" height="2" rx="1" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Belgelerim</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.MyDocuments</span>
                     </a>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="col-6">
-                    <a href="hat-durumu.html"
+                    <a href="@Url.Action("CustomerLineDetails","Home")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Text\Article.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                      width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
                                     <rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5" />
@@ -193,21 +168,17 @@
                                           fill="#000000" opacity="0.3" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Hat Durumu</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.LineState</span>
                     </a>
                 </div>
-                <!--end::Item-->
             </div>
             <div class="row gutter-b">
-                <!--begin::Item-->
                 <div class="col-6">
-                    <a href="tarife-kullanim.html"
+                    <a href="@Url.Action("RecipeUsage","Home")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Shopping\Chart-pie.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                            width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
                                     <path d="M4.00246329,12.2004927 L13,14 L13,4.06189375 C16.9463116,4.55399184 20,7.92038235 20,12 C20,16.418278 16.418278,20 12,20 C7.64874861,20 4.10886412,16.5261253 4.00246329,12.2004927 Z"
@@ -216,19 +187,15 @@
                                           fill="#000000" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Tarife & Kullanım</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.TariffUsage</span>
                     </a>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="col-6">
-                    <a href="otomatik-odeme.html"
+                    <a href="@Url.Action("PaymentInstruction","Payment")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Shopping\ATM.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                      width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <rect x="0" y="0" width="24" height="24" />
                                     <rect fill="#000000" opacity="0.3" x="2" y="4" width="20" height="5" rx="1" />
@@ -236,15 +203,12 @@
                                           fill="#000000" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Otomatik Ödeme</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.AutomaticPayment</span>
                     </a>
                 </div>
-                <!--end::Item-->
             </div>
             <div class="row gutter-b">
-                <!--begin::Item-->
                 <div class="col-6">
                     <a href="arkadasini-getir.html"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
@@ -261,17 +225,14 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Arkadaşını Getir</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.SpecialOfferFriends</span>
                     </a>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="col-6">
-                    <a href="hesabim.html"
+                    <a href="@Url.Action("MyAccount","Home")"
                        class="btn btn-block btn-info btn-hover-primary text-white text-center py-10 px-5">
                         <span class="svg-icon svg-icon-3x svg-icon-white m-0">
-                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\General\User.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                                                                                                                      width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <polygon points="0 0 24 0 24 24 0 24" />
                                     <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z"
@@ -280,12 +241,10 @@
                                           fill="#000000" fill-rule="nonzero" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
-                        <span class="d-block font-weight-bold font-size-h7 mt-2">Hesap Bilgilerim</span>
+                        <span class="d-block font-weight-bold font-size-h7 mt-2">@Common.MyAccount</span>
                     </a>
                 </div>
-                <!--end::Item-->
             </div>
             <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                 <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
@@ -294,33 +253,18 @@
                 <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
             </div>
         </div>
-        <!--end::Content-->
     </div>
-
-    </div>
-    <!--end::Header Mobile-->
     <div class="d-flex flex-column flex-root">
-        <!--begin::Page-->
         <div class="d-flex flex-row flex-column-fluid page">
-            <!--begin::Wrapper-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-                <!--begin::Header-->
                 <div id="kt_header" class="header flex-column header-fixed">
-                    <!--begin::Top-->
                     <div class="header-top">
-                        <!--begin::Container-->
                         <div class="container">
-                            <!--begin::Left-->
                             <div class="d-none d-lg-flex align-items-center mr-3">
-                                <!--begin::Logo-->
-                                <a href="index.html" class="mr-10">
+                                <a href="/" class="mr-10">
                                     <img alt="Logo" src="/assets/media/logos/logo-letter-5.png" class="max-h-35px" />
                                 </a>
-                                <!--end::Logo-->
-
                             </div>
-                            <!--end::Left-->
-                            <!--begin::Topbar-->
                             <div class="topbar">
                                 <!--begin::Desktop Search-->
                                 <div class="d-none d-lg-flex align-items-center">
@@ -332,7 +276,6 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">
                                                         <span class="svg-icon svg-icon-lg">
-                                                            <!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
                                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                                  height="24px" viewBox="0 0 24 24" version="1.1">
@@ -346,12 +289,10 @@
                                                                           fill="#000000" fill-rule="nonzero"></path>
                                                                 </g>
                                                             </svg>
-                                                            <!--end::Svg Icon-->
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <input type="text" class="form-control h-40px"
-                                                       placeholder="Nasıl yardımcı olabiliriz?">
+                                                <input type="text" class="form-control h-40px" placeholder="@Common.SearchPlaceholder">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <i class="quick-search-close ki ki-close icon-sm"
@@ -360,12 +301,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <!--end::Form-->
-                                        <!--begin::Search Toggle-->
                                         <div id="kt_quick_search_toggle" data-toggle="dropdown" data-offset="0px,0px">
                                         </div>
-                                        <!--end::Search Toggle-->
-                                        <!--begin::Dropdown-->
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg dropdown-menu-anim-up">
                                             <div class="quick-search-wrapper scroll ps" data-scroll="true"
                                                  data-height="350" data-mobile-height="200"
@@ -375,22 +312,16 @@
                                                          style="left: 0px; width: 0px;"></div>
                                                 </div>
                                                 <div class="ps__rail-y" style="top: 0px; right: 0px;">
-                                                    <div class="ps__thumb-y" tabindex="0"
-                                                         style="top: 0px; height: 0px;"></div>
+                                                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--end::Dropdown-->
                                     </div>
                                 </div>
-                                <!--end::Desktop Search-->
-                                <!--begin::Tablet & Mobile Search-->
                                 <div class="dropdown d-flex d-lg-none">
-                                    <!--begin::Toggle-->
                                     <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
                                         <div class="btn btn-icon btn-lg btn-dropdown mr-1">
                                             <span class="svg-icon svg-icon-xl">
-                                                <!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                      xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                                                      height="24px" viewBox="0 0 24 24" version="1.1">
@@ -402,21 +333,16 @@
                                                               fill="#000000" fill-rule="nonzero" />
                                                     </g>
                                                 </svg>
-                                                <!--end::Svg Icon-->
                                             </span>
                                         </div>
                                     </div>
-                                    <!--end::Toggle-->
-                                    <!--begin::Dropdown-->
                                     <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
                                         <div class="quick-search quick-search-dropdown" id="kt_quick_search_dropdown">
-                                            <!--begin:Form-->
                                             <form method="get" class="quick-search-form">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">
                                                             <span class="svg-icon svg-icon-lg">
-                                                                <!--begin::Svg Icon | path:assets/media/svg/icons/General/Search.svg-->
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                      xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                      width="24px" height="24px" viewBox="0 0 24 24"
@@ -431,12 +357,10 @@
                                                                               fill="#000000" fill-rule="nonzero" />
                                                                     </g>
                                                                 </svg>
-                                                                <!--end::Svg Icon-->
                                                             </span>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control"
-                                                           placeholder="Nasıl yardımcı olabiliriz?" />
+                                                    <input type="text" class="form-control" placeholder="@Common.SearchPlaceholder" />
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
                                                             <i class="quick-search-close ki ki-close icon-sm text-muted"></i>
@@ -444,25 +368,15 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <!--end::Form-->
-                                            <!--begin::Scroll-->
-                                            <div class="quick-search-wrapper scroll" data-scroll="true"
-                                                 data-height="325" data-mobile-height="200"></div>
-                                            <!--end::Scroll-->
+                                            <div class="quick-search-wrapper scroll" data-scroll="true" data-height="325" data-mobile-height="200"></div>
                                         </div>
                                     </div>
-                                    <!--end::Dropdown-->
                                 </div>
-                                <!--end::Tablet & Mobile Search-->
-                                <!--begin::My Cart-->
                                 <div class="dropdown">
-                                    <!--begin::Toggle-->
                                     <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
                                         <div class="btn btn-icon btn-dropdown btn-lg mr-1">
                                             <span class="svg-icon svg-icon-danger svg-icon-2x">
-                                                <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\Shopping\Credit-card.svg--><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                                                                                                                                                                  height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                         <rect x="0" y="0" width="24" height="24" />
                                                         <rect fill="#000000" opacity="0.3" x="2" y="5" width="20"
@@ -472,33 +386,43 @@
                                                               height="2" rx="1" />
                                                     </g>
                                                 </svg>
-                                                <!--end::Svg Icon-->
                                             </span>
                                         </div>
                                     </div>
-                                    <!--end::Toggle-->
-                                    <!--begin::Dropdown-->
                                     <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-xl dropdown-menu-anim-up">
                                         <form>
-                                            <!--begin::Header-->
                                             <div class="d-flex align-items-center py-10 px-8 bgi-size-cover bgi-no-repeat rounded-top"
-                                                 style="background-image: url(assets/media/misc/bg-1.jpg)">
+                                                 style="background-image: url(/assets/media/misc/bg-1.jpg)">
                                                 <span class="btn btn-md btn-icon bg-white-o-15 mr-4">
                                                     <i class="flaticon-list-1 text-success"></i>
                                                 </span>
                                                 <h4 class="text-white m-0 flex-grow-1 mr-3">Faturalarım</h4>
-                                                <button type="button" class="btn btn-danger btn-sm">2 fatura</button>
+                                                <button type="button" class="btn btn-danger btn-sm">2 @Common.Invoice</button>
                                             </div>
-                                            <!--end::Header-->
-                                            <!--begin::Scroll-->
                                             <div class="scroll scroll-push" data-scroll="true" data-height="250"
                                                  data-mobile-height="220">
-                                                <!--begin::Item-->
                                                 <div class="d-flex align-items-center justify-content-between p-8">
                                                     <div class="d-flex flex-column mr-2">
                                                         <a href="#"
                                                            class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">27.10.2020</a>
-                                                        <span class="text-muted">Tarihli fatura</span>
+                                                        <span class="text-muted">@Common.DatedInvoice</span>
+                                                        <div class="d-flex align-items-center mt-2">
+                                                            <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">@Common.Amount</span>
+                                                            <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
+                                                                94
+                                                                TL
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" class="symbol symbol-70 flex-shrink-0">
+                                                        <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
+                                                    </a>
+                                                </div>
+                                                <div class="separator separator-solid"></div>
+                                                <div class="d-flex align-items-center justify-content-between p-8">
+                                                    <div class="d-flex flex-column mr-2">
+                                                        <a href="#" class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">27.10.2020</a>
+                                                        <span class="text-muted">@Common.DatedInvoice</span>
                                                         <div class="d-flex align-items-center mt-2">
                                                             <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">Tutar</span>
                                                             <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
@@ -509,47 +433,15 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="symbol symbol-70 flex-shrink-0">
-                                                        <img src="/assets/media/project-logos/google-forms.png" title=""
-                                                             alt="" />
+                                                        <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
                                                     </a>
                                                 </div>
-                                                <!--end::Item-->
-                                                <!--begin::Separator-->
                                                 <div class="separator separator-solid"></div>
-                                                <!--end::Separator-->
-                                                <!--begin::Item-->
-                                                <div class="d-flex align-items-center justify-content-between p-8">
-                                                    <div class="d-flex flex-column mr-2">
-                                                        <a href="#"
-                                                           class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">27.10.2020</a>
-                                                        <span class="text-muted">Tarihli fatura</span>
-                                                        <div class="d-flex align-items-center mt-2">
-                                                            <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">Tutar</span>
-                                                            <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
-                                                                94
-                                                                TL
-                                                            </span>
-
-                                                        </div>
-                                                    </div>
-                                                    <a href="#" class="symbol symbol-70 flex-shrink-0">
-                                                        <img src="/assets/media/project-logos/google-forms.png" title=""
-                                                             alt="" />
-                                                    </a>
-                                                </div>
-                                                <!--end::Item-->
-                                                <!--begin::Separator-->
-                                                <div class="separator separator-solid"></div>
-                                                <!--end::Separator-->
-
                                             </div>
-                                            <!--end::Scroll-->
-                                            <!--begin::Summary-->
                                             <div class="p-8">
                                                 <div class="d-flex align-items-center justify-content-between mb-7">
                                                     <span class="font-weight-bold text-muted font-size-sm mr-2">
-                                                        Toplam
-                                                        Tutar
+                                                        @Common.TotalAmount
                                                     </span>
                                                     <span class="font-weight-bolder text-primary text-right">
                                                         188
@@ -557,28 +449,21 @@
                                                     </span>
                                                 </div>
                                                 <div class="text-right">
-                                                    <a href="odeme.html"
-                                                       class="btn btn-primary font-weight-bold mr-2">Hemen Öde</a>
+                                                    <a href="@Url.Action("PayBill","Payment")" class="btn btn-primary font-weight-bold mr-2">@Common.QuickPay</a>
                                                 </div>
                                             </div>
-                                            <!--end::Summary-->
                                         </form>
                                     </div>
-                                    <!--end::Dropdown-->
                                 </div>
-                                <!--end::My Cart-->
-                                <!--begin::User-->
                                 <div class="topbar-item">
                                     <div class="btn btn-icon w-auto d-flex align-items-center btn-lg px-2"
                                          id="kt_quick_user_toggle">
                                         <div class="d-flex text-right pr-3">
-                                            <span class="text-white opacity-50 font-weight-bold font-size-sm d-none d-md-inline mr-1">Merhaba,</span>
+                                            <span class="text-white opacity-50 font-weight-bold font-size-sm d-none d-md-inline mr-1">@Common.Hi,</span>
                                             <span class="text-white font-weight-bolder font-size-sm d-none d-md-inline">Avni</span>
                                         </div>
                                         <span class="svg-icon svg-icon-success svg-icon-2x">
-                                            <!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo12\dist/../src/media/svg/icons\General\Smile.svg--><svg xmlns="http://www.w3.org/2000/svg"
-                                                                                                                                                                                       xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                                                                                                                                                       viewBox="0 0 24 24" version="1.1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                                     <rect x="0" y="0" width="24" height="24" />
                                                     <rect fill="#000000" opacity="0.3" x="2" y="2" width="20"
@@ -587,85 +472,67 @@
                                                           fill="#000000" />
                                                 </g>
                                             </svg>
-                                            <!--end::Svg Icon-->
                                         </span>
                                     </div>
                                 </div>
-                                <!--end::User-->
                             </div>
-                            <!--end::Topbar-->
                         </div>
-                        <!--end::Container-->
                     </div>
-                    <!--end::Top-->
                     <div class="header-bottom">
-                        <!--begin::Container-->
                         <div class="container">
-                            <!--begin::Header Menu Wrapper-->
                             <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
-                                <!--begin::Header Menu-->
-                                <div id="kt_header_menu"
-                                     class="header-menu header-menu-left header-menu-layout-default">
-                                    <!--begin::Header Nav-->
+                                <div id="kt_header_menu" class="header-menu header-menu-left header-menu-layout-default">
                                     <ul class="menu-nav">
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="index.html" class="menu-link">
-                                                <span class="menu-text">Ana Sayfa</span>
+                                            <a href="/" class="menu-link">
+                                                <span class="menu-text">@Common.Homepage</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="fatura-odeme.html" class="menu-link">
-                                                <span class="menu-text">Fatura & Ödemeler</span>
+                                            <a href="@Url.Action("Bills","Payment")" class="menu-link">
+                                                <span class="menu-text">@Common.InvoicePayments</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="otomatik-odeme.html" class="menu-link">
-                                                <span class="menu-text">Otomatik Ödeme</span>
+                                            <a href="@Url.Action("PaymentInstruction","Payment")" class="menu-link">
+                                                <span class="menu-text">@Common.AutomaticPayment</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="hat-durumu.html" class="menu-link">
-                                                <span class="menu-text">Hat Durumu</span>
+                                            <a href="@Url.Action("CustomerLineDetails","Home")" class="menu-link">
+                                                <span class="menu-text">@Common.LineState</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="tarife-kullanim.html" class="menu-link">
-                                                <span class="menu-text">Tarife & Kullanım</span>
+                                            <a href="@Url.Action("RecipeUsage","Home")" class="menu-link">
+                                                <span class="menu-text">@Common.TariffUsage</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="hizmetlerim.html" class="menu-link">
-                                                <span class="menu-text">Hizmetlerim</span>
+                                            <a href="@Url.Action("MyServices","Home")" class="menu-link">
+                                                <span class="menu-text">@Common.MyServices</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="belgelerim.html" class="menu-link">
-                                                <span class="menu-text">Belgelerim</span>
+                                            <a href="@Url.Action("Documents","Home")" class="menu-link">
+                                                <span class="menu-text">@Common.MyDocuments</span>
                                             </a>
                                         </li>
                                         <li class="menu-item" aria-haspopup="true">
-                                            <a href="destek.html" class="menu-link">
-                                                <span class="menu-text">Destek Talepleri</span>
+                                            <a href="@Url.Action("SupportRequests","Support")" class="menu-link">
+                                                <span class="menu-text">@Common.SupportRequests</span>
                                             </a>
                                         </li>
-
-
+                                    </ul>
                                 </div>
                             </div>
-
-                            <!--end::Container-->
-
                             <div class="d-none d-lg-flex align-items-center">
-
-                                <a href="index.html" class="menu-link">
+                                <a href="/" class="menu-link">
                                 </a>
-                                </li>
-
-                                <a href="hesabim.html" class="navi-link py-3" data-toggle="tooltip" title=""
+                                <a href="@Url.Action("MyAccount","Home")" class="navi-link py-3" data-toggle="tooltip" title=""
                                    data-placement="right" data-original-title="">
                                     <span class="navi-icon mr-2">
                                         <span class="svg-icon svg-icon-2x">
-                                            <!--begin::Svg Icon | netspeed../src/media/svg/icons\Communication\Contact1.svg-->
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                                  viewBox="0 0 24 24" version="1.1">
@@ -677,85 +544,43 @@
                                                           fill="#000000" opacity="0.3"></path>
                                                 </g>
                                             </svg>
-                                            <!--end::Svg Icon-->
                                         </span>
-                                        <!--end::Svg Icon-->
                                     </span>
-                                    <!--end::Svg Icon-->
                                 </a>
-                                <!--begin::Search Toggle-->
-                                <!--end::Search Toggle-->
-
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-                <!--end::Container-->
             </div>
-            <!--end::Bottom-->
         </div>
-        <!--end::Header-->
-        <!--begin::Content-->
         <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-            <!--begin::Subheader-->
             <div class="subheader py-2 py-lg-6 subheader-transparent" id="kt_subheader">
                 <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                    <!--begin::Info-->
                     <div class="d-flex align-items-center flex-wrap mr-1">
-
                     </div>
-                    <!--end::Info-->
-
                 </div>
             </div>
-            <!--end::Subheader-->
-            <!--begin::Entry-->
             <div class="d-flex flex-column-fluid">
                 @RenderBody()
             </div>
         </div>
-        <!--end::Dashboard-->
     </div>
-
-    </div>
-    <!--end::Entry-->
-    </div>
-    <!--end::Content-->
-    <!--begin::Footer-->
     <div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
-        <!--begin::Container-->
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <!--begin::Copyright-->
             <div class="text-dark order-2 order-md-1">
                 <span class="text-muted font-weight-bold mr-2">2020©</span>
                 <a href="http://netspeed.com.tr" target="_blank" class="text-dark-75 text-hover-primary">Netspeed</a>
             </div>
-            <!--end::Copyright-->
-            <!--begin::Nav-->
             <div class="nav nav-dark order-1 order-md-2">
                 <a href="http://www.netspeed.com.tr" target="_blank" class="nav-link pr-3 pl-0">www.netspeed.com.tr</a>
-
             </div>
-            <!--end::Nav-->
         </div>
-        <!--end::Container-->
     </div>
-    <!--end::Footer-->
-    </div>
-    <!--end::Wrapper-->
-    </div>
-    <!--end::Page-->
-    </div>
-    <!--end::Main-->
-    <!-- begin::User Panel-->
     <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
-        <!--begin::Header-->
         <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
             <h3 class="font-weight-bold m-0">
-                Oim Hesabım
-                <span class="text-muted font-size-sm">Son Giriş : 19.09.2020</span>
+                @Common.MyCustomerServiceAccount
+                <span class="text-muted font-size-sm">@Common.LastLogin : 19.09.2020</span>
             </h3>
             <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_user_close">
                 <i class="ki ki-close icon-xs text-muted"></i>
@@ -763,50 +588,31 @@
         </div>
         <div class="separator separator-dashed my-7"></div>
         <!--end::Header-->
-        <div class="form-group fv-plugins-icon-container">
-            <label>İşlem yapmak istediğiniz hizmeti seçiniz</label>
-            <select name="country" class="form-control form-control-solid form-control-lg">
-                <option value="">Seçim Yapınız</option>
-                <option value="1">8826626972</option>
-                <option value="2">8826626972</option>
-                <option value="3">8826626972</option>
-                <option value="4">8826626972</option>
-
-            </select>
-            <div class="fv-plugins-message-container"></div>
-        </div>
+        @{ Html.RenderAction("SubscriptionList", "Home"); }
         <!--begin::Content-->
         <div class="offcanvas-content pr-5 mr-n5">
             <!--begin::Header-->
             <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
-                    <div class="symbol-label" style="background-image:url('assets/media/users/default.jpg')"></div>
+                    <div class="symbol-label" style="background-image:url('/assets/media/users/default.jpg')"></div>
                     <i class="symbol-badge bg-success"></i>
                 </div>
                 <div class="d-flex flex-column">
-                    <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">Avni ALKAN</a>
+                    <a href="@Url.Action("MyAccount","Home")" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">Avni ALKAN</a>
                     <div class="text-muted mt-1">Hizmet No : 8826626972</div>
-                    <div class="text-muted mt-1">Hizmet No : 8826544156</div>
                     <div class="navi mt-2">
 
-                        <a href="#" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">Çıkış Yap</a>
+                        <a href="@Url.Action("Logout","Account")" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">Çıkış Yap</a>
                     </div>
                 </div>
             </div>
-            <!--end::Header-->
-            <!--begin::Separator-->
             <div class="separator separator-dashed my-7"></div>
-            <!--end::Separator-->
-            <!--begin::Notifications-->
             <div>
                 <!--begin:Heading-->
-                <h5 class="mb-5">Son Bildirimler</h5>
-                <!--end:Heading-->
-                <!--begin::Item-->
+                <h5 class="mb-5">@Common.LastNotifications</h5>
                 <div class="d-flex align-items-center bg-light-warning rounded p-5 gutter-b">
                     <span class="svg-icon svg-icon-warning mr-5">
                         <span class="svg-icon svg-icon-lg">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -818,7 +624,6 @@
                                           x="16.3255682" y="2.94551858" width="3" height="18" rx="1" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </span>
                     <div class="d-flex flex-column flex-grow-1 mr-2">
@@ -831,12 +636,9 @@
                     </div>
                     <span class="font-weight-bolder text-warning py-1 font-size-lg"></span>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="d-flex align-items-center bg-light-success rounded p-5 gutter-b">
                     <span class="svg-icon svg-icon-success mr-5">
                         <span class="svg-icon svg-icon-lg">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Write.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -848,7 +650,6 @@
                                           fill="#000000" fill-rule="nonzero" opacity="0.3" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </span>
                     <div class="d-flex flex-column flex-grow-1 mr-2">
@@ -860,12 +661,9 @@
                     </div>
                     <span class="font-weight-bolder text-success py-1 font-size-lg"></span>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="d-flex align-items-center bg-light-danger rounded p-5 gutter-b">
                     <span class="svg-icon svg-icon-danger mr-5">
                         <span class="svg-icon svg-icon-lg">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group-chat.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -876,7 +674,6 @@
                                           fill="#000000" opacity="0.3" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </span>
                     <div class="d-flex flex-column flex-grow-1 mr-2">
@@ -889,12 +686,9 @@
                     </div>
                     <span class="font-weight-bolder text-danger py-1 font-size-lg"></span>
                 </div>
-                <!--end::Item-->
-                <!--begin::Item-->
                 <div class="d-flex align-items-center bg-light-info rounded p-5">
                     <span class="svg-icon svg-icon-info mr-5">
                         <span class="svg-icon svg-icon-lg">
-                            <!--begin::Svg Icon | path:assets/media/svg/icons/General/Attachment2.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -913,29 +707,21 @@
                                           transform="translate(18.035534, 17.863961) scale(1, -1) rotate(45.000000) translate(-18.035534, -17.863961)" />
                                 </g>
                             </svg>
-                            <!--end::Svg Icon-->
                         </span>
                     </span>
                     <div class="d-flex flex-column flex-grow-1 mr-2">
                         <a href="#" class="font-weight-normel text-dark-75 text-hover-primary font-size-lg mb-1">
-                            Fatura
-                            ödemeniz için teşekkürler
+                            Fatura ödemeniz için teşekkürler
                         </a>
                         <span class="text-muted font-size-sm">12.05.2020</span>
                     </div>
                     <span class="font-weight-bolder text-info py-1 font-size-lg"></span>
                 </div>
-                <!--end::Item-->
             </div>
-            <!--end::Notifications-->
         </div>
-        <!--end::Content-->
     </div>
-    <!-- end::User Panel-->
-    <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop">
         <span class="svg-icon">
-            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Up-2.svg-->
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
                  height="24px" viewBox="0 0 24 24" version="1.1">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -945,16 +731,12 @@
                           fill="#000000" fill-rule="nonzero" />
                 </g>
             </svg>
-            <!--end::Svg Icon-->
         </span>
     </div>
-    <!--end::Scrolltop-->
-    <!--begin::Global Config(global config for global JS scripts)-->
     <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#0BB783", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#D7F9EF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jscripts")
     @RenderSection("scripts", required: false)
 </body>
-<!--end::Body-->
 
 </html>

@@ -1,0 +1,179 @@
+﻿@model CMS.ViewModels.Home.RecipeUsageVM
+
+@using CMS.Localization;
+
+@{
+    ViewBag.Title = Common.RecipeUsageInfo;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">
+                        @Common.RecipeUsageInfo
+                    </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @Common.RecipeUsageDescription
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex flex-column-fluid ">
+                <div class="container">
+                    <div class="col-xl-12 ">
+                        <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
+                             role="alert">
+                            <div class="alert-icon">
+                                <span class="svg-icon svg-icon-danger svg-icon-2x">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none"
+                                           fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path d="M5.5,4 L9.5,4 C10.3284271,4 11,4.67157288 11,5.5 L11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M14.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,17.5 C13,16.6715729 13.6715729,16 14.5,16 Z"
+                                                  fill="#000000" />
+                                            <path d="M5.5,10 L9.5,10 C10.3284271,10 11,10.6715729 11,11.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,12.5 C20,13.3284271 19.3284271,14 18.5,14 L14.5,14 C13.6715729,14 13,13.3284271 13,12.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z"
+                                                  fill="#000000" opacity="0.3" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="alert-text card-label font-weight-bold">
+                                @Common.YourRecipe : @Html.DisplayFor(m => m.TariffName) | @Html.DisplayFor(m => m.QuotaType) | @Html.DisplayFor(m => m.CommitmentType) | @Html.DisplayFor(m => m.TariffAmount) / @Common.Month
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-color: #FFF4DE; background-position: right top; background-size: 30% auto;">
+                                        <div class="card-body">
+                                            <h4 class="text-danger mt-2 font-weight-bolder">
+                                                @Common.WeHaveSpecialOffer
+                                            </h4>
+                                            <p class="text-dark-75 font-weight-bolder my-6">
+                                                16 Mbps'e kadar limitsiz tarifemiz 66TL yerine
+                                                <br>
+                                                Size özel ayda sadece 58 TL
+                                            </p>
+                                            <a href="#" class="btn btn-danger font-weight-bold py-2 px-6">
+                                                @Common.AcceptOffer
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column-fluid ">
+                <div class="container">
+                    <div class="col-xl-12 ">
+                        <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
+                             role="alert">
+                            <div class="alert-icon">
+                                <span class="svg-icon svg-icon-info svg-icon-2x">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none"
+                                           fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <rect fill="#000000" opacity="0.3" x="12" y="4"
+                                                  width="3" height="13" rx="1.5" />
+                                            <rect fill="#000000" opacity="0.3" x="7" y="9"
+                                                  width="3" height="8" rx="1.5" />
+                                            <path d="M5,19 L20,19 C20.5522847,19 21,19.4477153 21,20 C21,20.5522847 20.5522847,21 20,21 L4,21 C3.44771525,21 3,20.5522847 3,20 L3,4 C3,3.44771525 3.44771525,3 4,3 C4.55228475,3 5,3.44771525 5,4 L5,19 Z"
+                                                  fill="#000000" fill-rule="nonzero" />
+                                            <rect fill="#000000" opacity="0.3" x="17" y="11"
+                                                  width="3" height="6" rx="1.5" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="alert-text card-label font-weight-bold">
+                                @Common.UsageInfoForLastFourMonth
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container">
+                            <div class="row">
+                                @foreach (var item in Model.RecipeUsage)
+                                {
+                                    <div class="col-xl-6">
+                                        <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-position: right top; background-size: 30% auto; background-image: url(assets/media/svg/shapes/abstract-4.svg)">
+                                            <div class="card-body">
+                                                <a href="#" class="card-title font-weight-bold text-danger text-hover-primary font-size-h5">
+                                                    @Html.DisplayFor(m => item.Month)
+                                                    @Html.DisplayFor(m => item.Year)
+                                                </a>
+                                                <div class="d-flex flex-wrap mt-14">
+                                                    <div class="mr-12 d-flex flex-column mb-7">
+                                                        <span class="d-block font-weight-bold mb-4">@Html.DisplayNameFor(m => item.TotalDownload)</span>
+                                                        <span class="btn btn-light-primary btn-sm font-weight-bold btn-upper btn-text">
+                                                            @Html.DisplayFor(m => item.TotalDownload)
+                                                            GB
+                                                        </span>
+                                                    </div>
+                                                    <div class="mr-12 d-flex flex-column mb-7">
+                                                        <span class="d-block font-weight-bold mb-4">@Html.DisplayNameFor(m => item.TotalUpload)</span>
+                                                        <span class="btn btn-light-warning btn-sm font-weight-bold btn-upper btn-text">
+                                                            @Html.DisplayFor(m => item.TotalUpload)
+                                                            GB
+                                                        </span>
+                                                    </div>
+                                                    @if (item.IsQuota)
+                                                    {
+                                                        <div class="flex-row-fluid mb-7">
+                                                            <span class="d-block font-weight-bold mb-4">
+                                                                @Common.RemainingQuota
+                                                            </span>
+                                                            <div class="d-flex align-items-center pt-2">
+                                                                <div class="progress progress-xs mt-2 mb-2 w-100">
+                                                                    <div class="progress-bar bg-info" role="progressbar" style="width: @Html.DisplayFor(m => item.PercentQuota)%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                </div>
+                                                                <span class="ml-3 font-weight-bolder">@Html.DisplayFor(m => item.PercentQuota)%</span>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div class="flex-row-fluid mb-7">
+                                                            <span class="d-block font-weight-bold mb-4">
+                                                                @Common.LimitlessQuota
+                                                            </span>
+                                                            <div class="d-flex align-items-center pt-2">
+                                                                <div class="progress progress-xs mt-2 mb-2 w-100">
+                                                                    <div class="progress-bar bg-info"
+                                                                         role="progressbar"
+                                                                         style="width: 100%;"
+                                                                         aria-valuenow="50"
+                                                                         aria-valuemin="0"
+                                                                         aria-valuemax="100"></div>
+                                                                </div>
+                                                                <span class="ml-3 font-weight-bolder"></span>
+                                                            </div>
+                                                        </div>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,191 @@
+﻿@model IEnumerable<CMS.ViewModels.Payment.PaymentInstructionVM>
+@using CMS.Localization;
+
+@{
+    ViewBag.Title = Common.AutomaticPaymentInstruction;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">
+                        @Common.AutomaticPaymentInstruction
+                    </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @Common.CanAddCardOrDeleteCard
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="@Url.Action("AddNewCard","Payment")" class="btn btn-sm btn-primary font-weight-bold mr-2">@Common.AddNewCard</a>
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-custom">
+        <div class="card-body py-12">
+            <div class="row">
+                <div class="form-group fv-plugins-icon-container">
+                    <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+                        <div class="alert-icon">
+                            <span class="svg-icon svg-icon-danger svg-icon-2x">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none"
+                                       fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                        <rect fill="#000000" opacity="0.3" x="2" y="5"
+                                              width="20" height="14" rx="2"></rect>
+                                        <rect fill="#000000" x="2" y="8" width="20" height="3">
+                                        </rect>
+                                        <rect fill="#000000" opacity="0.3" x="16" y="14"
+                                              width="4" height="2" rx="1"></rect>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="alert-text card-label font-weight-bold">
+                            @Common.MyRegisteredCreditCards
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model.Where(m => m.CreditCardStateTypes == CMS.ViewModels.Payment.CreditCardStateTypes.Passive))
+                        {
+                            <div class="col-lg-4">
+                                <label class="option">
+                                    <span class="option-label">
+                                        <span class="option-head">
+                                            <span class="option-title">@Html.DisplayFor(m => item.CreditCardNumber)</span>
+                                            <span class="option-focus">
+                                                <span class="alert-icon">
+                                                    <span class="svg-icon svg-icon-dark svg-icon-2x">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                             width="24px" height="24px"
+                                                             viewBox="0 0 24 24" version="1.1">
+                                                            <g stroke="none" stroke-width="1"
+                                                               fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24"
+                                                                      height="24"></rect>
+                                                                <rect fill="#000000" opacity="0.3"
+                                                                      x="2" y="5" width="20"
+                                                                      height="14" rx="2"></rect>
+                                                                <rect fill="#000000" x="2" y="8"
+                                                                      width="20" height="3"></rect>
+                                                                <rect fill="#000000" opacity="0.3"
+                                                                      x="16" y="14" width="4"
+                                                                      height="2" rx="1"></rect>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="option-body">                                            
+                                            @Common.InvoiceWillPayWithThisCard
+                                        </span>
+                                        <span class="card-toolbar">
+                                            <br>
+                                            <a href="" class="btn btn-sm btn-light-info font-weight-bold mr-2">                                                
+                                                @Common.ActivateAutoPayment
+                                            </a>
+                                            <a href=""
+                                               class="btn btn-sm btn-light-danger font-weight-bold mr-2">
+                                                @Common.DeleteCard
+                                            </a>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        }
+                    </div> <br>
+
+                    <div class="form-group fv-plugins-icon-container">
+                        <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
+                             role="alert">
+                            <div class="alert-icon">
+                                <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none"
+                                           fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <rect fill="#000000" opacity="0.3" x="2" y="5"
+                                                  width="20" height="14" rx="2"></rect>
+                                            <rect fill="#000000" x="2" y="8" width="20"
+                                                  height="3"></rect>
+                                            <rect fill="#000000" opacity="0.3" x="16" y="14"
+                                                  width="4" height="2" rx="1"></rect>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="alert-text card-label font-weight-bold">
+                                @Common.MyCardInAutoPayment
+                            </div>
+                        </div>
+                        <div class="row">
+                            @foreach (var item in Model.Where(m => m.CreditCardStateTypes == CMS.ViewModels.Payment.CreditCardStateTypes.Active))
+                            {
+                                <div class="col-lg-4">
+                                    <label class="option">
+                                        <span class="option-label">
+                                            <span class="option-head">
+                                                <span class="option-title">
+                                                    @Html.DisplayFor(m => item.CreditCardNumber)
+                                                </span>
+                                                <span class="option-focus">
+                                                    <span class="alert-icon">
+                                                        <span class="svg-icon svg-icon-success svg-icon-2x">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                 width="24px" height="24px"
+                                                                 viewBox="0 0 24 24" version="1.1">
+                                                                <g stroke="none" stroke-width="1"
+                                                                   fill="none" fill-rule="evenodd">
+                                                                    <rect x="0" y="0" width="24"
+                                                                          height="24"></rect>
+                                                                    <rect fill="#000000"
+                                                                          opacity="0.3" x="2" y="5"
+                                                                          width="20" height="14"
+                                                                          rx="2"></rect>
+                                                                    <rect fill="#000000" x="2" y="8"
+                                                                          width="20" height="3">
+                                                                    </rect>
+                                                                    <rect fill="#000000"
+                                                                          opacity="0.3" x="16" y="14"
+                                                                          width="4" height="2" rx="1">
+                                                                    </rect>
+                                                                </g>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <span class="option-body">
+                                                @Common.InvoiceWillPayWithThisCard
+                                            </span>
+                                            <span class="card-toolbar">
+                                                <br>
+                                                <a href="" class="btn btn-sm btn-light-success font-weight-bold mr-2">
+                                                    @Common.ActivateAutoPayment
+                                                </a>
+                                                <a href="" class="btn btn-sm btn-light-warning font-weight-bold mr-2">
+                                                    @Common.Cancel
+                                                </a>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

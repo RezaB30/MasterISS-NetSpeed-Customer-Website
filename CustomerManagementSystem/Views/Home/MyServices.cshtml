@@ -1,0 +1,169 @@
+﻿
+@{
+    ViewBag.Title = "MyServices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">Hizmetlerim</h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        Kullanmakta
+                        olduğunuz veya iptal ettiğiniz hizmetler..
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="@Url.Action("NewRequests","Support")"
+                       class="btn btn-sm btn-light-info font-weight-bold mr-2">
+                        Yeni Hizmet
+                        Talebi
+                    </a>
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="flex-row-lg-fluid ml-lg-0">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card card-custom gutter-b card-stretch">
+                    <div class="card-body pt-15 d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-center mb-7">
+                            <div class="d-flex flex-column">
+                                <a href="#"
+                                   class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
+                                    İnternet
+                                    Hizmeti
+                                </a>
+                                <span class="text-muted font-size-h6 font-weight-bold">
+                                    NET EKO 8
+                                    MBPS'E KADAR
+                                </span>
+                            </div>
+                        </div>
+                        <div class="pt-0 ">
+                            <div class="mb-7">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">KOTA</span>
+                                    <a href="#"
+                                       class="text-muted text-hover-primary">LİMİTSİZ</a>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">TAAHHÜT</span>
+                                    <a href="#"
+                                       class="text-muted text-hover-primary">TAAHHÜTSÜZ</a>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-cente my-1">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">FİYAT</span>
+                                    <a href="#" class="text-muted text-hover-primary">66 ₺</a>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">
+                                        FATURA
+                                        DÖNEMİ
+                                    </span>
+                                    <a href="#" class="text-muted text-hover-primary">23</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-toolbar">
+                            <a href="#" class="btn btn-block btn-sm btn-success font-weight-bold mr-2 disabled">AKTİF</a>
+                            <a href="@Url.Action("NewRequests","Support")" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                TARİFE
+                                DEĞİŞTİR
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card card-custom gutter-b card-stretch">
+                    <div class="card-body pt-15 d-flex flex-column justify-content-between">
+                        <div class="d-flex align-items-center mb-7">
+                            <div class="d-flex flex-column">
+                                <a href="#"
+                                   class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
+                                    Statik
+                                    IP
+                                </a>
+                                <span class="text-muted font-size-h6 font-weight-bold">185.125.12.52</span>
+                            </div>
+                        </div>
+                        <div class="pt-0 ">
+                            <div class="mb-7">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">FİYAT</span>
+                                    <a href="#" class="text-muted text-hover-primary">15 ₺</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-toolbar">
+                            <a href="@Url.Action("NewRequests","Support")"
+                               class="btn btn-block btn-sm btn-danger font-weight-bold mr-2 disabled">
+                                İPTAL
+                                EDİLMİŞ
+                            </a>
+                            <a href="@Url.Action("NewRequests","Support")"
+                               class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                TEKRAR
+                                TALEP ET
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-18 ">
+            <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
+                 role="alert">
+                <div class="alert-icon">
+                    <span class="svg-icon svg-icon-danger svg-icon-2x">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <path d="M5.5,4 L9.5,4 C10.3284271,4 11,4.67157288 11,5.5 L11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M14.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,17.5 C13,16.6715729 13.6715729,16 14.5,16 Z"
+                                      fill="#000000"></path>
+                                <path d="M5.5,10 L9.5,10 C10.3284271,10 11,10.6715729 11,11.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,12.5 C20,13.3284271 19.3284271,14 18.5,14 L14.5,14 C13.6715729,14 13,13.3284271 13,12.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z"
+                                      fill="#000000" opacity="0.3"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+                <div class="alert-text card-label font-size-h6 font-weight-bold">
+                    Size Özel
+                    Teklifler
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card card-custom bgi-no-repeat card-stretch gutter-b"
+                         style="background-color: #FFF4DE; background-position: right top; background-size: 30% auto;">
+                        <div class="card-body">
+                            <h4 class="text-danger mt-2 font-weight-bolder">
+                                Size özel tarife
+                                teklifimiz var!
+                            </h4>
+                            <p class="text-dark-75 font-weight-bolder my-6">
+                                16 Mbps'e kadar
+                                limitsiz tarifemiz 66TL yerine
+                                <br>Size özel ayda sadece 58 TL
+                            </p>
+                            <a href="#"
+                               class="btn btn-danger font-weight-bold py-2 px-6">
+                                Teklifi Kabul
+                                Et
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

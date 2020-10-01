@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptOffer" xml:space="preserve">
+    <value>Teklifi Kabul Et</value>
+  </data>
+  <data name="AccountInfo" xml:space="preserve">
+    <value>Hesap Bilgileri</value>
+  </data>
+  <data name="AccountPrefers" xml:space="preserve">
+    <value>Hesap Tercihleri</value>
+  </data>
+  <data name="ActivateAutoPayment" xml:space="preserve">
+    <value>Otomatik Ödeme Aktif Et</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="AddNewCard" xml:space="preserve">
+    <value>Yeni Kart Ekle</value>
+  </data>
+  <data name="AddNote" xml:space="preserve">
+    <value>Not Ekle</value>
+  </data>
+  <data name="AllSupportRequests" xml:space="preserve">
+    <value>Tüm Destek Kayıtlarım</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Tutar</value>
+  </data>
+  <data name="AutomaticPayment" xml:space="preserve">
+    <value>Otomatik Ödeme</value>
+  </data>
+  <data name="AutomaticPaymentInstruction" xml:space="preserve">
+    <value>Otomatik Ödeme Talimatı</value>
+  </data>
+  <data name="AutoPaymentAndAddCard" xml:space="preserve">
+    <value>Otomatik Ödeme Talimatı - Kart Ekleme</value>
+  </data>
+  <data name="AutoPaymentAndAddCardDescription" xml:space="preserve">
+    <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
+  </data>
+  <data name="CanAddCardOrDeleteCard" xml:space="preserve">
+    <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Kart Numarası</value>
+  </data>
+  <data name="ChangeAndSave" xml:space="preserve">
+    <value>Değiştir ve Kaydet</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Seçim Yapınız</value>
+  </data>
+  <data name="ChooseCardForPay" xml:space="preserve">
+    <value>Ödemenizi yapmak için daha önce kaydetmiş olduğunuz kartlardan seçim yapınız.</value>
+  </data>
+  <data name="ChooseMonth" xml:space="preserve">
+    <value>Ay Seçin</value>
+  </data>
+  <data name="ChooseSubscriberNo" xml:space="preserve">
+    <value>İşlem yapmak istediğiniz abone numarasını seçiniz</value>
+  </data>
+  <data name="ChooseYear" xml:space="preserve">
+    <value>Yıl Seçin</value>
+  </data>
+  <data name="ClickQuickLogin" xml:space="preserve">
+    <value>Hızlı Giriş İçin Tıklayın</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>TAMAMLANDI</value>
+  </data>
+  <data name="ContactPrefer" xml:space="preserve">
+    <value>İletişim Tercihi</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Adet</value>
+  </data>
+  <data name="CustomerLineDetails" xml:space="preserve">
+    <value>Hat Durumu</value>
+  </data>
+  <data name="DatedInvoice" xml:space="preserve">
+    <value>Tarihli Fatura</value>
+  </data>
+  <data name="DeleteCard" xml:space="preserve">
+    <value>Kartı Sil</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>AÇIKLAMA</value>
+  </data>
+  <data name="DescriptionCustomerService" xml:space="preserve">
+    <value>Netspeed Online İşlemler'de kredi kartı ile faturanızı anında ödeyebilir, Destek talebi oluşturabilir ve daha bir çok işlemi 7/24 hızlı ve güvenli bir şekilde
+gerçekleştirebilirsiniz.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>DETAYLAR</value>
+  </data>
+  <data name="DocumentsDescription" xml:space="preserve">
+    <value>Abonelik ile ilgili evrak ve belgelerinize erişim sağlayabilir ve indirebilirsiniz.</value>
+  </data>
+  <data name="DownloadAsPdf" xml:space="preserve">
+    <value>Pdf Olarak İndir</value>
+  </data>
+  <data name="Freeze" xml:space="preserve">
+    <value>Dondurulmuş</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Adı Soyadı</value>
+  </data>
+  <data name="HeadTitle" xml:space="preserve">
+    <value>Online İşlemler | Netspeed</value>
+  </data>
+  <data name="HelpSupportQuestion" xml:space="preserve">
+    <value>Size Nasıl Yardımcı Olabiliriz ?</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="InfoServices" xml:space="preserve">
+    <value>BİLGİ &amp; HİZMETLER</value>
+  </data>
+  <data name="InProcess" xml:space="preserve">
+    <value>İşlemde</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Fatura</value>
+  </data>
+  <data name="InvoicePayments" xml:space="preserve">
+    <value>Fatura &amp; Ödemeler</value>
+  </data>
+  <data name="InvoicePaymentsDescription" xml:space="preserve">
+    <value>Faturalarınızı görüntüleyebilir indirebilir ve ödeyebilirsiniz.</value>
+  </data>
+  <data name="InvoicePeriod" xml:space="preserve">
+    <value>Fatura Dönemi</value>
+  </data>
+  <data name="InvoiceWillPayWithThisCard" xml:space="preserve">
+    <value>Fatura ödemeleriniz daha önce kaydetmiş olduğunuz bu kart ile gerçekleşecektir.</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>Son Giriş</value>
+  </data>
+  <data name="LastNotifications" xml:space="preserve">
+    <value>Son Bildirimler</value>
+  </data>
+  <data name="LimitlessQuota" xml:space="preserve">
+    <value>Kota Kullanım (Limitsiz)</value>
+  </data>
+  <data name="LineDetailsDescription" xml:space="preserve">
+    <value>Hattınızın teknik ve durum bilgilerini görebilirsiniz.</value>
+  </data>
+  <data name="LineDetailsHeader" xml:space="preserve">
+    <value>Hat Teknik Bilgiler</value>
+  </data>
+  <data name="LineState" xml:space="preserve">
+    <value>Hat Durumu</value>
+  </data>
+  <data name="LineTechnicalState" xml:space="preserve">
+    <value>Hat Teknik Durumu</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="LoginDescription" xml:space="preserve">
+    <value>Giriş yaparak hizmetlerinizi inceleyebilir ve
+        faturalarınızı ödeyebilirsiniz.</value>
+  </data>
+  <data name="LoginUsernamePlaceholder" xml:space="preserve">
+    <value>Kimlik No veya GSM No</value>
+  </data>
+  <data name="LoginWithRegisteredPasssword" xml:space="preserve">
+    <value>Kayıtlı Şifre İle Giriş Yap</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="MailPlaceholder" xml:space="preserve">
+    <value>E-Posta</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Ay</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Hesap Bilgilerim</value>
+  </data>
+  <data name="MyCardInAutoPayment" xml:space="preserve">
+    <value>Otomatik Ödemedeki Kredi Kartım</value>
+  </data>
+  <data name="MyCustomerServiceAccount" xml:space="preserve">
+    <value>Oim Hesabım</value>
+  </data>
+  <data name="MyDocuments" xml:space="preserve">
+    <value>Belgelerim</value>
+  </data>
+  <data name="MyInvoices" xml:space="preserve">
+    <value>Faturalarım</value>
+  </data>
+  <data name="MyRegisteredCreditCards" xml:space="preserve">
+    <value>Kayıtlı Kredi Kartlarım</value>
+  </data>
+  <data name="MyServices" xml:space="preserve">
+    <value>Hizmetlerim</value>
+  </data>
+  <data name="NewRequest" xml:space="preserve">
+    <value>Yeni Destek Kaydı</value>
+  </data>
+  <data name="NewRequestDescription" xml:space="preserve">
+    <value>Destek talebinde bulunabilir ve takip edebilirsiniz.</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Sonraki</value>
+  </data>
+  <data name="OnlinePayBill" xml:space="preserve">
+    <value>Online Fatura Ödeme</value>
+  </data>
+  <data name="OpenRequestAgain" xml:space="preserve">
+    <value>TALEBİ TEKRAR AÇ</value>
+  </data>
+  <data name="Pagination" xml:space="preserve">
+    <value>Toplam {0} kayıt bulundu. Bu sayfada {1} ile {2} arası kayıtlar gösteriliyor.</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Ödendi</value>
+  </data>
+  <data name="Passive" xml:space="preserve">
+    <value>Pasif</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Şifreniz</value>
+  </data>
+  <data name="PayingBills" xml:space="preserve">
+    <value>Fatura Ödeme</value>
+  </data>
+  <data name="PaymentSecureDescription" xml:space="preserve">
+    <value>Güvenliğiniz sebebi ile ödeme işleminiz &lt;strong&gt;3D secure&lt;/strong&gt; ile gerçekleşecektir.</value>
+  </data>
+  <data name="PayRegisteredCardDescription" xml:space="preserve">
+    <value>Ödemeniz daha önce kaydetmiş olduğunuz bu kart ile gerçekleşecektir.</value>
+  </data>
+  <data name="PayWithBankCreditCard" xml:space="preserve">
+    <value>Banka/Kredi Kartı ile Ödeme</value>
+  </data>
+  <data name="PayWithRegisteredCard" xml:space="preserve">
+    <value>Kayıtlı Kart İle Ödeme</value>
+  </data>
+  <data name="PhonePlaceholder" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Önceki</value>
+  </data>
+  <data name="ProblemSolved" xml:space="preserve">
+    <value>SORUNUM ÇÖZÜLDÜ</value>
+  </data>
+  <data name="QuickActions" xml:space="preserve">
+    <value>Hızlı İşlemler</value>
+  </data>
+  <data name="QuickLogin" xml:space="preserve">
+    <value>Hızlı Giriş Yap</value>
+  </data>
+  <data name="QuickPay" xml:space="preserve">
+    <value>Hemen Öde</value>
+  </data>
+  <data name="RecipeUsageDescription" xml:space="preserve">
+    <value>Tarife bilgilerinizi ve aylık kullanım durumunu görebilirsiniz</value>
+  </data>
+  <data name="RecipeUsageInfo" xml:space="preserve">
+    <value>Tarife ve Kullanım Bilgileriniz</value>
+  </data>
+  <data name="RefreshState" xml:space="preserve">
+    <value>Durum Yenile</value>
+  </data>
+  <data name="RegisteredCards" xml:space="preserve">
+    <value>Kayıtlı Kartlar</value>
+  </data>
+  <data name="RegisteredCardsDescription" xml:space="preserve">
+    <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
+  </data>
+  <data name="RemainingQuota" xml:space="preserve">
+    <value>Kalan Kota</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Nasıl yardımcı olabiliriz?</value>
+  </data>
+  <data name="SecureAddCard" xml:space="preserve">
+    <value>Güvenli Kart Ekleme</value>
+  </data>
+  <data name="SecureAddCardDescription1" xml:space="preserve">
+    <value>Kredi kartı veri ve işlem güvenliğiniz dünyanın en üst düzey standardı olan PCI DSS LEVEL 1 uyumluluk sertifikasına sahip Mobilexpress altyapısı ile korunmaktadır.</value>
+  </data>
+  <data name="SecureAddCardDescription2" xml:space="preserve">
+    <value>Tüm Visa, Mastercard ve American Express logolu kredi kartları ve banka kartları (debit card) kaydedilebilir. İnternet kullanımına açık ve yeterli limiti bulunan tüm yurtiçi kredi kartları kullanılabilir.</value>
+  </data>
+  <data name="SecurePaymentPage" xml:space="preserve">
+    <value>Ödemeleriniz için güvenli ödeme sayfası</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gönder</value>
+  </data>
+  <data name="SendPdfToMail" xml:space="preserve">
+    <value>E-Posta Gönder</value>
+  </data>
+  <data name="SetCardExpirationMonth" xml:space="preserve">
+    <value>Lütfen Kartınızın Son Kullanma Ayını girin.</value>
+  </data>
+  <data name="SetCardExpirationYear" xml:space="preserve">
+    <value>Lütfen Kartınızın Son Kullanma Yılını girin.</value>
+  </data>
+  <data name="SetCardFullName" xml:space="preserve">
+    <value>Lütfen kart üzerinde yazan Ad ve Soyad giriniz</value>
+  </data>
+  <data name="SetCardInfoes" xml:space="preserve">
+    <value>Kart Bilgilerini Giriniz</value>
+  </data>
+  <data name="SetCardNumber" xml:space="preserve">
+    <value>Lütfen kart numarasını yazınız</value>
+  </data>
+  <data name="SetCardSecureCode" xml:space="preserve">
+    <value>3 Haneli Güvenlik Kodunu girin.</value>
+  </data>
+  <data name="SpecialOffer" xml:space="preserve">
+    <value>Kampanya</value>
+  </data>
+  <data name="SpecialOfferFriends" xml:space="preserve">
+    <value>Arkadaşını Getir</value>
+  </data>
+  <data name="StateInfo" xml:space="preserve">
+    <value>DURUM | BİLGİ</value>
+  </data>
+  <data name="SubscriberNo" xml:space="preserve">
+    <value>Abone Numarası</value>
+  </data>
+  <data name="SupportAndRequests" xml:space="preserve">
+    <value>Destek &amp; Talepler</value>
+  </data>
+  <data name="SupportRecords" xml:space="preserve">
+    <value>Destek Kayıtları</value>
+  </data>
+  <data name="SupportRequest" xml:space="preserve">
+    <value>Destek Talebi</value>
+  </data>
+  <data name="SupportRequestExplain" xml:space="preserve">
+    <value>Destek Talebi Açıklaması</value>
+  </data>
+  <data name="SupportRequestExplainText" xml:space="preserve">
+    <value>Destek talebinizi lütfen kısa ve anlaşılır şekilde açıklayınız.</value>
+  </data>
+  <data name="SupportRequests" xml:space="preserve">
+    <value>Destek Talepleri</value>
+  </data>
+  <data name="SupportRequestsAndNewRequest" xml:space="preserve">
+    <value>Destek &amp; Talepler - Yeni Destek Kaydı</value>
+  </data>
+  <data name="TariffUsage" xml:space="preserve">
+    <value>Tarife &amp; Kullanım</value>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Toplam Tutar</value>
+  </data>
+  <data name="UsageInfoForLastFourMonth" xml:space="preserve">
+    <value>SON 4 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ</value>
+  </data>
+  <data name="WeHaveSpecialOffer" xml:space="preserve">
+    <value>Size özel tarife teklifimiz var!</value>
+  </data>
+  <data name="WelcomeCustomerService" xml:space="preserve">
+    <value>Online İşlemler'e Hoşgeldiniz</value>
+  </data>
+  <data name="WithCompanyRegisteredPassword" xml:space="preserve">
+    <value>{0} Kayıtlı Şifre İle</value>
+  </data>
+  <data name="WriteNote" xml:space="preserve">
+    <value>Not Yazın</value>
+  </data>
+  <data name="YourRecipe" xml:space="preserve">
+    <value>Tarifeniz</value>
+  </data>
+</root>

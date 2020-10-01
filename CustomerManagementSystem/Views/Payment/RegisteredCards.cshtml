@@ -1,0 +1,179 @@
+﻿
+@using CMS.Localization;
+
+@{
+    ViewBag.Title = Common.PayWithRegisteredCard;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/assets/css/pages/wizard/wizard-4.css")
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">
+                        @Common.OnlinePayBill
+                    </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @Common.SecurePaymentPage
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="@Url.Action("PayBill","Payment")" class="btn btn-sm btn-light-dark font-weight-bold mr-2">
+                        @Common.PayWithBankCreditCard
+                    </a>
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        <div class="card card-custom card-shadowless rounded-top-0">
+            <div class="card-body p-0">
+                <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
+                    <div class="col-xl-12 col-xxl-7">
+                        <div class="row">
+                            <div class="form-group fv-plugins-icon-container">
+                                <h4 class="mb-4 font-weight-bold text-dark">
+                                    @Common.PayWithRegisteredCard
+                                </h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="option">
+                                            <span class="option-control">
+                                                <span class="radio radio-outline">
+                                                    <input type="radio" name="billing_delivery" value="">
+                                                    <span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                            <span class="option-label">
+                                                <span class="option-head">
+                                                    <span class="option-title">
+                                                        4444 2222 **** 1111
+                                                    </span>
+                                                    <span class="option-focus">
+                                                        <span class="alert-icon">
+                                                            <span class="svg-icon svg-icon-success svg-icon-2x">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                        <rect x="0" y="0"
+                                                                              width="24"
+                                                                              height="24"></rect>
+                                                                        <rect fill="#000000"
+                                                                              opacity="0.3" x="2"
+                                                                              y="5" width="20"
+                                                                              height="14" rx="2">
+                                                                        </rect>
+                                                                        <rect fill="#000000"
+                                                                              x="2" y="8"
+                                                                              width="20"
+                                                                              height="3"></rect>
+                                                                        <rect fill="#000000"
+                                                                              opacity="0.3" x="16"
+                                                                              y="14" width="4"
+                                                                              height="2" rx="1">
+                                                                        </rect>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                                <span class="option-body">                                                    
+                                                    @Common.PayRegisteredCardDescription
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="option">
+                                            <span class="option-control">
+                                                <span class="radio radio-outline">
+                                                    <input type="radio" name="billing_delivery" value="">
+                                                    <span></span>
+                                                </span>
+                                            </span>
+                                            <span class="option-label">
+                                                <span class="option-head">
+                                                    <span class="option-title">
+                                                        4444 2222 **** 1111
+                                                    </span>
+                                                    <span class="option-focus">
+                                                        <span class="alert-icon">
+                                                            <span class="svg-icon svg-icon-success svg-icon-2x">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                     width="24px" height="24px"
+                                                                     viewBox="0 0 24 24"
+                                                                     version="1.1">
+                                                                    <g stroke="none"
+                                                                       stroke-width="1"
+                                                                       fill="none"
+                                                                       fill-rule="evenodd">
+                                                                        <rect x="0" y="0"
+                                                                              width="24"
+                                                                              height="24"></rect>
+                                                                        <rect fill="#000000"
+                                                                              opacity="0.3" x="2"
+                                                                              y="5" width="20"
+                                                                              height="14" rx="2">
+                                                                        </rect>
+                                                                        <rect fill="#000000"
+                                                                              x="2" y="8"
+                                                                              width="20"
+                                                                              height="3"></rect>
+                                                                        <rect fill="#000000"
+                                                                              opacity="0.3" x="16"
+                                                                              y="14" width="4"
+                                                                              height="2" rx="1">
+                                                                        </rect>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                                <span class="option-body">
+                                                    @Common.PayRegisteredCardDescription
+                                                </span>
+                                            </span>
+                                        </label>
+
+                                        <div class="fv-plugins-message-container"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box ">                            
+                            @Common.ChooseCardForPay
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="d-flex justify-content-between border-top mt-5 pt-3">
+                                    <div class="mr-1"></div>
+                                    <div>
+                                        <button type="reset" class="btn btn-light-primary font-weight-bold">
+                                            @Common.Cancel
+                                        </button>
+                                        <button type="button" class="btn btn-danger font-weight-bold" id="kt_sweetalert_yonlendirme2">
+                                            @Common.Send
+                                        </button>
+                                    </div>
+                                </div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
+    @Scripts.Render("~/assets/js/pages/custom/ecommerce/checkout.js")
+}

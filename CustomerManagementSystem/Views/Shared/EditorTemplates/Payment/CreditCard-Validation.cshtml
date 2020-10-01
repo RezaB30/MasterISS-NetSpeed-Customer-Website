@@ -1,0 +1,45 @@
+﻿@using (Ajax.BeginForm("CreditCardValidation", "Payment", new AjaxOptions { HttpMethod = "POST", OnComplete = "ValidateResult" }))
+{
+    @Html.AntiForgeryToken()
+    <div id="third-content" class="pb-5">
+        <h4 class="mb-10 font-weight-bold text-dark">
+            SMS
+            Doğrulaması
+        </h4>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="form-group fv-plugins-icon-container">
+                    <label>SMS Doğrulama Kodu</label>
+                    @Html.Editor("SMSCode", new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Sms Kodu", autocomplete = "off" } })
+                    <span class="form-text text-muted">
+                        Kayıtlı
+                        GSM numarasına gönderdiğimiz
+                        Doğrulama Kodu'nu giriniz
+                    </span>
+                    <div class="fv-plugins-message-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+        <div class="mr-2">
+            <button onclick="window.location.href ='/Payment/CreditCardRegister'" id="validation-page-prev" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">
+                Önceki
+            </button>
+        </div>
+        <div>
+            <button id="validation-page-submit" type="submit" class="btn btn-success font-weight-bolder text-uppercase px-9 py-4">
+                Kaydet
+            </button>
+        </div>
+    </div>
+    <div></div>
+    <div></div>
+}
+
+@section scripts{
+    <script>
+
+    </script>
+}

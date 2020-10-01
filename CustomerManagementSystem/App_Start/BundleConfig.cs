@@ -20,12 +20,23 @@ namespace CustomerManagementSystem
                         "~/assets/js/scripts.bundle.js",
                         "~/assets/plugins/global/*.js",
                         "~/assets/plugins/custom/prismjs/*.js",
-                        "~/assets/plugins/custom/fullcalendar/*.js"));
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));            
+                        "~/assets/plugins/custom/fullcalendar/*.js",
+                        "~/Scripts/Custom/current-subscription.js",
+                        "~/Scripts/Custom/resource-displayText.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/loginjs").Include(
+                "~/assets/plugins/global/plugins.bundle.js",
+                "~/assets/plugins/custom/prismjs/prismjs.bundle.js",
+                "~/assets/js/scripts.bundle.js",
+                "~/Scripts/Custom/resource-displayText.js"
+                //"~/assets/js/pages/custom/login/login-general.js"
+                ));
+            bundles.Add(new StyleBundle("~/bundles/logincss").Include(
+                "~/assets/css/pages/login/classic/login-6.css",
+                "~/assets/plugins/global/plugins.bundle.css",
+                "~/assets/plugins/custom/prismjs/prismjs.bundle.css",
+                "~/assets/css/style.bundle.css"                
+                ));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       //"~/assets/css/pages/error/*.css",
                       //"~/assets/css/pages/invoice/*.css",

@@ -12,10 +12,10 @@ var KTSpinnersDemo = function () {
 
         KTUtil.addEvent(btn, "click", function() {
             KTUtil.btnWait(btn, "spinner spinner-right spinner-white pr-15", "Lütfen Bekleyin");
-
-            setTimeout(function() {
-                KTUtil.btnRelease(btn);
-            }, 1000);
+            window.location.reload();
+            //setTimeout(function() {
+            //    KTUtil.btnRelease(btn);
+            //}, 1000);
         });
     }
 

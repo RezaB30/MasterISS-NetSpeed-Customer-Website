@@ -1,0 +1,575 @@
+﻿@model CMS.ViewModels.Home.SpecialOfferDetailsVM
+@using CMS.Localization;
+
+@{
+    ViewBag.Title = SpecialOffer.SpecialOfferDetails;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">
+                        @SpecialOffer.SpecialOfferConditions
+                    </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        Kampanya katılım
+                        şartları ve örnek paylaşım görselleri.
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="@Url.Action("SpecialOffer","Home")"
+                       class="btn btn-sm btn-light-info font-weight-bold mr-2">Kampanya Özeti</a>
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="col-xl-12">
+                <div class="card card-custom gutter-b">
+                    <div class="card-body  p-0">
+                        <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
+                             style="background-color: #4b4e80; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/progress.svg)">
+                            <h2 class="text-warning pb-5 font-weight-bolder">
+                                Netspeed 12 Aylık indirim
+                                Kodu
+                            </h2>
+                            <p class="text-inverse-info pb-5 font-size-h6">
+                                Netspeed'e aşağıdaki kod ile
+                                başvuranlar, 12 ay indirimli internet kullanma hakkı kazanıyor, Davet
+                                kodumu kullanırsan hem sen hem de ben 12 ay indirimli internet kullanma
+                                hakkı kazanacağız. Üstelik katılım sınırı yok, sende arkadaşlarını davet
+                                et! ne kadar çok arkadaş, o kadar çok indirimli kullanım hakkı!<br>
+
+                                <div class="font-size-h2 mb-7 text-white">
+                                    İNDİRİM KODU :
+                                    <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
+                                </div>
+                                <img src="/assets/media/svg/logos/bejjpluslogonew.svg" alt="" class="align-self-end h-25px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="card card-custom gutter-b">
+                    <div class="card-body  p-0">
+                        <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
+                             style="background-color: #3f1b58; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/login-visual-5.svg)">
+                            <h2 class="text-warning pb-5 font-weight-bolder">
+                                Netspeed 12 Aylık indirim
+                                Kodu
+                            </h2>
+                            <p class="text-inverse-info pb-5 font-size-h6">
+                                Arkadaşını Getir Kampanyası,
+                                davet kodum ile Netspeed’e üye olursan ikimiz de 12 aylık fatura dönemi
+                                boyunca her faturamızda 5'er TL indirim hakkı kazanacağız. Üstelik
+                                katılım sınırı yok, sende arkadaşlarını davet et! ne kadar çok arkadaş,
+                                o kadar çok indirim hakkı!<br>
+
+                                <div class="font-size-h2 mb-7 text-white">
+                                    İNDİRİM KODU :
+                                    <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
+                                </div>
+                                <img src="/assets/media/svg/logos/bejjpluslogonew.svg" alt=""
+                                     class="align-self-end h-25px"> <br>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end::Engage Widget 8-->
+
+        </div>
+        <div class="col-lg-6">
+            <div class="card mb-8">
+                <div class="card-body">
+                    <div class="p-5">
+                        <h2 class="text-info mb-8 font-size-h3">
+                            Kampanya Şartları & Sıkça Sorulan
+                            Sorular
+                        </h2>
+                        <!--begin::Accordion-->
+                        <div class="accordion accordion-light accordion-light-borderless accordion-svg-toggle"
+                             id="accordionExample7">
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingonea7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseonea7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Arkadaşını
+                                            Getir Nedir?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapseonea7" class="collapse" aria-labelledby="headingonea7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Arkadaşını Getir Kampanyası, referans kodunuz ile Netspeed’e
+                                        davet ederek kazandırdığınız her bir yeni abonelik için 12 adet
+                                        fatura döneminde her faturanızda 5 TL indirim hakkı kazanmanızı
+                                        sağlayan bir indirim kampanyasıdır.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingone7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseone7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Nasıl
+                                            Çalışır?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapseone7" class="collapse" aria-labelledby="headingone7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Online İşlem Merkezi üzerinden “arkadaşını getir” sekmesine
+                                        tıklayarak görebileceğiniz size özel referans kodunuz ile
+                                        arkadaşlarınızı davet edebilirsiniz. Önermiş olduğunuz
+                                        arkadaşınız indirim kodunu abonelik başlatırken başvuru
+                                        esnasında 444 0 217 Numaralı Başvuru Hattı üzerinden satış
+                                        temsilcimize beyan etmesi veya web sitemiz üzerinde yer alan
+                                        abone başvuru formunu doldururken “referans kodu” alanına sizin
+                                        verdiğiniz kodu yazması yeterlidir.
+                                        Başvurunun tamamlanması sonrasında referans olunan kişinin aktif
+                                        Netspeed müşterisi olması ve kullanıma başlaması ardından bir
+                                        sonraki fatura döneminde hem siz hem referans kodunuzu kullanan
+                                        arkadaşınız 12 adet fatura dönemi boyunca faturalarınızda
+                                        indirimli internet hizmeti almaya hak kazanırsınız. .
+                                        Referansınız ile gelen aboneler hatlarını iptal etmediği sürece
+                                        kazandığınız indirimler 12 fatura dönemi süresince faturanıza
+                                        yansıtılır.
+                                        Daha fazla kişiye referans olursanız kazandırdığınız her bir
+                                        abonelik için belirlenen indirim tutarı oranı referans olduğunuz
+                                        kişi sayısı ile çarpılır ve her kişi için 12 adet fatura dönemi
+                                        süresince fatura tutarınıza indirim olarak yansıtılır.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingTwo7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseTwo7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Örnek
+                                            İndirimli Fatura
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapseTwo7" class="collapse" aria-labelledby="headingTwo7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        <div class="col-lg-12">
+
+                                            <div class="mb-5">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-light table-light-success">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fatura Dönemi</th>
+                                                                <th class="table-center">Ocak 2020</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="font-weight-bold table-row-title">
+                                                                    75 Mbps'e Kadar Limitsiz
+                                                                </td>
+                                                                <td class="table-center">94 TL</td>
+                                                            </tr>
+                                                            <tr class="bg-gray-100">
+                                                                <td class="font-weight-bold table-row-title">
+                                                                    5 referans x 5 TL İndirim toplamı
+                                                                </td>
+                                                                <td class="table-center">-25 TL</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="font-weight-bold table-row-title">
+                                                                    Ödenecek Tutar
+                                                                </td>
+                                                                <td class="table-center">69 TL</td>
+                                                            </tr>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingThree7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseThree7" aria-expanded="true"
+                                         role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Kimler
+                                            Katılabilir?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapseThree7" class="collapse"
+                                     aria-labelledby="headingThree7" data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Bireysel, aktif ve T.C uyruklu müşterilerimiz kampanyadan
+                                        faydalanabilirler.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingfour7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapsefour7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Arkadaşlarınızı Nasıl Davet Edebilirsiniz?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapsefour7" class="collapse" aria-labelledby="headingfour7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Online İşlem Merkezi üzerinden alabileceğiniz size özel referans
+                                        kodunuzu arkadaşınızla paylaşarak kampanyaya katılabilirsiniz.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingfive7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapsefive7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            İndirimler
+                                            Faturalarınıza Ne Zaman Yansıtılır?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapsefive7" class="collapse" aria-labelledby="headingfive7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6 ">
+                                        Kazanılan indirimler bir sonraki fatura döneminde
+                                        yansıtılacaktır. İndirimin yansıtılacağı fatura dönemi
+                                        içerisinde referans ile gelen abone ve referans kodu sahibinin
+                                        aboneliğini herhangi bir nedenle iptal etmesi veya aboneliğin
+                                        fesih edilmesi halinde her iki tarafında indirim hakkı kaybolur.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingsix7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapsesix7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Kampanya
+                                            Kapsamında Davet Limiti Var mı?
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div id="collapsesix7" class="collapse" aria-labelledby="headingsix7"
+                                     data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Davet sınırı bulunmamaktadır. Dilediğiniz kadar arkadaşınızı
+                                        davet edebilirsiniz. Ancak aylık ödeyeceğiniz fatura tutarından
+                                        daha fazla indirim kazanmanız durumunda indirimleriniz sonraki
+                                        aylara ait ödeme çıkan faturalarda yansıtılmak üzere devir
+                                        edilir.
+                                    </div>
+                                </div>
+                                <!--end::Body-->
+                            </div>
+                            <!--end::Item-->
+                            <!--begin::Item-->
+                            <div class="card">
+                                <!--begin::Header-->
+                                <div class="card-header" id="headingseven7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseseven7" aria-expanded="true"
+                                         role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Fatura
+                                            Ödemeleri Gecikirse Ne Olur?
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapseseven7" class="collapse" aria-labelledby="headingseven7" data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Arkadaşını getir kampanyası ile kazanılan indirimler referans
+                                        kodu ile gelen abone ve referans kodu sahibi abone faturalarının
+                                        düzenli ve zamanında ödenmesi durumunda geçerli olacaktır.
+                                        Ödemesi geciken ve ödenmeyen faturalar olması halinde bir
+                                        sonraki dönemin faturalarına indirim yansıtılmayacaktır.
+                                        Gecikmiş fatura borcu daha sonra ödense dahi ilgili döneme ait
+                                        indirim hakkı tamamen kaybedilir ve sonraki aylara yansıtılmaz.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingeight7">
+                                    <div class="card-title collapsed" data-toggle="collapse"
+                                         data-target="#collapseeight7" aria-expanded="true"
+                                         role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Arkadaşınız
+                                            Aboneliği İptal Ederse Ne Olacak?
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapseeight7" class="collapse" aria-labelledby="headingeight7" data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Referans kodunuz ile abone olan arkadaşınızın herhangi bir
+                                        sebeple aboneliğini sonlandırması halinde abonelik iptalinin
+                                        gerçekleştiği ay dâhil gelecek dönemlerde yansıtılmak üzere
+                                        iptali sağlanan abonelikten kazanılan tüm indirimler
+                                        silinecektir.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingnine7">
+                                    <div class="card-title collapsed" data-toggle="collapse" data-target="#collapsenine7" aria-expanded="true" role="button">
+                                        <span class="svg-icon svg-icon-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                                                 height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+                                                          fill="#000000" fill-rule="nonzero"></path>
+                                                    <path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+                                                          fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                                          transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)">
+                                                    </path>
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <div class="card-label text-dark pl-4 font-size-h4">
+                                            Kazandığınız
+                                            İndirimleri Nasıl Takip Edebilirsiniz?
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapsenine7" class="collapse" aria-labelledby="headingnine7" data-parent="#accordionExample7">
+                                    <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
+                                        Kazandığınız indirimleri Online İşlemler üzerinden takip
+                                        edebilirsiniz.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/assets/js/pages/widgets.js")
+    @Scripts.Render("~/assets/js/pages/custom/todo/todo.js")
+}

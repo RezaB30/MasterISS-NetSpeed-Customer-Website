@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagementSystem", "CustomerManagementSystem\CustomerManagementSystem.csproj", "{20567F72-E66D-4869-AA65-5EC5A332E881}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.ViewModels", "CMS.ViewModels\CMS.ViewModels.csproj", "{77E5B7A2-F5C5-42E2-B1C4-D73DBE2B51F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Localization", "CMS.Localization\CMS.Localization.csproj", "{69633573-47FE-43C1-B817-A51B984E0831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{20567F72-E66D-4869-AA65-5EC5A332E881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20567F72-E66D-4869-AA65-5EC5A332E881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20567F72-E66D-4869-AA65-5EC5A332E881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E5B7A2-F5C5-42E2-B1C4-D73DBE2B51F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E5B7A2-F5C5-42E2-B1C4-D73DBE2B51F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77E5B7A2-F5C5-42E2-B1C4-D73DBE2B51F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77E5B7A2-F5C5-42E2-B1C4-D73DBE2B51F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69633573-47FE-43C1-B817-A51B984E0831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69633573-47FE-43C1-B817-A51B984E0831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69633573-47FE-43C1-B817-A51B984E0831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69633573-47FE-43C1-B817-A51B984E0831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

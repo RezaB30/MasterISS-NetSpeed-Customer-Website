@@ -1,0 +1,11 @@
+﻿@model CMS.ViewModels.Home.SubscriptionListVM
+
+@using CMS.Localization;
+@using (Html.BeginForm("CurrentSubscription", "Home", FormMethod.Post , new { id = "CurrentSubForm" }))
+{
+    <div class="form-group fv-plugins-icon-container">
+        <label>@Common.ChooseSubscriberNo</label>
+        @Html.DropDownListFor(m => m.CurrentSubscriberNo, Model.SubscriptionList, new { @class = "form-control form-control-solid form-control-lg", @onchange = "" })
+        <div class="fv-plugins-message-container"></div>
+    </div>
+}
