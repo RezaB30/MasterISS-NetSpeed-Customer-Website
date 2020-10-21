@@ -9,13 +9,17 @@ namespace CMS.ViewModels.Payment
 {
     public class NewCardVM
     {
-        [Required(ErrorMessage = "Kredi Kartı Adı Gerekli")]
+        [Required(ErrorMessageResourceType =typeof(CMS.Localization.Errors) , ErrorMessageResourceName = "CCNameRequired")]
+        [Display(Name = "CCName", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CCName { get; set; }
-        [Required(ErrorMessage = "Kredi Kartı Numarası Gerekli")]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCNumberRequired")]
+        [Display(Name = "CCNumber", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CCNumber { get; set; }
-        [Required(ErrorMessage = "Kredi Kartı Ayı Gerekli")]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCMonthRequired")]
+        [Display(Name = "CCMonth", ResourceType = typeof(CMS.Localization.Models.Models))]
         public int CCMonth { get; set; }
-        [Required(ErrorMessage = "Kredi Kartı Yılı Gerekli")]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCYearRequired")]
+        [Display(Name = "CCYear", ResourceType = typeof(CMS.Localization.Models.Models))]
         public int CCYear { get; set; }
     }
 }

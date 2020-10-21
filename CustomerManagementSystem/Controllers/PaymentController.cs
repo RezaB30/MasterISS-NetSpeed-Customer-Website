@@ -104,7 +104,7 @@ namespace CustomerManagementSystem.Controllers
         {
             if (SMSCode == "1")
             {
-                return Json(new { valid = "Hatalı kod girdiniz. Tekrar Deneyiniz." }, JsonRequestBehavior.AllowGet);
+                return Json(new { valid = CMS.Localization.Errors.SetWrongCode }, JsonRequestBehavior.AllowGet);
             }
             return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
         }

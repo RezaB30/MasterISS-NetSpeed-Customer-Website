@@ -3,7 +3,7 @@
 @using CMS.Localization;
 
 @{
-    ViewBag.Title = "MyAccount";
+    ViewBag.Title = Common.MyAccount;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Styles.Render("~/assets/css/pages/wizard/wizard-4.css")
@@ -13,10 +13,9 @@
         <div class="card card-custom card-stretch">
             <div class="card-header py-3">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">Hesabım</h3>
+                    <h3 class="card-label font-weight-bolder text-dark">@Common.MyAccount</h3>
                     <span class="text-muted font-weight-bold font-size-sm mt-1">
-                        İletişim
-                        bilgilerinizi güncelleyebilirsiniz
+                        @Common.CanUpdateContactInformation
                     </span>
                 </div>
                 <div class="card-toolbar">
@@ -31,14 +30,14 @@
         <div class="card-body py-12">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="font-weight-bold mb-10 text-dark">Hesap Bilgileri</h3>
+                    @*<h3 class="font-weight-bold mb-10 text-dark">Hesap Bilgileri</h3>*@
                     <div class="mb-5">
                         <div class="table-responsive">
                             <table class="table table-light table-light-primary">
                                 <thead>
                                     <tr>
-                                        <th class="table-center">BİLGİ & HİZMETLER</th>
-                                        <th class="table-center">AÇIKLAMA</th>
+                                        <th class="table-center">@Common.InfoServices</th>
+                                        <th class="table-center">@Common.Description</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,7 +49,7 @@
                                         <td class="font-weight-bold table-row-title">
                                             @Html.DisplayNameFor(m => m.SubscriberNo)
                                         </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.FullName)</td>
+                                        <td class="table-center">@Html.DisplayFor(m => m.SubscriberNo)</td>
                                     </tr>
                                     <tr>
                                         <td class="font-weight-bold table-row-title">
@@ -81,7 +80,22 @@
                                             @Html.DisplayNameFor(m => m.SubscriptionStateTypes)
                                         </td>
                                         <td class="table-center">
-                                            <span class="label px-4 label-lg label-warning label-inline mr-2">DONDURULMUŞ</span>
+                                            @if (Model.SubscriptionStateTypes == CMS.ViewModels.Home.SubscriptionStateTypes.Active)
+                                            {
+                                                <span class="label px-4 label-lg label-success label-inline mr-2 text-uppercase">@Common.Active</span>
+                                            }
+                                            else
+                                            {
+                                                if (Model.SubscriptionStateTypes == CMS.ViewModels.Home.SubscriptionStateTypes.Cancelled)
+                                                {
+                                                    <span class="label px-4 label-lg label-danger label-inline mr-2 text-uppercase">@Common.Cancel</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label px-4 label-lg label-warning label-inline mr-2 text-uppercase">@Common.Freeze</span>
+                                                }
+                                            }
+
                                         </td>
                                     </tr>
                                     <tr class="bg-gray-100">
@@ -89,16 +103,21 @@
                                             @Html.DisplayNameFor(m => m.AutomaticPaymentInstruction)
                                         </td>
                                         <td class="table-center">
-                                            <span class="label px-4 label-lg label-success label-inline mr-2">
-                                                @if (Model.AutomaticPaymentInstruction)
-                                                {
+
+                                            @if (Model.AutomaticPaymentInstruction)
+                                            {
+                                                <span class="label px-4 label-lg label-success label-inline mr-2">
                                                     @Common.Active
-                                                }
-                                                else
-                                                {
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="label px-4 label-lg label-danger label-inline mr-2">
                                                     @Common.Passive
-                                                }
-                                            </span>
+                                                </span>
+
+                                            }
+
                                         </td>
                                     </tr>
                                     <tr>
@@ -114,9 +133,19 @@
                                             @Html.DisplayNameFor(m => m.PassedInvoice)
                                         </td>
                                         <td class="table-center">
-                                            <span class="label px-4 label-lg label-danger label-inline mr-2">
-                                                @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
-                                            </span>
+                                            @if (Model.PassedInvoice > 0)
+                                            {
+                                                <span class="label px-4 label-lg label-danger label-inline mr-2">
+                                                    @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="label px-4 label-lg label-success label-inline mr-2">
+                                                    @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
+                                                </span>
+                                            }
+
                                         </td>
 
                                     </tr>
@@ -183,7 +212,6 @@
                                                         <i class="la la-at"></i>
                                                     </span>
                                                 </div>
-                                                <input type="text" class="form-control form-control-lg form-control-solid" value="adiniz@netspeed.com.tr" placeholder="E-Posta" />
                                                 @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder } })
                                             </div>
                                         </div>
@@ -199,45 +227,10 @@
                                                         <i class="la la-unlock-alt"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder } })                                                
+                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder } })
                                             </div>
                                         </div>
                                     </div>
-                                    @*<div class="form-group row">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
-                                        <div class="col-lg-9 col-xl-6">
-                                            <div class="row image-input image-input-outline"
-                                                 id="kt_profile_avatar"
-                                                 style="background-image: url(/assets/media/users/blank.png)">
-                                                <div class="image-input-wrapper"
-                                                     style="background-image: url(/assets/media/users/default.jpg)">
-                                                </div>
-                                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                       data-action="change" data-toggle="tooltip"
-                                                       title="" data-original-title="Değiştir">
-                                                    <i class="fa fa-pen icon-sm text-muted"></i>
-                                                    <input type="file" name="profile_avatar"
-                                                           accept=".png, .jpg, .jpeg" />
-                                                    <input type="hidden"
-                                                           name="profile_avatar_remove" />
-                                                </label>
-                                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                      data-action="cancel" data-toggle="tooltip"
-                                                      title="Kaldır">
-                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                </span>
-                                                <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                                      data-action="remove" data-toggle="tooltip"
-                                                      title="Avatar sil">
-                                                    <i class="ki ki-bold-close icon-xs text-muted"></i>
-                                                </span>
-                                            </div>
-                                            <span class="form-text text-muted">
-                                                Kabul edilen
-                                                formatlar: png, jpg, jpeg.
-                                            </span>
-                                        </div>
-                                    </div>*@
                                     <div class="d-flex justify-content-between border-top pt-10 mt-15">
                                         <div class="mr-2"></div>
                                         <div>
@@ -261,5 +254,16 @@
 
 @section scripts{
     @Scripts.Render("~/assets/js/pages/features/custom/spinners.js")
-    @Scripts.Render("~/assets/js/pages/custom/ecommerce/checkout.js")
+    <script>
+        $('#ContactPhoneNo').keypress(function () {
+            var reg = /^\d+$/;
+            var res = reg.test($(this).val());
+            if (!res) {
+                $(this).val($(this).val().slice(0, $(this).val().length - 1));
+            }
+        });
+        $('#ContactPhoneNo').change(function () {
+            $('#ContactPhoneNo').trigger("keypress");
+        });
+    </script>
 }

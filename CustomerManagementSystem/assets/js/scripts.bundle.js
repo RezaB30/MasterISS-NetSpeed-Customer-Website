@@ -10801,7 +10801,7 @@ var KTLayoutSearch = function() {
 
         setTimeout(function() {
             $.ajax({
-                url: HOST_URL + '/api/quick_search.php',
+                url: '/Home/QuickSearch',
                 data: {
                     query: _query
                 },
@@ -10818,7 +10818,7 @@ var KTLayoutSearch = function() {
                     _hasResult = false;
                     _hideProgress();
                     KTUtil.addClass(_target, _resultClass);
-                    KTUtil.setHTML(_resultWrapper, '<span class="font-weight-bold text-muted">Connection error. Please try again later..</div>');
+                    KTUtil.setHTML(_resultWrapper, '<span class="font-weight-bold text-muted">???</div>');
                     _showDropdown();
                     KTUtil.scrollUpdate(_resultWrapper);
                 }

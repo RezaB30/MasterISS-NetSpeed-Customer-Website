@@ -67,6 +67,7 @@
     <Compile Include="Home\CustomerLineDetailsVM.cs" />
     <Compile Include="Home\IndexVM.cs" />
     <Compile Include="Home\MyAccountVM.cs" />
+    <Compile Include="Home\QuickSearch.cs" />
     <Compile Include="Home\RecipeUsageVM.cs" />
     <Compile Include="Home\SpecialOfferDetailsVM.cs" />
     <Compile Include="Home\SpecialOfferVM.cs" />
@@ -83,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.Localization\CMS.Localization.csproj">
+      <Project>{69633573-47fe-43c1-b817-a51b984e0831}</Project>
+      <Name>CMS.Localization</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿@model CMS.ViewModels.Home.IndexVM
 
+@using CMS.Localization;
 <div class="col-xl-16">
     <div class="card card-custom gutter-b" style="height: 160px">
         <div class="card p-5 mr-0 border-0 pt-2">
@@ -23,7 +24,7 @@
                     </div>
                     <div>
                         <div class="font-size-h4 text-dark-75 font-weight-bolder">
-                            Aylık Kullanım
+                            @Common.MonthlyUse
                         </div>
                     </div>
                 </div>
@@ -56,8 +57,8 @@
                             <div class="font-size-h4 text-dark-75 font-weight-bolder">
                                 @Html.DisplayFor(m => m.DownloadUsage)
                             </div>
-                            <div class="font-size-sm text-muted font-weight-bold mt-1">
-                                DOWNLOAD
+                            <div class="font-size-sm text-muted font-weight-bold mt-1 text-uppercase">
+                                @Common.Download
                             </div>
                         </div>
                     </div>
@@ -87,8 +88,8 @@
                             <div class="font-size-h4 text-dark-75 font-weight-bolder">
                                 @Html.DisplayFor(m => m.UploadUsage)
                             </div>
-                            <div class="font-size-sm text-muted font-weight-bold mt-1">
-                                UPLOAD
+                            <div class="font-size-sm text-muted font-weight-bold mt-1 text-uppercase">
+                                @Common.Upload
                             </div>
                         </div>
                     </div>
@@ -102,10 +103,8 @@
                 <h4 class="font-weight-bolder">Tarifem</h4>
                 <div class="text-dark-50 font-size-lg mt-2">@Html.DisplayFor(m => m.TariffName)</div>
             </div>
-            <a href="@Url.Action("RecipeUsage","Home")"
-               class="btn btn-info font-weight-bold py-2 px-6">
-                Tarife &
-                Kullanım
+            <a href="@Url.Action("RecipeUsage","Home")" class="btn btn-info font-weight-bold py-2 px-6">
+                @Common.TariffUsage
             </a>
         </div>
     </div>

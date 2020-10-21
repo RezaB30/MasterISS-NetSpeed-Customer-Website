@@ -74,10 +74,10 @@ namespace CustomerManagementSystem.Controllers
             StaticPagedList<SupportRequestsVM> model = new StaticPagedList<SupportRequestsVM>(list, page, pageSize, TotalCount);
             return View(model);
         }
-        public ActionResult SupportDetails(long SupportNo) //destek-detay.html
-        {
-            return View();
-        }
+        //public ActionResult SupportDetails(long SupportNo) //destek-detay.html
+        //{
+        //    return View();
+        //}
         public ActionResult SupportResults(long SupportNo) // destek-detay-biten.html - destek-detay-tam-biten
         {
             var message = new SupportMessagesVM();

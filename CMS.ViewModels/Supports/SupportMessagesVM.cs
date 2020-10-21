@@ -14,12 +14,16 @@ namespace CMS.ViewModels.Supports
         public string AgentName { get; set; }
         public int AgentID { get; set; } // ??
         public string CustomerFullName { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models) , Name = "SupportNo")]
         public long SupportNo { get; set; }
         public ChangeType? ChangeType { get; set; }
         public SupportState SupportState { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "SupportDate")]
         public DateTime SupportDate { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "Department")]
         public string Department { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "State")]
         public string State { get; set; }   // complete or processing
         public IEnumerable<SupportMessageList> SupportMessageList { get; set; }
     }

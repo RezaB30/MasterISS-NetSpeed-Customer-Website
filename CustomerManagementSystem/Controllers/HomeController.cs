@@ -98,7 +98,26 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult MyAccount() //hesabim.html
         {
-            return View();
+            var account = new MyAccountVM()
+            {
+                AutomaticPaymentInstruction = false,
+                ChooseMail = true,
+                ChooseSMS = false,
+                ContactPhoneNo = "5387829318",
+                CustomerServicePassword = "123456",
+                FullName = "Onur Civanoğlu",
+                LineAddress = "Pamukkale Denizli",
+                Mail = "onur.civanoglu@netspeed.com.tr",
+                ModemPassword = "123123",
+                ModemUsername = "ns1231231231",
+                PassedInvoice = 0,
+                SpecialOfferReferenceCode = "12Q43G",
+                StaticIP = "",
+                SubscriberNo = "2504332241",
+                SubscriptionStateTypes = SubscriptionStateTypes.Active,
+                XDSLNo = "12345854214"
+            };
+            return View(account);
         }
         public ActionResult MyServices() //hizmetlerim.html
         {
@@ -151,9 +170,65 @@ namespace CustomerManagementSystem.Controllers
             }
             return PartialView("~/Views/Shared/EditorTemplates/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = list });
         }
-        public ActionResult CurrentSubscription(SubscriptionListVM subscription)
+        public ActionResult CurrentSubscription(SubscriptionListVM subscription) // abone numarasını değiştirmek isterse
         {
             return RedirectToAction("Index", "Home");
+        }
+        public ActionResult QuickSearch(string query)
+        {
+            var SearchList = new List<QuickSearch>();
+            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            {
+                Content = "oto",
+                Header = "Otomatik Ödeme Talimatı",
+                Url = "/Payment/PaymentInstruction"
+            });
+            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            {
+                Content = "öde",
+                Header = "Otomatik Ödeme Talimatı",
+                Url = "/Payment/PaymentInstruction"
+            });
+            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            {
+                Content = "öde",
+                Header = "Fatura & Ödemeler",
+                Url = "/Payment/Bills"
+            });
+            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            {
+                Content = "fat",
+                Header = "Otomatik Ödeme Talimatı",
+                Url = "/Payment/PaymentInstruction"
+            });
+            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            {
+                Content = "fat",
+                Header = "Fatura & Ödemeler",
+                Url = "/Payment/Bills"
+
+            });
+            var contentList = new List<string>();
+            foreach (var item in SearchList.Distinct())
+            {
+                if (query.Contains(item.Content))
+                {
+                    contentList.Add("<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
+                        "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
+                        "<img src='/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
+                        "</div>" +
+                        "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
+                        "<a href='" + item.Url + "' class='font-weight-bold text-dark text-hover-primary'>" + item.Header + "</a>" +
+                        "</div>" + "</div>");
+                }
+            }
+            var content = "<div class='quick-search-result'>" +
+                "<div class='text-muted d-none'>No record found</div>" +
+                "<div class='font-size-sm text-primary font-weight-bolder text-uppercase mb-2'>Arama Sonuçları</div>" +
+                "<div class='mb-10'>" + string.Join("", contentList.ToArray()) +
+                "</div>" +
+                "</div>";
+            return Content(content);
         }
     }
 }

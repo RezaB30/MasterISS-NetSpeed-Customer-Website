@@ -1,11 +1,13 @@
-﻿<div class="wizard-steps" data-total-steps="3">
+﻿@using CMS.Localization;
+
+<div class="wizard-steps" data-total-steps="3">
     <div id="first-wizard-step" class="wizard-step" data-wizard-state="current">
         <div class="wizard-wrapper">
             <div class="wizard-number">1</div>
             <div class="wizard-label">
-                <div class="wizard-title">Kart Ekleme </div>
+                <div class="wizard-title">Kart Ekleme @Common.AddCard </div>
                 <div class="wizard-desc">
-                    Kart güvenliği hakkında
+                    @Common.AboutCardSecurity
                 </div>
             </div>
         </div>
@@ -14,8 +16,8 @@
         <div class="wizard-wrapper">
             <div class="wizard-number">2</div>
             <div class="wizard-label">
-                <div class="wizard-title">Kart Bilgileri</div>
-                <div class="wizard-desc">Ödeme Bilgileri</div>
+                <div class="wizard-title">@Common.CardInformation</div>
+                <div class="wizard-desc">@Common.PaymentInformation </div>
             </div>
         </div>
     </div>
@@ -24,9 +26,9 @@
             <div class="wizard-number">3</div>
             <div class="wizard-label">
                 <div class="wizard-title">
-                    Doğrulama ve Kaydetme
+                    @Common.ValidationAndSave
                 </div>
-                <div class="wizard-desc">SMS Doğrulama Kodu</div>
+                <div class="wizard-desc">@Common.SMSValidationCode</div>
             </div>
         </div>
     </div>

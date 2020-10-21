@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutCardSecurity" xml:space="preserve">
+    <value>Kart Güvenliği Hakkında</value>
+  </data>
   <data name="AcceptOffer" xml:space="preserve">
     <value>Teklifi Kabul Et</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="Active" xml:space="preserve">
     <value>Aktif</value>
+  </data>
+  <data name="AddCard" xml:space="preserve">
+    <value>Kart Ekleme</value>
   </data>
   <data name="AddNewCard" xml:space="preserve">
     <value>Yeni Kart Ekle</value>
@@ -161,6 +167,15 @@
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>İptal</value>
+  </data>
+  <data name="CanPayWithCreditCardNow" xml:space="preserve">
+    <value>Kredi kartınız ile hemen ödeme yapabilirsiniz.</value>
+  </data>
+  <data name="CanUpdateContactInformation" xml:space="preserve">
+    <value>İletişim bilgilerinizi güncelleyebilirsiniz</value>
+  </data>
+  <data name="CardInformation" xml:space="preserve">
+    <value>Kart Bilgileri</value>
   </data>
   <data name="CardNumber" xml:space="preserve">
     <value>Kart Numarası</value>
@@ -217,6 +232,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="DocumentsDescription" xml:space="preserve">
     <value>Abonelik ile ilgili evrak ve belgelerinize erişim sağlayabilir ve indirebilirsiniz.</value>
   </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Pdf Olarak İndir</value>
   </data>
@@ -225,6 +243,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Adı Soyadı</value>
+  </data>
+  <data name="HaveUnpaidInvoiceInfo" xml:space="preserve">
+    <value>{0} numaralı aboneliğinize ait {1} adet ödenmesi gereken faturanız var.</value>
   </data>
   <data name="HeadTitle" xml:space="preserve">
     <value>Online İşlemler | Netspeed</value>
@@ -280,6 +301,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="LineTechnicalState" xml:space="preserve">
     <value>Hat Teknik Durumu</value>
   </data>
+  <data name="ListLastFourRequest" xml:space="preserve">
+    <value>Son 4 kayıt listelenmektedir..</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
   </data>
@@ -302,6 +326,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="Month" xml:space="preserve">
     <value>Ay</value>
   </data>
+  <data name="MonthlyUse" xml:space="preserve">
+    <value>Aylık Kullanım</value>
+  </data>
   <data name="MyAccount" xml:space="preserve">
     <value>Hesap Bilgilerim</value>
   </data>
@@ -322,6 +349,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="MyServices" xml:space="preserve">
     <value>Hizmetlerim</value>
+  </data>
+  <data name="MySupportRequests" xml:space="preserve">
+    <value>Destek Taleplerim</value>
   </data>
   <data name="NewRequest" xml:space="preserve">
     <value>Yeni Destek Kaydı</value>
@@ -352,6 +382,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="PayingBills" xml:space="preserve">
     <value>Fatura Ödeme</value>
+  </data>
+  <data name="PaymentInformation" xml:space="preserve">
+    <value>Ödeme Bilgileri</value>
   </data>
   <data name="PaymentSecureDescription" xml:space="preserve">
     <value>Güvenliğiniz sebebi ile ödeme işleminiz &lt;strong&gt;3D secure&lt;/strong&gt; ile gerçekleşecektir.</value>
@@ -416,6 +449,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="SecurePaymentPage" xml:space="preserve">
     <value>Ödemeleriniz için güvenli ödeme sayfası</value>
   </data>
+  <data name="SeeAllInvoices" xml:space="preserve">
+    <value>Tüm Faturaları Gör</value>
+  </data>
   <data name="Send" xml:space="preserve">
     <value>Gönder</value>
   </data>
@@ -439,6 +475,18 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="SetCardSecureCode" xml:space="preserve">
     <value>3 Haneli Güvenlik Kodunu girin.</value>
+  </data>
+  <data name="SetValidationCode" xml:space="preserve">
+    <value>Kayıtlı GSM numarasına gönderdiğimiz Doğrulama Kodu'nu giriniz</value>
+  </data>
+  <data name="SMSCode" xml:space="preserve">
+    <value>SMS Kodu</value>
+  </data>
+  <data name="SMSValidation" xml:space="preserve">
+    <value>SMS Doğrulaması</value>
+  </data>
+  <data name="SMSValidationCode" xml:space="preserve">
+    <value>SMS Doğrulama Kodu</value>
   </data>
   <data name="SpecialOffer" xml:space="preserve">
     <value>Kampanya</value>
@@ -473,14 +521,23 @@ gerçekleştirebilirsiniz.</value>
   <data name="SupportRequestsAndNewRequest" xml:space="preserve">
     <value>Destek &amp; Talepler - Yeni Destek Kaydı</value>
   </data>
+  <data name="SupportTopic" xml:space="preserve">
+    <value>Destek Konusu</value>
+  </data>
   <data name="TariffUsage" xml:space="preserve">
     <value>Tarife &amp; Kullanım</value>
   </data>
   <data name="TotalAmount" xml:space="preserve">
     <value>Toplam Tutar</value>
   </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
   <data name="UsageInfoForLastFourMonth" xml:space="preserve">
     <value>SON 4 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ</value>
+  </data>
+  <data name="ValidationAndSave" xml:space="preserve">
+    <value>Doğrulama ve Kaydetme</value>
   </data>
   <data name="WeHaveSpecialOffer" xml:space="preserve">
     <value>Size özel tarife teklifimiz var!</value>

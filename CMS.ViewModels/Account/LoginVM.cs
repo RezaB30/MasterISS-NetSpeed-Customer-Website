@@ -9,9 +9,9 @@ namespace CMS.ViewModels.Account
 {
     public class LoginVM
     {
-        [Required(ErrorMessage = "TC Kimlik No veya GSM No Gerekli")]
+        [Required(ErrorMessageResourceName = "LoginUsernameRequired",ErrorMessageResourceType =typeof(CMS.Localization.Errors))]
         public string username { get; set; }
-        [Required(ErrorMessage = "Şifre Gerekli")]
+        [Required(ErrorMessageResourceName = "PasswordRequired", ErrorMessageResourceType = typeof(CMS.Localization.Errors))]
         public string password { get; set; }
     }
 }

@@ -1,20 +1,19 @@
-﻿@using (Ajax.BeginForm("CreditCardValidation", "Payment", new AjaxOptions { HttpMethod = "POST", OnComplete = "ValidateResult" }))
+﻿@using CMS.Localization;
+
+@using (Ajax.BeginForm("CreditCardValidation", "Payment", new AjaxOptions { HttpMethod = "POST", OnComplete = "ValidateResult" }))
 {
     @Html.AntiForgeryToken()
     <div id="third-content" class="pb-5">
         <h4 class="mb-10 font-weight-bold text-dark">
-            SMS
-            Doğrulaması
+            @Common.SMSValidation
         </h4>
         <div class="row">
             <div class="col-xl-6">
                 <div class="form-group fv-plugins-icon-container">
-                    <label>SMS Doğrulama Kodu</label>
-                    @Html.Editor("SMSCode", new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Sms Kodu", autocomplete = "off" } })
+                    <label>@Common.SMSValidationCode</label>
+                    @Html.Editor("SMSCode", new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Common.SMSCode, autocomplete = "off" } })
                     <span class="form-text text-muted">
-                        Kayıtlı
-                        GSM numarasına gönderdiğimiz
-                        Doğrulama Kodu'nu giriniz
+                        @Common.SetValidationCode
                     </span>
                     <div class="fv-plugins-message-container">
                     </div>
@@ -25,12 +24,12 @@
     <div class="d-flex justify-content-between border-top mt-5 pt-10">
         <div class="mr-2">
             <button onclick="window.location.href ='/Payment/CreditCardRegister'" id="validation-page-prev" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">
-                Önceki
+                @Common.Prev
             </button>
         </div>
         <div>
             <button id="validation-page-submit" type="submit" class="btn btn-success font-weight-bolder text-uppercase px-9 py-4">
-                Kaydet
+                @Common.Next
             </button>
         </div>
     </div>

@@ -1,23 +1,23 @@
 ﻿@model IEnumerable<CMS.ViewModels.Supports.SupportRequestsVM>
+
+@using CMS.Localization;
+
 <div class="row">
     <div class="col-lg-12 col-xxl-16">
         <div class="card card-custom gutter-b">
             <div class="card-header border-0 py-5">
                 <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label font-weight-bolder text-dark">Destek Taleplerim</span>
+                    <span class="card-label font-weight-bolder text-dark">@Common.MySupportRequests</span>
                     <span class="text-muted mt-3 font-weight font-size-sm">
-                        Son 4 kayıt
-                        listelenmektedir..
+                        @Common.ListLastFourRequest
                     </span>
                 </h3>
                 <div class="card-toolbar">
                     <a href="@Url.Action("NewRequests","Support")"
                        class="btn btn-sm btn-light-info font-weight-bold mr-2">
-                        Yeni Destek
-                        Talebi
+                        @Common.NewRequest
                     </a>
-                    <a href="@Url.Action("SupportRequests","Support")"
-                       class="btn btn-sm btn-light-primary font-weight-bold ">Destek Kayıtları</a>
+                    <a href="@Url.Action("SupportRequests","Support")" class="btn btn-sm btn-light-primary font-weight-bold ">@Common.SupportRecords</a>
                 </div>
             </div>
             <div class="card-body pt-0 pb-3">
@@ -26,13 +26,13 @@
                         <thead>
                             <tr class="bg-gray-100 text-left">
                                 <th style="min-width: 250px" class="pl-7">
-                                    <span class="text-dark-75">Destek Konusu</span>
+                                    <span class="text-dark-75">@Common.SupportTopic</span>
                                 </th>
-                                <th style="min-width: 110px">Destek No</th>
-                                <th style="min-width: 130px">Tarih</th>
-                                <th style="min-width: 120px">Birimi</th>
-                                <th style="min-width: 110px">Durumu</th>
-                                <th style="min-width: 110px">Detay</th>
+                                <th style="min-width: 110px">@Html.DisplayNameFor(m=>m.FirstOrDefault().SupportNo)</th>
+                                <th style="min-width: 130px">@Html.DisplayNameFor(m=>m.FirstOrDefault().Date)</th>
+                                <th style="min-width: 120px">@Html.DisplayNameFor(m => m.FirstOrDefault().Department)</th>
+                                <th style="min-width: 110px">@Html.DisplayNameFor(m => m.FirstOrDefault().State)</th>
+                                <th style="min-width: 110px">@Common.Details</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -102,7 +102,7 @@
                                         }
                                     </td>
                                     <td class="pr-0 text-center">
-                                        <a href="@Url.Action("SupportDetails","Support" , new { SupportNo = item.SupportNo })"
+                                        <a href="@Url.Action("SupportResults","Support" , new { SupportNo = item.SupportNo })"
                                            class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

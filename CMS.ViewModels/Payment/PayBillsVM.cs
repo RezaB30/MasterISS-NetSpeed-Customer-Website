@@ -10,11 +10,14 @@ namespace CMS.ViewModels.Payment
 {
     public class PayBillsVM
     {
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCNameRequired")]
+        [Display(Name = "CCName" , ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CCFullName { get; set; }
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCNumberRequired")]
+        [Display(Name = "CCNumber", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CCNumber { get; set; }
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCMonthRequired")]
+        [Display(Name = "CCMonth", ResourceType = typeof(CMS.Localization.Models.Models))]
         public int ExpirationMonthId { get; set; }
         public List<SelectListItem> ExpirationMonthDate
         {
@@ -32,7 +35,8 @@ namespace CMS.ViewModels.Payment
                 return list;
             }
         }
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CCYearRequired")]
+        [Display(Name = "CCYear", ResourceType = typeof(CMS.Localization.Models.Models))]
         public int ExpirationYearId { get; set; }
         public List<SelectListItem> ExpirationYearDate
         {
@@ -50,7 +54,8 @@ namespace CMS.ViewModels.Payment
                 return list;
             }
         }
-        [Required]
+        [Required(ErrorMessageResourceType = typeof(CMS.Localization.Errors), ErrorMessageResourceName = "CreditSecureCodeRequired")]
+        [Display(Name = "CreditSecureCode", ResourceType = typeof(CMS.Localization.Models.Models))]
         public int CreditSecureCode { get; set; }
     }
 }
