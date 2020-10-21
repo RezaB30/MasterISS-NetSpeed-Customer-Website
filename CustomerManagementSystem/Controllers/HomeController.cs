@@ -11,7 +11,7 @@ namespace CustomerManagementSystem.Controllers
     public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+        { 
             var index = new CMS.ViewModels.Home.IndexVM()
             {
                 FullName = "Onur Civanoğlu",
