@@ -138,7 +138,13 @@
   <data name="PasswordRequired" xml:space="preserve">
     <value>Şifre Gerekli</value>
   </data>
+  <data name="Required" xml:space="preserve">
+    <value>{0} gerekli</value>
+  </data>
   <data name="SetWrongCode" xml:space="preserve">
     <value>Hatalı kod girdiniz. Tekrar Deneyiniz.</value>
+  </data>
+  <data name="SMSPasswordWrong" xml:space="preserve">
+    <value>Hatalı giriş yaptınız. Lütfen şifrenizi kontrol ediniz.</value>
   </data>
 </root>

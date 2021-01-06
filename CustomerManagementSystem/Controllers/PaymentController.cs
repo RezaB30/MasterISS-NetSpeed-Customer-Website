@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CustomerManagementSystem.Controllers
 {
-    public class PaymentController : Controller
+    public class PaymentController : BaseController
     {
         // GET: Payment
         public ActionResult PayBill()   //odeme.html

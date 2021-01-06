@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CustomerManagementSystem.Controllers
 {
-    public class InitializeController : Controller
+    public class InitializeController : BaseController
     {
         // GET: Initialize
         /// <summary>

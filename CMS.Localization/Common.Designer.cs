@@ -629,12 +629,30 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GSM No veya TCK No.
+        /// </summary>
+        public static string LoginCustomerCode {
+            get {
+                return ResourceManager.GetString("LoginCustomerCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş yaparak hizmetlerinizi inceleyebilir ve
         ///        faturalarınızı ödeyebilirsiniz..
         /// </summary>
         public static string LoginDescription {
             get {
                 return ResourceManager.GetString("LoginDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gönderilen SMS Şifre.
+        /// </summary>
+        public static string LoginSMSPassword {
+            get {
+                return ResourceManager.GetString("LoginSMSPassword", resourceCulture);
             }
         }
         
@@ -833,6 +851,15 @@ namespace CMS.Localization {
         public static string Passive {
             get {
                 return ResourceManager.GetString("Passive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Şifre.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
             }
         }
         

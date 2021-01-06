@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -77,6 +83,12 @@
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RezaB.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Data.1.0.1\lib\net452\RezaB.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RezaB.Web, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Web.1.0.1\lib\net452\RezaB.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,19 +160,32 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AuthenticationExtentions.cs" />
     <Compile Include="Auth\Hasher.cs" />
     <Compile Include="Auth\Identity.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Connected Services\GenericCustomerServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InitializeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
+    <Compile Include="GenericServiceSettings.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MyExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceUtilities.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2363,6 +2388,124 @@
     <Content Include="assets\plugins\global\fonts\socicon\socicon.svg" />
     <Content Include="assets\plugins\global\plugins.bundle.css" />
     <Content Include="assets\plugins\global\plugins.bundle.js" />
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardSMSValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAutoPaymentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBillPayableAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceChangeSubClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceConnectionStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceDeactivateAutomaticPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceEArchivePDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerBillsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerSpecialOffersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerTariffAndTrafficInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceNameValuePair.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePayBillsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentSystemLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentTypeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaPackagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRegisteredCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardSMSValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSupportMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSubscriptionBasicInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSErrorParameterNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.disco" />
+    <None Include="Connected Services\GenericCustomerServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\GenericCustomerServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\GenericCustomerServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -2411,8 +2554,31 @@
     <Content Include="assets\plugins\global\fonts\summernote\summernote.ttf" />
     <Content Include="assets\plugins\global\fonts\summernote\summernote.woff" />
     <Content Include="assets\plugins\global\fonts\summernote\summernote.woff2" />
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.wsdl" />
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\Custom\current-subscription.js" />
@@ -2456,25 +2622,40 @@
     <Content Include="Views\Home\MyServices.cshtml" />
     <Content Include="Views\Payment\AddNewCard.cshtml" />
     <Content Include="Views\Payment\RegisteredCards.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Account\DirectLogin.cshtml" />
+    <Content Include="Views\Auth\DirectLogin.cshtml" />
     <Content Include="Views\Home\SpecialOffer.cshtml" />
     <Content Include="Views\Home\SpecialOfferDetails.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Index\RequestsTable.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Index\BillInfo.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Index\TariffInfo.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Index\SpecialOfferInfo.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Support\RequestData.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Payment\CCSecurity-Description.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Payment\CreditCard-Register.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Payment\CreditCard-Validation.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Payment\Wizard\wizard-first.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Payment\Wizard\wizard-second.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Payment\Wizard\wizard-third.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Index\RequestsTable.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Index\BillInfo.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Index\TariffInfo.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Index\SpecialOfferInfo.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Support\RequestData.cshtml" />
+    <Content Include="Views\Shared\EditorPartials\Payment\CCSecurity-Description.cshtml" />
+    <Content Include="Views\Shared\EditorPartials\Payment\CreditCard-Register.cshtml" />
+    <Content Include="Views\Shared\EditorPartials\Payment\CreditCard-Validation.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Payment\Wizard\wizard-first.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Payment\Wizard\wizard-second.cshtml" />
+    <Content Include="Views\Shared\DisplayPartials\Payment\Wizard\wizard-third.cshtml" />
     <Content Include="Views\Payment\CreditCardRegister.cshtml" />
     <Content Include="Views\Payment\CreditCardValidation.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Home\SubscriptionList.cshtml" />
+    <Content Include="Views\Shared\EditorPartials\Home\SubscriptionList.cshtml" />
+    <Content Include="Views\Home\_Language.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\_Navbar.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\_BillInfo.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\_MobileNavbar.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\_IndexNavbar.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\FormattedBytes.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeHour.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InvisibleText.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\LocalizedList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MonthAndYear.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TextWithPlaceholder.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TrafficLimit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2496,6 +2677,12 @@
       <Project>{77e5b7a2-f5c5-42e2-b1c4-d73dbe2b51f7}</Project>
       <Name>CMS.ViewModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GenericCustomerServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

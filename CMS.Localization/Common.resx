@@ -307,9 +307,15 @@ gerçekleştirebilirsiniz.</value>
   <data name="Login" xml:space="preserve">
     <value>Giriş Yap</value>
   </data>
+  <data name="LoginCustomerCode" xml:space="preserve">
+    <value>GSM No veya TCK No</value>
+  </data>
   <data name="LoginDescription" xml:space="preserve">
     <value>Giriş yaparak hizmetlerinizi inceleyebilir ve
         faturalarınızı ödeyebilirsiniz.</value>
+  </data>
+  <data name="LoginSMSPassword" xml:space="preserve">
+    <value>Gönderilen SMS Şifre</value>
   </data>
   <data name="LoginUsernamePlaceholder" xml:space="preserve">
     <value>Kimlik No veya GSM No</value>
@@ -376,6 +382,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="Passive" xml:space="preserve">
     <value>Pasif</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Şifre</value>
   </data>
   <data name="PasswordPlaceholder" xml:space="preserve">
     <value>Şifreniz</value>

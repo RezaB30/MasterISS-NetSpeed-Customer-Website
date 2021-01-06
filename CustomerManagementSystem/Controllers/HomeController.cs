@@ -5,38 +5,53 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using CMS.ViewModels.Home;
+using RezaB.Web.Authentication;
 
 namespace CustomerManagementSystem.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
         public ActionResult Index()
-        { 
-            var index = new CMS.ViewModels.Home.IndexVM()
+        {
+            var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
+            if (customerInfo.ResponseMessage.ErrorCode != 0)
             {
-                FullName = "Onur Civanoğlu",
+                return View(new IndexViewModel());
+            }
+            var tariffAndtraffic = new ServiceUtilities().GetTariffAndTrafficInfo(User.GiveUserId());
+            var tariffInfo = tariffAndtraffic.GetCustomerTariffAndTrafficInfoResponse;
+            var bills = new ServiceUtilities().GetCustomerBillList(User.GiveUserId());
+            var index = new IndexViewModel()
+            {
+                FullName = customerInfo.GetCustomerInfoResponse.ValidDisplayName,
                 LineState = "Online",
-                SubscriberNo = "1234567890",
-                ID = 12312,
-                ReferenceCode = "WAQSA1",
-                TariffName = "NET EKO 8M E KADAR",
-                DownloadUsage = "390 GB",
-                UploadUsage = "90 GB",
-                UnPaidBillCount = 2
+                SubscriberNo = customerInfo.GetCustomerInfoResponse.CurrentSubscriberNo,
+                ID = User.GiveUserId().Value,
+                ReferenceCode = customerInfo.GetCustomerInfoResponse == null ? "-" : customerInfo.GetCustomerInfoResponse.ReferenceNo,
+                TariffName = tariffInfo == null ? "-" : tariffInfo.ServiceName,
+                DownloadUsage = tariffInfo == null ? 0 : tariffInfo.Download,
+                UploadUsage = tariffInfo == null ? 0 : tariffInfo.Upload,
+                UnPaidBillCount = bills.ResponseMessage.ErrorCode != 0 ? 0 : bills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).Count()
             };
             return View(index);
         }
         public ActionResult CustomerLineDetails() //hat-durumu.html
         {
-            CustomerLineDetailsVM customer = new CustomerLineDetailsVM()
+            var lineDetails = new ServiceUtilities().ConnectionStatus(User.GiveUserId());
+            if (lineDetails.ResponseMessage.ErrorCode != 0)
             {
-                DownloadSpeed = "16 MBPS",
-                UploadSpeed = "8 MBPS",
+                return View(new CustomerLineDetailsViewModel());
+            }
+            CustomerLineDetailsViewModel customer = new CustomerLineDetailsViewModel()
+            {
+                DownloadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentDownload,
+                UploadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentUpload,
                 IPAddress = "127.0.0.1",
-                XDSLType = "VDSL",
-                XDSLNo = "8827624008",
+                XDSLType = lineDetails.GetCustomerConnectionStatusResponse.XDSLTypeText,
+                XDSLNo = lineDetails.GetCustomerConnectionStatusResponse.XDSLNo,
                 PhysicalState = "AÇIK",
-                LineState = "ONLINE"
+                LineState = lineDetails.GetCustomerConnectionStatusResponse.ConnectionStatusText
             };
             return View(customer);
         }
@@ -168,7 +183,7 @@ namespace CustomerManagementSystem.Controllers
                     Value = "12226626972"
                 });
             }
-            return PartialView("~/Views/Shared/EditorTemplates/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = list });
+            return PartialView("~/Views/Shared/EditorPartials/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = list });
         }
         public ActionResult CurrentSubscription(SubscriptionListVM subscription) // abone numarasını değiştirmek isterse
         {

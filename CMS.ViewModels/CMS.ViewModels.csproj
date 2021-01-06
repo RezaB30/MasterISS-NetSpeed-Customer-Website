@@ -63,9 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\LoginVM.cs" />
-    <Compile Include="Home\CustomerLineDetailsVM.cs" />
-    <Compile Include="Home\IndexVM.cs" />
+    <Compile Include="Auth\LoginViewModel.cs" />
+    <Compile Include="Home\CustomerLineDetailsViewModel.cs" />
+    <Compile Include="Home\IndexViewModel.cs" />
     <Compile Include="Home\MyAccountVM.cs" />
     <Compile Include="Home\QuickSearch.cs" />
     <Compile Include="Home\RecipeUsageVM.cs" />

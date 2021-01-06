@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Home.IndexVM
+﻿@model CMS.ViewModels.Home.IndexViewModel
 @using CMS.Localization;
 
 @{
@@ -56,231 +56,7 @@
                             </div>
                         </div>
                         <div class="py-3"></div>
-                        <div class="navi navi-bold navi-hover navi-link-rounded">
-                            <div class="navi-item mb-2">
-                                <a href="@Url.Action("SpecialOffer", "Home")" class="navi-link py-4" data-toggle="tooltip" title="" data-placement="right">
-                                    <span class=" label pulse mr-2">
-                                        <span class="svg-icon svg-icon-2x">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none"
-                                                   fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
-                                                    <polygon fill="#000000" opacity="0.3"
-                                                             points="12 20.0218549 8.47346039 21.7286168 6.86905972 18.1543453 3.07048824 17.1949849 4.13894342 13.4256452 1.84573388 10.2490577 5.08710286 8.04836581 5.3722735 4.14091196 9.2698837 4.53859595 12 1.72861679 14.7301163 4.53859595 18.6277265 4.14091196 18.9128971 8.04836581 22.1542661 10.2490577 19.8610566 13.4256452 20.9295118 17.1949849 17.1309403 18.1543453 15.5265396 21.7286168" />
-                                                    <polygon fill="#000000"
-                                                             points="14.0890818 8.60255815 8.36079737 14.7014391 9.70868621 16.049328 15.4369707 9.950447" />
-                                                    <path d="M10.8543431,9.1753866 C10.8543431,10.1252593 10.085524,10.8938719 9.13585777,10.8938719 C8.18793881,10.8938719 7.41737243,10.1252593 7.41737243,9.1753866 C7.41737243,8.22551387 8.18793881,7.45690126 9.13585777,7.45690126 C10.085524,7.45690126 10.8543431,8.22551387 10.8543431,9.1753866"
-                                                          fill="#000000" opacity="0.3" />
-                                                    <path d="M14.8641422,16.6221564 C13.9162233,16.6221564 13.1456569,15.8535438 13.1456569,14.9036711 C13.1456569,13.9520555 13.9162233,13.1851857 14.8641422,13.1851857 C15.8138085,13.1851857 16.5826276,13.9520555 16.5826276,14.9036711 C16.5826276,15.8535438 15.8138085,16.6221564 14.8641422,16.6221564 Z"
-                                                          fill="#000000" opacity="0.3" />
-                                                </g>
-                                            </svg>
-                                        </span>
-                                        <span class="pulse-ring"></span>
-                                    </span>
-                                    <span class="navi-text font-size-lg">@Common.SpecialOfferFriends</span>
-                                    <span class="label label-light-success label-inline font-weight-bold">@Common.SpecialOffer</span>
-                                    <span class="navi-label">
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="navi-item mb-2">
-                                <a href="@Url.Action("PaymentInstruction", "Payment")" class="navi-link py-3">
-                                    <span class="navi-icon mr-2">
-                                        <span class="svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none"
-                                                   fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
-                                                    <rect fill="#000000" opacity="0.3" x="2" y="5"
-                                                          width="20" height="14" rx="2" />
-                                                    <rect fill="#000000" x="2" y="8" width="20"
-                                                          height="3" />
-                                                    <rect fill="#000000" opacity="0.3" x="16" y="14"
-                                                          width="4" height="2" rx="1" />
-                                                </g>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                    <span class="navi-text font-weight-bold ">
-                                        @Common.AutomaticPaymentInstruction
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="navi-item mb-2">
-                                <a href="@Url.Action("Bills", "Payment")" class="navi-link py-3" data-toggle="tooltip"
-                                   title="" data-placement="right">
-                                    <span class="navi-icon mr-2">
-                                        <span class="svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none"
-                                                   fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <rect fill="#000000" x="2" y="5" width="19"
-                                                          height="4" rx="1"></rect>
-                                                    <rect fill="#000000" opacity="0.3" x="2" y="11"
-                                                          width="19" height="10" rx="1"></rect>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                    <span class="navi-text font-size-lg">@Common.InvoicePayments</span>
-                                    <span class="navi-label">
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="navi-item mb-2">
-                                <a href="@Url.Action("CustomerLineDetails", "Home")" class="navi-link py-3" data-toggle="tooltip"
-                                   title="" data-placement="right">
-                                    <span class="navi-icon mr-2">
-                                        <span class="svg-icon svg-icon-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none"
-                                                   fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24"></rect>
-                                                    <rect fill="#000000" x="4" y="5" width="16"
-                                                          height="3" rx="1.5"></rect>
-                                                    <path d="M5.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L5.5,18 C4.67157288,18 4,17.3284271 4,16.5 C4,15.6715729 4.67157288,15 5.5,15 Z M5.5,10 L12.5,10 C13.3284271,10 14,10.6715729 14,11.5 C14,12.3284271 13.3284271,13 12.5,13 L5.5,13 C4.67157288,13 4,12.3284271 4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z"
-                                                          fill="#000000" opacity="0.3"></path>
-                                                </g>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                    <span class="navi-text font-size-lg">@Common.LineState</span>
-                                    <span class="label label-light-primary label-inline font-weight-bold">Online</span>
-                                    <span class="navi-label">
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="navi-item mb-2">
-                                <a href="@Url.Action("RecipeUsage", "Home")" class="navi-link py-3"
-                                   data-toggle="tooltip" title="" data-placement="right">
-                                    <span class="navi-icon mr-2">
-                                        <span class="svg-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none"
-                                                   fill-rule="evenodd">
-                                                    <rect x="0" y="0" width="24" height="24" />
-                                                    <path d="M4.00246329,12.2004927 L13,14 L13,4.06189375 C16.9463116,4.55399184 20,7.92038235 20,12 C20,16.418278 16.418278,20 12,20 C7.64874861,20 4.10886412,16.5261253 4.00246329,12.2004927 Z"
-                                                          fill="#000000" opacity="0.3" />
-                                                    <path d="M3.0603968,10.0120794 C3.54712466,6.05992157 6.91622084,3 11,3 L11,11.6 L3.0603968,10.0120794 Z"
-                                                          fill="#000000" />
-                                                </g>
-                                            </svg>
-                                        </span>
-                                    </span>
-                                    <span class="navi-text font-size-lg">@Common.TariffUsage</span>
-                                    <span class="navi-label">
-                                    </span>
-                                </a>
-                            </div>
-
-                            <div class="navi-item mb-2">
-                                <div class="navi-item mb-2">
-                                    <a href="@Url.Action("MyServices", "Home")" class="navi-link py-3 ">
-                                        <span class="navi-icon mr-2">
-                                            <span class="svg-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                     width="24px" height="24px" viewBox="0 0 24 24"
-                                                     version="1.1">
-                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                       fill-rule="evenodd">
-                                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                                        <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
-                                                              fill="#000000" fill-rule="nonzero"></path>
-                                                        <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z"
-                                                              fill="#000000" opacity="0.3"></path>
-                                                    </g>
-                                                </svg>
-                                            </span>
-                                        </span>
-                                        <span class="navi-text font-size-lg">@Common.MyServices</span>
-                                    </a>
-                                </div>
-                                <div class="navi-item mb-2">
-                                    <a href="@Url.Action("Documents", "Home")" class="navi-link py-3"
-                                       data-toggle="tooltip" title="" data-placement="right">
-                                        <span class="navi-icon mr-2">
-                                            <span class="svg-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                     width="24px" height="24px" viewBox="0 0 24 24"
-                                                     version="1.1">
-                                                    <g stroke="none" stroke-width="1" fill="none"
-                                                       fill-rule="evenodd">
-                                                        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                                        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z"
-                                                              fill="#000000" fill-rule="nonzero"
-                                                              opacity="0.3"></path>
-                                                        <rect fill="#000000" x="6" y="11" width="9"
-                                                              height="2" rx="1"></rect>
-                                                        <rect fill="#000000" x="6" y="15" width="5"
-                                                              height="2" rx="1"></rect>
-                                                    </g>
-                                                </svg>
-                                            </span>
-                                        </span>
-                                        <span class="navi-text font-size-lg">@Common.MyDocuments</span>
-                                    </a>
-                                </div>
-                                <div class="navi-item mb-2">
-                                    <div class="navi-item mb-2">
-                                        <a href="@Url.Action("SupportRequests", "Support")" class="navi-link py-3 ">
-                                            <span class="navi-icon mr-2">
-                                                <span class="svg-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                         xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                         width="24px" height="24px" viewBox="0 0 24 24"
-                                                         version="1.1">
-                                                        <g stroke="none" stroke-width="1" fill="none"
-                                                           fill-rule="evenodd">
-                                                            <rect x="0" y="0" width="24" height="24" />
-                                                            <path opacity="0.3" fill-rule="evenodd"
-                                                                  clip-rule="evenodd"
-                                                                  d="M14.4862 18L12.7975 21.0566C12.5304 21.54 11.922 21.7153 11.4386 21.4483C11.2977 21.3704 11.1777 21.2597 11.0887 21.1255L9.01653 18H5C3.34315 18 2 16.6569 2 15V6C2 4.34315 3.34315 3 5 3H19C20.6569 3 22 4.34315 22 6V15C22 16.6569 20.6569 18 19 18H14.4862Z"
-                                                                  fill="black" />
-                                                            <path fill-rule="evenodd"
-                                                                  clip-rule="evenodd"
-                                                                  d="M6 7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H6C5.44772 9 5 8.55228 5 8C5 7.44772 5.44772 7 6 7ZM6 11H11C11.5523 11 12 11.4477 12 12C12 12.5523 11.5523 13 11 13H6C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11Z"
-                                                                  fill="black" />
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            </span>
-                                            <span class="navi-text font-size-lg">@Common.SupportRequests</span>
-                                        </a>
-                                    </div>
-                                    <div class="navi navi-bold navi-hover navi-link-rounded">
-                                        <div class="navi-item mb-2">
-                                            <a href="@Url.Action("MyAccount", "Home")" class="navi-link py-3"
-                                               data-toggle="tooltip" title="" data-placement="right">
-                                                <span class="navi-icon mr-2">
-                                                    <span class="svg-icon svg-icon-2x">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                            <g stroke="none" stroke-width="1"
-                                                               fill="none" fill-rule="evenodd">
-                                                                <rect x="0" y="0" width="24"
-                                                                      height="24" />
-                                                                <circle fill="#000000" opacity="0.3"
-                                                                        cx="12" cy="12" r="10" />
-                                                                <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 L7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z"
-                                                                      fill="#000000" opacity="0.3" />
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                                <span class="navi-text font-size-lg">@Common.MyAccount</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @Html.Partial("~/Views/Shared/LayoutParts/_IndexNavbar.cshtml")                        
                     </div>
                 </div>
             </div>
@@ -289,13 +65,13 @@
             <div class="row">
                 <div class="col-xl-12">
                     <br>
-                    @Html.Partial("~/Views/Shared/DisplayTemplates/Index/SpecialOfferInfo.cshtml", Model)
-                    @Html.Partial("~/Views/Shared/DisplayTemplates/Index/TariffInfo.cshtml", Model)
+                    @Html.Partial("~/Views/Shared/DisplayPartials/Index/SpecialOfferInfo.cshtml", Model)
+                    @Html.Partial("~/Views/Shared/DisplayPartials/Index/TariffInfo.cshtml", Model)
                 </div>
             </div>
         </div>
         <div class="col-xl-3">
-            @Html.Partial("~/Views/Shared/DisplayTemplates/Index/BillInfo.cshtml", Model)
+            @Html.Partial("~/Views/Shared/DisplayPartials/Index/BillInfo.cshtml", Model)
         </div>
     </div>
     @{ Html.RenderAction("SupportRequestTable", "Support"); }

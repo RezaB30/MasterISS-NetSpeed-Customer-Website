@@ -1,0 +1,67 @@
+﻿@using CMS.Localization
+
+<div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-xl dropdown-menu-anim-up">
+    <form>
+        <div class="d-flex align-items-center py-10 px-8 bgi-size-cover bgi-no-repeat rounded-top"
+             style="background-image: url(/assets/media/misc/bg-1.jpg)">
+            <span class="btn btn-md btn-icon bg-white-o-15 mr-4">
+                <i class="flaticon-list-1 text-success"></i>
+            </span>
+            <h4 class="text-white m-0 flex-grow-1 mr-3">@Common.MyInvoices</h4>
+            <button type="button" class="btn btn-danger btn-sm">2 @Common.Invoice</button>
+        </div>
+        <div class="scroll scroll-push" data-scroll="true" data-height="250"
+             data-mobile-height="220">
+            <div class="d-flex align-items-center justify-content-between p-8">
+                <div class="d-flex flex-column mr-2">
+                    <a href="#"
+                       class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">27.10.2020</a>
+                    <span class="text-muted">@Common.DatedInvoice</span>
+                    <div class="d-flex align-items-center mt-2">
+                        <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">@Common.Amount</span>
+                        <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
+                            94
+                            TL
+                        </span>
+                    </div>
+                </div>
+                <a href="#" class="symbol symbol-70 flex-shrink-0">
+                    <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
+                </a>
+            </div>
+            <div class="separator separator-solid"></div>
+            <div class="d-flex align-items-center justify-content-between p-8">
+                <div class="d-flex flex-column mr-2">
+                    <a href="#" class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">27.10.2020</a>
+                    <span class="text-muted">@Common.DatedInvoice</span>
+                    <div class="d-flex align-items-center mt-2">
+                        <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">Tutar</span>
+                        <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
+                            94
+                            TL
+                        </span>
+
+                    </div>
+                </div>
+                <a href="#" class="symbol symbol-70 flex-shrink-0">
+                    <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
+                </a>
+            </div>
+            <div class="separator separator-solid"></div>
+        </div>
+        <div class="p-8">
+            <div class="d-flex align-items-center justify-content-between mb-7">
+                <span class="font-weight-bold text-muted font-size-sm mr-2">
+                    @Common.TotalAmount
+                </span>
+                <span class="font-weight-bolder text-primary text-right">
+                    188
+                    TL
+                </span>
+            </div>
+            <div class="text-right">
+                <a href="@Url.Action("PayBill","Payment")" class="btn btn-primary font-weight-bold mr-2">@Common.QuickPay</a>
+            </div>
+        </div>
+    </form>
+</div>

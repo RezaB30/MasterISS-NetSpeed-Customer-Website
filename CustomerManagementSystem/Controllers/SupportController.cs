@@ -9,7 +9,7 @@ using PagedList;
 
 namespace CustomerManagementSystem.Controllers
 {
-    public class SupportController : Controller
+    public class SupportController : BaseController
     {
         // GET: Support
         public ActionResult SupportRequests(int page = 1, int pageSize = 6)   // destek.html
@@ -74,10 +74,6 @@ namespace CustomerManagementSystem.Controllers
             StaticPagedList<SupportRequestsVM> model = new StaticPagedList<SupportRequestsVM>(list, page, pageSize, TotalCount);
             return View(model);
         }
-        //public ActionResult SupportDetails(long SupportNo) //destek-detay.html
-        //{
-        //    return View();
-        //}
         public ActionResult SupportResults(long SupportNo) // destek-detay-biten.html - destek-detay-tam-biten
         {
             var message = new SupportMessagesVM();
@@ -239,7 +235,7 @@ namespace CustomerManagementSystem.Controllers
                 SupportState = SupportState.Processing,
                 CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
             });
-            return PartialView("~/Views/Shared/DisplayTemplates/Index/RequestsTable.cshtml", req.OrderByDescending(m => m.Date).Take(4).ToList());
+            return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", req.OrderByDescending(m => m.Date).Take(4).ToList());
         }
         public ActionResult RequestData(int NewRequestID)
         {

@@ -124,11 +124,29 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} gerekli.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hatalı kod girdiniz. Tekrar Deneyiniz..
         /// </summary>
         public static string SetWrongCode {
             get {
                 return ResourceManager.GetString("SetWrongCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hatalı giriş yaptınız. Lütfen şifrenizi kontrol ediniz..
+        /// </summary>
+        public static string SMSPasswordWrong {
+            get {
+                return ResourceManager.GetString("SMSPasswordWrong", resourceCulture);
             }
         }
     }
