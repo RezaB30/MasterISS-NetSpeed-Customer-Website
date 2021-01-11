@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CMS.ViewModels.Home
 {
-    public class MyAccountVM
+    public class MyAccountViewModel
     {
         [Display(Name = "FullName", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string FullName { get; set; }
@@ -20,15 +20,17 @@ namespace CMS.ViewModels.Home
         [Display(Name = "ModemPassword", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string ModemPassword { get; set; }
         [Display(Name = "StaticIP", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [UIHint("TextWithPlaceholder")]
         public string StaticIP { get; set; }
         [Display(Name = "SubscriptionLineState", ResourceType = typeof(CMS.Localization.Models.Models))]
-        public SubscriptionStateTypes SubscriptionStateTypes { get; set; }
+        [UIHint("TextWithPlaceholder")]
+        public string SubscriptionState { get; set; }
         [Display(Name = "AutomaticPaymentInstruction", ResourceType = typeof(CMS.Localization.Models.Models))]
         public bool AutomaticPaymentInstruction { get; set; }
         [Display(Name = "LineAddress", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string LineAddress { get; set; }
         [Display(Name = "PassedInvoice", ResourceType = typeof(CMS.Localization.Models.Models))]
-        public int PassedInvoice { get; set; }
+        public int? PassedInvoice { get; set; }
         [Display(Name = "SpecialOfferReferenceCode", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string SpecialOfferReferenceCode { get; set; }
         [Display(Name = "SMS", ResourceType = typeof(CMS.Localization.Models.Models))]
@@ -42,11 +44,5 @@ namespace CMS.ViewModels.Home
         public string Mail { get; set; }
         [Display(Name = "CustomerServicePassword", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CustomerServicePassword { get; set; }
-    }
-    public enum SubscriptionStateTypes
-    {
-        Active = 1,
-        Cancelled = 2,
-        Freeze = 3
     }
 }

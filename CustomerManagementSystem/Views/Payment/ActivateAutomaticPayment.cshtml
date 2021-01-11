@@ -1,0 +1,53 @@
+﻿@model CMS.ViewModels.Payment.ActivateAutomaticPaymentViewModel
+
+@using CMS.Localization
+@{
+    ViewBag.Title = Common.ActivateAutomaticPayment;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
+                <div class="col-xl-12 col-xxl-7">
+                    @using (Html.BeginForm("ActivateAutomaticPaymentConfirm", "Payment", FormMethod.Post, new { @class = "form fv-plugins-bootstrap fv-plugins-framework", @id = "kt_projects_add_form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(model => model.SubscriptionID)
+                        @Html.HiddenFor(model => model.CardToken)
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="form-group row">
+                                    <div class="col-lg-10 col-xl-6">
+                                        <h3 class="mb-10 font-weight-bold text-dark">
+                                            @Common.AutomaticPayment
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="form-group row fv-plugins-icon-container">
+                                    <label class="col-xl-3 col-lg-3 col-form-label">
+                                        @Html.DisplayNameFor(m => m.PaymentType)
+                                    </label>
+                                    <div class="col-lg-8 col-xl-9">
+                                        @Html.DropDownListFor(m => m.PaymentType, (SelectList)ViewBag.PaymentTypes, new { @class = "form-control form-control-lg form-control-solid" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between border-top mt-0 pt-4">
+                            <div class="mr-2">
+                                @Html.ActionLink(Common.Back, "AutomaticPayment", null, new { @class = "btn btn-danger font-weight-bolder text-uppercase px-10 py-2 action-submit" })
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success font-weight-bolder text-uppercase px-10 py-2 action-submit">
+                                    @Common.ActivateAutomaticPayment
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

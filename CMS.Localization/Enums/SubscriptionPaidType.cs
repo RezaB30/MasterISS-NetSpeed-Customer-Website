@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.ViewModels.Home
+namespace CMS.Localization.Enums
 {
-    public class SpecialOfferDetailsVM
+    public enum SubscriptionPaidType
     {
-        public string ReferenceNo { get; set; }
+        Billing = 1,
+        PrePaid = 2
     }
 }

@@ -129,8 +129,8 @@
   <data name="AccountPrefers" xml:space="preserve">
     <value>Hesap Tercihleri</value>
   </data>
-  <data name="ActivateAutoPayment" xml:space="preserve">
-    <value>Otomatik Ödeme Aktif Et</value>
+  <data name="ActivateAutomaticPayment" xml:space="preserve">
+    <value>Otomatik Ödemeyi Etkinleştir</value>
   </data>
   <data name="Active" xml:space="preserve">
     <value>Aktif</value>
@@ -143,6 +143,9 @@
   </data>
   <data name="AddNote" xml:space="preserve">
     <value>Not Ekle</value>
+  </data>
+  <data name="Agent" xml:space="preserve">
+    <value>Müşteri Temsilcisi</value>
   </data>
   <data name="AllSupportRequests" xml:space="preserve">
     <value>Tüm Destek Kayıtlarım</value>
@@ -161,6 +164,15 @@
   </data>
   <data name="AutoPaymentAndAddCardDescription" xml:space="preserve">
     <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
+  </data>
+  <data name="AutoPaymentAndRemoveCard" xml:space="preserve">
+    <value>Otomatik Ödeme Talimatı - Kartı Sil</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Geri</value>
+  </data>
+  <data name="BillsAndPayments" xml:space="preserve">
+    <value>Fatura ve Ödemeler</value>
   </data>
   <data name="CanAddCardOrDeleteCard" xml:space="preserve">
     <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
@@ -229,6 +241,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="Details" xml:space="preserve">
     <value>DETAYLAR</value>
   </data>
+  <data name="DiscountAmount" xml:space="preserve">
+    <value>İndirim toplamı</value>
+  </data>
   <data name="DocumentsDescription" xml:space="preserve">
     <value>Abonelik ile ilgili evrak ve belgelerinize erişim sağlayabilir ve indirebilirsiniz.</value>
   </data>
@@ -237,6 +252,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Pdf Olarak İndir</value>
+  </data>
+  <data name="ExtendPacket" xml:space="preserve">
+    <value>Paketi Uzat</value>
   </data>
   <data name="Freeze" xml:space="preserve">
     <value>Dondurulmuş</value>
@@ -265,11 +283,14 @@ gerçekleştirebilirsiniz.</value>
   <data name="InProcess" xml:space="preserve">
     <value>İşlemde</value>
   </data>
+  <data name="InvalidTokenKey" xml:space="preserve">
+    <value>Geçersiz jeton!</value>
+  </data>
   <data name="Invoice" xml:space="preserve">
     <value>Fatura</value>
   </data>
   <data name="InvoicePayments" xml:space="preserve">
-    <value>Fatura &amp; Ödemeler</value>
+    <value>Fatura ve Ödemeler</value>
   </data>
   <data name="InvoicePaymentsDescription" xml:space="preserve">
     <value>Faturalarınızı görüntüleyebilir indirebilir ve ödeyebilirsiniz.</value>
@@ -328,6 +349,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="MailPlaceholder" xml:space="preserve">
     <value>E-Posta</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mesaj</value>
   </data>
   <data name="Month" xml:space="preserve">
     <value>Ay</value>
@@ -389,6 +413,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="PasswordPlaceholder" xml:space="preserve">
     <value>Şifreniz</value>
   </data>
+  <data name="PayAll" xml:space="preserve">
+    <value>Tümünü Öde</value>
+  </data>
   <data name="PayingBills" xml:space="preserve">
     <value>Fatura Ödeme</value>
   </data>
@@ -397,6 +424,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="PaymentSecureDescription" xml:space="preserve">
     <value>Güvenliğiniz sebebi ile ödeme işleminiz &lt;strong&gt;3D secure&lt;/strong&gt; ile gerçekleşecektir.</value>
+  </data>
+  <data name="PaymentWithCardNotAvailable" xml:space="preserve">
+    <value>Kredi kartları alınamadı. Lütfen daha sonra tekrar deneyiniz.</value>
   </data>
   <data name="PayRegisteredCardDescription" xml:space="preserve">
     <value>Ödemeniz daha önce kaydetmiş olduğunuz bu kart ile gerçekleşecektir.</value>
@@ -409,6 +439,12 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="PhonePlaceholder" xml:space="preserve">
     <value>Telefon</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>İşleniyor... Lütfen Bekleyin..</value>
+  </data>
+  <data name="POSSuccessMessage" xml:space="preserve">
+    <value>Ödeme başarılı.</value>
   </data>
   <data name="Prev" xml:space="preserve">
     <value>Önceki</value>
@@ -424,6 +460,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="QuickPay" xml:space="preserve">
     <value>Hemen Öde</value>
+  </data>
+  <data name="QuotaPackages" xml:space="preserve">
+    <value>Kota Paketleri</value>
   </data>
   <data name="RecipeUsageDescription" xml:space="preserve">
     <value>Tarife bilgilerinizi ve aylık kullanım durumunu görebilirsiniz</value>
@@ -509,6 +548,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="SubscriberNo" xml:space="preserve">
     <value>Abone Numarası</value>
   </data>
+  <data name="SubscriberNotFound" xml:space="preserve">
+    <value>Abone bulunamadı!</value>
+  </data>
   <data name="SupportAndRequests" xml:space="preserve">
     <value>Destek &amp; Talepler</value>
   </data>
@@ -542,8 +584,8 @@ gerçekleştirebilirsiniz.</value>
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
-  <data name="UsageInfoForLastFourMonth" xml:space="preserve">
-    <value>SON 4 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ</value>
+  <data name="UsageInfoHeader" xml:space="preserve">
+    <value>SON 3 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ</value>
   </data>
   <data name="ValidationAndSave" xml:space="preserve">
     <value>Doğrulama ve Kaydetme</value>

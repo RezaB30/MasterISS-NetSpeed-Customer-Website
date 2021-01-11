@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Home.SpecialOfferVM
+﻿@model CMS.ViewModels.Home.SpecialOfferViewModel
 @using CMS.Localization;
 
 @{
@@ -45,7 +45,7 @@
                         </p>
                         <div class="font-size-h2 mb-7 text-dark-50">
                             @SpecialOffer.InviteCode
-                            <span class="text-info font-weight-boldest ml-2">@Html.DisplayFor(m=>m.ReferenceNo)</span>
+                            <span class="text-info font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
                         </div>
                         <a href="@Url.Action("SpecialOfferDetails","Home")" class="btn btn-danger font-weight-bold py-2 px-6">@SpecialOffer.SpecialOfferDetails</a>
                     </div>
@@ -110,14 +110,14 @@
                         <thead>
                             <tr>
                                 <th>@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().ReferenceNo)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().BeginDate)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().StartDate)</th>
                                 <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().EndDate)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().EarnDiscount)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().UseDiscount)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().LoseDiscount)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().RemainingDiscount)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().ThisPeriodDiscount)</th>
-                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().SubscriberState)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().TotalCount)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().UsedCount)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().MissedCount)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().RemainingCount)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().IsApplicableThisPeriod)</th>
+                                <th class="table-center">@Html.DisplayNameFor(m => m.SpecialOfferList.FirstOrDefault().ReferralSubscriberState)</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -125,27 +125,14 @@
                             {
                                 <tr>
                                     <td class="font-weight-bold table-row-title">@Html.DisplayFor(m => item.ReferenceNo)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.BeginDate)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.StartDate)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.EndDate)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.EarnDiscount)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.UseDiscount)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.LoseDiscount)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.RemainingDiscount)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.ThisPeriodDiscount)</td>
-                                    <td class="table-center">
-                                        @if (item.SubscriberState == CMS.ViewModels.Home.SubscriberStateTypes.Active)
-                                        {
-                                            <span>
-                                                @Common.Active
-                                            </span>
-                                        }
-                                        else
-                                        {
-                                            <span>
-                                                @Common.Passive
-                                            </span>
-                                        }
-                                    </td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.TotalCount)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.UsedCount)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.MissedCount)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.RemainingCount)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.IsApplicableThisPeriod)</td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.ReferralSubscriberState)</td>
                                 </tr>
                             }
                         </tbody>

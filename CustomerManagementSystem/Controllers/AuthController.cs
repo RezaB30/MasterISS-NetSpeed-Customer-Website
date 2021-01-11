@@ -139,7 +139,7 @@ namespace CustomerManagementSystem.Controllers
         public ActionResult Logout()
         {
             SignoutUser(Request.GetOwinContext());
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Login", "Auth");
         }
         private string GetRedirectUrl(string returnUrl)
         {

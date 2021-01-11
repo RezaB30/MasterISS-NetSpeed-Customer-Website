@@ -88,7 +88,7 @@
                                 var error = "";
                                 var token = $('input[name="__RequestVerificationToken"]').val();
                                 $.ajax({
-                                    url: '/Auth/CustomerLogin',
+                                    url: '@Url.Action("CustomerLogin","Auth")',
                                     method: 'POST',
                                     data: { CustomerCode: $('#CustomerCode').val(), SMSPassword: value, __RequestVerificationToken: token },
                                     complete: function (data, status) {

@@ -13,7 +13,7 @@ namespace CustomerManagementSystem.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -61,11 +61,20 @@ namespace CustomerManagementSystem.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<a href=\"https://www.netspeed.com.tr\" title=\"Netspeed\" target=\"_blank\">www.netspe" +
-            "ed.com.tr</a>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<a href=\"https://www.netspeed.com.tr\" title=\"Netspeed\" class=\"nav-link pr-3 pl-0\"" +
+            " target=\"_blank\">www.netspeed.com.tr</a>")]
         public string WebSite {
             get {
                 return ((string)(this["WebSite"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int TableRows {
+            get {
+                return ((int)(this["TableRows"]));
             }
         }
     }

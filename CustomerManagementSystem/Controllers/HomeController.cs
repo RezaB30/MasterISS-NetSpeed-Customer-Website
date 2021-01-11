@@ -38,72 +38,60 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult CustomerLineDetails() //hat-durumu.html
         {
-            var lineDetails = new ServiceUtilities().ConnectionStatus(User.GiveUserId());
-            if (lineDetails.ResponseMessage.ErrorCode != 0)
+            if (Request.IsAjaxRequest())
+            {
+                var lineDetails = new ServiceUtilities().ConnectionStatus(User.GiveUserId());
+                if (lineDetails.ResponseMessage.ErrorCode != 0)
+                {
+                    return PartialView("_ConnectionStatusPartial", new CustomerLineDetailsViewModel());
+                }
+                CustomerLineDetailsViewModel customer = new CustomerLineDetailsViewModel()
+                {
+                    DownloadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentDownload,
+                    UploadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentUpload,
+                    IPAddress = Utilities.InternalUtilities.GetUserIP(),
+                    XDSLType = lineDetails.GetCustomerConnectionStatusResponse.XDSLTypeText,
+                    XDSLNo = lineDetails.GetCustomerConnectionStatusResponse.XDSLNo,
+                    LineState = lineDetails.GetCustomerConnectionStatusResponse.ConnectionStatusText,
+                    DownloadMargin = lineDetails.GetCustomerConnectionStatusResponse.DownloadMargin,
+                    UploadMargin = lineDetails.GetCustomerConnectionStatusResponse.UploadMargin
+                };
+                return PartialView("_ConnectionStatusPartial", customer);
+            }
+            else
             {
                 return View(new CustomerLineDetailsViewModel());
             }
-            CustomerLineDetailsViewModel customer = new CustomerLineDetailsViewModel()
-            {
-                DownloadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentDownload,
-                UploadSpeed = lineDetails.GetCustomerConnectionStatusResponse.CurrentUpload,
-                IPAddress = "127.0.0.1",
-                XDSLType = lineDetails.GetCustomerConnectionStatusResponse.XDSLTypeText,
-                XDSLNo = lineDetails.GetCustomerConnectionStatusResponse.XDSLNo,
-                PhysicalState = "AÇIK",
-                LineState = lineDetails.GetCustomerConnectionStatusResponse.ConnectionStatusText
-            };
-            return View(customer);
         }
         public ActionResult RecipeUsage() // tarife-kullanim.html
         {
-            var recipe = new RecipeUsageVM();
+            var tariffAndtraffic = new ServiceUtilities().GetTariffAndTrafficInfo(User.GiveUserId());
+            var tariffInfo = tariffAndtraffic.GetCustomerTariffAndTrafficInfoResponse;
+            if (tariffInfo == null)
+            {
+                return View(new RecipeUsageViewModel());
+            }
+            var recipe = new RecipeUsageViewModel();
+
             var recipeList = new List<RecipeUsageList>();
-            recipeList.Add(new RecipeUsageList()
+            foreach (var item in tariffInfo.MonthlyUsage)
             {
-                IsQuota = true,
-                Month = DateTime.Now.ToString("MMMM", Thread.CurrentThread.CurrentUICulture),
-                Year = DateTime.Now.Year,
-                TotalDownload = 312,
-                TotalUpload = 40,
-                TotalQuota = 500,
-                PercentQuota = 100 - (352 * 100 / 500)
-            });
-            recipeList.Add(new RecipeUsageList()
-            {
-                IsQuota = false,
-                Month = DateTime.Now.AddMonths(-1).ToString("MMMM", Thread.CurrentThread.CurrentUICulture),
-                Year = DateTime.Now.Year,
-                TotalDownload = 312,
-                TotalUpload = 40,
-                TotalQuota = 0,
-                PercentQuota = 0
-            });
-            recipeList.Add(new RecipeUsageList()
-            {
-                IsQuota = true,
-                Month = DateTime.Now.AddMonths(-2).ToString("MMMM", Thread.CurrentThread.CurrentUICulture),
-                Year = DateTime.Now.Year,
-                TotalDownload = 450,
-                TotalUpload = 40,
-                TotalQuota = 500,
-                PercentQuota = 100 - (490 * 100 / 500)
-            });
-            recipeList.Add(new RecipeUsageList()
-            {
-                IsQuota = false,
-                Month = DateTime.Now.AddMonths(-3).ToString("MMMM", Thread.CurrentThread.CurrentUICulture),
-                Year = DateTime.Now.Year,
-                TotalDownload = 312,
-                TotalUpload = 40,
-                TotalQuota = 0,
-                PercentQuota = 0
-            });
-            recipe.CommitmentType = "TAAHHÜTSÜZ";
-            recipe.QuotaType = "LİMİTSİZ";
-            recipe.TariffAmount = "66 TL";
-            recipe.TariffName = " NET EKO 8M E KADAR";
-            recipe.RecipeUsage = recipeList;
+                recipeList.Add(new RecipeUsageList()
+                {
+                    IsQuota = tariffInfo.BaseQuota != null,
+                    Month = new DateTime(item.Year.GetValueOrDefault(), item.Month.GetValueOrDefault(), 1),
+                    Year = new DateTime(item.Year.GetValueOrDefault(), item.Month.GetValueOrDefault(), 1),
+                    TotalDownload = item.TotalDownload,
+                    TotalUpload = item.TotalUpload,
+                    TotalQuota = tariffInfo.BaseQuota,
+                    PercentQuota = tariffInfo.BaseQuota != null ? 100 - ((item.TotalUpload + item.TotalDownload) * 100 / tariffInfo.BaseQuota.Value) : 0
+                });
+            }
+            //recipe.CommitmentType = "TAAHHÜTSÜZ";
+            //recipe.QuotaType = "LİMİTSİZ";
+            //recipe.TariffAmount = "66 TL";
+            recipe.TariffName = tariffInfo.ServiceName;
+            recipe.RecipeUsage = recipeList.OrderByDescending(r => r.Year).ThenByDescending(r => r.Month).ToArray();
 
             return View(recipe);
         }
@@ -113,24 +101,36 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult MyAccount() //hesabim.html
         {
-            var account = new MyAccountVM()
+            var getCustomerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
+            if (getCustomerInfo.ResponseMessage.ErrorCode != 0)
             {
-                AutomaticPaymentInstruction = false,
+                return View(new MyAccountViewModel());
+            }
+            var customer = getCustomerInfo.GetCustomerInfoResponse;
+            var getBillInfo = new ServiceUtilities().GetCustomerBillList(User.GiveUserId());
+            int? billCount = null;
+            if (getBillInfo.ResponseMessage.ErrorCode == 0)
+            {
+                billCount = getBillInfo.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == (short)CMS.Localization.Enums.BillState.Unpaid).Count();
+            }
+            var account = new MyAccountViewModel()
+            {
+                AutomaticPaymentInstruction = customer.HashAutoPayment,
                 ChooseMail = true,
                 ChooseSMS = false,
-                ContactPhoneNo = "5387829318",
-                CustomerServicePassword = "123456",
-                FullName = "Onur Civanoğlu",
-                LineAddress = "Pamukkale Denizli",
-                Mail = "onur.civanoglu@netspeed.com.tr",
-                ModemPassword = "123123",
-                ModemUsername = "ns1231231231",
-                PassedInvoice = 0,
-                SpecialOfferReferenceCode = "12Q43G",
-                StaticIP = "",
-                SubscriberNo = "2504332241",
-                SubscriptionStateTypes = SubscriptionStateTypes.Active,
-                XDSLNo = "12345854214"
+                ContactPhoneNo = customer.PhoneNo,
+                CustomerServicePassword = customer.OnlinePassword,
+                FullName = customer.ValidDisplayName,
+                LineAddress = customer.InstallationAddress,
+                Mail = customer.EMail,
+                ModemPassword = customer.Username,
+                ModemUsername = customer.Password,
+                PassedInvoice = billCount,
+                SpecialOfferReferenceCode = customer.ReferenceNo,
+                StaticIP = customer.StaticIP,
+                SubscriberNo = customer.CurrentSubscriberNo,
+                SubscriptionState = customer.CustomerStateText,
+                XDSLNo = customer.TTSubscriberNo
             };
             return View(account);
         }
@@ -140,53 +140,74 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult SpecialOffer() // arkadasini-getir.html
         {
-            var list = new List<SpecialOfferList>();
-            for (int i = 1; i < 6; i++)
+            var customerSpecialOffer = new ServiceUtilities().CustomerSpecialOffers(User.GiveUserId());
+            var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
+
+            if (customerSpecialOffer.ResponseMessage.ErrorCode != 0)
             {
-                list.Add(new SpecialOfferList()
-                {
-                    BeginDate = DateTime.Now.AddMonths(-i),
-                    EndDate = DateTime.Now.AddMonths(-i).AddYears(1),
-                    EarnDiscount = 12,
-                    LoseDiscount = i,
-                    UseDiscount = 1,
-                    RemainingDiscount = 12 - (i + 1),
-                    ReferenceNo = "54DSA" + i.ToString(),
-                    SubscriberState = i % 3 == 0 ? SubscriberStateTypes.Passive : SubscriberStateTypes.Active,
-                    ThisPeriodDiscount = i % 3 == 0 ? 0 : 1
-                });
+                return View(new SpecialOfferViewModel());
             }
-            SpecialOfferVM specialOffer = new SpecialOfferVM()
+            var specialOfflerList = customerSpecialOffer.GetCustomerSpecialOffersResponse.Select(s => new SpecialOfferList()
             {
-                ReferenceNo = "54DSA8",
-                SpecialOfferList = list,
-                TotalEarnDiscount = 12 * 5,
-                TotalLoseDiscount = 5 * 6 / 2,
-                TotalRemainingDiscount = 6 + 7 + 8 + 9 + 10,
-                TotalThisPeriod = 4,
-                TotalUseDiscount = 5
+                StartDate = s.StartDate,
+                IsCancelled = s.IsCancelled,
+                MissedCount = s.MissedCount,
+                ReferenceNo = s.ReferenceNo,
+                ReferralSubscriberState = s.ReferralSubscriberState,
+                TotalCount = s.TotalCount,
+                UsedCount = s.UsedCount
+            });
+            SpecialOfferViewModel specialOffer = new SpecialOfferViewModel()
+            {
+                ReferenceNo = customerInfo.ResponseMessage.ErrorCode != 0 ? string.Empty : customerInfo.GetCustomerInfoResponse.ReferenceNo,
+                SpecialOfferList = specialOfflerList,
+                TotalEarnDiscount = specialOfflerList.Sum(s => s.TotalCount),
+                TotalLoseDiscount = specialOfflerList.Sum(s => s.MissedCount),
+                TotalRemainingDiscount = specialOfflerList.Sum(s => s.RemainingCount),
+                TotalThisPeriod = specialOfflerList.Where(s => s.IsApplicableThisPeriod).Count(),
+                TotalUseDiscount = specialOfflerList.Sum(s => s.UsedCount)
             };
             return View(specialOffer);
         }
         public ActionResult SpecialOfferDetails() // arkadasini-getir-sss.html
         {
-            return View(new SpecialOfferDetailsVM() { ReferenceNo = "54DSA8" });
+            var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
+
+            return View(new SpecialOfferDetailsViewModel()
+            {
+                ReferenceNo = customerInfo.ResponseMessage.ErrorCode != 0 ? string.Empty
+                : customerInfo.GetCustomerInfoResponse.ReferenceNo
+            });
         }
         public ActionResult SubscriptionList()
         {
             var list = new List<SelectListItem>();
-            for (int i = 0; i < 3; i++)
+            var subscriptionBag = Utilities.InternalUtilities.GetSubscriptionBag(User);
+            foreach (var item in subscriptionBag)
             {
                 list.Add(new SelectListItem()
                 {
-                    Text = "12226626972",
-                    Value = "12226626972"
+                    Text = item.SubscriberNo,
+                    Value = item.ID
                 });
             }
             return PartialView("~/Views/Shared/EditorPartials/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = list });
         }
         public ActionResult CurrentSubscription(SubscriptionListVM subscription) // abone numarasını değiştirmek isterse
         {
+            var targetId = Convert.ToInt64(subscription.CurrentSubscriberNo);
+            var response = new ServiceUtilities().ChangeSubClient(User.GiveUserId(), targetId);
+            if (response.ResponseMessage.ErrorCode != 0)
+            {
+                //log
+                return RedirectToAction("Index", "Home");
+            }
+            AuthController.SignoutUser(Request.GetOwinContext());
+            AuthController.SignInUser(response.ChangeSubClientResponse.ValidDisplayName,
+                response.ChangeSubClientResponse.ID.ToString(),
+                response.ChangeSubClientResponse.SubscriberNo,
+                response.ChangeSubClientResponse.RelatedCustomers,
+                Request.GetOwinContext());
             return RedirectToAction("Index", "Home");
         }
         public ActionResult QuickSearch(string query)

@@ -106,11 +106,74 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bir hata oluştu. Lütfen destek ekibimizle iletişime geçin..
+        /// </summary>
+        public static string GeneralError {
+            get {
+                return ResourceManager.GetString("GeneralError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aktif bir destek talebiniz var. Yeni bir tane gönderemezsiniz..
+        /// </summary>
+        public static string HasActiveRequest {
+            get {
+                return ResourceManager.GetString("HasActiveRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İç Hata.
+        /// </summary>
+        public static string InternalError {
+            get {
+                return ResourceManager.GetString("InternalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İşleminiz gerçekleştirilirken bir hata oluştu..
+        /// </summary>
+        public static string InternalErrorDescription {
+            get {
+                return ResourceManager.GetString("InternalErrorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TC Kimlik No veya GSM No Gerekli.
         /// </summary>
         public static string LoginUsernameRequired {
             get {
                 return ResourceManager.GetString("LoginUsernameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} karakterden fazla olamaz..
+        /// </summary>
+        public static string MaxLength {
+            get {
+                return ResourceManager.GetString("MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} {1} karakterden daha az olamaz..
+        /// </summary>
+        public static string MinLength {
+            get {
+                return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen geçerli bir {0} girin..
+        /// </summary>
+        public static string NotValid {
+            get {
+                return ResourceManager.GetString("NotValid", resourceCulture);
             }
         }
         

@@ -10,7 +10,7 @@
         </div>
         <br>
         <div>
-            @Common.SecureAddCardDescription2            
+            @Common.SecureAddCardDescription2
         </div>
     </div>
 </div>
@@ -18,7 +18,7 @@
     <div class="mr-2">
     </div>
     <div>
-        <button onclick="window.location.href='/Payment/CreditCardRegister'" id="description-page-next" type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">
+        <button onclick="window.location.href = '@Url.Action("CreditCardRegister","Payment")'" id="description-page-next" type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">
             @Common.Next
         </button>
     </div>

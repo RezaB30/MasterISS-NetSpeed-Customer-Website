@@ -97,11 +97,20 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Son Kullanım Tarihi (AY).
+        ///   Looks up a localized string similar to Kart Sahibi Adı Soyadı.
         /// </summary>
-        public static string CCMonth {
+        public static string CardholderName {
             get {
-                return ResourceManager.GetString("CCMonth", resourceCulture);
+                return ResourceManager.GetString("CardholderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kart Numarası.
+        /// </summary>
+        public static string CardNumber {
+            get {
+                return ResourceManager.GetString("CardNumber", resourceCulture);
             }
         }
         
@@ -111,24 +120,6 @@ namespace CMS.Localization.Models {
         public static string CCName {
             get {
                 return ResourceManager.GetString("CCName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Kart Numarası.
-        /// </summary>
-        public static string CCNumber {
-            get {
-                return ResourceManager.GetString("CCNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Son Kullanım Tarihi (YIL).
-        /// </summary>
-        public static string CCYear {
-            get {
-                return ResourceManager.GetString("CCYear", resourceCulture);
             }
         }
         
@@ -178,6 +169,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Noise Margin.
+        /// </summary>
+        public static string DownloadNoiseMargin {
+            get {
+                return ResourceManager.GetString("DownloadNoiseMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Download Hızı.
         /// </summary>
         public static string DownloadSpeed {
@@ -214,11 +214,29 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitiş Tar..
+        ///   Looks up a localized string similar to Bitiş Tarihi.
         /// </summary>
         public static string EndDate {
             get {
                 return ResourceManager.GetString("EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son Kullanım Tarihi (AY).
+        /// </summary>
+        public static string ExpirationDateMonth {
+            get {
+                return ResourceManager.GetString("ExpirationDateMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son Kullanım Tarihi (YIL).
+        /// </summary>
+        public static string ExpirationDateYear {
+            get {
+                return ResourceManager.GetString("ExpirationDateYear", resourceCulture);
             }
         }
         
@@ -259,6 +277,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Son Ödeme Tarihi.
+        /// </summary>
+        public static string LastPaymentDate {
+            get {
+                return ResourceManager.GetString("LastPaymentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hat Tesis Adresi.
         /// </summary>
         public static string LineAddress {
@@ -282,6 +309,15 @@ namespace CMS.Localization.Models {
         public static string LoseDiscount {
             get {
                 return ResourceManager.GetString("LoseDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kaybedilen.
+        /// </summary>
+        public static string MissedCount {
+            get {
+                return ResourceManager.GetString("MissedCount", resourceCulture);
             }
         }
         
@@ -322,6 +358,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ödeme Tipi.
+        /// </summary>
+        public static string PaymentType {
+            get {
+                return ResourceManager.GetString("PaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fiziksel Bağlantı.
         /// </summary>
         public static string PhysicalState {
@@ -342,9 +387,27 @@ namespace CMS.Localization.Models {
         /// <summary>
         ///   Looks up a localized string similar to Kalan.
         /// </summary>
+        public static string RemainingCount {
+            get {
+                return ResourceManager.GetString("RemainingCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kalan.
+        /// </summary>
         public static string RemainingDiscount {
             get {
                 return ResourceManager.GetString("RemainingDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarife Adı.
+        /// </summary>
+        public static string ServiceName {
+            get {
+                return ResourceManager.GetString("ServiceName", resourceCulture);
             }
         }
         
@@ -363,6 +426,15 @@ namespace CMS.Localization.Models {
         public static string SpecialOfferReferenceCode {
             get {
                 return ResourceManager.GetString("SpecialOfferReferenceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başlangıç Tarihi.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
             }
         }
         
@@ -394,6 +466,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abone Durum.
+        /// </summary>
+        public static string SubscriberState {
+            get {
+                return ResourceManager.GetString("SubscriberState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hat Hizmet Durumu.
         /// </summary>
         public static string SubscriptionLineState {
@@ -421,11 +502,20 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tarife Adı.
+        ///   Looks up a localized string similar to Destek Talebi Açıklaması.
         /// </summary>
-        public static string TariffName {
+        public static string SupportRequestSubType {
             get {
-                return ResourceManager.GetString("TariffName", resourceCulture);
+                return ResourceManager.GetString("SupportRequestSubType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destek Talebi Türü.
+        /// </summary>
+        public static string SupportRequestType {
+            get {
+                return ResourceManager.GetString("SupportRequestType", resourceCulture);
             }
         }
         
@@ -441,9 +531,36 @@ namespace CMS.Localization.Models {
         /// <summary>
         ///   Looks up a localized string similar to Bu Dönem.
         /// </summary>
+        public static string ThisPeriod {
+            get {
+                return ResourceManager.GetString("ThisPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bu Dönem.
+        /// </summary>
         public static string ThisPeriodDiscount {
             get {
                 return ResourceManager.GetString("ThisPeriodDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toplam.
+        /// </summary>
+        public static string Total {
+            get {
+                return ResourceManager.GetString("Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kazanılan.
+        /// </summary>
+        public static string TotalCount {
+            get {
+                return ResourceManager.GetString("TotalCount", resourceCulture);
             }
         }
         
@@ -466,11 +583,29 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upload Noise Margin.
+        /// </summary>
+        public static string UploadNoiseMargin {
+            get {
+                return ResourceManager.GetString("UploadNoiseMargin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uplod Hızı.
         /// </summary>
         public static string UploadSpeed {
             get {
                 return ResourceManager.GetString("UploadSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kullanılan.
+        /// </summary>
+        public static string UsedCount {
+            get {
+                return ResourceManager.GetString("UsedCount", resourceCulture);
             }
         }
         

@@ -1,12 +1,17 @@
-﻿@model PagedList.StaticPagedList<CMS.ViewModels.Supports.SupportRequestsVM>
-@using PagedList.Mvc
+﻿@using RezaB.Web.Helpers
+@model IEnumerable<CMS.ViewModels.Supports.SupportRequestsViewModel>
+
 @using CMS.Localization;
 
 @{
     ViewBag.Title = Common.SupportAndRequests;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    .page-link {
+        display: inline-block !important;
+    }
+</style>
 <div class="container">
     <div class="flex-row-fluid ">
         <div class="card card-custom card-stretch">
@@ -37,7 +42,39 @@
                             <div class="card-body pt-15 d-flex flex-column justify-content-between">
                                 <div class="d-flex align-items-center mb-7">
                                     <div class="flex-shrink-0 mr-4 mt-lg-0 mt-3">
-                                        @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Processing)
+                                        @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.OpenRequestAgainDisplay)
+                                        {
+                                            <span class="svg-icon svg-icon-success svg-icon-3x">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                       fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24" />
+                                                        <circle fill="#000000" opacity="0.3" cx="12"
+                                                                cy="12" r="10" />
+                                                        <rect fill="#000000" x="11" y="10" width="2"
+                                                              height="7" rx="1" />
+                                                        <rect fill="#000000" x="11" y="7" width="2"
+                                                              height="2" rx="1" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        }
+                                        @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.NoneDisplay)
+                                        {
+                                            <span class="svg-icon svg-icon-success svg-icon-3x">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                    <g stroke="none" stroke-width="1" fill="none"
+                                                       fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24" />
+                                                        <rect fill="#000000" opacity="0.3" x="2" y="2"
+                                                              width="20" height="20" rx="10" />
+                                                        <path d="M6.16794971,14.5547002 C5.86159725,14.0951715 5.98577112,13.4743022 6.4452998,13.1679497 C6.90482849,12.8615972 7.52569784,12.9857711 7.83205029,13.4452998 C8.9890854,15.1808525 10.3543313,16 12,16 C13.6456687,16 15.0109146,15.1808525 16.1679497,13.4452998 C16.4743022,12.9857711 17.0951715,12.8615972 17.5547002,13.1679497 C18.0142289,13.4743022 18.1384028,14.0951715 17.8320503,14.5547002 C16.3224187,16.8191475 14.3543313,18 12,18 C9.64566871,18 7.67758127,16.8191475 6.16794971,14.5547002 Z"
+                                                              fill="#000000" />
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        }
+                                        @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.AddNoteDisplay)
                                         {
                                             <span class="svg-icon svg-icon-danger svg-icon-3x">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -54,51 +91,13 @@
                                                 </svg>
                                             </span>
                                         }
-                                        else
-                                        {
-                                            if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete && item.ChangeType == CMS.ViewModels.Supports.ChangeType.Agent)
-                                            {
-                                                <span class="svg-icon svg-icon-success svg-icon-3x">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                        <g stroke="none" stroke-width="1" fill="none"
-                                                           fill-rule="evenodd">
-                                                            <rect x="0" y="0" width="24" height="24" />
-                                                            <circle fill="#000000" opacity="0.3" cx="12"
-                                                                    cy="12" r="10" />
-                                                            <rect fill="#000000" x="11" y="10" width="2"
-                                                                  height="7" rx="1" />
-                                                            <rect fill="#000000" x="11" y="7" width="2"
-                                                                  height="2" rx="1" />
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            }
-                                            else
-                                            {
-                                                if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete && item.ChangeType == CMS.ViewModels.Supports.ChangeType.Customer)
-                                                {
-                                                    <span class="svg-icon svg-icon-success svg-icon-3x">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                                            <g stroke="none" stroke-width="1" fill="none"
-                                                               fill-rule="evenodd">
-                                                                <rect x="0" y="0" width="24" height="24" />
-                                                                <rect fill="#000000" opacity="0.3" x="2" y="2"
-                                                                      width="20" height="20" rx="10" />
-                                                                <path d="M6.16794971,14.5547002 C5.86159725,14.0951715 5.98577112,13.4743022 6.4452998,13.1679497 C6.90482849,12.8615972 7.52569784,12.9857711 7.83205029,13.4452998 C8.9890854,15.1808525 10.3543313,16 12,16 C13.6456687,16 15.0109146,15.1808525 16.1679497,13.4452998 C16.4743022,12.9857711 17.0951715,12.8615972 17.5547002,13.1679497 C18.0142289,13.4743022 18.1384028,14.0951715 17.8320503,14.5547002 C16.3224187,16.8191475 14.3543313,18 12,18 C9.64566871,18 7.67758127,16.8191475 6.16794971,14.5547002 Z"
-                                                                      fill="#000000" />
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                }
-                                            }
-                                        }
                                     </div>
                                     <div class="d-flex flex-column">
                                         <a href="javascript:void();" class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
-                                            @Html.DisplayFor(m => item.SupportRequestName)
+                                            @Html.DisplayFor(m => item.SupportRequestType)
                                         </a>
                                         <span class="text-muted font-weight-bold">
-                                            @Html.DisplayFor(m => item.SupportRequestSummary)
+                                            @Html.DisplayFor(m => item.SupportRequestSubType)
                                         </span>
                                     </div>
                                 </div>
@@ -106,23 +105,23 @@
                                     <div class="mb-7">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="text-dark-75 font-weight-bolder mr-2">
-                                                @Html.DisplayNameFor(m => item.SupportNo)
+                                                @Html.DisplayNameFor(m => m.SupportNo)
                                             </span>
                                             <a href="javascript:void();" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.SupportNo)</a>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => item.Date)</span>
+                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Date)</span>
                                             <a href="javascript:void();" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.Date)</a>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-cente my-1">
-                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => item.Department)</span>
+                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Department)</span>
                                             <a href="javascript:void();" class="text-muted text-hover-primary">
                                                 @Html.DisplayFor(m => item.Department)
                                             </a>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => item.State)</span>
-                                            @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete)
+                                            <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.State)</span>
+                                            @if (item.StateId == (short)CMS.ViewModels.Supports.SupportRequestStateID.Done)
                                             {
                                                 <span class="label label-lg label-light-success label-inline">@Html.DisplayFor(m => item.State)</span>
                                             }
@@ -139,40 +138,30 @@
                                         @Html.DisplayFor(m => item.Note)
                                     </p>
                                 </div>
-                                @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Processing)
+                                @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.AddNoteDisplay)
                                 {
-                                    <a href="@Url.Action("SupportResults","Support" , new { SupportNo = item.SupportNo })" class="btn btn-block btn-sm btn-light-danger font-weight-bolder text-uppercase py-4">
+                                    <a href="@Url.Action("SupportResults","Support" , new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-danger font-weight-bolder text-uppercase py-4">
                                         @Common.AddNote
                                     </a>
                                 }
-                                else
+                                @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.NoneDisplay)
                                 {
-                                    if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete && item.ChangeType == CMS.ViewModels.Supports.ChangeType.Agent)
-                                    {
-                                        <div class="card-toolbar">
-                                            <button type="button" class="btn btn-block btn-sm btn-light-success font-weight-bold" id="kt_sweetalert_cozuldu">
-                                                @Common.ProblemSolved
-                                            </button>
-                                            <button type="button" class="btn btn-block btn-sm btn-light-danger font-weight-bold" id="kt_sweetalert_destektekrar">
-                                                @Common.OpenRequestAgain
-                                            </button>
-                                            <a href="@Url.Action("SupportResults","Support",new { SupportNo = item.SupportNo })" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">@Common.Details</a>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete && item.ChangeType == CMS.ViewModels.Supports.ChangeType.Customer)
-                                        {
-                                            <div class="card-toolbar">
-                                                <a href="javascript:void();" class="btn btn-block btn-sm btn-light-success font-weight-bold mr-2 disabled ">
-                                                    @Common.Completed
-                                                </a>
-                                                <a href="@Url.Action("SupportResults","Support",new { SupportNo = item.SupportNo })" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
-                                                    @Common.Details
-                                                </a>
-                                            </div>
-                                        }
-                                    }
+                                    <div class="card-toolbar">
+                                        <a href="javascript:void();" class="btn btn-block btn-sm btn-light-success font-weight-bold mr-2 disabled ">
+                                            @Common.Completed
+                                        </a>
+                                        <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                            @Common.Details
+                                        </a>
+                                    </div>
+                                }
+                                @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.OpenRequestAgainDisplay)
+                                {
+                                    <div class="card-toolbar">
+                                        <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-success font-weight-bold ">@Common.ProblemSolved</a>
+                                        <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-danger font-weight-bold ">@Common.OpenRequestAgain</a>
+                                        <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">@Common.Details</a>
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -190,13 +179,13 @@
                 @if (Model.Count() > 0)
                 {
                     <div id="paged" class="d-flex flex-wrap mr-3">
-                        @Html.PagedListPager(Model, page => Url.Action("SupportRequests", new { page, pageSize = Model.PageSize }))
+                        @Html.PagedList((int)ViewBag.PageCount, 5)
                     </div>
-                    <div class="d-flex align-items-center">
-                        <span class="text-muted">
-                            @string.Format(Common.Pagination, Model.TotalItemCount, Model.FirstItemOnPage, Model.LastItemOnPage)
-                        </span>
-                    </div>
+                    @*<div class="d-flex align-items-center">
+                            <span class="text-muted">
+                                @string.Format(Common.Pagination, Model.TotalItemCount, Model.FirstItemOnPage, Model.LastItemOnPage)
+                            </span>
+                        </div>*@
                 }
             </div>
         </div>
@@ -204,7 +193,6 @@
 </div>
 @section scripts{
     @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
-    <script>
-        EditPagedList();
-    </script>
+    @Scripts.Render("~/Scripts/Custom/display-message-box.js")
+
 }

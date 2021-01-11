@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Home.RecipeUsageVM
+﻿@model CMS.ViewModels.Home.RecipeUsageViewModel
 
 @using CMS.Localization;
 
@@ -46,7 +46,7 @@
                                 </span>
                             </div>
                             <div class="alert-text card-label font-weight-bold">
-                                @Common.YourRecipe : @Html.DisplayFor(m => m.TariffName) | @Html.DisplayFor(m => m.QuotaType) | @Html.DisplayFor(m => m.CommitmentType) | @Html.DisplayFor(m => m.TariffAmount) / @Common.Month
+                                @Common.YourRecipe : @Html.DisplayFor(m => m.TariffName)
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                                 </span>
                             </div>
                             <div class="alert-text card-label font-weight-bold">
-                                @Common.UsageInfoForLastFourMonth
+                                @Common.UsageInfoHeader
                             </div>
                         </div>
                     </div>
@@ -120,14 +120,12 @@
                                                         <span class="d-block font-weight-bold mb-4">@Html.DisplayNameFor(m => item.TotalDownload)</span>
                                                         <span class="btn btn-light-primary btn-sm font-weight-bold btn-upper btn-text">
                                                             @Html.DisplayFor(m => item.TotalDownload)
-                                                            GB
                                                         </span>
                                                     </div>
                                                     <div class="mr-12 d-flex flex-column mb-7">
                                                         <span class="d-block font-weight-bold mb-4">@Html.DisplayNameFor(m => item.TotalUpload)</span>
                                                         <span class="btn btn-light-warning btn-sm font-weight-bold btn-upper btn-text">
                                                             @Html.DisplayFor(m => item.TotalUpload)
-                                                            GB
                                                         </span>
                                                     </div>
                                                     @if (item.IsQuota)

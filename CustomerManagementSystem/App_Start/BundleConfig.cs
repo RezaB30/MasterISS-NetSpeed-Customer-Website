@@ -22,7 +22,8 @@ namespace CustomerManagementSystem
                         "~/assets/plugins/custom/prismjs/*.js",
                         "~/assets/plugins/custom/fullcalendar/*.js",
                         "~/Scripts/Custom/current-subscription.js",
-                        "~/Scripts/Custom/resource-displayText.js"));
+                        "~/Scripts/Custom/resource-displayText.js",
+                        "~/Scripts/Custom/display-message-box.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/loginjs").Include(
                 "~/assets/plugins/global/plugins.bundle.js",

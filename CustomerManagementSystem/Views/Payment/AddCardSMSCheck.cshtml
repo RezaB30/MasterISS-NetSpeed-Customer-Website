@@ -1,7 +1,9 @@
-﻿@using CMS.Localization;
+﻿@model CMS.ViewModels.Payment.AutoPaymentCardViewModel
+
+@using CMS.Localization;
 
 @{
-    ViewBag.Title = "CreditCardValidation";
+    ViewBag.Title = Common.SMSValidation;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,7 +21,7 @@
                     </span>
                 </div>
                 <div class="card-toolbar">
-                    <a href="@Url.Action("PaymentInstruction","Payment")"
+                    <a href="@Url.Action("AutomaticPayment","Payment")"
                        class="btn btn-sm btn-light-info font-weight-bold mr-2">
                         @Common.RegisteredCards
                     </a>
@@ -48,6 +50,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer text-center text-danger p-0">
+                            @ViewBag.WrongPassword
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,37 +61,41 @@
 </div>
 @section scripts{
     @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
-    <script>
-        function ValidateResult(data, status) {
-            try {
-                if (status == "success") {
-                    var response = data.responseJSON;
-                    if (!response.valid) {
-                        swal.fire({
-                            icon: 'success',
-                            title: 'İşlem Başarılı. Kayıtlı Kartlar Sayfasına Yönlendiriliyorsunuz. Lütfen Bekleyiniz',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            onOpen: function () {
-                                Swal.showLoading()
-                            }
-                        }).then((result) => {
-                            window.location.href = "/Payment/PaymentInstruction";
-                        });
-                    }
-                    else {
-                        swal.fire({
-                            icon: 'error',
-                            title: '',
-                            text: response.valid,
-                            confirmButtonText: 'Tamam'
-                        });
-                    }
-                }
-            } catch (e) {
-                console.log(e);
-            }
 
+    <script>
+        function PrevSubmit() {
+            $('#prev-form').find('form').submit();
         }
+                //function ValidateResult(data, status) {
+                //    try {
+                //        if (status == "success") {
+                //            var response = data.responseJSON;
+                //            if (!response.valid) {
+                //                swal.fire({
+                //                    icon: 'success',
+                //                    title: 'İşlem Başarılı. Kayıtlı Kartlar Sayfasına Yönlendiriliyorsunuz. Lütfen Bekleyiniz',
+                //                    showConfirmButton: false,
+                //                    timer: 3000,
+                //                    onOpen: function () {
+                //                        Swal.showLoading()
+                //                    }
+                //                }).then((result) => {
+                //                    window.location.href = "/Payment/PaymentInstruction";
+                //                });
+                //            }
+                //            else {
+                //                swal.fire({
+                //                    icon: 'error',
+                //                    title: '',
+                //                    text: response.valid,
+                //                    confirmButtonText: 'Tamam'
+                //                });
+                //            }
+                //        }
+                //    } catch (e) {
+                //        console.log(e);
+                //    }
+
+                //}
     </script>
 }

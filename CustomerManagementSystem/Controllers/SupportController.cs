@@ -6,334 +6,313 @@ using System.Web;
 using System.Web.Mvc;
 using CMS.ViewModels.Supports;
 using PagedList;
+using RezaB.Web.Authentication;
 
 namespace CustomerManagementSystem.Controllers
 {
     public class SupportController : BaseController
     {
         // GET: Support
-        public ActionResult SupportRequests(int page = 1, int pageSize = 6)   // destek.html
+        public ActionResult SupportRequests(int? page)   // destek.html
         {
-            var note = "35 mbps internet bağlatmama rağmen sık sık bu hızlarda düşüş yaşıyor ve 15 mbps hızları zor görüyorum." +
-                " Sanırım kuruluma gelen arkadaş kabloları bağlarken bir hata yaptı." +
-                " Kurulumun kontrol edilmesi için destek talep ediyorum.";
-            var req = new List<CMS.ViewModels.Supports.SupportRequestsVM>();
-            for (int i = 0; i < 100; i++)
+            var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
+            if (supportRequests.ResponseMessage.ErrorCode != 0)
             {
-                req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-                {
-                    ChangeType = ChangeType.Agent,
-                    Date = DateTime.Now.AddDays(-1),
-                    Department = "TEKNİK DESTEK",
-                    Note = note.Length > 200 ? note.Substring(0, 200) : note,
-                    State = "TAMAMLANDI",
-                    SupportNo = 1,
-                    SupportRequestName = "BAĞLANTI SORUNU",
-                    SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                    SupportState = SupportState.Complete
-                });
+                return View(Enumerable.Empty<SupportRequestsViewModel>());
             }
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
+            Dictionary<long, SupportRequestsAdditional> keyValuePairs = new Dictionary<long, SupportRequestsAdditional>();
+            foreach (var item in supportRequests.GetCustomerSupportListResponse)
             {
-                ChangeType = ChangeType.Agent,
-                Date = DateTime.Now.AddDays(-1),
-                Department = "TEKNİK DESTEK",
-                Note = note.Length > 200 ? note.Substring(0, 200) : note,
-                State = "TAMAMLANDI",
-                SupportNo = 1,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Complete
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = null,
-                Date = DateTime.Now.AddDays(-2),
-                Department = "TEKNİK DESTEK",
-                Note = note.Length > 200 ? note.Substring(0, 200) : note,
-                State = "İŞLEMDE",
-                SupportNo = 2,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Processing
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = ChangeType.Customer,
-                Date = DateTime.Now.AddDays(-2),
-                Department = "TEKNİK DESTEK",
-                Note = note.Length > 200 ? note.Substring(0, 200) : note,
-                State = "TAMAMLANDI",
-                SupportNo = 3,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Complete
-            });
-            var TotalCount = req.Count();
-            var list = req.OrderByDescending(m => m.Date).Skip((page - 1) * pageSize).Take(pageSize).ToList();
-            StaticPagedList<SupportRequestsVM> model = new StaticPagedList<SupportRequestsVM>(list, page, pageSize, TotalCount);
-            return View(model);
-        }
-        public ActionResult SupportResults(long SupportNo) // destek-detay-biten.html - destek-detay-tam-biten
-        {
-            var message = new SupportMessagesVM();
-            var messageList = new List<SupportMessageList>();
-            var Files = new List<SupportFileList>();
-            Files.Add(new SupportFileList()
-            {
-                FileName = "Tester.jpg",
-                FileUrl = "#"
-            });
-            var msgDate = DateTime.Now;
-            for (int i = 0; i < 10; i++)
-            {
-                messageList.Add(new SupportMessageList()
+                var supportDetailsResponse = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), item.ID);
+                if (supportDetailsResponse.ResponseMessage.ErrorCode == 0)
                 {
-                    Files = i == 7 ? Files : null,
-                    Message = "Bu bir test mesajıdır.",
-                    MessageDate = msgDate.AddDays(-(i * 7)),
-                    SenderName = i % 2 == 1 ? "Onur Civanoğlu" : "Müşteri Temsilcisi",
-                    SenderType = i % 2 == 1 ? SupportMessageSenderType.Customer : SupportMessageSenderType.Agent,
-                    State = SupportNo == 1 ? "TAMAMLANDI" : SupportNo == 2 ? "İŞLEMDE" : "TAMAMLANDI",
-                    SupportState = SupportNo == 1 ? SupportState.Complete : SupportNo == 2 ? SupportState.Processing : SupportState.Complete,
+                    var supportDetails = new
+                    {
+                        lastMessage = supportDetailsResponse.SupportDetailMessagesResponse.SupportMessages.OrderByDescending(s => s.MessageDate).FirstOrDefault().Message,
+                        IsCustomer = supportDetailsResponse.SupportDetailMessagesResponse.SupportMessages.OrderByDescending(s => s.MessageDate).FirstOrDefault().IsCustomer,
+                        supportDisplayType = supportDetailsResponse.SupportDetailMessagesResponse.SupportRequestDisplayType.SupportRequestDisplayTypeId
+                    };
+                    keyValuePairs.Add(item.ID, new SupportRequestsAdditional()
+                    {
+                        IsCustomer = supportDetails.IsCustomer,
+                        LastMessage = supportDetails.lastMessage,
+                        SupportDisplayType = supportDetails.supportDisplayType
+                        
+                    });
+                }
+            }
+            var supportRequestList = supportRequests.GetCustomerSupportListResponse != null ? supportRequests.GetCustomerSupportListResponse.OrderByDescending(s => s.Date).Select(s => new SupportRequestsViewModel()
+            {
+                SupportDisplayType = (SupportRequestDisplayTypes)keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.SupportDisplayType,
+                SupportId = s.ID,
+                Date = s.Date,
+                ApprovalDate = s.ApprovalDate,
+                SupportNo = s.SupportNo,
+                State = s.StateText,
+                StateId = s.State,
+                Department = s.SupportRequestType,
+                SupportRequestType = s.SupportRequestType,
+                SupportRequestSubType = s.SupportRequestSubType,
+                Note = keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.LastMessage,
+                ChangeType = keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.IsCustomer ? ChangeType.Customer : ChangeType.Agent
 
-                });
-            }
-            if (SupportNo == 1)
+            }).AsQueryable() : Enumerable.Empty<SupportRequestsViewModel>().AsQueryable();
+
+            SetupPages(page, ref supportRequestList, 10);
+
+            return View(supportRequestList.ToList());
+        }
+        public ActionResult SupportResults(long ID)
+        {
+            var supportDetails = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), ID);
+            if (supportDetails.ResponseMessage.ErrorCode != 0)
             {
-                message = new SupportMessagesVM()
-                {
-                    State = "TAMAMLANDI",
-                    SupportState = SupportState.Complete,
-                    SupportNo = SupportNo,
-                    AgentID = 1,
-                    AgentName = "Müşteri Temsilcisi",
-                    ChangeType = ChangeType.Agent,
-                    CustomerFullName = "Onur Civanoğlu",
-                    Department = "TEKNİK DESTEK",
-                    SupportDate = DateTime.Now,
-                    SupportMessageList = messageList,
-                    SupportRequestName = "BAĞLANTI SORUNU",
-                    SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                };
-                return View(message);
+                return RedirectToAction("SupportRequests", "Support");
             }
-            if (SupportNo == 2)
+            SupportMessagesViewModel supportMessages = new SupportMessagesViewModel()
             {
-                message = new SupportMessagesVM()
+                SupportDisplayType = (SupportRequestDisplayTypes)supportDetails.SupportDetailMessagesResponse.SupportRequestDisplayType.SupportRequestDisplayTypeId,
+                SupportRequestName = supportDetails.SupportDetailMessagesResponse.SupportRequestName,
+                SupportRequestSummary = supportDetails.SupportDetailMessagesResponse.SupportRequestSubName,
+                Department = supportDetails.SupportDetailMessagesResponse.SupportRequestName,
+                SupportNo = supportDetails.SupportDetailMessagesResponse.SupportNo,
+                State = supportDetails.SupportDetailMessagesResponse.State.StateName,
+                SupportDate = supportDetails.SupportDetailMessagesResponse.SupportDate,
+                ID = ID,
+                StateId = supportDetails.SupportDetailMessagesResponse.State.StateId,
+                SupportMessageList = supportDetails.SupportDetailMessagesResponse.SupportMessages.Select(s => new SupportMessageList()
                 {
-                    State = "İŞLEMDE",
-                    SupportState = SupportState.Processing,
-                    SupportNo = SupportNo,
-                    AgentID = 1,
-                    AgentName = "Müşteri Temsilcisi",
-                    ChangeType = null,
-                    CustomerFullName = "Onur Civanoğlu",
-                    Department = "TEKNİK DESTEK",
-                    SupportDate = DateTime.Now,
-                    SupportMessageList = messageList,
-                    SupportRequestName = "BAĞLANTI SORUNU",
-                    SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                };
-                return View(message);
-            }
-            else
-            {
-                message = new SupportMessagesVM()
-                {
-                    State = "TAMAMLANDI",
-                    SupportState = SupportState.Complete,
-                    SupportNo = SupportNo,
-                    AgentID = 1,
-                    AgentName = "Müşteri Temsilcisi",
-                    ChangeType = ChangeType.Customer,
-                    CustomerFullName = "Onur Civanoğlu",
-                    Department = "TEKNİK DESTEK",
-                    SupportDate = DateTime.Now,
-                    SupportMessageList = messageList,
-                    SupportRequestName = "BAĞLANTI SORUNU",
-                    SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                };
-                return View(message);
-            }
+                    Files = null,
+                    IsCustomer = s.IsCustomer,
+                    SenderName = s.IsCustomer ? User.Identity.Name.Length > 20 ? User.Identity.Name.Substring(0, 20) + "..." : User.Identity.Name
+                          : CMS.Localization.Common.Agent,
+                    Message = s.Message,
+                    MessageDate = s.MessageDate,
+
+                })
+            };
+            return View(supportMessages);
         }
         public ActionResult NewRequests() //yeni-talep.html
         {
-            var req = new NewRequestVM();
-            return View(req);
+            var hasActiveRequest = new ServiceUtilities().HasOpenRequest(User.GiveUserId());
+            if (hasActiveRequest.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), hasActiveRequest.ResponseMessage.ErrorMessage, false);
+            }
+            if (hasActiveRequest.HasActiveRequest == true)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.HasActiveRequest, false);
+            }
+            ViewBag.RequestTypes = new ServiceUtilities().GetSupportTypes();
+            ViewBag.SubRequestTypes = new SelectList(Enumerable.Empty<object>());
+            return View();
+        }
+        [HttpPost]
+        public ActionResult GetSubRequestTypes(int RequestTypeId)
+        {
+            var list = new ServiceUtilities().GetSupportSubTypes(RequestTypeId).Select(sst => new { Text = sst.Text, Value = sst.Value }).ToList();
+            list.Insert(0, new { Text = CMS.Localization.Common.Choose, Value = "" });
+            return Json(list.ToArray());
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult NewRequests(NewRequestVM request) //yeni-talep.html
+        public ActionResult NewRequests(NewRequestViewModel request) //yeni-talep.html
         {
-            if (request.NewRequestID == null)
+            if (request.Description != null)
+                request.Description = request.Description.Trim(new char[] { ' ', '\n', '\r' });
+            ModelState.Clear();
+            TryValidateModel(request);
+            if (!ModelState.IsValid)
             {
-                return Json(new { errorCode = 1, errorMessage = "Lütfen Bir Konu Seçiniz" }, JsonRequestBehavior.AllowGet);
+                ViewBag.RequestTypes = new ServiceUtilities().GetSupportTypes(request.RequestTypeId);
+                ViewBag.SubRequestTypes = new ServiceUtilities().GetSupportSubTypes(request.RequestTypeId, request.SubRequestTypeId);
+                return View(request);
             }
-            return Json(new { errorCode = 0, errorMessage = "Destek Kaydı Başarıyla Açıldı" }, JsonRequestBehavior.AllowGet);
+            var hasActiveRequest = new ServiceUtilities().HasOpenRequest(User.GiveUserId());
+            if (hasActiveRequest.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), hasActiveRequest.ResponseMessage.ErrorMessage, false);
+            }
+            if (hasActiveRequest.HasActiveRequest == true)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.HasActiveRequest, false);
+            }
+            var supportRegister = new ServiceUtilities().SupportRegister(request, User.GiveUserId());
+            if (supportRegister.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, false);
+            }
+            return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, true);
         }
         public ActionResult SupportRequestTable()
         {
-            var req = new List<CMS.ViewModels.Supports.SupportRequestsVM>();
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
+            var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
+            if (supportRequests.ResponseMessage.ErrorCode != 0)
             {
-                ChangeType = ChangeType.Agent,
-                Date = DateTime.Now.AddDays(-1),
-                Department = "TEKNİK DESTEK",
-                State = "TAMAMLANDI",
-                SupportNo = 1,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Complete,
-                CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = ChangeType.Agent,
-                Date = DateTime.Now.AddDays(-1),
-                Department = "TEKNİK DESTEK",
-                State = "TAMAMLANDI",
-                SupportNo = 1,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Complete,
-                CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = null,
-                Date = DateTime.Now.AddDays(-2),
-                Department = "TEKNİK DESTEK",
-                State = "İŞLEMDE",
-                SupportNo = 2,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Processing,
-                CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = ChangeType.Customer,
-                Date = DateTime.Now.AddDays(-2),
-                Department = "TEKNİK DESTEK",
-                State = "TAMAMLANDI",
-                SupportNo = 3,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Complete,
-                CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
-            });
-            req.Add(new CMS.ViewModels.Supports.SupportRequestsVM()
-            {
-                ChangeType = null,
-                Date = DateTime.Now.AddDays(-2),
-                Department = "TEKNİK DESTEK",
-                State = "İŞLEMDE",
-                SupportNo = 2,
-                SupportRequestName = "BAĞLANTI SORUNU",
-                SupportRequestSummary = "İNTERNETE BAĞLANMADA SORUN YAŞIYORUM",
-                SupportState = SupportState.Processing,
-                CompletedDate = DateTime.Now.ToString("dd.MM.yyyy")
-            });
-            return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", req.OrderByDescending(m => m.Date).Take(4).ToList());
-        }
-        public ActionResult RequestData(int NewRequestID)
-        {
-            var label = string.Empty;
-            var list = new List<SelectListItem>();
-            switch ((RequestTypes)NewRequestID)
-            {
-                case RequestTypes.Transfer:
-                    {
-                        label = "NAKİL";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Nakil Talebinde Bulunmak İstiyorum",
-                            Value = "1"
-                        });
-                    }
-                    break;
-                case RequestTypes.Fault:
-                    {
-                        label = "ARIZA";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "ADSL Işığı Yanmıyor",
-                            Value = "1"
-                        });
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Sık Sık Kopma Problemi",
-                            Value = "2"
-                        });
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "İnternet Işığı Yanmıyor",
-                            Value = "3"
-                        });
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Bazı Sayfalara Erişemiyorum",
-                            Value = "4"
-                        });
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Düşük Hız Alıyorum",
-                            Value = "5"
-                        });
-                    }
-                    break;
-                case RequestTypes.Invoice:
-                    {
-                        label = "FATURA";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Faturam Yüksek Geldi",
-                            Value = "1"
-                        });
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Faturamı Ödeyemiyorum",
-                            Value = "2"
-                        });
-                    }
-                    break;
-                case RequestTypes.Tariff:
-                    {
-                        label = "TARİFE";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Tarifemi Değiştirmek İstiyorum",
-                            Value = "1"
-                        });
-                    }
-                    break;
-                case RequestTypes.Freeze:
-                    {
-                        label = "DONDURMA";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Hizmetimi Bir Süreliğine Dondurmak İstiyorum",
-                            Value = "1"
-                        });
-                    }
-                    break;
-                case RequestTypes.StaticIP:
-                    {
-                        label = "STATİK IP";
-                        list.Add(new SelectListItem()
-                        {
-                            Text = "Statik IP Hizmeti Almak İstiyorum",
-                            Value = "1"
-                        });
-                    }
-                    break;
-                case RequestTypes.Others:
-                    break;
-                default:
-                    break;
+                return View(Enumerable.Empty<SupportRequestsViewModel>());
             }
-            return Json(new { label = string.Format("Talebiniz Nedir ? ({0})", label), list = list.Select(m => new { Text = m.Text, Value = m.Value }) }, JsonRequestBehavior.AllowGet);
+            Dictionary<long, SupportRequestsAdditional> keyValuePairs = new Dictionary<long, SupportRequestsAdditional>();
+            foreach (var item in supportRequests.GetCustomerSupportListResponse)
+            {
+                var supportDetailsResponse = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), item.ID);
+                if (supportDetailsResponse.ResponseMessage.ErrorCode == 0)
+                {
+                    var supportDetails = new
+                    {
+                        lastMessage = supportDetailsResponse.SupportDetailMessagesResponse.SupportMessages.OrderByDescending(s => s.MessageDate).FirstOrDefault().Message,
+                        IsCustomer = supportDetailsResponse.SupportDetailMessagesResponse.SupportMessages.OrderByDescending(s => s.MessageDate).FirstOrDefault().IsCustomer
+                    };
+                    keyValuePairs.Add(item.ID, new SupportRequestsAdditional()
+                    {
+                        IsCustomer = supportDetails.IsCustomer,
+                        LastMessage = supportDetails.lastMessage
+                    });
+                }
+            }
+            var supportRequestList = supportRequests.GetCustomerSupportListResponse != null ? supportRequests.GetCustomerSupportListResponse.OrderByDescending(s => s.Date).Select(s => new SupportRequestsViewModel()
+            {
+                SupportId = s.ID,
+                Date = s.Date,
+                ApprovalDate = s.ApprovalDate,
+                SupportNo = s.SupportNo,
+                State = s.StateText,
+                StateId = s.State,
+                Department = s.SupportRequestType,
+                SupportRequestType = s.SupportRequestType,
+                SupportRequestSubType = s.SupportRequestSubType,
+                Note = keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.LastMessage,
+                ChangeType = keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.IsCustomer ? ChangeType.Customer : ChangeType.Agent
+
+            }).ToArray() : Enumerable.Empty<SupportRequestsViewModel>().ToArray();
+            return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", supportRequestList.OrderByDescending(m => m.Date).Take(4).ToList());
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult NewSupportMessage(RequestSupportMessage requestMessage)
+        {
+            if (requestMessage.Message != null)
+                requestMessage.Message = requestMessage.Message.Trim(new char[] { ' ', '\n', '\r' });
+            if (requestMessage.IsSolved)
+            {
+                if (string.IsNullOrEmpty(requestMessage.Message))
+                    requestMessage.Message = CMS.Localization.Common.ProblemSolved;
+            }
+            ModelState.Clear();
+            TryValidateModel(requestMessage);
+            if (!ModelState.IsValid)
+            {
+                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), ModelErrorMessages(ModelState), false);
+            }
+            var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, User.GiveUserId());
+            //generalLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
+            if (newMessageResponse.ResponseMessage.ErrorCode == 5) // has active request
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
+            }
+            return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
+        }
+        //public ActionResult RequestData(int NewRequestID)
+        //{
+        //    var label = string.Empty;
+        //    var list = new List<SelectListItem>();
+        //    switch ((RequestTypes)NewRequestID)
+        //    {
+        //        case RequestTypes.Transfer:
+        //            {
+        //                label = "NAKİL";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Nakil Talebinde Bulunmak İstiyorum",
+        //                    Value = "1"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.Fault:
+        //            {
+        //                label = "ARIZA";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "ADSL Işığı Yanmıyor",
+        //                    Value = "1"
+        //                });
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Sık Sık Kopma Problemi",
+        //                    Value = "2"
+        //                });
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "İnternet Işığı Yanmıyor",
+        //                    Value = "3"
+        //                });
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Bazı Sayfalara Erişemiyorum",
+        //                    Value = "4"
+        //                });
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Düşük Hız Alıyorum",
+        //                    Value = "5"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.Invoice:
+        //            {
+        //                label = "FATURA";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Faturam Yüksek Geldi",
+        //                    Value = "1"
+        //                });
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Faturamı Ödeyemiyorum",
+        //                    Value = "2"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.Tariff:
+        //            {
+        //                label = "TARİFE";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Tarifemi Değiştirmek İstiyorum",
+        //                    Value = "1"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.Freeze:
+        //            {
+        //                label = "DONDURMA";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Hizmetimi Bir Süreliğine Dondurmak İstiyorum",
+        //                    Value = "1"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.StaticIP:
+        //            {
+        //                label = "STATİK IP";
+        //                list.Add(new SelectListItem()
+        //                {
+        //                    Text = "Statik IP Hizmeti Almak İstiyorum",
+        //                    Value = "1"
+        //                });
+        //            }
+        //            break;
+        //        case RequestTypes.Others:
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    return Json(new { label = string.Format("Talebiniz Nedir ? ({0})", label), list = list.Select(m => new { Text = m.Text, Value = m.Value }) }, JsonRequestBehavior.AllowGet);
+        //}        
+        private string ModelErrorMessages(ModelStateDictionary ModelState)
+        {
+            return string.Join(Environment.NewLine, ModelState.Values.Select(m => string.Join(Environment.NewLine, m.Errors.Where(s => !string.IsNullOrEmpty(s.ErrorMessage)).Select(s => $"<div class='text-red'>{s.ErrorMessage}<div>"))));
         }
     }
 }

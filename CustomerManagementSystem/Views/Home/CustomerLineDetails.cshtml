@@ -5,90 +5,12 @@
     ViewBag.Title = Common.CustomerLineDetails;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="container">
+<div id="line-field" class="container">
     <div class="flex-row-fluid ">
         <div class="card card-custom card-stretch">
             <div class="card-header py-3">
                 <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">@Common.LineDetailsHeader</h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">
-                        @Common.LineDetailsDescription
-                    </span>
-                </div>
-                <div class="card-toolbar">
-                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
-                        <i class="flaticon-home-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card card-custom">
-        <div class="card-body py-12">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="font-weight-bold mb-10 text-dark">@Common.LineTechnicalState</h3>
-                    <div class="mb-5">
-                        <div class="table-responsive">
-                            <table class="table table-light table-light-info">
-                                <thead>
-                                    <tr>
-                                        <th class="table-center">@Common.Description</th>
-                                        <th class="table-center">@Common.StateInfo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.XDSLNo)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.XDSLNo)</td>
-                                    </tr>
-                                    <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.LineState)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.LineState)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.PhysicalState)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.PhysicalState)</td>
-                                    </tr>
-                                    <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.DownloadSpeed)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.DownloadSpeed)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.UploadSpeed)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.UploadSpeed)</td>
-                                    </tr>
-                                    <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.IPAddress)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.IPAddress)</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font-weight-bold table-row-title text-uppercase">
-                                            @Html.DisplayNameFor(m => m.XDSLType)
-                                        </td>
-                                        <td class="table-center">@Html.DisplayFor(m => m.XDSLType)</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--end::Table-->
-                    </div>
-                    <button type="button" class="btn btn-md btn-light-primary spinner-left mr-3" id="kt_btn_1">
-                        @Common.RefreshState
-                    </button>
+                    <h3 class="card-label font-weight-bolder text-dark">@Common.PleaseWait</h3>
                 </div>
             </div>
         </div>
@@ -96,4 +18,15 @@
 </div>
 @section scripts{
     @Scripts.Render("~/assets/js/pages/features/custom/spinners.js")
+<script>
+        $.ajax({
+            url: '@Url.Action("CustomerLineDetails", "Home")',
+            method: 'GET',
+            complete: function (data, status) {
+                if (status == "success") {
+                    $('#line-field').html(data.responseText);
+                }
+            }
+        });
+</script>
 }

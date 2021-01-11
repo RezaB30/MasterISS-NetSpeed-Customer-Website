@@ -13,15 +13,22 @@ namespace CMS.ViewModels.Home
         public string XDSLNo { get; set; }
         [Display(Name = "LineState", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string LineState { get; set; }   //online
-        [Display(Name = "PhysicalState", ResourceType = typeof(CMS.Localization.Models.Models))]
-        public string PhysicalState { get; set; } //açık
+        public string LineStateValue { get; set; }   //online
+        //[Display(Name = "PhysicalState", ResourceType = typeof(CMS.Localization.Models.Models))]
+        //public string PhysicalState { get; set; } //açık
         [Display(Name = "DownloadSpeed", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [UIHint("TextWithPlaceholder")]
         public string DownloadSpeed { get; set; }
         [Display(Name = "UploadSpeed", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [UIHint("TextWithPlaceholder")]
         public string UploadSpeed { get; set; }
         [Display(Name = "IPAddress", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string IPAddress { get; set; }
         [Display(Name = "XDSLType", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string XDSLType { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "DownloadNoiseMargin")]
+        public string DownloadMargin { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "UploadNoiseMargin")]
+        public string UploadMargin { get; set; }
     }
 }

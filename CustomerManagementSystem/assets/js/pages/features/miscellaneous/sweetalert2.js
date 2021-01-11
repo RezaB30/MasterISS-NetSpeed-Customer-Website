@@ -39,38 +39,7 @@ var KTSweetAlert2Demo = function () {
 
             });
 
-        });
-
-        $("#send_req").click(function (e) {
-            var _form = $('form').serialize();
-            $.ajax({
-                url: '/Support/NewRequests',
-                data: _form,
-                method: 'POST',
-                complete: function (data, status) {
-                    try {
-                        if (status == "success") {
-                            var result = data.responseJSON;
-                            var icon = result.errorCode == 0 ? "success" : result.errorCode == 1 ? "warning" : "error";
-                            Swal.fire({
-                                title: result.errorMessage,
-                                icon: icon,
-                                buttonsStyling: true,
-                                confirmButtonText: "Tamam"
-                            });
-                        }
-                    } catch (e) {
-                        console.log(e);
-                        Swal.fire({
-                            title: "Hata! İşlem Başarısız",
-                            icon: "error",
-                            buttonsStyling: true,
-                            confirmButtonText: "Tamam"
-                        });
-                    }
-                }
-            });
-        });
+        });        
 
         $('#kt_sweetalert_demo_3_2').click(function (e) {
             Swal.fire("Good job!", "You clicked the button!", "error");

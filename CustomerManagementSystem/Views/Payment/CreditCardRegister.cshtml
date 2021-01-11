@@ -1,4 +1,5 @@
-﻿@using CMS.Localization;
+﻿@model CMS.ViewModels.Payment.AutoPaymentCardViewModel
+@using CMS.Localization;
 
 @{
     ViewBag.Title = Common.AutoPaymentAndAddCard;
@@ -19,7 +20,7 @@
                     </span>
                 </div>
                 <div class="card-toolbar">
-                    <a href="@Url.Action("PaymentInstruction","Payment")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
+                    <a href="@Url.Action("AutoPayment","Payment")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
                         @Common.RegisteredCards
                     </a>
                     <a href="/" class="btn btn-icon btn-sm btn-light-info">
@@ -57,27 +58,42 @@
     @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
     <script>
         $('input').keyup(function () {
-            var id = $(this).attr("id");
-            $('span[data-valmsg-for="' + id + '"]').text("");
+            //var id = $(this).attr("id");
+            //$('span[data-valmsg-for="' + id + '"]').text("");
+
         })
-        function AddCard(data, status) {
-            if (status == "success") {
-                if (data.responseJSON) {
-                    if (!data.valid) {
-                        swal.fire({
-                            icon: 'success',
-                            title: '',
-                            text: 'İşlem Başarılı. Onay sayfasına gitmek için tıklayın',
-                            confirmButtonText: 'Tamam'
-                        }).then((result) => {
-                            window.location.href = "/Payment/CreditCardValidation";
-                        });
-                    }
-                }
-                else {
-                    $('body').html(data.responseText);
+        $('#CardNo').bind('input', function () {
+            var value = $(this).val().substring(0, 19);
+            value = value.replace(/\-/g, '');
+            var length = value.length;
+            for (var i = 0; i < value.length; i++) {
+                if ((i != 0) && ((i % 4) - Math.floor(i / 4) + 1 == 0)) {
+                    if (value[i] != '-')
+                        value = [value.slice(0, i), '-', value.slice(i)].join('');
+                    length++;
                 }
             }
-        }
+
+            $(this).val(value);
+        });
+                        //function AddCard(data, status) {
+                        //    if (status == "success") {
+                        //        if (data.responseJSON) {
+                        //            if (!data.valid) {
+                        //                swal.fire({
+                        //                    icon: 'success',
+                        //                    title: '',
+                        //                    text: 'İşlem Başarılı. Onay sayfasına gitmek için tıklayın',
+                        //                    confirmButtonText: 'Tamam'
+                        //                }).then((result) => {
+                        //                    window.location.href = "/Payment/CreditCardValidation";
+                        //                });
+                        //            }
+                        //        }
+                        //        else {
+                        //            $('body').html(data.responseText);
+                        //        }
+                        //    }
+                        //}
     </script>
 }

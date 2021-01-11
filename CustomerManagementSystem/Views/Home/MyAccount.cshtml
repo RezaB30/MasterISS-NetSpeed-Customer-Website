@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Home.MyAccountVM
+﻿@model CMS.ViewModels.Home.MyAccountViewModel
 
 @using CMS.Localization;
 
@@ -77,25 +77,10 @@
                                     </tr>
                                     <tr>
                                         <td class="font-weight-bold table-row-title">
-                                            @Html.DisplayNameFor(m => m.SubscriptionStateTypes)
+                                            @Html.DisplayNameFor(m => m.SubscriptionState)
                                         </td>
                                         <td class="table-center">
-                                            @if (Model.SubscriptionStateTypes == CMS.ViewModels.Home.SubscriptionStateTypes.Active)
-                                            {
-                                                <span class="label px-4 label-lg label-success label-inline mr-2 text-uppercase">@Common.Active</span>
-                                            }
-                                            else
-                                            {
-                                                if (Model.SubscriptionStateTypes == CMS.ViewModels.Home.SubscriptionStateTypes.Cancelled)
-                                                {
-                                                    <span class="label px-4 label-lg label-danger label-inline mr-2 text-uppercase">@Common.Cancel</span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="label px-4 label-lg label-warning label-inline mr-2 text-uppercase">@Common.Freeze</span>
-                                                }
-                                            }
-
+                                            <span class="label px-4 label-lg label-success label-inline mr-2 text-uppercase">@Html.DisplayFor(m => m.SubscriptionState)</span>
                                         </td>
                                     </tr>
                                     <tr class="bg-gray-100">
@@ -133,18 +118,28 @@
                                             @Html.DisplayNameFor(m => m.PassedInvoice)
                                         </td>
                                         <td class="table-center">
-                                            @if (Model.PassedInvoice > 0)
+                                            @if (Model.PassedInvoice == null)
                                             {
                                                 <span class="label px-4 label-lg label-danger label-inline mr-2">
-                                                    @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
+                                                    -
                                                 </span>
                                             }
                                             else
                                             {
-                                                <span class="label px-4 label-lg label-success label-inline mr-2">
-                                                    @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
-                                                </span>
+                                                if (Model.PassedInvoice > 0)
+                                                {
+                                                    <span class="label px-4 label-lg label-danger label-inline mr-2">
+                                                        @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="label px-4 label-lg label-success label-inline mr-2">
+                                                        @Html.DisplayFor(m => m.PassedInvoice) @Common.Count
+                                                    </span>
+                                                }
                                             }
+
 
                                         </td>
 

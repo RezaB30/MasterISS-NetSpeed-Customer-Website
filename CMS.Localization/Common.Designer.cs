@@ -97,11 +97,11 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Otomatik Ödeme Aktif Et.
+        ///   Looks up a localized string similar to Otomatik Ödemeyi Etkinleştir.
         /// </summary>
-        public static string ActivateAutoPayment {
+        public static string ActivateAutomaticPayment {
             get {
-                return ResourceManager.GetString("ActivateAutoPayment", resourceCulture);
+                return ResourceManager.GetString("ActivateAutomaticPayment", resourceCulture);
             }
         }
         
@@ -138,6 +138,15 @@ namespace CMS.Localization {
         public static string AddNote {
             get {
                 return ResourceManager.GetString("AddNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Müşteri Temsilcisi.
+        /// </summary>
+        public static string Agent {
+            get {
+                return ResourceManager.GetString("Agent", resourceCulture);
             }
         }
         
@@ -192,6 +201,33 @@ namespace CMS.Localization {
         public static string AutoPaymentAndAddCardDescription {
             get {
                 return ResourceManager.GetString("AutoPaymentAndAddCardDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Otomatik Ödeme Talimatı - Kartı Sil.
+        /// </summary>
+        public static string AutoPaymentAndRemoveCard {
+            get {
+                return ResourceManager.GetString("AutoPaymentAndRemoveCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geri.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatura ve Ödemeler.
+        /// </summary>
+        public static string BillsAndPayments {
+            get {
+                return ResourceManager.GetString("BillsAndPayments", resourceCulture);
             }
         }
         
@@ -395,6 +431,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İndirim toplamı.
+        /// </summary>
+        public static string DiscountAmount {
+            get {
+                return ResourceManager.GetString("DiscountAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abonelik ile ilgili evrak ve belgelerinize erişim sağlayabilir ve indirebilirsiniz..
         /// </summary>
         public static string DocumentsDescription {
@@ -418,6 +463,15 @@ namespace CMS.Localization {
         public static string DownloadAsPdf {
             get {
                 return ResourceManager.GetString("DownloadAsPdf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paketi Uzat.
+        /// </summary>
+        public static string ExtendPacket {
+            get {
+                return ResourceManager.GetString("ExtendPacket", resourceCulture);
             }
         }
         
@@ -503,6 +557,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Geçersiz jeton!.
+        /// </summary>
+        public static string InvalidTokenKey {
+            get {
+                return ResourceManager.GetString("InvalidTokenKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fatura.
         /// </summary>
         public static string Invoice {
@@ -512,7 +575,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fatura &amp; Ödemeler.
+        ///   Looks up a localized string similar to Fatura ve Ödemeler.
         /// </summary>
         public static string InvoicePayments {
             get {
@@ -689,6 +752,15 @@ namespace CMS.Localization {
         public static string MailPlaceholder {
             get {
                 return ResourceManager.GetString("MailPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mesaj.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
             }
         }
         
@@ -873,6 +945,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tümünü Öde.
+        /// </summary>
+        public static string PayAll {
+            get {
+                return ResourceManager.GetString("PayAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fatura Ödeme.
         /// </summary>
         public static string PayingBills {
@@ -896,6 +977,15 @@ namespace CMS.Localization {
         public static string PaymentSecureDescription {
             get {
                 return ResourceManager.GetString("PaymentSecureDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kredi kartları alınamadı. Lütfen daha sonra tekrar deneyiniz..
+        /// </summary>
+        public static string PaymentWithCardNotAvailable {
+            get {
+                return ResourceManager.GetString("PaymentWithCardNotAvailable", resourceCulture);
             }
         }
         
@@ -932,6 +1022,24 @@ namespace CMS.Localization {
         public static string PhonePlaceholder {
             get {
                 return ResourceManager.GetString("PhonePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İşleniyor... Lütfen Bekleyin...
+        /// </summary>
+        public static string PleaseWait {
+            get {
+                return ResourceManager.GetString("PleaseWait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ödeme başarılı..
+        /// </summary>
+        public static string POSSuccessMessage {
+            get {
+                return ResourceManager.GetString("POSSuccessMessage", resourceCulture);
             }
         }
         
@@ -977,6 +1085,15 @@ namespace CMS.Localization {
         public static string QuickPay {
             get {
                 return ResourceManager.GetString("QuickPay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kota Paketleri.
+        /// </summary>
+        public static string QuotaPackages {
+            get {
+                return ResourceManager.GetString("QuotaPackages", resourceCulture);
             }
         }
         
@@ -1233,6 +1350,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Abone bulunamadı!.
+        /// </summary>
+        public static string SubscriberNotFound {
+            get {
+                return ResourceManager.GetString("SubscriberNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destek &amp; Talepler.
         /// </summary>
         public static string SupportAndRequests {
@@ -1332,11 +1458,11 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SON 4 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ.
+        ///   Looks up a localized string similar to SON 3 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ.
         /// </summary>
-        public static string UsageInfoForLastFourMonth {
+        public static string UsageInfoHeader {
             get {
-                return ResourceManager.GetString("UsageInfoForLastFourMonth", resourceCulture);
+                return ResourceManager.GetString("UsageInfoHeader", resourceCulture);
             }
         }
         

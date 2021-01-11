@@ -46,6 +46,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\AccountantType.cs" />
+    <Compile Include="Enums\AutoPaymentType.cs" />
+    <Compile Include="Enums\BillState.cs" />
+    <Compile Include="Enums\CustomerState.cs" />
+    <Compile Include="Enums\PaymentType.cs" />
+    <Compile Include="Enums\SubscriptionPaidType.cs" />
     <Compile Include="Message.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

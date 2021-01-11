@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Supports.NewRequestVM
+﻿@model CMS.ViewModels.Supports.NewRequestViewModel
 
 @using CMS.Localization;
 @{
@@ -29,7 +29,8 @@
             </div>
             <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
                 <div class="col-xl-12 col-xxl-7">
-                    <form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_projects_add_form">
+                    @using (Html.BeginForm("NewRequests", "Support", new { @class = "form fv-plugins-bootstrap fv-plugins-framework", @id = "kt_projects_add_form" }))
+                    {
                         @Html.AntiForgeryToken()
                         <div class="row">
                             <div class="col-xl-12">
@@ -42,34 +43,34 @@
                                 </div>
                                 <div class="form-group row fv-plugins-icon-container">
                                     <label class="col-xl-3 col-lg-3 col-form-label">
-                                        @Common.HelpSupportQuestion
+                                        @Html.DisplayNameFor(m => m.RequestTypeId)
                                     </label>
                                     <div class="col-lg-8 col-xl-9">
-                                        @Html.DropDownListFor(m => m.NewRequestID, Model.RequestList, Common.Choose, new { @class = "form-control form-control-lg form-control-solid" })
-                                        <div class="fv-plugins-message-container"></div>
+                                        @Html.DropDownListFor(m => m.RequestTypeId, (SelectList)ViewBag.RequestTypes, Common.HelpSupportQuestion, new { @class = "form-control form-control-lg form-control-solid" })
+                                        <div class="fv-plugins-message-container">@Html.ValidationMessageFor(m => m.RequestTypeId, null, new { @class = "text-danger" })</div>
                                     </div>
                                 </div>
                                 <div class="form-group row fv-plugins-icon-container">
                                     <label id="subLabel" class="col-xl-3 col-lg-3 col-form-label">
-
+                                        @Html.DisplayNameFor(m => m.SubRequestTypeId)
                                     </label>
                                     <div class="col-lg-8 col-xl-9">
-                                        @Html.DropDownListFor(m => m.subRequest, new SelectList(""), new { @class = "form-control form-control-lg form-control-solid d-none" })
-                                        <div class="fv-plugins-message-container"></div>
+                                        @Html.DropDownListFor(m => m.SubRequestTypeId, (SelectList)ViewBag.SubRequestTypes, Common.Choose, new { @class = "form-control form-control-lg form-control-solid" })
+                                        <div class="fv-plugins-message-container">@Html.ValidationMessageFor(m => m.SubRequestTypeId, null, new { @class = "text-danger" })</div>
                                     </div>
                                 </div>
                                 <div class="form-group row align-items-center fv-plugins-icon-container">
                                     <label class="col-xl-3 col-lg-3 col-form-label">
-                                        @Common.SupportRequestExplain
+                                        @Html.DisplayNameFor(m => m.Description)
                                     </label>
                                     <div class="col-lg-8 col-xl-9">
                                         <div class="form-group">
-                                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control form-control-solid form-control-lg", @rows = "3" })
+                                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control form-control-solid form-control-lg", @rows = "3", @maxlength = "500" })
                                             <span class="form-text text-muted">
-                                               @Common.SupportRequestExplainText
+                                                @Common.SupportRequestExplainText
                                             </span>
                                         </div>
-                                        <div class="fv-plugins-message-container"></div>
+                                        <div class="fv-plugins-message-container">@Html.ValidationMessageFor(m => m.Description, null, new { @class = "text-danger" })</div>
                                     </div>
                                 </div>
                             </div>
@@ -78,15 +79,14 @@
                             <div class="mr-2">
                             </div>
                             <div>
-                                <button type="button" class="btn btn-danger font-weight-bolder text-uppercase px-10 py-2 action-submit" id="send_req">
+                                <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-10 py-2 action-submit">
                                     @Common.Send
                                 </button>
                             </div>
                         </div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </form>
+                    }
+                    @*<form class="form fv-plugins-bootstrap fv-plugins-framework" id="kt_projects_add_form">
+                        </form>*@
                 </div>
             </div>
         </div>
@@ -94,41 +94,32 @@
 </div>
 @section scripts{
     @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
+
     <script>
-        $('#NewRequestID').change(function () {
-            try {
-                ClearList();
-                if ($(this).val()) {
-                    var val = $(this).val();
-                    $.ajax({
-                        url: '/Support/RequestData',
-                        method: 'GET',
-                        data: { NewRequestID: val },
-                        complete: function (data, status) {
+        $('#RequestTypeId').change(function () {
+            if ($(this).val()) {
+                $.ajax({
+                    url: '@Url.Action("GetSubRequestTypes", "Support")',
+                    method: 'POST',
+                    data: { RequestTypeId: $(this).val() },
+                    complete: function (data, status) {
+                        try {
                             if (status == "success") {
-                                if (data.responseJSON.list.length > 0) {
-                                    $('#subRequest').removeClass("d-none");
-                                    $('#subLabel').text(data.responseJSON.label);
-                                    var list = data.responseJSON.list;
-                                    for (var i = 0; i < list.length; i++) {
-                                        $('#subRequest').append('<option data-offset="10800" value="' + list[i].Value + '">' + list[i].Text + '</option >');
-                                    }
+                                var result = data.responseJSON;
+                                var options = "";
+                                for (var i = 0; i < result.length; i++) {
+                                    options += "<option value='" + result[i].Value + "'>" + result[i].Text + "</option>";
                                 }
-                                else {
-                                    ClearList();
-                                }
+                                $('#SubRequestTypeId').html(options);
                             }
+                        } catch (e) {
+                            console.log(e);
                         }
-                    })
-                }
-            } catch (e) {
-                console.log(e);
+                    }
+                })
+            } else {
+                $('#SubRequestTypeId').children('option[value!=""]').remove();
             }
         });
-        function ClearList() {
-            $('#subLabel').text("");
-            $('#subRequest').html("");
-            $('#subRequest').addClass("d-none");
-        }
     </script>
 }

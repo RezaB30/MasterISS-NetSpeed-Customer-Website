@@ -1,10 +1,12 @@
-﻿<div class="dropdown">
+﻿@using RezaB.Web.Authentication
+
+<div class="dropdown">
     <button class="btn btn-block
                    btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dil Seçiniz
+        @System.Threading.Thread.CurrentThread.CurrentCulture.NativeName
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
-        <a class="dropdown-item" href="#">Türkçe</a>
-        <a class="dropdown-item" href="#">İngilizce</a>
+        <a class="dropdown-item" href="@Url.LanguageLink("tr-tr",ViewContext)">Türkçe</a>
+        <a class="dropdown-item" href="@Url.LanguageLink("en-US",ViewContext)">İngilizce</a>
     </div>
 </div>

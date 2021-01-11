@@ -1,8 +1,8 @@
-﻿@model CMS.ViewModels.Payment.NewCardVM
+﻿@model CMS.ViewModels.Payment.AutoPaymentCardViewModel
 
 @using CMS.Localization;
 
-@using (Ajax.BeginForm("CreditCardRegister", "Payment", new AjaxOptions { HttpMethod = "POST", OnComplete = "AddCard" }, new { @class = "form mt-0 mt-lg-10 fv-plugins-bootstrap fv-plugins-framework", @id = "kt_form" }))
+@using (Html.BeginForm("CreditCardRegister", "Payment", FormMethod.Post, new { @class = "form mt-0 mt-lg-10 fv-plugins-bootstrap fv-plugins-framework", @id = "kt_form" }))
 {
     @Html.AntiForgeryToken()
     <div id="second-content" class="pb-5">
@@ -12,25 +12,25 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="form-group fv-plugins-icon-container">
-                    <label>@Html.DisplayNameFor(m => m.CCName)</label>
-                    @Html.EditorFor(m => m.CCName, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Adı Soyadı", autocomplete = "off" } })
+                    <label>@Html.DisplayNameFor(m => m.CardholderName)</label>
+                    @Html.EditorFor(m => m.CardholderName, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.CardholderName), autocomplete = "off" } })
                     <span class="form-text text-muted">
                         @Common.SetCardFullName
                     </span>
                     <div class="fv-plugins-message-container">
-                        @Html.ValidationMessageFor(m => m.CCName, null, new { @class = "fv-help-block" })
+                        @Html.ValidationMessageFor(m => m.CardholderName, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
             </div>
             <div class="col-xl-6">
                 <div class="form-group fv-plugins-icon-container">
-                    <label>@Html.DisplayNameFor(m => m.CCNumber)</label>
-                    @Html.EditorFor(m => m.CCNumber, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Kart Numarası", autocomplete = "off" } })
+                    <label>@Html.DisplayNameFor(m => m.CardNo)</label>
+                    @Html.EditorFor(m => m.CardNo, new { htmlAttributes = new { @placeholder = "1234-1234-1234-1234", @maxlength = 19, @class = "form-control form-control-solid form-control-lg", autocomplete = "off" } })
                     <span class="form-text text-muted">
                         @Common.SetCardNumber
                     </span>
                     <div class="fv-plugins-message-container">
-                        @Html.ValidationMessageFor(m => m.CCNumber, null, new { @class = "fv-help-block" })
+                        @Html.ValidationMessageFor(m => m.CardNo, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
             </div>
@@ -39,28 +39,28 @@
             <div class="col-xl-4">
                 <div class="form-group fv-plugins-icon-container">
                     <label>
-                        @Html.DisplayNameFor(m => m.CCMonth)
+                        @Html.DisplayNameFor(m => m.ExpirationMonth)
                     </label>
-                    @Html.EditorFor(m => m.CCMonth, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Son Kullanma Ayı", autocomplete = "off" } })
+                    @Html.EditorFor(m => m.ExpirationMonth, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationMonth), autocomplete = "off" } })
                     <span class="form-text text-muted">
                         @Common.SetCardExpirationMonth
                     </span>
                     <div class="fv-plugins-message-container">
-                        @Html.ValidationMessageFor(m => m.CCMonth, null, new { @class = "fv-help-block" })
+                        @Html.ValidationMessageFor(m => m.ExpirationMonth, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
             </div>
             <div class="col-xl-4">
                 <div class="form-group fv-plugins-icon-container">
                     <label>
-                        @Html.DisplayNameFor(m => m.CCYear)
+                        @Html.DisplayNameFor(m => m.ExpirationYear)
                     </label>
-                    @Html.EditorFor(m => m.CCYear, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = "Son Kullanma Yılı", autocomplete = "off" } })
+                    @Html.EditorFor(m => m.ExpirationYear, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationYear), autocomplete = "off" } })
                     <span class="form-text text-muted">
                         @Common.SetCardExpirationYear
                     </span>
                     <div class="fv-plugins-message-container">
-                        @Html.ValidationMessageFor(m => m.CCYear, null, new { @class = "fv-help-block" })
+                        @Html.ValidationMessageFor(m => m.ExpirationYear, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     </div>
     <div class="d-flex justify-content-between border-top mt-5 pt-10">
         <div class="mr-2">
-            <button onclick="window.location.href='/Payment/AddNewCard'" id="register-page-prev" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">
+            <button onclick="window.location.href = '@Url.Action("AddNewCard","Payment")'" id="register-page-prev" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">
                 @Common.Prev
             </button>
         </div>

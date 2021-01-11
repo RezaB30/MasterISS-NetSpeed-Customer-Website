@@ -1,0 +1,11 @@
+﻿@model DateTime?
+
+@if (Model == null)
+{
+    @:-
+}
+else
+{
+    @Model.Value.ToString("yyyy")
+}
+

@@ -15,24 +15,21 @@ namespace CMS.ViewModels.Supports
         Customer = 1,
         Agent = 2
     }
-    public enum SupportState
+    public enum SupportRequestDisplayTypes
     {
-        Processing = 1,
-        Complete = 2
+        NoneDisplay = 1,
+        OpenRequestAgainDisplay = 2,
+        AddNoteDisplay = 3
     }
-    public enum SupportMessageSenderType
+    public enum SupportMesssageTypes
     {
-        Customer = 1,
-        Agent = 2
+        AddNote = 1,
+        ProblemSolved = 2,
+        OpenRequestAgain = 3
     }
-    public enum RequestTypes
+    public enum SupportRequestStateID
     {
-        Transfer = 1,
-        Fault = 2,
-        Invoice = 3,
-        Tariff = 4,
-        Freeze = 5,
-        StaticIP = 6,
-        Others = 7
+        InProgress = 1,
+        Done = 2
     }
 }

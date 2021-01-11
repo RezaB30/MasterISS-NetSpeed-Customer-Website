@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CMS.ViewModels.Supports.SupportRequestsVM>
+﻿@model IEnumerable<CMS.ViewModels.Supports.SupportRequestsViewModel>
 
 @using CMS.Localization;
 
@@ -28,10 +28,10 @@
                                 <th style="min-width: 250px" class="pl-7">
                                     <span class="text-dark-75">@Common.SupportTopic</span>
                                 </th>
-                                <th style="min-width: 110px">@Html.DisplayNameFor(m=>m.FirstOrDefault().SupportNo)</th>
-                                <th style="min-width: 130px">@Html.DisplayNameFor(m=>m.FirstOrDefault().Date)</th>
-                                <th style="min-width: 120px">@Html.DisplayNameFor(m => m.FirstOrDefault().Department)</th>
-                                <th style="min-width: 110px">@Html.DisplayNameFor(m => m.FirstOrDefault().State)</th>
+                                <th style="min-width: 110px">@Html.DisplayNameFor(m => m.SupportNo)</th>
+                                <th style="min-width: 130px">@Html.DisplayNameFor(m => m.Date)</th>
+                                <th style="min-width: 120px">@Html.DisplayNameFor(m => m.Department)</th>
+                                <th style="min-width: 110px">@Html.DisplayNameFor(m => m.State)</th>
                                 <th style="min-width: 110px">@Common.Details</th>
                             </tr>
                         </thead>
@@ -63,11 +63,11 @@
                                                 </span>
                                             </div>
                                             <div>
-                                                <a href="@Url.Action("SupportResults","Support",new { SupportNo = item.SupportNo })" class="text-dark-75 font-weight text-hover-primary mb-1 font-size-lg">
-                                                    @Html.DisplayFor(m => item.SupportRequestName)
+                                                <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="text-dark-75 font-weight text-hover-primary mb-1 font-size-lg">
+                                                    @Html.DisplayFor(m => item.SupportRequestType)
                                                 </a>
                                                 <span class="text-muted font-weight d-block">
-                                                    @Html.DisplayFor(m => item.SupportRequestSummary)
+                                                    @Html.DisplayFor(m => item.SupportRequestSubType)
                                                 </span>
                                             </div>
                                         </div>
@@ -77,13 +77,13 @@
                                     </td>
                                     <td>
                                         <span class="text-dark-75 font-weight d-block font-size-lg">@Html.DisplayFor(m => item.Date)</span>
-                                        @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Processing)
+                                        @if (item.StateId == (short)CMS.ViewModels.Supports.SupportRequestStateID.InProgress)
                                         {
                                             <span class="text-muted font-weight">...</span>
                                         }
                                         else
                                         {
-                                            <span class="text-muted font-weight">@Html.DisplayFor(m => item.CompletedDate)</span>
+                                            <span class="text-muted font-weight">@Html.DisplayFor(m => item.ApprovalDate)</span>
                                         }
                                     </td>
                                     <td>
@@ -92,17 +92,17 @@
                                         </span>
                                     </td>
                                     <td>
-                                        @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Processing)
+                                        @if (item.StateId == (short)CMS.ViewModels.Supports.SupportRequestStateID.InProgress)
                                         {
                                             <span class="label label-lg label-light-warning label-inline">@Html.DisplayFor(m => item.State)</span>
                                         }
-                                        @if (item.SupportState == CMS.ViewModels.Supports.SupportState.Complete)
+                                        @if (item.StateId == (short)CMS.ViewModels.Supports.SupportRequestStateID.Done)
                                         {
                                             <span class="label label-lg label-light-success label-inline">@Html.DisplayFor(m => item.State)</span>
                                         }
                                     </td>
                                     <td class="pr-0 text-center">
-                                        <a href="@Url.Action("SupportResults","Support" , new { SupportNo = item.SupportNo })"
+                                        <a href="@Url.Action("SupportResults","Support" , new { ID = item.SupportId })"
                                            class="btn btn-icon btn-light btn-hover-primary btn-sm">
                                             <span class="svg-icon svg-icon-md svg-icon-primary">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

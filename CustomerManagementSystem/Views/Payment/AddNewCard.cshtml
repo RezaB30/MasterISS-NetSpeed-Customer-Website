@@ -1,4 +1,4 @@
-﻿@model CMS.ViewModels.Payment.NewCardVM
+﻿@model CMS.ViewModels.Payment.AutoPaymentCardViewModel
 
 @using CMS.Localization;
 
@@ -20,7 +20,7 @@
                     </span>
                 </div>
                 <div class="card-toolbar">
-                    <a href="@Url.Action("PaymentInstruction","Payment")"
+                    <a href="@Url.Action("AutomaticPayment","Payment")"
                        class="btn btn-sm btn-light-info font-weight-bold mr-2">
                         @Common.RegisteredCards
                     </a>

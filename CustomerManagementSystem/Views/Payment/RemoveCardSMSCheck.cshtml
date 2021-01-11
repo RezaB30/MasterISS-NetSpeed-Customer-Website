@@ -1,0 +1,88 @@
+﻿@model string
+
+@using CMS.Localization
+@{
+    ViewBag.Title = CMS.Localization.Common.SMSValidation;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/assets/css/pages/wizard/wizard-4.css")
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">
+                        @Common.AutoPaymentAndAddCard
+                    </h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @Common.AutoPaymentAndAddCardDescription
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-transparent">
+            <div class="card-body p-0">
+                <div class="wizard wizard-4">
+                    <div class="card card-custom card-shadowless rounded-top-0">
+                        <div class="card-body p-0">
+                            <div class="row justify-content-center py-8 px-8 py-lg-15 px-lg-10">
+                                <div class="col-xl-12 col-xxl-7">
+                                    <div id="cc-content-valid">
+
+                                        @using CMS.Localization;
+
+                                        @using (Html.BeginForm("RemoveCardSMSCheck", "Payment", FormMethod.Post))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.Hidden("id", Model)
+
+                                            <div id="third-content" class="pb-5">
+                                                <h4 class="mb-10 font-weight-bold text-dark">
+                                                    @Common.SMSValidation
+                                                </h4>
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="form-group fv-plugins-icon-container">
+                                                            <label>@Common.SMSValidationCode</label>
+                                                            @Html.Editor("smsCode", new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Common.SMSCode, autocomplete = "off" } })
+                                                            <span class="form-text text-muted">
+                                                                @Common.SetValidationCode
+                                                            </span>
+                                                            <div class="fv-plugins-message-container">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                    <div class="mr-2">
+                                                        <button onclick="window.location.href = '@Url.Action("AutomaticPayment","Payment")'" id="validation-page-prev" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">
+                                                            @Common.Back
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <button id="validation-page-submit" type="submit" class="btn btn-success font-weight-bolder text-uppercase px-9 py-4">
+                                                            @Common.Send
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div></div>
+                                            <div></div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center text-danger p-0">
+                            @ViewBag.WrongPassword
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

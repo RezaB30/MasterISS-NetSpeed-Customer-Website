@@ -129,17 +129,14 @@
   <data name="BillNo" xml:space="preserve">
     <value>Fatura No</value>
   </data>
-  <data name="CCMonth" xml:space="preserve">
-    <value>Son Kullanım Tarihi (AY)</value>
+  <data name="CardholderName" xml:space="preserve">
+    <value>Kart Sahibi Adı Soyadı</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Kart Numarası</value>
   </data>
   <data name="CCName" xml:space="preserve">
     <value>Kart Sahibi Adı Soyadı</value>
-  </data>
-  <data name="CCNumber" xml:space="preserve">
-    <value>Kart Numarası</value>
-  </data>
-  <data name="CCYear" xml:space="preserve">
-    <value>Son Kullanım Tarihi (YIL)</value>
   </data>
   <data name="ContactPhoneNo" xml:space="preserve">
     <value>İletişim Telefonu</value>
@@ -156,6 +153,9 @@
   <data name="Department" xml:space="preserve">
     <value>Birim</value>
   </data>
+  <data name="DownloadNoiseMargin" xml:space="preserve">
+    <value>Download Noise Margin</value>
+  </data>
   <data name="DownloadSpeed" xml:space="preserve">
     <value>Download Hızı</value>
   </data>
@@ -169,7 +169,13 @@
     <value>E-Posta</value>
   </data>
   <data name="EndDate" xml:space="preserve">
-    <value>Bitiş Tar.</value>
+    <value>Bitiş Tarihi</value>
+  </data>
+  <data name="ExpirationDateMonth" xml:space="preserve">
+    <value>Son Kullanım Tarihi (AY)</value>
+  </data>
+  <data name="ExpirationDateYear" xml:space="preserve">
+    <value>Son Kullanım Tarihi (YIL)</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Adı Soyadı</value>
@@ -183,6 +189,9 @@
   <data name="IssueDate" xml:space="preserve">
     <value>Fatura Kesim Tarihi</value>
   </data>
+  <data name="LastPaymentDate" xml:space="preserve">
+    <value>Son Ödeme Tarihi</value>
+  </data>
   <data name="LineAddress" xml:space="preserve">
     <value>Hat Tesis Adresi</value>
   </data>
@@ -190,6 +199,9 @@
     <value>Bağlantı Durumu</value>
   </data>
   <data name="LoseDiscount" xml:space="preserve">
+    <value>Kaybedilen</value>
+  </data>
+  <data name="MissedCount" xml:space="preserve">
     <value>Kaybedilen</value>
   </data>
   <data name="ModemPassword" xml:space="preserve">
@@ -204,20 +216,32 @@
   <data name="Password" xml:space="preserve">
     <value>Şifre</value>
   </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Ödeme Tipi</value>
+  </data>
   <data name="PhysicalState" xml:space="preserve">
     <value>Fiziksel Bağlantı</value>
   </data>
   <data name="ReferenceNo" xml:space="preserve">
     <value>Referans No</value>
   </data>
+  <data name="RemainingCount" xml:space="preserve">
+    <value>Kalan</value>
+  </data>
   <data name="RemainingDiscount" xml:space="preserve">
     <value>Kalan</value>
+  </data>
+  <data name="ServiceName" xml:space="preserve">
+    <value>Tarife Adı</value>
   </data>
   <data name="SMS" xml:space="preserve">
     <value>SMS</value>
   </data>
   <data name="SpecialOfferReferenceCode" xml:space="preserve">
     <value>Kampanya Referans Kodu</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Başlangıç Tarihi</value>
   </data>
   <data name="State" xml:space="preserve">
     <value>Durum</value>
@@ -228,6 +252,9 @@
   <data name="SubscriberNo" xml:space="preserve">
     <value>Abone No</value>
   </data>
+  <data name="SubscriberState" xml:space="preserve">
+    <value>Abone Durum</value>
+  </data>
   <data name="SubscriptionLineState" xml:space="preserve">
     <value>Hat Hizmet Durumu</value>
   </data>
@@ -237,14 +264,26 @@
   <data name="SupportNo" xml:space="preserve">
     <value>Destek No</value>
   </data>
-  <data name="TariffName" xml:space="preserve">
-    <value>Tarife Adı</value>
+  <data name="SupportRequestSubType" xml:space="preserve">
+    <value>Destek Talebi Açıklaması</value>
+  </data>
+  <data name="SupportRequestType" xml:space="preserve">
+    <value>Destek Talebi Türü</value>
   </data>
   <data name="TckGsmLogin" xml:space="preserve">
     <value>TC Kimlik No veya GSM No</value>
   </data>
+  <data name="ThisPeriod" xml:space="preserve">
+    <value>Bu Dönem</value>
+  </data>
   <data name="ThisPeriodDiscount" xml:space="preserve">
     <value>Bu Dönem</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="TotalCount" xml:space="preserve">
+    <value>Kazanılan</value>
   </data>
   <data name="TotalDownload" xml:space="preserve">
     <value>Download</value>
@@ -252,8 +291,14 @@
   <data name="TotalUpload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="UploadNoiseMargin" xml:space="preserve">
+    <value>Upload Noise Margin</value>
+  </data>
   <data name="UploadSpeed" xml:space="preserve">
     <value>Uplod Hızı</value>
+  </data>
+  <data name="UsedCount" xml:space="preserve">
+    <value>Kullanılan</value>
   </data>
   <data name="UseDiscount" xml:space="preserve">
     <value>Kullanılan</value>

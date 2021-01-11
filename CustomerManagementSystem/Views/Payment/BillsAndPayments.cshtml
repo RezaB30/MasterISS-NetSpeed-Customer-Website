@@ -1,0 +1,257 @@
+﻿@model  IEnumerable<CMS.ViewModels.Payment.PaymentsAndBillsViewModel>
+@using RezaB.Web.Helpers
+@using CMS.Localization;
+
+@{
+    ViewBag.Title = CMS.Localization.Common.InvoicePayments;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var hasUnpaidBills = (bool)ViewBag.HasUnpaidBills;
+    var isPrePaid = (bool)ViewBag.IsPrePaid;
+    var POSErrorMessage = ViewBag.POSErrorMessage as string;
+    var POSSuccessMessage = ViewBag.POSSuccessMessage as string;
+    var ClientCredit = ViewBag.ClientCredits as decimal?;
+    var quotaPackages = ViewBag.QuotaPackages as IEnumerable<CMS.ViewModels.Payment.QuotaPackageViewModel>;
+}
+<style>
+    .page-link {
+        display: inline-block !important;
+    }
+</style>
+<div class="container">
+    <div class="flex-row-fluid ">
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">@Common.InvoicePayments</h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @Common.InvoicePaymentsDescription
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="@Url.Action("AutomaticPayment","Payment")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
+                        @Common.AutomaticPaymentInstruction
+                    </a>
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card card-custom card-stretch">
+            @if (ViewBag.CanBuyQuota == true && quotaPackages != null && quotaPackages.Count() > 0)
+            {
+                <div class="card-header py-3">
+                    <div class="card-toolbar"><h3 class="card-label font-weight-bolder text-dark m-2">@Common.QuotaPackages</h3></div>
+                    <div class="card-toolbar">
+                        @foreach (var quotaPackage in quotaPackages)
+                        {
+                            <a href="@Url.Action("BuyQuota","Payment",new { id = quotaPackage.ID })" class="btn btn-sm btn-light-info font-weight-bold m-2">
+                                @Html.DisplayFor(model => quotaPackage.Name).ToHtmlString()
+                                (@Html.DisplayFor(model => quotaPackage.Amount)) &nbsp;&nbsp; @Html.DisplayFor(model => quotaPackage.Price)
+                            </a>
+                        }
+                    </div>
+                </div>
+
+            }
+            @if (hasUnpaidBills || isPrePaid || ClientCredit.HasValue)
+            {
+                <div class="card-header py-3">
+                    <div class="card-toolbar">
+                        @if (hasUnpaidBills)
+                        {
+                            <a href="@Url.Action("PaymentSelection","Payment")" class="btn btn-sm btn-light-danger font-weight-bold mr-2">
+                                @Common.PayAll
+                            </a>
+                        }
+                        @if (isPrePaid)
+                        {
+                            <a href="@Url.Action("Payment","Payment")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
+                                @Common.ExtendPacket
+                            </a>
+                        }
+
+                    </div>
+                    @if (ClientCredit.HasValue)
+                    {
+                        <div class="card-toolbar">
+                            @Common.DiscountAmount <span class="card-label font-weight-bolder text-dark">@Html.Partial("DisplayTemplates/Currency", ClientCredit.Value.ToString("###,##0.00"))</span>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (ViewBag.ServiceError != null)
+            {
+                <div class="card-header py-3">
+                    <div class="card-toolbar">
+                        @ViewBag.ServiceError
+                    </div>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(POSSuccessMessage))
+            {
+                <div class="card-header py-3">
+                    <div class="card-toolbar">
+                        @POSSuccessMessage
+                    </div>
+                </div>
+            }
+            else if (!string.IsNullOrEmpty(POSErrorMessage))
+            {
+                <div class="card-header py-3">
+                    <div class="card-toolbar">
+                        @POSErrorMessage
+                    </div>
+                </div>
+            }
+        </div>
+        <br>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4">
+                    <div class="card card-custom gutter-b card-stretch">
+                        <div class="card-body pt-12">
+                            <div class="d-flex justify-content-end"></div>
+                            <div class="d-flex align-items-center mb-10">
+                                <div class="flex-shrink-0 mr-4 mt-lg-0 mt-3">
+                                    @if (item.Status == (short)CMS.Localization.Enums.BillState.Paid)
+                                    {
+                                        <span class="svg-icon svg-icon-success svg-icon-3x">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <rect fill="#000000" opacity="0.3" x="2" y="2" width="20"
+                                                          height="20" rx="10" />
+                                                    <path d="M6.16794971,14.5547002 C5.86159725,14.0951715 5.98577112,13.4743022 6.4452998,13.1679497 C6.90482849,12.8615972 7.52569784,12.9857711 7.83205029,13.4452998 C8.9890854,15.1808525 10.3543313,16 12,16 C13.6456687,16 15.0109146,15.1808525 16.1679497,13.4452998 C16.4743022,12.9857711 17.0951715,12.8615972 17.5547002,13.1679497 C18.0142289,13.4743022 18.1384028,14.0951715 17.8320503,14.5547002 C16.3224187,16.8191475 14.3543313,18 12,18 C9.64566871,18 7.67758127,16.8191475 6.16794971,14.5547002 Z"
+                                                          fill="#000000" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="svg-icon svg-icon-danger svg-icon-3x">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <circle fill="#000000" opacity="0.3" cx="12" cy="12"
+                                                            r="10" />
+                                                    <rect fill="#000000" x="11" y="10" width="2" height="7"
+                                                          rx="1" />
+                                                    <rect fill="#000000" x="11" y="7" width="2" height="2"
+                                                          rx="1" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    }
+
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <a href="#"
+                                       class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">@Html.DisplayFor(m => item.BillDate) - @Html.DisplayFor(m => item.LastPaymentDate)</a>
+                                    <span class="text-muted font-weight-bold">@Common.InvoicePeriod</span>
+                                </div>
+                            </div>
+                            <div class="mb-7">
+                                @*<div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.ID)</span>
+                                        <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.ID)</a>
+                                    </div>
+                                    <p> </p>*@
+                                <div class="d-flex justify-content-between align-items-cente my-1">
+                                    <span class="text-dark-100 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Total)</span>
+                                    <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.Total)</a>
+                                </div>
+                                <p> </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">
+                                        @Html.DisplayNameFor(m => m.BillDate)
+                                    </span>
+                                    <span class="text-muted font-weight-bold">@Html.DisplayFor(m => item.BillDate)</span>
+                                </div>
+                                <p> </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark-75 font-weight-bolder mr-2">
+                                        @Html.DisplayNameFor(m => m.LastPaymentDate)
+                                    </span>
+                                    <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.LastPaymentDate)</a>
+                                </div>
+                                <p></p>
+                                @*<div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-dark-75 font-weight-bolder mr-2">
+                                            @Html.DisplayNameFor(m => m.InvoicingPeriod)
+                                        </span>
+                                        <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.)</a>
+                                    </div>*@
+                            </div>
+                            @if (item.Status == (short)CMS.Localization.Enums.BillState.Cancelled)
+                            {
+                                <span class="btn btn-block btn-sm btn-light-warning font-weight-bold disabled">
+                                    @Common.Cancel
+                                </span>
+                            }
+                            @if (item.Status == (short)CMS.Localization.Enums.BillState.Paid)
+                            {
+                                <span class="btn btn-block btn-sm btn-light-success font-weight-bold disabled">
+                                    @Common.Paid
+                                </span>
+                            }
+                            else
+                            {
+                                if (item.CanBePaid)
+                                {
+                                    <a href="@Url.Action("PaymentSelection","Payment",new { ID = item.ID })" class="btn btn-block btn-sm btn-danger font-weight-bolder  mr-2">
+                                        @Common.QuickPay
+                                    </a>
+                                }
+
+                            }
+                            <p> </p>
+                            @if (item.HasEArchiveBill)
+                            {
+                                using (Html.BeginForm("EArchivePDF", "Payment", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("id", item.ID)
+                                    <input type="submit" value="@Common.DownloadAsPdf" class="btn btn-block btn-sm btn-light-primary font-weight-bold" />
+                                }
+                                <p></p>
+                                <a href="javascript:void(0);" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                    @Common.SendPdfToMail
+                                </a>
+                            }
+                            @*<a href="#" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                    @Common.DownloadAsPdf
+                                </a>*@
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="card card-custom">
+            <div class="card-body py-7">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                    @if (Model.Count() > 0)
+                    {
+                        <div id="paged" class="d-flex flex-wrap mr-3">
+                            @Html.PagedList((int)ViewBag.PageCount, 5)
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+    </script>
+}

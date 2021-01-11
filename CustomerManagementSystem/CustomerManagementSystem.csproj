@@ -90,10 +90,17 @@
     <Reference Include="RezaB.Web, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RezaB.Web.1.0.1\lib\net452\RezaB.Web.dll</HintPath>
     </Reference>
+    <Reference Include="RezaB.Web.Helpers, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Web.Helpers.1.0.3\lib\net452\RezaB.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="RezaB.Web.VPOS, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Web.VPOS.1.0.3\lib\net452\RezaB.Web.VPOS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
@@ -174,11 +181,18 @@
     <Compile Include="Controllers\InitializeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
+    <Compile Include="CustomAttributes\CardCVV.cs" />
+    <Compile Include="CustomAttributes\CardExpirationMonth.cs" />
+    <Compile Include="CustomAttributes\CardExpirationYear.cs" />
+    <Compile Include="CustomAttributes\CardNumberAttribute.cs" />
     <Compile Include="GenericServiceSettings.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MyExtensions.cs" />
+    <Compile Include="LanguageLinkHelper.cs" />
+    <Compile Include="Utilities\DomainCache.cs" />
+    <Compile Include="Utilities\InternalUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -187,6 +201,11 @@
     </Compile>
     <Compile Include="ServiceUtilities.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="VPOSToken\BillPaymentToken.cs" />
+    <Compile Include="VPOSToken\PaymentTokenBase.cs" />
+    <Compile Include="VPOSToken\PaymentTokenType.cs" />
+    <Compile Include="VPOSToken\QuotaSaleToken.cs" />
+    <Compile Include="VPOSToken\VPOSTokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\pages\error\error-3.css" />
@@ -2577,11 +2596,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\Custom\current-subscription.js" />
+    <Content Include="Scripts\Custom\display-message-box.js" />
     <Content Include="Scripts\Custom\resource-displayText.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -2609,8 +2629,8 @@
     <Content Include="Views\Shared\_IndexLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Payment\PayBill.cshtml" />
-    <Content Include="Views\Payment\Bills.cshtml" />
-    <Content Include="Views\Payment\PaymentInstruction.cshtml" />
+    <Content Include="Views\Payment\BillsAndPayments.cshtml" />
+    <Content Include="Views\Payment\AutomaticPayment.cshtml" />
     <Content Include="Views\Home\CustomerLineDetails.cshtml" />
     <Content Include="Views\Home\RecipeUsage.cshtml" />
     <Content Include="Views\Home\Documents.cshtml" />
@@ -2639,7 +2659,7 @@
     <Content Include="Views\Shared\DisplayPartials\Payment\Wizard\wizard-second.cshtml" />
     <Content Include="Views\Shared\DisplayPartials\Payment\Wizard\wizard-third.cshtml" />
     <Content Include="Views\Payment\CreditCardRegister.cshtml" />
-    <Content Include="Views\Payment\CreditCardValidation.cshtml" />
+    <Content Include="Views\Payment\AddCardSMSCheck.cshtml" />
     <Content Include="Views\Shared\EditorPartials\Home\SubscriptionList.cshtml" />
     <Content Include="Views\Home\_Language.cshtml" />
     <Content Include="Views\Shared\LayoutParts\_Navbar.cshtml" />
@@ -2656,6 +2676,14 @@
     <Content Include="Views\Shared\DisplayTemplates\MonthAndYear.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\TextWithPlaceholder.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\TrafficLimit.cshtml" />
+    <Content Include="Views\Home\_ConnectionStatusPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Month.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Year.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\_QuickSideBar.cshtml" />
+    <Content Include="Views\Shared\LayoutParts\Footer.cshtml" />
+    <Content Include="Views\Payment\RemoveCardSMSCheck.cshtml" />
+    <Content Include="Views\Payment\ActivateAutomaticPayment.cshtml" />
+    <Content Include="Views\Payment\3DHostPayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
