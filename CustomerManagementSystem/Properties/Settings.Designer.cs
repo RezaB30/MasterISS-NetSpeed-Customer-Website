@@ -77,5 +77,14 @@ namespace CustomerManagementSystem.Properties {
                 return ((int)(this["TableRows"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int SupportTableRow {
+            get {
+                return ((int)(this["SupportTableRow"]));
+            }
+        }
     }
 }

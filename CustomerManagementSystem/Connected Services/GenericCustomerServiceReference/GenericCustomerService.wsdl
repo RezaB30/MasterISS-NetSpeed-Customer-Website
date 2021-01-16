@@ -244,6 +244,78 @@
   <wsdl:message name="IGenericCustomerService_GetVPOSErrorParameterName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetVPOSErrorParameterNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ExistingCustomerRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExistingCustomerRegister" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ExistingCustomerRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistingCustomerRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_CommitmentLengthList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CommitmentLengthList" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_CommitmentLengthList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommitmentLengthListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetProvinces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinces" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetProvinces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvincesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetProvinceDistricts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinceDistricts" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetProvinceDistricts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProvinceDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetDistrictRuralRegions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictRuralRegions" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetDistrictRuralRegions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDistrictRuralRegionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetRuralRegionNeighbourhoods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuralRegionNeighbourhoods" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetRuralRegionNeighbourhoods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuralRegionNeighbourhoodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetNeighbourhoodStreets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeighbourhoodStreets" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetNeighbourhoodStreets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeighbourhoodStreetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetStreetBuildings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStreetBuildings" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetStreetBuildings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStreetBuildingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetBuildingApartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildingApartments" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetBuildingApartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuildingApartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetApartmentAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartmentAddress" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetApartmentAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartmentAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ExternalTariffList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExternalTariffList" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ExternalTariffList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExternalTariffListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ServiceAvailability_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceAvailability" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ServiceAvailability_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceAvailabilityResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetKeyFragment">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetKeyFragment" message="tns:IGenericCustomerService_GetKeyFragment_InputMessage" />
@@ -400,6 +472,54 @@
     <wsdl:operation name="GetVPOSErrorParameterName">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetVPOSErrorParameterName" message="tns:IGenericCustomerService_GetVPOSErrorParameterName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetVPOSErrorParameterNameResponse" message="tns:IGenericCustomerService_GetVPOSErrorParameterName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistingCustomerRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ExistingCustomerRegister" message="tns:IGenericCustomerService_ExistingCustomerRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ExistingCustomerRegisterResponse" message="tns:IGenericCustomerService_ExistingCustomerRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommitmentLengthList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/CommitmentLengthList" message="tns:IGenericCustomerService_CommitmentLengthList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/CommitmentLengthListResponse" message="tns:IGenericCustomerService_CommitmentLengthList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetProvinces" message="tns:IGenericCustomerService_GetProvinces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetProvincesResponse" message="tns:IGenericCustomerService_GetProvinces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinceDistricts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetProvinceDistricts" message="tns:IGenericCustomerService_GetProvinceDistricts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetProvinceDistrictsResponse" message="tns:IGenericCustomerService_GetProvinceDistricts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictRuralRegions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetDistrictRuralRegions" message="tns:IGenericCustomerService_GetDistrictRuralRegions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetDistrictRuralRegionsResponse" message="tns:IGenericCustomerService_GetDistrictRuralRegions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuralRegionNeighbourhoods">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetRuralRegionNeighbourhoods" message="tns:IGenericCustomerService_GetRuralRegionNeighbourhoods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetRuralRegionNeighbourhoodsResponse" message="tns:IGenericCustomerService_GetRuralRegionNeighbourhoods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNeighbourhoodStreets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetNeighbourhoodStreets" message="tns:IGenericCustomerService_GetNeighbourhoodStreets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetNeighbourhoodStreetsResponse" message="tns:IGenericCustomerService_GetNeighbourhoodStreets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStreetBuildings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetStreetBuildings" message="tns:IGenericCustomerService_GetStreetBuildings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetStreetBuildingsResponse" message="tns:IGenericCustomerService_GetStreetBuildings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingApartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetBuildingApartments" message="tns:IGenericCustomerService_GetBuildingApartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetBuildingApartmentsResponse" message="tns:IGenericCustomerService_GetBuildingApartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApartmentAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetApartmentAddress" message="tns:IGenericCustomerService_GetApartmentAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetApartmentAddressResponse" message="tns:IGenericCustomerService_GetApartmentAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExternalTariffList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ExternalTariffList" message="tns:IGenericCustomerService_ExternalTariffList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ExternalTariffListResponse" message="tns:IGenericCustomerService_ExternalTariffList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceAvailability">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ServiceAvailability" message="tns:IGenericCustomerService_ServiceAvailability_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ServiceAvailabilityResponse" message="tns:IGenericCustomerService_ServiceAvailability_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -748,6 +868,114 @@
     </wsdl:operation>
     <wsdl:operation name="GetVPOSErrorParameterName">
       <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetVPOSErrorParameterName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistingCustomerRegister">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/ExistingCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommitmentLengthList">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/CommitmentLengthList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinces">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetProvinces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProvinceDistricts">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetProvinceDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDistrictRuralRegions">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetDistrictRuralRegions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuralRegionNeighbourhoods">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetRuralRegionNeighbourhoods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNeighbourhoodStreets">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetNeighbourhoodStreets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStreetBuildings">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetStreetBuildings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuildingApartments">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetBuildingApartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApartmentAddress">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetApartmentAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExternalTariffList">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/ExternalTariffList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceAvailability">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/ServiceAvailability" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

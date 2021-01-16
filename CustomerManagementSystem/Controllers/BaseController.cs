@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
@@ -93,6 +94,27 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.CompanyTitle = Settings.Default.CompanyTitle;
             return base.BeginExecuteCore(callback, state);
         }
+        private bool WebServiceState()
+        {
+            try
+            {
+                GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
+                var webServiceRequest = (HttpWebRequest)WebRequest.Create(client.Endpoint.ListenUri);
+                var response = (HttpWebResponse)webServiceRequest.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, $"Error while connection web service");
+                return false;
+            }
+
+        }
         [AllowAnonymous]
         [HttpGet, ActionName("Language")]
         public virtual ActionResult Language(string culture, string sender)
@@ -132,7 +154,7 @@ namespace CustomerManagementSystem.Controllers
             var TotalAmount = bills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == (short)CMS.Localization.Enums.BillState.Unpaid).Sum(bill => bill.Total);
             var results = new CMS.ViewModels.Layout.BillsLayoutViewModel()
             {
-                Bills = unpaidBills,
+                Bills = unpaidBills ?? Enumerable.Empty<CMS.ViewModels.Layout.BillsLayoutViewModel.BillList>(),
                 BillCount = unpaidBills.Count(),
                 TotalAmount = TotalAmount.ToString("###,##0.00")
             };
@@ -174,6 +196,50 @@ namespace CustomerManagementSystem.Controllers
                 viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
                 return sw.GetStringBuilder().ToString();
             }
+        }
+        public virtual ActionResult Notifications()
+        {
+            try
+            {
+                var statusResponse = new ServiceUtilities().SupportStatus(User.GiveUserId());
+                long[] supportIds = { };
+                if (statusResponse.ResponseMessage.ErrorCode == 0 && statusResponse.SupportStatusResponse != null)
+                {
+                    supportIds = statusResponse.SupportStatusResponse.SupportRequestIds.ToArray();
+                }
+                var notifications = new List<CMS.ViewModels.Supports.NotificationViewModel>();
+                var lang = RouteData.Values.Where(r => r.Key == "lang").Select(r => r.Value).FirstOrDefault();
+                var controller = RouteData.Values.Where(r => r.Key == "controller").Select(r => r.Value).FirstOrDefault();
+                foreach (var item in supportIds)
+                {
+                    if (Request.Cookies["Notification_" + item.ToString()] == null)
+                    {
+                        var url = $"{lang}/Support/SupportResults/{item}";
+                        notifications.Add(new CMS.ViewModels.Supports.NotificationViewModel()
+                        {
+                            Url = $"{lang}/{controller}/RedirectNotification?url={HttpUtility.UrlEncode(url)}&uniqueId={item}",
+                            Content = CMS.Localization.Common.NewSupportNotification,
+                            Type = CMS.ViewModels.Supports.NotificationType.Info
+                        });
+                    }
+
+                }
+                return PartialView("_Notifications", notifications);
+            }
+            catch (Exception)
+            {
+                return PartialView("_Notifications", Enumerable.Empty<CMS.ViewModels.Supports.NotificationViewModel>());
+            }
+        }
+        public ActionResult RedirectNotification(string url, string uniqueId)
+        {
+            var cookie = new HttpCookie($"Notification_{uniqueId}")
+            {
+                Expires = DateTime.Now + new TimeSpan(0, 2, 0)
+            };
+            var response = HttpContext.Response;
+            response.Cookies.Add(cookie);
+            return Redirect("~/" + HttpUtility.UrlDecode(url));
         }
     }
 }

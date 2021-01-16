@@ -1,0 +1,139 @@
+﻿@model CMS.ViewModels.Home.SubcriptionRegisterViewModel
+@using CMS.Localization
+@{ ViewBag.ProvinceList = ViewBag.ProvinceList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.DistrictList = ViewBag.DistrictList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.RuralList = ViewBag.RuralList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.NeighbourhoodList = ViewBag.NeighbourhoodList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.StreetList = ViewBag.StreetList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.BuildingList = ViewBag.BuildingList ?? new SelectList(Enumerable.Empty<SelectListItem>());
+    ViewBag.ApartmentList = ViewBag.ApartmentList ?? new SelectList(Enumerable.Empty<SelectListItem>()); }
+<!--begin: Wizard Step 4-->
+<div class="pb-5" data-wizard-type="step-content">
+    <div class="separator separator-dashed my-3"></div>
+    <div class="pb-10 pb-lg-5 text-center">
+        <h5 class="font-weight-bolder text-dark-50 font-size-h2">Adres Bilgileriniz</h5><hr class="my-4">
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.ProvinceID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.ProvinceID, (SelectList)ViewBag.ProvinceList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.ProvinceID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+        </div>
+        <!--end::Form Group-->
+        <!--begin::Form Group-->
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.DistrictID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.DistrictID, (SelectList)ViewBag.DistrictList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.DistrictID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+            <!--end::Form Group-->
+        </div>
+    </div>
+
+    <!--begin::Form Group-->
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.RuralCode)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.RuralCode, (SelectList)ViewBag.RuralList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.RuralCode, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+        </div>
+        <!--end::Form Group-->
+        <!--begin::Form Group-->
+
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.NeighbourhoodID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.NeighbourhoodID, (SelectList)ViewBag.NeighbourhoodList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.NeighbourhoodID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+            <!--end::Form Group-->
+        </div>
+    </div>
+
+    <!--begin::Form Group-->
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.StreetID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.StreetID, (SelectList)ViewBag.StreetList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.StreetID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+        </div>
+        <!--end::Form Group-->
+        <!--begin::Form Group-->
+
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.DoorID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.DoorID, (SelectList)ViewBag.BuildingList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.DoorID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+            <!--end::Form Group-->
+        </div>
+    </div>
+
+    <!--begin::Form Group-->
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.ApartmentID)</label>
+                @Html.DropDownListFor(m => m.SetupAddress.ApartmentID, (SelectList)ViewBag.ApartmentList, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.ApartmentID, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+        </div>
+        <!--end::Form Group-->
+        <!--begin::Form Group-->
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.Floor)</label>
+                @Html.EditorFor(m => m.SetupAddress.Floor, new { htmlAttributes = new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6", @placeholder = Html.DisplayNameFor(m => m.SetupAddress.Floor) } })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.Floor, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+            <!--end::Form Group-->
+        </div>
+    </div>
+    <!--begin::Form Group-->
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.SetupAddress.PostalCode)</label>
+                @Html.EditorFor(m => m.SetupAddress.PostalCode, new { htmlAttributes = new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6", @placeholder = Html.DisplayNameFor(m => m.SetupAddress.PostalCode) } })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.SetupAddress.PostalCode, null, new { @class = "fv-help-block" })
+                </div>
+                <!--end::Form Group-->
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-12 col-md-12">
+            <div class="form-group">
+                <input type="submit" class="btn btn-outline-success font-weight-bold py-2 px-6" value="@Common.ApplicationRegister" />
+                <!--end::Form Group-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end: Wizard Step 4-->

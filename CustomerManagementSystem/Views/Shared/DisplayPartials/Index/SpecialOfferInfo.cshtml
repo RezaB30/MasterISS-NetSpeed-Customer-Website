@@ -1,4 +1,5 @@
 ﻿@model CMS.ViewModels.Home.IndexViewModel
+@using CMS.Localization
 
 <div class="col-xl-16">
     <div class="card card-custom gutter-b card-stretch card-shadowless">
@@ -7,20 +8,17 @@
                 <div class="d-flex flex-column align-items-start flex-grow-1 h-100">
                     <div class="p-1 flex-grow-1">
                         <h4 class="text-warning font-weight-bolder">
-                            Arkadaşını
-                            Getir!
+                            @Common.SpecialOfferFriends
                         </h4>
                         <p class="text-dark-50 font-weight-bold mt-2">
-                            12 ay boyunca
-                            daha az fatura öde!
+                            @Common.SpecialOfferIntro
                     </div>
                     <h4 class="text-hover-warning font-weight-bold font-size-lg">
-                        Davet Kodunuz : <span class="label label-lg label-warning label-pill label-inline mr-2">@Html.DisplayFor(m => m.ReferenceCode)</span>
+                        @Common.ReferenceCode : <span class="label label-lg label-warning label-pill label-inline mr-2">@Html.DisplayFor(m => m.ReferenceCode)</span>
                     </h4>
                     <a href='@Url.Action("SpecialOffer","Home")'
                        class="btn btn-link btn-link-warning font-weight-bold">
-                        Detaylı
-                        Bilgi
+                        @Common.Details
                         <span class="svg-icon svg-icon-lg svg-icon-warning">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none"

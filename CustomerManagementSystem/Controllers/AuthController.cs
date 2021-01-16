@@ -44,7 +44,7 @@ namespace CustomerManagementSystem.Controllers
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]        
+        [ValidateAntiForgeryToken]
         public ActionResult DirectLogin([Bind(Include = "CustomerCode")] LoginViewModel login)
         {
             ModelState.Remove("SMSPassword");
@@ -156,6 +156,7 @@ namespace CustomerManagementSystem.Controllers
                 new Claim(ClaimTypes.Name, ValidDisplayName),
                 new Claim(ClaimTypes.NameIdentifier, ID),
                 new Claim(ClaimTypes.SerialNumber, SubscriberNo),
+                new Claim("LastLogin",DateTime.Now.ToString("yyyy-MM-dd HH:mm")),
                 new Claim("SubscriptionBag", string.Join(";", relatedCustomers))
             }, "ApplicationCookie");
             context.Authentication.SignIn(identity);

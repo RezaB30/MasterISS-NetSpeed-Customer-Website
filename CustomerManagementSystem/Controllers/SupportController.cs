@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CMS.ViewModels.Supports;
+using NLog;
 using PagedList;
 using RezaB.Web.Authentication;
 
@@ -12,6 +13,7 @@ namespace CustomerManagementSystem.Controllers
 {
     public class SupportController : BaseController
     {
+        Logger requestsLogger = LogManager.GetLogger("requests");
         // GET: Support
         public ActionResult SupportRequests(int? page)   // destek.html
         {
@@ -37,7 +39,7 @@ namespace CustomerManagementSystem.Controllers
                         IsCustomer = supportDetails.IsCustomer,
                         LastMessage = supportDetails.lastMessage,
                         SupportDisplayType = supportDetails.supportDisplayType
-                        
+
                     });
                 }
             }
@@ -150,7 +152,7 @@ namespace CustomerManagementSystem.Controllers
             var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
             if (supportRequests.ResponseMessage.ErrorCode != 0)
             {
-                return View(Enumerable.Empty<SupportRequestsViewModel>());
+                return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", Enumerable.Empty<SupportRequestsViewModel>());
             }
             Dictionary<long, SupportRequestsAdditional> keyValuePairs = new Dictionary<long, SupportRequestsAdditional>();
             foreach (var item in supportRequests.GetCustomerSupportListResponse)
@@ -170,7 +172,7 @@ namespace CustomerManagementSystem.Controllers
                     });
                 }
             }
-            var supportRequestList = supportRequests.GetCustomerSupportListResponse != null ? supportRequests.GetCustomerSupportListResponse.OrderByDescending(s => s.Date).Select(s => new SupportRequestsViewModel()
+            var supportRequestList = supportRequests.GetCustomerSupportListResponse != null ? supportRequests.GetCustomerSupportListResponse.OrderByDescending(s => s.Date).Take(Properties.Settings.Default.SupportTableRow).Select(s => new SupportRequestsViewModel()
             {
                 SupportId = s.ID,
                 Date = s.Date,
@@ -185,7 +187,7 @@ namespace CustomerManagementSystem.Controllers
                 ChangeType = keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.IsCustomer ? ChangeType.Customer : ChangeType.Agent
 
             }).ToArray() : Enumerable.Empty<SupportRequestsViewModel>().ToArray();
-            return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", supportRequestList.OrderByDescending(m => m.Date).Take(4).ToList());
+            return PartialView("~/Views/Shared/DisplayPartials/Index/RequestsTable.cshtml", supportRequestList.OrderByDescending(m => m.Date).ToList());
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -205,111 +207,13 @@ namespace CustomerManagementSystem.Controllers
                 return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), ModelErrorMessages(ModelState), false);
             }
             var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, User.GiveUserId());
-            //generalLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
+            requestsLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
             if (newMessageResponse.ResponseMessage.ErrorCode == 5) // has active request
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
             }
             return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
-        }
-        //public ActionResult RequestData(int NewRequestID)
-        //{
-        //    var label = string.Empty;
-        //    var list = new List<SelectListItem>();
-        //    switch ((RequestTypes)NewRequestID)
-        //    {
-        //        case RequestTypes.Transfer:
-        //            {
-        //                label = "NAKİL";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Nakil Talebinde Bulunmak İstiyorum",
-        //                    Value = "1"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.Fault:
-        //            {
-        //                label = "ARIZA";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "ADSL Işığı Yanmıyor",
-        //                    Value = "1"
-        //                });
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Sık Sık Kopma Problemi",
-        //                    Value = "2"
-        //                });
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "İnternet Işığı Yanmıyor",
-        //                    Value = "3"
-        //                });
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Bazı Sayfalara Erişemiyorum",
-        //                    Value = "4"
-        //                });
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Düşük Hız Alıyorum",
-        //                    Value = "5"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.Invoice:
-        //            {
-        //                label = "FATURA";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Faturam Yüksek Geldi",
-        //                    Value = "1"
-        //                });
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Faturamı Ödeyemiyorum",
-        //                    Value = "2"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.Tariff:
-        //            {
-        //                label = "TARİFE";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Tarifemi Değiştirmek İstiyorum",
-        //                    Value = "1"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.Freeze:
-        //            {
-        //                label = "DONDURMA";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Hizmetimi Bir Süreliğine Dondurmak İstiyorum",
-        //                    Value = "1"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.StaticIP:
-        //            {
-        //                label = "STATİK IP";
-        //                list.Add(new SelectListItem()
-        //                {
-        //                    Text = "Statik IP Hizmeti Almak İstiyorum",
-        //                    Value = "1"
-        //                });
-        //            }
-        //            break;
-        //        case RequestTypes.Others:
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    return Json(new { label = string.Format("Talebiniz Nedir ? ({0})", label), list = list.Select(m => new { Text = m.Text, Value = m.Value }) }, JsonRequestBehavior.AllowGet);
-        //}        
+        }        
         private string ModelErrorMessages(ModelStateDictionary ModelState)
         {
             return string.Join(Environment.NewLine, ModelState.Values.Select(m => string.Join(Environment.NewLine, m.Errors.Where(s => !string.IsNullOrEmpty(s.ErrorMessage)).Select(s => $"<div class='text-red'>{s.ErrorMessage}<div>"))));

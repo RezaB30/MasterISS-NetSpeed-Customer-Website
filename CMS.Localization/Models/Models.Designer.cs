@@ -61,6 +61,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daire No.
+        /// </summary>
+        public static string ApartmentID {
+            get {
+                return ResourceManager.GetString("ApartmentID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Otomatik Ödeme Talimatı.
         /// </summary>
         public static string AutomaticPaymentInstruction {
@@ -124,6 +133,24 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Taahhüt Bitiş Tarihi.
+        /// </summary>
+        public static string CommitmentExpirationDate {
+            get {
+                return ResourceManager.GetString("CommitmentExpirationDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taahhüt Süresi.
+        /// </summary>
+        public static string CommitmentLength {
+            get {
+                return ResourceManager.GetString("CommitmentLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İletişim Telefonu.
         /// </summary>
         public static string ContactPhoneNo {
@@ -165,6 +192,24 @@ namespace CMS.Localization.Models {
         public static string Department {
             get {
                 return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İlçe.
+        /// </summary>
+        public static string DistrictID {
+            get {
+                return ResourceManager.GetString("DistrictID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bina No/Apt No..
+        /// </summary>
+        public static string DoorID {
+            get {
+                return ResourceManager.GetString("DoorID", resourceCulture);
             }
         }
         
@@ -237,6 +282,15 @@ namespace CMS.Localization.Models {
         public static string ExpirationDateYear {
             get {
                 return ResourceManager.GetString("ExpirationDateYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kat No.
+        /// </summary>
+        public static string Floor {
+            get {
+                return ResourceManager.GetString("Floor", resourceCulture);
             }
         }
         
@@ -340,6 +394,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mahalle.
+        /// </summary>
+        public static string NeighbourhoodID {
+            get {
+                return ResourceManager.GetString("NeighbourhoodID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Geçmiş Fatura.
         /// </summary>
         public static string PassedInvoice {
@@ -376,6 +439,24 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posta Kodu.
+        /// </summary>
+        public static string PostalCode {
+            get {
+                return ResourceManager.GetString("PostalCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Şehir.
+        /// </summary>
+        public static string ProvinceID {
+            get {
+                return ResourceManager.GetString("ProvinceID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referans No.
         /// </summary>
         public static string ReferenceNo {
@@ -399,6 +480,15 @@ namespace CMS.Localization.Models {
         public static string RemainingDiscount {
             get {
                 return ResourceManager.GetString("RemainingDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semt.
+        /// </summary>
+        public static string RuralCode {
+            get {
+                return ResourceManager.GetString("RuralCode", resourceCulture);
             }
         }
         
@@ -453,6 +543,15 @@ namespace CMS.Localization.Models {
         public static string StaticIP {
             get {
                 return ResourceManager.GetString("StaticIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sokak/Cadde.
+        /// </summary>
+        public static string StreetID {
+            get {
+                return ResourceManager.GetString("StreetID", resourceCulture);
             }
         }
         

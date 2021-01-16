@@ -96,12 +96,12 @@
     <Compile Include="Home\RecipeUsageViewModel.cs" />
     <Compile Include="Home\SpecialOfferDetailsViewModel.cs" />
     <Compile Include="Home\SpecialOfferViewModel.cs" />
+    <Compile Include="Home\SubcriptionRegisterViewModel.cs" />
     <Compile Include="Home\SubscriptionListVM.cs" />
     <Compile Include="Layout\BillsLayoutViewModel.cs" />
     <Compile Include="Payment\ActivateAutomaticPaymentViewModel.cs" />
     <Compile Include="Payment\PaymentsAndBillsViewModel.cs" />
     <Compile Include="Payment\AutoPaymentCardViewModel.cs" />
-    <Compile Include="Payment\PayBillsVM.cs" />
     <Compile Include="Payment\CustomerAutomaticPaymentViewModel.cs" />
     <Compile Include="Payment\QuotaPackageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +109,7 @@
     <Compile Include="Supports\RequestSupportMessage.cs" />
     <Compile Include="Supports\SupportMessagesViewModel.cs" />
     <Compile Include="Supports\SupportRequestsViewModel.cs" />
+    <Compile Include="Supports\NotificationViewModel.cs" />
     <Compile Include="Supports\SupportTypes.cs" />
   </ItemGroup>
   <ItemGroup>

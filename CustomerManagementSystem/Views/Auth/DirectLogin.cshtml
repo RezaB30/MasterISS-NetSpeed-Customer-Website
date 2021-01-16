@@ -26,7 +26,7 @@
                 <label class="font-size-h4 font-weight-bolder text-warning">
                     @Common.QuickLogin
                 </label>
-                <p class="text-muted font-size-h5 font-weight-bold">Tek kullanımlık şifre ile</p>
+                <p class="text-muted font-size-h5 font-weight-bold">@Common.WithPassword</p>
             </div>
             @*@using (Html.BeginForm("DirectLogin", "Auth", FormMethod.Post))
                 {
@@ -72,17 +72,18 @@
                     swal.fire({
                         input: "text",
                         icon: "success",
-                        title: "Gönderilen Giriş Kodunu Giriniz",
+                        title: "@Common.SetLoginSMSCode",
                         buttonsStyling: false,
-                        confirmButtonText: "Giriş Yap",
+                        confirmButtonText: "@Common.Login",
                         showCancelButton: true,
+                        cancelButtonText: "@Common.Cancel",
                         customClass: {
                             confirmButton: "btn font-weight-bold btn-light-primary",
                             cancelButton: "btn font-weight-bold btn-light-danger"
                         },
                         inputValidator: (value) => {
                             if (!value) {
-                                return 'Lütfen Kodu Giriniz'
+                                return '@Common.SetLoginSMSCode'
                             }
                             else {
                                 var error = "";
@@ -104,7 +105,7 @@
                                                 })
                                                 Toast.fire({
                                                     icon: 'success',
-                                                    title: 'Giriş Yapılıyor'
+                                                    title: '@Common.LoggingOn'
                                                 }).then((result) => {
                                                     $('form').find("button").prop("disabled", "disabled");
                                                     window.location.href = "/";
@@ -116,7 +117,7 @@
                                                     title: '',
                                                     text: result.valid,
                                                     buttonsStyling: false,
-                                                    confirmButtonText: "Tamam",
+                                                    confirmButtonText: "@Common.OK",
                                                     showCancelButton: false,
                                                     customClass: {
                                                         confirmButton: "btn font-weight-bold btn-light-primary"

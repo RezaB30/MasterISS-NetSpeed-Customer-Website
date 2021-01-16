@@ -1,0 +1,52 @@
+﻿@model CMS.ViewModels.Home.SubcriptionRegisterViewModel
+
+@{
+    ViewBag.Title = "SubscriptionRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="d-flex justify-content-center flex-row-fluid">
+            <div class="pb-10 pb-lg-5 text-center">
+                <h3 class="font-weight-bolder text-dark-50 font-size-h2">Yeni Abonelik Başvurusu</h3><hr class="my-4">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center flex-row-fluid ">
+            @Html.Partial("_SubscriptionRegisterCommitmentPartial")
+        </div>
+        <div class="d-flex justify-content-center flex-row-fluid ">
+            @Html.Partial("_SetupAddressPartial")
+        </div>
+    }
+</div>
+@section scripts{
+    @Scripts.Render("~/Scripts/Custom/get-infrastructure.js")
+    @Scripts.Render("~/assets/js/pages/features/miscellaneous/sweetalert2.js")
+    @Scripts.Render("~/Scripts/Custom/display-message-box.js")
+
+    <script>
+        $('#SetupAddress_ProvinceID').change(function () {
+            GetValues('#SetupAddress_ProvinceID', '#SetupAddress_DistrictID', '@Url.Action("GetDistrict","Infrastructure")');
+        })
+        $('#SetupAddress_DistrictID').change(function () {
+            GetValues('#SetupAddress_DistrictID', '#SetupAddress_RuralCode', '@Url.Action("GetRegions","Infrastructure")');
+        })
+        $('#SetupAddress_RuralCode').change(function () {
+            GetValues('#SetupAddress_RuralCode', '#SetupAddress_NeighbourhoodID', '@Url.Action("GetNeighborhoods","Infrastructure")');
+        })
+        $('#SetupAddress_NeighbourhoodID').change(function () {
+            GetValues('#SetupAddress_NeighbourhoodID', '#SetupAddress_StreetID', '@Url.Action("GetStreets","Infrastructure")');
+        })
+        $('#SetupAddress_StreetID').change(function () {
+            GetValues('#SetupAddress_StreetID', '#SetupAddress_DoorID', '@Url.Action("GetBuildings","Infrastructure")');
+        })
+        $('#SetupAddress_DoorID').change(function () {
+            GetValues('#SetupAddress_DoorID', '#SetupAddress_ApartmentID', '@Url.Action("GetApartments","Infrastructure")');
+        })
+        $('#SetupAddress_ApartmentID').change(function () {
+
+        })
+    </script>
+}

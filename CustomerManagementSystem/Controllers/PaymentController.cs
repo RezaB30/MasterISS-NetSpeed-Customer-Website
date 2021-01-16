@@ -16,22 +16,8 @@ namespace CustomerManagementSystem.Controllers
     {
         Logger paymentLogger = LogManager.GetLogger("payments");
         Logger unpaidLogger = LogManager.GetLogger("unpaid");
-        GenericCustomerServiceClient client = new GenericCustomerServiceClient();
-        // GET: Payment
-        public ActionResult PayBill()   //odeme.html
-        {
-            return View(new PayBillsVM());
-        }
-        [ValidateAntiForgeryToken]
-        [HttpPost]
-        public ActionResult PayBill(PayBillsVM pay)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Json(new { valid = "Eksik Yada Hata Bilgi Girdiniz. Tekrar Deneyiniz" }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
-        }
+        Logger generalLogger = LogManager.GetLogger("general");
+
         public ActionResult BillsAndPayments(int? page) // fatura-odeme.html
         {
             var response = new ServiceUtilities().GetCustomerBillList(User.GiveUserId());
@@ -88,6 +74,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult BuyQuota(int id)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.QuotaPackageList(new CustomerServiceQuotaPackagesRequest()
             {
@@ -147,6 +134,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult AutomaticPayment()
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var settings = GenericAppSettings();
             if (settings.ResponseMessage.ErrorCode != 0 || !settings.GenericAppSettings.MobilExpressIsActive)
             {
@@ -171,7 +159,7 @@ namespace CustomerManagementSystem.Controllers
             });
             if (cardList.ResponseMessage.ErrorCode != 0)
             {
-                //generalLogger.Warn($"Error calling 'GetCards' from MobilExpress client. Code : {cardList.ResponseMessage.ErrorCode} - Message : {cardList.ResponseMessage.ErrorMessage}");
+                generalLogger.Warn($"Error calling 'GetCards' from MobilExpress client. Code : {cardList.ResponseMessage.ErrorCode} - Message : {cardList.ResponseMessage.ErrorMessage}");
                 ViewBag.ServiceError = CMS.Localization.Errors.GeneralError;
                 return View();
             }
@@ -196,7 +184,7 @@ namespace CustomerManagementSystem.Controllers
             });
             if (autoPaymentList.ResponseMessage.ErrorCode != 0)
             {
-                //generalLogger.Warn($"Error calling 'remove invalid cards' from web service. Code : {autoPaymentList.ResponseMessage.ErrorCode} - Message : {autoPaymentList.ResponseMessage.ErrorMessage}");
+                generalLogger.Warn($"Error calling 'remove invalid cards' from web service. Code : {autoPaymentList.ResponseMessage.ErrorCode} - Message : {autoPaymentList.ResponseMessage.ErrorMessage}");
             }
             var autoPayments = autoPaymentList.AutoPaymentListResult.Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
             {
@@ -250,6 +238,7 @@ namespace CustomerManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
                 var baseRequest = new GenericServiceSettings();
                 var addCardSms = client.AddCardSMSCheck(new CustomerServiceBaseRequest()
                 {
@@ -294,6 +283,7 @@ namespace CustomerManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
+                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
                 var baseRequest = new GenericServiceSettings();
                 var addCard = client.AddCard(new CustomerServiceAddCardRequest()
                 {
@@ -320,7 +310,7 @@ namespace CustomerManagementSystem.Controllers
                 {
                     return RedirectToAction("AutomaticPayment");
                 }
-                //generalLogger.Warn(addCard.ResponseMessage.ErrorMessage, "Error calling 'SaveCard' from MobilExpress client");
+                generalLogger.Warn(addCard.ResponseMessage.ErrorMessage, "Error calling 'SaveCard' from MobilExpress client");
                 TempData["generic-error"] = CMS.Localization.Errors.GeneralError;
                 return View(viewName: "CreditCardRegister", model: card);
             }
@@ -336,6 +326,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult RemoveCard(string id)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var removeCardSms = client.RemoveCardSMSCheck(new CustomerServiceRemoveCardSMSCheckRequest()
             {
@@ -378,7 +369,7 @@ namespace CustomerManagementSystem.Controllers
                 return View(model: id);
             }
             TempData.Remove("smsRetries");
-
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var removeCard = client.RemoveCard(new CustomerServiceRemoveCardRequest()
             {
@@ -400,7 +391,7 @@ namespace CustomerManagementSystem.Controllers
             });
             if (removeCard.ResponseMessage.ErrorCode != 0)
             {
-                //generalLogger.Warn($"{removeCard.ResponseMessage.ErrorMessage} - Error calling 'DeleteCard' from MobilExpress client");
+                generalLogger.Warn($"{removeCard.ResponseMessage.ErrorMessage} - Error calling 'DeleteCard' from MobilExpress client");
                 TempData["ServiceError"] = removeCard.ResponseMessage.ErrorMessage;// RadiusRCustomerWebSite.Localization.Common.GeneralError;
                 return RedirectToAction("AutomaticPayment");
             }
@@ -446,6 +437,7 @@ namespace CustomerManagementSystem.Controllers
                 {
                     return RedirectToAction("AutomaticPayment");
                 }
+                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
                 var activateBaseRequest = new GenericServiceSettings();
                 var activateAutomaticPayment = client.ActivateAutomaticPayment(new CustomerServiceActivateAutomaticPaymentRequest()
                 {
@@ -467,7 +459,7 @@ namespace CustomerManagementSystem.Controllers
                 });
                 if (activateAutomaticPayment.ResponseMessage.ErrorCode != 0)
                 {
-                    //generalLogger.Warn($"Error calling 'GetCards' from MobilExpress client. Code : {activateAutomaticPayment.ResponseMessage.ErrorCode} - Message : {activateAutomaticPayment.ResponseMessage.ErrorMessage} ");
+                    generalLogger.Warn($"Error calling 'GetCards' from MobilExpress client. Code : {activateAutomaticPayment.ResponseMessage.ErrorCode} - Message : {activateAutomaticPayment.ResponseMessage.ErrorMessage} ");
                     return ReturnMessageUrl(Url.Action("AutomaticPayment", "Payment"), CMS.Localization.Errors.GeneralError, false);
                 }
             }
@@ -478,6 +470,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult DeactivateAutomaticPayment(long id)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var settingRequest = new GenericServiceSettings();
             var settings = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
             {
@@ -513,12 +506,13 @@ namespace CustomerManagementSystem.Controllers
                     SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID
                 }
             });
-            //generalLogger.Info($"Deactive Automatic Payment Result -> Code : {deactiveAutomaticPayment.ResponseMessage.ErrorCode} - Message : {deactiveAutomaticPayment.ResponseMessage.ErrorMessage}");
+            generalLogger.Info($"Deactive Automatic Payment Result -> Code : {deactiveAutomaticPayment.ResponseMessage.ErrorCode} - Message : {deactiveAutomaticPayment.ResponseMessage.ErrorMessage}");
             return RedirectToAction("AutomaticPayment");
         }
         [HttpGet]
         public ActionResult PaymentSelection(long? id)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var settings = GenericAppSettings();
             if (settings.ResponseMessage.ErrorCode != 0 || !settings.GenericAppSettings.MobilExpressIsActive)
             {
@@ -530,14 +524,14 @@ namespace CustomerManagementSystem.Controllers
                 var dbBills = new ServiceUtilities().GetCustomerBillList(User.GiveUserId());
                 if (dbBills.ResponseMessage.ErrorCode != 0)
                 {
-                    //generalLogger.Error($"Error calling 'get bills' from web service. Code : {dbBills.ResponseMessage.ErrorCode} - Message : {dbBills.ResponseMessage.ErrorMessage}");
+                    generalLogger.Error($"Error calling 'get bills' from web service. Code : {dbBills.ResponseMessage.ErrorCode} - Message : {dbBills.ResponseMessage.ErrorMessage}");
                     return RedirectToAction("BillsAndPayments");
                 }
-                var billIDs = id.HasValue ? new[] { id.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.PaymentTypeID == (short) CMS.Localization.Enums.PaymentType.None).Select(b => b.ID).ToArray(); // enum paymentType
+                var billIDs = id.HasValue ? new[] { id.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.PaymentTypeID == (short)CMS.Localization.Enums.PaymentType.None).Select(b => b.ID).ToArray(); // enum paymentType
                 if (billIDs.Any())
                 {
-                    var payBills = PayBills(billIDs, (short)CMS.Localization.Enums.SubscriptionPaidType.Billing, User.GiveUserId(), (int) CMS.Localization.Enums.PaymentType.Cash, (int)CMS.Localization.Enums.AccountantType.Admin);
-                    //generalLogger.Debug($"Payment selection 'Pay Bills' web service result. Code : {payBills.ResponseMessage.ErrorCode}");
+                    var payBills = PayBills(billIDs, (short)CMS.Localization.Enums.SubscriptionPaidType.Billing, User.GiveUserId(), (int)CMS.Localization.Enums.PaymentType.Cash, (int)CMS.Localization.Enums.AccountantType.Admin);
+                    generalLogger.Debug($"Payment selection 'Pay Bills' web service result. Code : {payBills.ResponseMessage.ErrorCode}");
                     if (payBills.ResponseMessage.ErrorCode != 0)
                     {
                         return RedirectToAction("BillsAndPayments");
@@ -545,6 +539,7 @@ namespace CustomerManagementSystem.Controllers
                 }
 
                 // log - need web service
+
                 var logBaseRequest = new GenericServiceSettings();
                 var systemLog = client.PaymentSystemLog(new CustomerServicePaymentSystemLogRequest()
                 {
@@ -563,7 +558,7 @@ namespace CustomerManagementSystem.Controllers
                 });
                 if (systemLog.ResponseMessage.ErrorCode != 0)
                 {
-                    //generalLogger.Error($"Error Calling 'system log payment' from webservice. Code : {systemLog.ResponseMessage.ErrorCode} ");
+                    generalLogger.Error($"Error Calling 'system log payment' from webservice. Code : {systemLog.ResponseMessage.ErrorCode} ");
                 }
                 return RedirectToAction("BillsAndPayments");
             }
@@ -606,6 +601,7 @@ namespace CustomerManagementSystem.Controllers
             var payableAmount = GetPayableAmount(User.GiveUserId(), id);
             if (payableAmount == 0m)
                 return RedirectToAction("PaymentSelection");
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var mobileExpressPayBill = client.MobilexpressPayBill(new CustomerServiceMobilexpressPayBillRequest()
             {
@@ -628,7 +624,7 @@ namespace CustomerManagementSystem.Controllers
             });
             if (mobileExpressPayBill.ResponseMessage.ErrorCode != 0)
             {
-                //generalLogger.Error($"Error calling 'Mobile express pay bill' from web service. Code : {mobileExpressPayBill.ResponseMessage.ErrorCode} ");
+                generalLogger.Error($"Error calling 'Mobile express pay bill' from web service. Code : {mobileExpressPayBill.ResponseMessage.ErrorCode} ");
                 return RedirectToAction("PaymentSelection");
             }
 
@@ -652,6 +648,7 @@ namespace CustomerManagementSystem.Controllers
                 AuthController.SignoutUser(Request.GetOwinContext());
                 AuthController.SignInCurrentUserAgain(Request.GetOwinContext());
             }
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var VPOSFormResponse = client.GetVPOSForm(new CustomerServiceVPOSFormRequest()
             {
                 Culture = baseRequest.Culture,
@@ -683,6 +680,7 @@ namespace CustomerManagementSystem.Controllers
                 Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
                 return RedirectToAction("BillsAndPayments");
             }
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var dbSubscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
             {
@@ -839,6 +837,7 @@ namespace CustomerManagementSystem.Controllers
                 Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
                 return RedirectToAction("BillsAndPayments");
             }
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var subscriptionBaseRequest = new GenericServiceSettings();
             var subscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
             {
@@ -926,6 +925,7 @@ namespace CustomerManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EArchivePDF(long id)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.EArchivePDF(new CustomerServiceEArchivePDFRequest()
             {
@@ -955,6 +955,7 @@ namespace CustomerManagementSystem.Controllers
         #region
         private CustomerServiceGenericAppSettingsResponse GenericAppSettings()
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var settings = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
             {
@@ -967,6 +968,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private string GetErrorMessage()
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var getVPOSError = client.GetVPOSErrorParameterName(new CustomerServiceVPOSErrorParameterNameRequest()
             {
@@ -979,6 +981,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private CustomerServicePayBillsResponse PayBills(long[] billIds, short? subscriptionPaidType, long? subscriptionId, int? paymentType, int? accountantType)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var payBillBaseRequest = new GenericServiceSettings();
             var payBills = client.PayBills(new CustomerServicePayBillsRequest()
             {
@@ -999,6 +1002,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private decimal GetPayableAmount(long? subscriptionId, long? billId)
         {
+            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.BillPayableAmount(new CustomerServiceBillPayableAmountRequest()
             {
@@ -1016,7 +1020,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 return 0m;
             }
-            return response.PayableAmount ?? 0m;            
+            return response.PayableAmount ?? 0m;
         }
         #endregion
 

@@ -17,3 +17,33 @@ if (success) {
         });
     }
 }
+
+
+//$('#quick-search-form').change(function () {
+//    alert("sad");
+//    //setTimeout(function () {
+//    //    $.ajax({
+//    //        url: navigator.language + '/Home/QuickSearch',
+//    //        data: {
+//    //            query: _query
+//    //        },
+//    //        dataType: 'html',
+//    //        success: function (res) {
+//    //            _hasResult = true;
+//    //            _hideProgress();
+//    //            KTUtil.addClass(_target, _resultClass);
+//    //            KTUtil.setHTML(_resultWrapper, res);
+//    //            _showDropdown();
+//    //            KTUtil.scrollUpdate(_resultWrapper);
+//    //        },
+//    //        error: function (res) {
+//    //            _hasResult = false;
+//    //            _hideProgress();
+//    //            KTUtil.addClass(_target, _resultClass);
+//    //            KTUtil.setHTML(_resultWrapper, '<span class="font-weight-bold text-muted">???</div>');
+//    //            _showDropdown();
+//    //            KTUtil.scrollUpdate(_resultWrapper);
+//    //        }
+//    //    });
+//    //}, 1000);
+//});

@@ -1,4 +1,5 @@
-﻿using CMS.ViewModels.Supports;
+﻿using CMS.ViewModels.Home;
+using CMS.ViewModels.Supports;
 using CustomerManagementSystem.GenericCustomerServiceReference;
 using System;
 using System.Collections.Generic;
@@ -193,7 +194,7 @@ namespace CustomerManagementSystem
             {
                 return new SelectList(Enumerable.Empty<object>());
             }
-            return new SelectList(response.NameValuePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
+            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
         }
         public SelectList GetSupportSubTypes(int? SupportTypeId, object selectedValue = null)
         {
@@ -214,7 +215,7 @@ namespace CustomerManagementSystem
             {
                 return new SelectList(Enumerable.Empty<object>());
             }
-            return new SelectList(response.NameValuePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
+            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
         }
         public CustomerServiceSupportRegisterResponse SupportRegister(CMS.ViewModels.Supports.NewRequestViewModel request, long? subscriptionId)
         {
@@ -278,6 +279,193 @@ namespace CustomerManagementSystem
                 Username = paymentRequest.Username
             });
             return paymentTypes;
+        }
+        public CustomerServiceSupportStatusResponse SupportStatus(long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var statusResponse = client.SupportStatus(new CustomerServiceBaseRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                SubscriptionParameters = new BaseSubscriptionRequest()
+                {
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return statusResponse;
+        }
+        public CustomerServiceExistingCustomerRegisterResponse SubscriptionRegister(SubcriptionRegisterViewModel register, long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            int? postalCode = null;
+            if (!string.IsNullOrEmpty(register.SetupAddress.PostalCode))
+            {
+                postalCode = Convert.ToInt32(register.SetupAddress.PostalCode);
+            }
+            var response = client.ExistingCustomerRegister(new CustomerServiceExistingCustomerRegisterRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ExistingCustomerRegister = new ExistingCustomerRegisterRequest()
+                {
+                    SubscriberID = subscriptionId,
+                    RegistrationInfo = new RegistrationInfo()
+                    {
+                        //BillingPeriod = 1,
+                        DomainID = 1, // already sent in service
+                        ServiceID = 1,
+                        ReferralDiscount = register.ReferralDiscount == null ? null : new GenericCustomerServiceReference.ReferralDiscountInfo()
+                        {
+                            ReferenceNo = register.ReferralDiscount.ReferenceNo
+                        },
+                        CommitmentInfo = new GenericCustomerServiceReference.CustomerCommitmentInfo()
+                        {
+                            CommitmentExpirationDate = register.CommitmentInfo.CommitmentExpirationDate.HasValue ? register.CommitmentInfo.CommitmentExpirationDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : null,
+                            CommitmentLength = register.CommitmentInfo.CommitmentLength
+                        },
+                        SetupAddress = new GenericCustomerServiceReference.AddressInfo()
+                        {
+                            AddressNo = register.SetupAddress.AddressNo,
+                            AddressText = register.SetupAddress.AddressText,
+                            ApartmentID = register.SetupAddress.ApartmentID,
+                            ApartmentNo = register.SetupAddress.ApartmentNo,
+                            DistrictID = register.SetupAddress.DistrictID,
+                            DistrictName = register.SetupAddress.DistrictName,
+                            DoorID = register.SetupAddress.DoorID,
+                            DoorNo = register.SetupAddress.DoorNo,
+                            Floor = register.SetupAddress.Floor,
+                            NeighbourhoodID = register.SetupAddress.NeighbourhoodID,
+                            NeighbourhoodName = register.SetupAddress.NeighbourhoodName,
+                            PostalCode = postalCode,
+                            ProvinceID = register.SetupAddress.ProvinceID,
+                            ProvinceName = register.SetupAddress.ProvinceName,
+                            RuralCode = register.SetupAddress.RuralCode,
+                            StreetID = register.SetupAddress.StreetID,
+                            StreetName = register.SetupAddress.StreetName,
+                        }
+                    }
+                }
+            });
+            return response;
+        }
+        public CustomerServiceNameValuePair GetProvinces()
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetProvinces(new CustomerServiceProvincesRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetProvinceDistricts(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetProvinceDistricts(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetDistrictRuralRegions(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetDistrictRuralRegions(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetRuralRegionNeighbourhoods(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetRuralRegionNeighbourhoods(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetNeighbourhoodStreets(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetNeighbourhoodStreets(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetStreetBuildings(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetStreetBuildings(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetBuildingApartments(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetBuildingApartments(new CustomerServiceNameValuePairRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ItemCode = code
+            });
+            return result;
+        }
+        public CustomerServiceAddressDetailsResponse GetApartmentAddress(long? code)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetApartmentAddress(new CustomerServiceAddressDetailsRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                BBK = code
+            });
+            return result;
+        }
+        public CustomerServiceNameValuePair GetCommitmentLengths()
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.CommitmentLengthList(new CustomerServiceCommitmentLengthsRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+            });
+            return result;
         }
     }
 }

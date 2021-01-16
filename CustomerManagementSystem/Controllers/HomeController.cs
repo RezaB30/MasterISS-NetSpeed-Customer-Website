@@ -5,13 +5,14 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using CMS.ViewModels.Home;
+using NLog;
 using RezaB.Web.Authentication;
 
 namespace CustomerManagementSystem.Controllers
 {
     public class HomeController : BaseController
     {
-        GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
+        Logger generalLogger = LogManager.GetLogger("general");
         public ActionResult Index()
         {
             var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
@@ -25,7 +26,7 @@ namespace CustomerManagementSystem.Controllers
             var index = new IndexViewModel()
             {
                 FullName = customerInfo.GetCustomerInfoResponse.ValidDisplayName,
-                LineState = "Online",
+                //LineState = "Online",
                 SubscriberNo = customerInfo.GetCustomerInfoResponse.CurrentSubscriberNo,
                 ID = User.GiveUserId().Value,
                 ReferenceCode = customerInfo.GetCustomerInfoResponse == null ? "-" : customerInfo.GetCustomerInfoResponse.ReferenceNo,
@@ -210,61 +211,172 @@ namespace CustomerManagementSystem.Controllers
                 Request.GetOwinContext());
             return RedirectToAction("Index", "Home");
         }
-        public ActionResult QuickSearch(string query)
+        public ActionResult SubscriptionRegister()
         {
-            var SearchList = new List<QuickSearch>();
-            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+            var provinces = new ServiceUtilities().GetProvinces();
+            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
+            var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
+            ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
+            return View();
+        }
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult SubscriptionRegister(SubcriptionRegisterViewModel register)
+        {
+            if (ModelState.IsValid)
             {
-                Content = "oto",
-                Header = "Otomatik Ödeme Talimatı",
-                Url = "/Payment/PaymentInstruction"
-            });
-            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
-            {
-                Content = "öde",
-                Header = "Otomatik Ödeme Talimatı",
-                Url = "/Payment/PaymentInstruction"
-            });
-            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
-            {
-                Content = "öde",
-                Header = "Fatura & Ödemeler",
-                Url = "/Payment/Bills"
-            });
-            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
-            {
-                Content = "fat",
-                Header = "Otomatik Ödeme Talimatı",
-                Url = "/Payment/PaymentInstruction"
-            });
-            SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
-            {
-                Content = "fat",
-                Header = "Fatura & Ödemeler",
-                Url = "/Payment/Bills"
-
-            });
-            var contentList = new List<string>();
-            foreach (var item in SearchList.Distinct())
-            {
-                if (query.Contains(item.Content))
+                var address = new ServiceUtilities().GetApartmentAddress(register.SetupAddress.ApartmentID);
+                if (address.ResponseMessage.ErrorCode == 0)
                 {
-                    contentList.Add("<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
-                        "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
-                        "<img src='/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
-                        "</div>" +
-                        "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
-                        "<a href='" + item.Url + "' class='font-weight-bold text-dark text-hover-primary'>" + item.Header + "</a>" +
-                        "</div>" + "</div>");
+                    var getAddress = address.AddressDetailsResponse;
+                    var existingRegister = new SubcriptionRegisterViewModel()
+                    {
+                        //BillingPeriod = 1,
+                        SetupAddress = new AddressInfo()
+                        {
+                            AddressNo = getAddress.AddressNo,
+                            AddressText = getAddress.AddressText,
+                            ApartmentID = getAddress.ApartmentID,
+                            ApartmentNo = getAddress.ApartmentNo,
+                            DistrictID = getAddress.DistrictID,
+                            DistrictName = getAddress.DistrictName,
+                            DoorID = getAddress.DoorID,
+                            DoorNo = getAddress.DoorNo,
+                            Floor = register.SetupAddress.Floor,
+                            NeighbourhoodID = getAddress.NeighbourhoodID,
+                            NeighbourhoodName = getAddress.NeighbourhoodName,
+                            PostalCode = register.SetupAddress.PostalCode,
+                            ProvinceID = getAddress.ProvinceID,
+                            ProvinceName = getAddress.ProvinceName,
+                            RuralCode = getAddress.RuralCode,
+                            StreetID = getAddress.StreetID,
+                            StreetName = getAddress.StreetName
+                        },
+                        CommitmentInfo = new CustomerCommitmentInfo()
+                        {
+                            CommitmentExpirationDate = register.CommitmentInfo.CommitmentExpirationDate,
+                            CommitmentLength = register.CommitmentInfo.CommitmentLength
+                        },
+                        DomainID = register.DomainID,
+                        ServiceID = register.ServiceID,
+                        ReferralDiscount = register.ReferralDiscount == null ? null : new ReferralDiscountInfo()
+                        {
+                            ReferenceNo = register.ReferralDiscount.ReferenceNo
+                        }
+                    };
+                    var registerResponse = new ServiceUtilities().SubscriptionRegister(existingRegister, User.GiveUserId());
+                    if (registerResponse.ResponseMessage.ErrorCode != 0)
+                    {
+                        TempData["generic-error"] = registerResponse.ResponseMessage.ErrorMessage;
+                    }
+                    else
+                    {
+                        TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
+                        return RedirectToAction("Index");
+                    }
+                }
+                else
+                {
+                    TempData["generic-error"] = address.ResponseMessage.ErrorMessage;
                 }
             }
-            var content = "<div class='quick-search-result'>" +
-                "<div class='text-muted d-none'>No record found</div>" +
-                "<div class='font-size-sm text-primary font-weight-bolder text-uppercase mb-2'>Arama Sonuçları</div>" +
-                "<div class='mb-10'>" + string.Join("", contentList.ToArray()) +
-                "</div>" +
-                "</div>";
-            return Content(content);
+            var provinces = new ServiceUtilities().GetProvinces();
+            var districts = new ServiceUtilities().GetProvinceDistricts(register.SetupAddress.ProvinceID);
+            var rurals = new ServiceUtilities().GetDistrictRuralRegions(register.SetupAddress.DistrictID);
+            var neighbourhoods = new ServiceUtilities().GetRuralRegionNeighbourhoods(register.SetupAddress.RuralCode);
+            var streets = new ServiceUtilities().GetNeighbourhoodStreets(register.SetupAddress.NeighbourhoodID);
+            var buildings = new ServiceUtilities().GetStreetBuildings(register.SetupAddress.StreetID);
+            var apartments = new ServiceUtilities().GetBuildingApartments(register.SetupAddress.DoorID);
+            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ProvinceID);
+            ViewBag.DistrictList = new SelectList(districts.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DistrictID);
+            ViewBag.RuralList = new SelectList(rurals.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.RuralCode);
+            ViewBag.NeighbourhoodList = new SelectList(neighbourhoods.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.NeighbourhoodID);
+            ViewBag.StreetList = new SelectList(streets.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.StreetID);
+            ViewBag.BuildingList = new SelectList(buildings.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DoorID);
+            ViewBag.ApartmentList = new SelectList(apartments.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ApartmentID);
+            var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
+            ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.CommitmentInfo.CommitmentLength);
+            return View(register);
+        }
+        public ActionResult QuickSearch(string query)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(query))
+                {
+                    if (Session["quickSearch"] != null)
+                    {
+                        var sessionContent = Session["quickSearch"].ToString();
+                        Session.Remove("quickSearch");
+                        return Content(sessionContent);
+                    }
+                }
+                var SearchList = new List<QuickSearch>();
+                SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+                {
+                    Content = "oto",
+                    Header = "Otomatik Ödeme Talimatı",
+                    Url = "/Payment/AutomaticPayment"
+                });
+                SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+                {
+                    Content = "öde",
+                    Header = "Otomatik Ödeme Talimatı",
+                    Url = "/Payment/AutomaticPayment"
+                });
+                SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+                {
+                    Content = "öde",
+                    Header = "Fatura & Ödemeler",
+                    Url = "/Payment/BillsAndPayments"
+                });
+                SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+                {
+                    Content = "fat",
+                    Header = "Otomatik Ödeme Talimatı",
+                    Url = "/Payment/AutomaticPayment"
+                });
+                SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
+                {
+                    Content = "fat",
+                    Header = "Fatura & Ödemeler",
+                    Url = "/Payment/BillsAndPayments"
+
+                });
+                var contentList = new List<string>();
+                foreach (var item in SearchList.Distinct())
+                {
+                    if (query.Contains(item.Content))
+                    {
+                        contentList.Add("<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
+                            "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
+                            "<img src='/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
+                            "</div>" +
+                            "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
+                            "<a href='" + item.Url + "' class='font-weight-bold text-dark text-hover-primary'>" + item.Header + "</a>" +
+                            "</div>" + "</div>");
+                    }
+                }
+                var content = "<div class='quick-search-result'>" +
+                    "<div class='text-muted d-none'>No record found</div>" +
+                    "<div class='font-size-sm text-primary font-weight-bolder text-uppercase mb-2'>Arama Sonuçları</div>" +
+                    "<div class='mb-10'>" + string.Join("", contentList.ToArray()) +
+                    "</div>" +
+                    "</div>";
+
+                Session["quickSearch"] = content;
+                return Content(content);
+            }
+            catch (Exception)
+            {
+                var content = "<div class='quick-search-result'>" +
+                    "<div class='text-muted d-none'>No record found</div>" +
+                    "<div class='font-size-sm text-primary font-weight-bolder text-uppercase mb-2'>Arama Sonuçları</div>" +
+                    "<div class='mb-10'>" + "Sonuç Bulunamadı" +
+                    "</div>" +
+                    "</div>";
+                return Content(content);
+            }
         }
     }
 }

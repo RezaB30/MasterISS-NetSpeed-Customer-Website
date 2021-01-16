@@ -13,25 +13,28 @@
             <button type="button" class="btn btn-danger btn-sm">@Model.BillCount @Common.Invoice</button>
         </div>
         <div class="scroll scroll-push" data-scroll="true" data-height="250" data-mobile-height="220">
-            @foreach (var item in Model.Bills)
+            @if (Model.Bills != null)
             {
-                <div class="d-flex align-items-center justify-content-between p-8">
-                    <div class="d-flex flex-column mr-2">
-                        <a href="#"
-                           class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">@Html.DisplayFor(m => item.IssueDate)</a>
-                        <span class="text-muted">@Html.DisplayNameFor(m => item.IssueDate)</span>
-                        <div class="d-flex align-items-center mt-2">
-                            <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">@Html.DisplayNameFor(m => item.Amount)</span>
-                            <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
-                                @Html.DisplayFor(m => item.Amount)
-                            </span>
+                foreach (var item in Model.Bills)
+                {
+                    <div class="d-flex align-items-center justify-content-between p-8">
+                        <div class="d-flex flex-column mr-2">
+                            <a href="#"
+                               class="font-weight-bold text-dark-75 font-size-lg text-hover-primary">@Html.DisplayFor(m => item.IssueDate)</a>
+                            <span class="text-muted">@Html.DisplayNameFor(m => item.IssueDate)</span>
+                            <div class="d-flex align-items-center mt-2">
+                                <span class="font-weight-bold mr-1 text-dark-75 font-size-lg">@Html.DisplayNameFor(m => item.Amount)</span>
+                                <span class="font-weight-bold mr-1 text-dark-50 font-size-lg">
+                                    @Html.DisplayFor(m => item.Amount)
+                                </span>
+                            </div>
                         </div>
+                        <a href="#" class="symbol symbol-70 flex-shrink-0">
+                            <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
+                        </a>
                     </div>
-                    <a href="#" class="symbol symbol-70 flex-shrink-0">
-                        <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
-                    </a>
-                </div>
-                <div class="separator separator-solid"></div>
+                    <div class="separator separator-solid"></div>
+                }
             }
         </div>
         <div class="p-8">
@@ -43,7 +46,7 @@
                     @Html.DisplayFor(m => m.TotalAmount)
                 </span>
             </div>
-            @if (Model.Bills.Count() != 0)
+            @if ( Model.Bills != null && Model.Bills.Count() != 0)
             {
                 <div class="text-right">
                     <a href="@Url.Action("PaymentSelection","Payment")" class="btn btn-primary font-weight-bold mr-2">@Common.QuickPay</a>

@@ -159,27 +159,27 @@
   <xs:element name="GetCustomerUsageInfoResponse" nillable="true" type="tns:GetCustomerUsageInfoResponse" />
   <xs:complexType name="CustomerServiceNameValuePair">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q6:BaseResponseOfArrayOfNameValuePairSHA1KVWl_PpN3">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q6:BaseResponseOfArrayOfValueNamePairSHA1KVWl_PpN3">
         <xs:sequence>
-          <xs:element minOccurs="0" name="NameValuePairList" nillable="true" type="tns:ArrayOfNameValuePair" />
+          <xs:element minOccurs="0" name="ValueNamePairList" nillable="true" type="tns:ArrayOfValueNamePair" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="CustomerServiceNameValuePair" nillable="true" type="tns:CustomerServiceNameValuePair" />
-  <xs:complexType name="ArrayOfNameValuePair">
+  <xs:complexType name="ArrayOfValueNamePair">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValuePair" nillable="true" type="tns:NameValuePair" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValueNamePair" nillable="true" type="tns:ValueNamePair" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfNameValuePair" nillable="true" type="tns:ArrayOfNameValuePair" />
-  <xs:complexType name="NameValuePair">
+  <xs:element name="ArrayOfValueNamePair" nillable="true" type="tns:ArrayOfValueNamePair" />
+  <xs:complexType name="ValueNamePair">
     <xs:sequence>
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Value" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="NameValuePair" nillable="true" type="tns:NameValuePair" />
+  <xs:element name="ValueNamePair" nillable="true" type="tns:ValueNamePair" />
   <xs:complexType name="CustomerServiceGetCustomerSupportListResponse">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q7:BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3">
@@ -692,4 +692,120 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="CustomerServiceVPOSErrorParameterNameResponse" nillable="true" type="tns:CustomerServiceVPOSErrorParameterNameResponse" />
+  <xs:complexType name="CustomerServiceExistingCustomerRegisterResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q43:BaseResponseOfArrayOfKeyValueOfstringstringSHA1PGu3YCeQ">
+        <xs:sequence>
+          <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeyValuePairs" nillable="true" type="q44:ArrayOfKeyValueOfstringstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceExistingCustomerRegisterResponse" nillable="true" type="tns:CustomerServiceExistingCustomerRegisterResponse" />
+  <xs:complexType name="CustomerServiceAddressDetailsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q45:BaseResponseOfAddressDetailsResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressDetailsResponse" nillable="true" type="tns:AddressDetailsResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceAddressDetailsResponse" nillable="true" type="tns:CustomerServiceAddressDetailsResponse" />
+  <xs:complexType name="AddressDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressNo" type="xs:long" />
+      <xs:element minOccurs="0" name="AddressText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApartmentID" type="xs:long" />
+      <xs:element minOccurs="0" name="ApartmentNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictID" type="xs:long" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorID" type="xs:long" />
+      <xs:element minOccurs="0" name="DoorNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeighbourhoodID" type="xs:long" />
+      <xs:element minOccurs="0" name="NeighbourhoodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceID" type="xs:long" />
+      <xs:element minOccurs="0" name="ProvinceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuralCode" type="xs:long" />
+      <xs:element minOccurs="0" name="StreetID" type="xs:long" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDetailsResponse" nillable="true" type="tns:AddressDetailsResponse" />
+  <xs:complexType name="CustomerServiceExternalTariffResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q46:BaseResponseOfArrayOfExternalTariffResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExternalTariffList" nillable="true" type="tns:ArrayOfExternalTariffResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceExternalTariffResponse" nillable="true" type="tns:CustomerServiceExternalTariffResponse" />
+  <xs:complexType name="ArrayOfExternalTariffResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExternalTariffResponse" nillable="true" type="tns:ExternalTariffResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternalTariffResponse" nillable="true" type="tns:ArrayOfExternalTariffResponse" />
+  <xs:complexType name="ExternalTariffResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DomainID" type="xs:int" />
+      <xs:element minOccurs="0" name="HasFiber" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasXDSL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TariffID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExternalTariffResponse" nillable="true" type="tns:ExternalTariffResponse" />
+  <xs:complexType name="CustomerServiceServiceAvailabilityResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q47:BaseResponseOfServiceAvailabilityResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ServiceAvailabilityResponse" nillable="true" type="tns:ServiceAvailabilityResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceServiceAvailabilityResponse" nillable="true" type="tns:CustomerServiceServiceAvailabilityResponse" />
+  <xs:complexType name="ServiceAvailabilityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADSL" nillable="true" type="tns:ServiceAvailabilityResponse.ADSLInfo" />
+      <xs:element minOccurs="0" name="BBK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIBER" nillable="true" type="tns:ServiceAvailabilityResponse.FIBERInfo" />
+      <xs:element minOccurs="0" name="VDSL" nillable="true" type="tns:ServiceAvailabilityResponse.VDSLInfo" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAvailabilityResponse" nillable="true" type="tns:ServiceAvailabilityResponse" />
+  <xs:complexType name="ServiceAvailabilityResponse.ADSLInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdslDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AdslPortState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdslSVUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdslSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HasInfrastructureAdsl" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAvailabilityResponse.ADSLInfo" nillable="true" type="tns:ServiceAvailabilityResponse.ADSLInfo" />
+  <xs:complexType name="ServiceAvailabilityResponse.FIBERInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FiberDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FiberPortState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FiberSVUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FiberSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HasInfrastructureFiber" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAvailabilityResponse.FIBERInfo" nillable="true" type="tns:ServiceAvailabilityResponse.FIBERInfo" />
+  <xs:complexType name="ServiceAvailabilityResponse.VDSLInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HasInfrastructureVdsl" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VdslDistance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VdslPortState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VdslSVUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VdslSpeed" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceAvailabilityResponse.VDSLInfo" nillable="true" type="tns:ServiceAvailabilityResponse.VDSLInfo" />
 </xs:schema>
