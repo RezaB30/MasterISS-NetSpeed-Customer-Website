@@ -261,6 +261,9 @@
   <data name="RuralCode" xml:space="preserve">
     <value>Semt</value>
   </data>
+  <data name="ServiceID" xml:space="preserve">
+    <value>Tarife</value>
+  </data>
   <data name="ServiceName" xml:space="preserve">
     <value>Tarife Adı</value>
   </data>

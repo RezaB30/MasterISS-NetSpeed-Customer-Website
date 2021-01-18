@@ -98,6 +98,7 @@
     <Compile Include="Home\SpecialOfferViewModel.cs" />
     <Compile Include="Home\SubcriptionRegisterViewModel.cs" />
     <Compile Include="Home\SubscriptionListVM.cs" />
+    <Compile Include="Home\TariffsViewModel.cs" />
     <Compile Include="Layout\BillsLayoutViewModel.cs" />
     <Compile Include="Payment\ActivateAutomaticPaymentViewModel.cs" />
     <Compile Include="Payment\PaymentsAndBillsViewModel.cs" />

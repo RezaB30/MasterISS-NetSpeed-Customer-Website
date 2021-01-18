@@ -14,6 +14,7 @@
     <RootNamespace>CustomerManagementSystem</RootNamespace>
     <AssemblyName>CustomerManagementSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -191,6 +192,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MyExtensions.cs" />
+    <Compile Include="Helper\PageBuilder.cs" />
     <Compile Include="LanguageLinkHelper.cs" />
     <Compile Include="Utilities\DomainCache.cs" />
     <Compile Include="Utilities\InternalUtilities.cs" />
@@ -2698,7 +2700,8 @@
     <Content Include="Views\Shared\_Notifications.cshtml" />
     <Content Include="Views\Home\_SetupAddressPartial.cshtml" />
     <Content Include="Views\Home\SubscriptionRegister.cshtml" />
-    <Content Include="Views\Home\_SubscriptionRegisterCommitmentPartial.cshtml" />
+    <Content Include="Views\Home\_SubscriptionRegisterReferencePartial.cshtml" />
+    <Content Include="Views\Home\_TariffListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

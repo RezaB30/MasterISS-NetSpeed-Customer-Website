@@ -35,7 +35,7 @@ function EnableSelectList() {
         $(this).find("select").removeAttr("disabled");
     })
 }
-function ClearList(responseId) {
+function ClearList(responseId) {    
     var container = $(responseId);
     container.find('option').each(function () {
         if ($(this).val() != '') {

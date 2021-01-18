@@ -61,6 +61,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;hr class=&apos;my-4&apos;&gt;&lt;div class=&apos;text-dark-10 font-weight font-size-h5 mt-5 text-center&apos;&gt;{0}&lt;/div&gt;&lt;hr class=&apos;my-4&apos;&gt;.
+        /// </summary>
+        public static string AddressDescription {
+            get {
+                return ResourceManager.GetString("AddressDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gönderilen Giriş Kodunu Giriniz.
         /// </summary>
         public static string SetLoginCode {

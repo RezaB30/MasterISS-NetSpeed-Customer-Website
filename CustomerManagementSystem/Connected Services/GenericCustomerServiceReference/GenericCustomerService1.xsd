@@ -754,6 +754,8 @@
       <xs:element minOccurs="0" name="DomainID" type="xs:int" />
       <xs:element minOccurs="0" name="HasFiber" type="xs:boolean" />
       <xs:element minOccurs="0" name="HasXDSL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Speed" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TariffID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

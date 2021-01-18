@@ -2547,9 +2547,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private CustomerManagementSystem.GenericCustomerServiceReference.CustomerCommitmentInfo CommitmentInfoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> DomainIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2568,19 +2565,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public CustomerManagementSystem.GenericCustomerServiceReference.CustomerCommitmentInfo CommitmentInfo {
-            get {
-                return this.CommitmentInfoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommitmentInfoField, value) != true)) {
-                    this.CommitmentInfoField = value;
-                    this.RaisePropertyChanged("CommitmentInfo");
-                }
             }
         }
         
@@ -2632,67 +2616,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
                 if ((object.ReferenceEquals(this.SetupAddressField, value) != true)) {
                     this.SetupAddressField = value;
                     this.RaisePropertyChanged("SetupAddress");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerCommitmentInfo", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
-    [System.SerializableAttribute()]
-    public partial class CustomerCommitmentInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CommitmentExpirationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CommitmentLengthField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CommitmentExpirationDate {
-            get {
-                return this.CommitmentExpirationDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CommitmentExpirationDateField, value) != true)) {
-                    this.CommitmentExpirationDateField = value;
-                    this.RaisePropertyChanged("CommitmentExpirationDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> CommitmentLength {
-            get {
-                return this.CommitmentLengthField;
-            }
-            set {
-                if ((this.CommitmentLengthField.Equals(value) != true)) {
-                    this.CommitmentLengthField = value;
-                    this.RaisePropertyChanged("CommitmentLength");
                 }
             }
         }
@@ -7562,6 +7485,12 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         private bool HasXDSLField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TariffIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -7622,6 +7551,32 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
                 if ((this.HasXDSLField.Equals(value) != true)) {
                     this.HasXDSLField = value;
                     this.RaisePropertyChanged("HasXDSL");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Speed {
+            get {
+                return this.SpeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpeedField, value) != true)) {
+                    this.SpeedField = value;
+                    this.RaisePropertyChanged("Speed");
                 }
             }
         }

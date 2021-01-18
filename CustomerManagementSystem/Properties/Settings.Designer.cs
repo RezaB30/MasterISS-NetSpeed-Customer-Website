@@ -86,5 +86,23 @@ namespace CustomerManagementSystem.Properties {
                 return ((int)(this["SupportTableRow"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("testwebservice")]
+        public string WebServiceUsername {
+            get {
+                return ((string)(this["WebServiceUsername"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12345678")]
+        public string WebServicePassword {
+            get {
+                return ((string)(this["WebServicePassword"]));
+            }
+        }
     }
 }

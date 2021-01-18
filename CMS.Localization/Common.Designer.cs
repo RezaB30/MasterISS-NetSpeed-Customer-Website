@@ -476,11 +476,29 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DSL.
+        /// </summary>
+        public static string DSL {
+            get {
+                return ResourceManager.GetString("DSL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paketi Uzat.
         /// </summary>
         public static string ExtendPacket {
             get {
                 return ResourceManager.GetString("ExtendPacket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FIBER.
+        /// </summary>
+        public static string Fiber {
+            get {
+                return ResourceManager.GetString("Fiber", resourceCulture);
             }
         }
         
@@ -900,6 +918,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Yeni Başvuru.
+        /// </summary>
+        public static string NewRegister {
+            get {
+                return ResourceManager.GetString("NewRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yeni Destek Kaydı.
         /// </summary>
         public static string NewRequest {
@@ -918,7 +945,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yeni Abonelik.
+        ///   Looks up a localized string similar to Yeni Abonelik Başvurusu.
         /// </summary>
         public static string NewSubscriptionRegister {
             get {
@@ -977,6 +1004,15 @@ namespace CMS.Localization {
         public static string OpenRequestAgain {
             get {
                 return ResourceManager.GetString("OpenRequestAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İsteğe bağlı.
+        /// </summary>
+        public static string Optional {
+            get {
+                return ResourceManager.GetString("Optional", resourceCulture);
             }
         }
         
@@ -1535,6 +1571,24 @@ namespace CMS.Localization {
         public static string SupportTopic {
             get {
                 return ResourceManager.GetString("SupportTopic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarife  Tercihi.
+        /// </summary>
+        public static string TariffPreference {
+            get {
+                return ResourceManager.GetString("TariffPreference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresinizde desteklenen altyapıya göre aşağıdaki tarifelerden seçim yapabilirsiniz..
+        /// </summary>
+        public static string TariffPreferenceDescription {
+            get {
+                return ResourceManager.GetString("TariffPreferenceDescription", resourceCulture);
             }
         }
         

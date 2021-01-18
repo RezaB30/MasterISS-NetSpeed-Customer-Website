@@ -255,8 +255,14 @@
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Download as PDF</value>
   </data>
+  <data name="DSL" xml:space="preserve">
+    <value>DSL</value>
+  </data>
   <data name="ExtendPacket" xml:space="preserve">
     <value>Extend Packet</value>
+  </data>
+  <data name="Fiber" xml:space="preserve">
+    <value>FIBER</value>
   </data>
   <data name="Freeze" xml:space="preserve">
     <value>Freezed</value>
@@ -396,6 +402,9 @@
   <data name="MyTariff" xml:space="preserve">
     <value>My Tariff</value>
   </data>
+  <data name="NewRegister" xml:space="preserve">
+    <value>New Register</value>
+  </data>
   <data name="NewRequest" xml:space="preserve">
     <value>New Support Request</value>
   </data>
@@ -403,7 +412,7 @@
     <value>You can request support and follow up</value>
   </data>
   <data name="NewSubscriptionRegister" xml:space="preserve">
-    <value>New Subscription</value>
+    <value>New Subscription Register</value>
   </data>
   <data name="NewSupportNotification" xml:space="preserve">
     <value>You have new notification about support request</value>
@@ -422,6 +431,9 @@
   </data>
   <data name="OpenRequestAgain" xml:space="preserve">
     <value>Open Request Again</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Optional</value>
   </data>
   <data name="Pagination" xml:space="preserve">
     <value>Total row is {0}. Rows between {1} and {2} are shown on this page.</value>
@@ -608,6 +620,12 @@
   </data>
   <data name="SupportTopic" xml:space="preserve">
     <value>Support Topic</value>
+  </data>
+  <data name="TariffPreference" xml:space="preserve">
+    <value>Tariff Preference</value>
+  </data>
+  <data name="TariffPreferenceDescription" xml:space="preserve">
+    <value>You can choose from the following tariffs according to the infrastructure supported at your address.</value>
   </data>
   <data name="TariffUsage" xml:space="preserve">
     <value>Tariff &amp; Usage</value>

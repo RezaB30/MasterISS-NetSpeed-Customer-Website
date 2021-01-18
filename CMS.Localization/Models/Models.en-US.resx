@@ -261,6 +261,9 @@
   <data name="RuralCode" xml:space="preserve">
     <value>Rural</value>
   </data>
+  <data name="ServiceID" xml:space="preserve">
+    <value>Tarife</value>
+  </data>
   <data name="ServiceName" xml:space="preserve">
     <value>Tariff Name</value>
   </data>

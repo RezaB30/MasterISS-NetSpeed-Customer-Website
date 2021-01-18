@@ -211,6 +211,36 @@ namespace CustomerManagementSystem.Controllers
                 Request.GetOwinContext());
             return RedirectToAction("Index", "Home");
         }
+        public ActionResult GetAddressFromCode(string bbk)
+        {
+            var availability = new ServiceUtilities().ServiceAvailability(bbk);
+            if (availability.ResponseMessage.ErrorCode != 0)
+            {
+                return Content(string.Format(CMS.Localization.Message.AddressDescription, "-"));
+            }
+            return Content(string.Format(CMS.Localization.Message.AddressDescription, availability.ServiceAvailabilityResponse.address));
+        }
+        public ActionResult LoadTariffs(string bbk)
+        {
+            var availability = new ServiceUtilities().ServiceAvailability(bbk);
+            if (availability.ResponseMessage.ErrorCode != 0)
+            {
+                return Content(CMS.Localization.Errors.AvailabilityTariffNotFoundDescription);
+            }
+            var externalTariffs = new ServiceUtilities().GetTariffList();
+            if (availability.ServiceAvailabilityResponse.FIBER.HasInfrastructureFiber)
+            {
+                var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasFiber).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
+
+                return PartialView("_TariffListPartial", tariffList);
+            }
+            if (availability.ServiceAvailabilityResponse.VDSL.HasInfrastructureVdsl || availability.ServiceAvailabilityResponse.ADSL.HasInfrastructureAdsl)
+            {
+                var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasXDSL).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
+                return PartialView("_TariffListPartial", tariffList);
+            }
+            return Content(CMS.Localization.Errors.AvailabilityTariffNotFoundDescription);
+        }
         public ActionResult SubscriptionRegister()
         {
             var provinces = new ServiceUtilities().GetProvinces();
@@ -252,14 +282,8 @@ namespace CustomerManagementSystem.Controllers
                             StreetID = getAddress.StreetID,
                             StreetName = getAddress.StreetName
                         },
-                        CommitmentInfo = new CustomerCommitmentInfo()
-                        {
-                            CommitmentExpirationDate = register.CommitmentInfo.CommitmentExpirationDate,
-                            CommitmentLength = register.CommitmentInfo.CommitmentLength
-                        },
-                        DomainID = register.DomainID,
                         ServiceID = register.ServiceID,
-                        ReferralDiscount = register.ReferralDiscount == null ? null : new ReferralDiscountInfo()
+                        ReferralDiscount = register.ReferralDiscount == null ? null : register.ReferralDiscount.ReferenceNo == null ? null : new ReferralDiscountInfo()
                         {
                             ReferenceNo = register.ReferralDiscount.ReferenceNo
                         }
@@ -267,12 +291,19 @@ namespace CustomerManagementSystem.Controllers
                     var registerResponse = new ServiceUtilities().SubscriptionRegister(existingRegister, User.GiveUserId());
                     if (registerResponse.ResponseMessage.ErrorCode != 0)
                     {
-                        TempData["generic-error"] = registerResponse.ResponseMessage.ErrorMessage;
+                        if (registerResponse.KeyValuePairs != null && registerResponse.KeyValuePairs.Count() != 0 && registerResponse.KeyValuePairs.ContainsKey("ReferralDiscount.ReferenceNo"))
+                        {
+                            TempData["generic-error"] = CMS.Localization.Errors.InvalidReferenceNo;
+                        }
+                        else
+                        {
+                            TempData["generic-error"] = registerResponse.ResponseMessage.ErrorMessage;
+                        }                        
                     }
                     else
                     {
                         TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("Index");
+                        return RedirectToAction("SubscriptionRegister");
                     }
                 }
                 else
@@ -294,8 +325,6 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.StreetList = new SelectList(streets.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.StreetID);
             ViewBag.BuildingList = new SelectList(buildings.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DoorID);
             ViewBag.ApartmentList = new SelectList(apartments.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ApartmentID);
-            var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
-            ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.CommitmentInfo.CommitmentLength);
             return View(register);
         }
         public ActionResult QuickSearch(string query)

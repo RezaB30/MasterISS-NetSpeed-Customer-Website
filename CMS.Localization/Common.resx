@@ -256,8 +256,14 @@ gerçekleştirebilirsiniz.</value>
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Pdf Olarak İndir</value>
   </data>
+  <data name="DSL" xml:space="preserve">
+    <value>DSL</value>
+  </data>
   <data name="ExtendPacket" xml:space="preserve">
     <value>Paketi Uzat</value>
+  </data>
+  <data name="Fiber" xml:space="preserve">
+    <value>FIBER</value>
   </data>
   <data name="Freeze" xml:space="preserve">
     <value>Dondurulmuş</value>
@@ -398,6 +404,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="MyTariff" xml:space="preserve">
     <value>Tarifem</value>
   </data>
+  <data name="NewRegister" xml:space="preserve">
+    <value>Yeni Başvuru</value>
+  </data>
   <data name="NewRequest" xml:space="preserve">
     <value>Yeni Destek Kaydı</value>
   </data>
@@ -405,7 +414,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Destek talebinde bulunabilir ve takip edebilirsiniz.</value>
   </data>
   <data name="NewSubscriptionRegister" xml:space="preserve">
-    <value>Yeni Abonelik</value>
+    <value>Yeni Abonelik Başvurusu</value>
   </data>
   <data name="NewSupportNotification" xml:space="preserve">
     <value>Yeni destek bildiriminiz var</value>
@@ -424,6 +433,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="OpenRequestAgain" xml:space="preserve">
     <value>TALEBİ TEKRAR AÇ</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>İsteğe bağlı</value>
   </data>
   <data name="Pagination" xml:space="preserve">
     <value>Toplam {0} kayıt bulundu. Bu sayfada {1} ile {2} arası kayıtlar gösteriliyor.</value>
@@ -610,6 +622,12 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="SupportTopic" xml:space="preserve">
     <value>Destek Konusu</value>
+  </data>
+  <data name="TariffPreference" xml:space="preserve">
+    <value>Tarife  Tercihi</value>
+  </data>
+  <data name="TariffPreferenceDescription" xml:space="preserve">
+    <value>Adresinizde desteklenen altyapıya göre aşağıdaki tarifelerden seçim yapabilirsiniz.</value>
   </data>
   <data name="TariffUsage" xml:space="preserve">
     <value>Tarife &amp; Kullanım</value>

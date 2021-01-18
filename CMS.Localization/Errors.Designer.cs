@@ -61,6 +61,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3 class=&quot;font-weight-bolder text-dark-50 font-size-h3&quot;&gt;Altyapınıza uygun tarife bulunamadı.&lt;/h3&gt;.
+        /// </summary>
+        public static string AvailabilityTariffNotFoundDescription {
+            get {
+                return ResourceManager.GetString("AvailabilityTariffNotFoundDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kredi Kartı Ayı Gerekli.
         /// </summary>
         public static string CCMonthRequired {
@@ -142,6 +151,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lütfen geçerli bir referans numarası giriniz..
+        /// </summary>
+        public static string InvalidReferenceNo {
+            get {
+                return ResourceManager.GetString("InvalidReferenceNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TC Kimlik No veya GSM No Gerekli.
         /// </summary>
         public static string LoginUsernameRequired {
@@ -210,6 +228,15 @@ namespace CMS.Localization {
         public static string SMSPasswordWrong {
             get {
                 return ResourceManager.GetString("SMSPasswordWrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tarifeler yükleniyor. Lütfen bekleyin....
+        /// </summary>
+        public static string TariffsLoading {
+            get {
+                return ResourceManager.GetString("TariffsLoading", resourceCulture);
             }
         }
     }

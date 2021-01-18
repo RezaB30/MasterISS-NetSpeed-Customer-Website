@@ -304,6 +304,11 @@ namespace CustomerManagementSystem
             {
                 postalCode = Convert.ToInt32(register.SetupAddress.PostalCode);
             }
+            var tariffs = new ServiceUtilities().GetTariffList();
+            var selectedTariff = tariffs.ResponseMessage.ErrorCode != 0 ? null
+                : tariffs.ExternalTariffList == null ? null
+                : tariffs.ExternalTariffList.Count() == 0 ? null
+                : tariffs.ExternalTariffList.Where(t => t.TariffID == register.ServiceID).FirstOrDefault();
             var response = client.ExistingCustomerRegister(new CustomerServiceExistingCustomerRegisterRequest()
             {
                 Culture = baseRequest.Culture,
@@ -316,16 +321,11 @@ namespace CustomerManagementSystem
                     RegistrationInfo = new RegistrationInfo()
                     {
                         //BillingPeriod = 1,
-                        DomainID = 1, // already sent in service
-                        ServiceID = 1,
+                        DomainID = selectedTariff?.DomainID, // already sent in service
+                        ServiceID = selectedTariff?.TariffID,
                         ReferralDiscount = register.ReferralDiscount == null ? null : new GenericCustomerServiceReference.ReferralDiscountInfo()
                         {
                             ReferenceNo = register.ReferralDiscount.ReferenceNo
-                        },
-                        CommitmentInfo = new GenericCustomerServiceReference.CustomerCommitmentInfo()
-                        {
-                            CommitmentExpirationDate = register.CommitmentInfo.CommitmentExpirationDate.HasValue ? register.CommitmentInfo.CommitmentExpirationDate.Value.ToString("yyyy-MM-dd HH:mm:ss") : null,
-                            CommitmentLength = register.CommitmentInfo.CommitmentLength
                         },
                         SetupAddress = new GenericCustomerServiceReference.AddressInfo()
                         {
@@ -464,6 +464,34 @@ namespace CustomerManagementSystem
                 Hash = baseRequest.Hash,
                 Rand = baseRequest.Rand,
                 Username = baseRequest.Username,
+            });
+            return result;
+        }
+        public CustomerServiceExternalTariffResponse GetTariffList()
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.ExternalTariffList(new CustomerServiceExternalTariffRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+            });
+            return result;
+        }
+        public CustomerServiceServiceAvailabilityResponse ServiceAvailability(string bbk)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.ServiceAvailability(new CustomerServiceServiceAvailabilityRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                ServiceAvailabilityParameters = new ServiceAvailabilityRequest()
+                {
+                    bbk = bbk
+                }
             });
             return result;
         }

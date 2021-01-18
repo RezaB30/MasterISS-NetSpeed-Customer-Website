@@ -528,7 +528,6 @@
   <xs:element name="ExistingCustomerRegisterRequest" nillable="true" type="tns:ExistingCustomerRegisterRequest" />
   <xs:complexType name="RegistrationInfo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CommitmentInfo" nillable="true" type="tns:CustomerCommitmentInfo" />
       <xs:element minOccurs="0" name="DomainID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ReferralDiscount" nillable="true" type="tns:ReferralDiscountInfo" />
       <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:int" />
@@ -536,13 +535,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RegistrationInfo" nillable="true" type="tns:RegistrationInfo" />
-  <xs:complexType name="CustomerCommitmentInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CommitmentExpirationDate" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CommitmentLength" nillable="true" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CustomerCommitmentInfo" nillable="true" type="tns:CustomerCommitmentInfo" />
   <xs:complexType name="ReferralDiscountInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="ReferenceNo" nillable="true" type="xs:string" />

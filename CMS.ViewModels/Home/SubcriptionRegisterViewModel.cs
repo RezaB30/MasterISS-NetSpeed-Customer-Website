@@ -9,24 +9,26 @@ namespace CMS.ViewModels.Home
 {
     public class SubcriptionRegisterViewModel
     {
-        public int? DomainID { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models) , Name = "ServiceID")]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
         public int? ServiceID { get; set; }
         public AddressInfo SetupAddress { get; set; }
         //public int? BillingPeriod { get; set; }
-        public CustomerCommitmentInfo CommitmentInfo { get; set; }
+        //public CustomerCommitmentInfo CommitmentInfo { get; set; }
         public ReferralDiscountInfo ReferralDiscount { get; set; }
     }
-    public class CustomerCommitmentInfo
-    {
-        [Display(Name = "CommitmentLength", ResourceType = typeof(CMS.Localization.Models.Models))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
-        public int? CommitmentLength { get; set; } //CommitmentLength
-        [Display(Name = "CommitmentExpirationDate", ResourceType = typeof(CMS.Localization.Models.Models))]
-        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
-        public DateTime? CommitmentExpirationDate { get; set; }
-    }
+    //public class CustomerCommitmentInfo
+    //{
+    //    [Display(Name = "CommitmentLength", ResourceType = typeof(CMS.Localization.Models.Models))]
+    //    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
+    //    public int? CommitmentLength { get; set; } //CommitmentLength
+    //    //[Display(Name = "CommitmentExpirationDate", ResourceType = typeof(CMS.Localization.Models.Models))]
+    //    //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
+    //    //public DateTime? CommitmentExpirationDate { get; set; }
+    //}
     public class ReferralDiscountInfo
     {
+        [Display(Name = "ReferenceNo", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string ReferenceNo { get; set; }
     }
     public class AddressInfo

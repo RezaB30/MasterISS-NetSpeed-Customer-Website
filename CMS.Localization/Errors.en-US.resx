@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AvailabilityTariffNotFoundDescription" xml:space="preserve">
+    <value>&lt;h3 class="font-weight-bolder text-dark-50 font-size-h3"&gt;Available tariff not found in your infrastructure.&lt;/h3&gt;</value>
+  </data>
   <data name="CCMonthRequired" xml:space="preserve">
     <value>Card Month is reqiured</value>
   </data>
@@ -144,6 +147,9 @@
   <data name="InternalErrorDescription" xml:space="preserve">
     <value>An error occurred while processing your transaction</value>
   </data>
+  <data name="InvalidReferenceNo" xml:space="preserve">
+    <value>Please enter valid reference number.</value>
+  </data>
   <data name="LoginUsernameRequired" xml:space="preserve">
     <value>TCK No or GSM No is required</value>
   </data>
@@ -167,5 +173,8 @@
   </data>
   <data name="SMSPasswordWrong" xml:space="preserve">
     <value>You entered incorrectly. Please check your password.</value>
+  </data>
+  <data name="TariffsLoading" xml:space="preserve">
+    <value>Tariffs are loading. Please wait...</value>
   </data>
 </root>

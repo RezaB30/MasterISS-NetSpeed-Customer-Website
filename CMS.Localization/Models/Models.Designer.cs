@@ -493,6 +493,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tarife.
+        /// </summary>
+        public static string ServiceID {
+            get {
+                return ResourceManager.GetString("ServiceID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tarife Adı.
         /// </summary>
         public static string ServiceName {

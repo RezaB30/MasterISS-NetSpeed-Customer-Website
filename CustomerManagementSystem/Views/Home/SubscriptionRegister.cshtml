@@ -10,14 +10,41 @@
         @Html.AntiForgeryToken()
         <div class="d-flex justify-content-center flex-row-fluid">
             <div class="pb-10 pb-lg-5 text-center">
-                <h3 class="font-weight-bolder text-dark-50 font-size-h2">Yeni Abonelik Başvurusu</h3><hr class="my-4">
+                <h3 class="font-weight-bolder text-dark-100 font-size-h2">@CMS.Localization.Common.NewSubscriptionRegister</h3><hr class="my-4">
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center flex-row-fluid ">
+            @Html.Partial("_SetupAddressPartial")
+        </div>
+        <div class="d-flex justify-content-center flex-row-fluid ">
+            <div id="address-description"></div>
+        </div>
+        <div id="tariffContent" class="d-none justify-content-center flex-row-fluid ">
+            @*<div class="separator separator-dashed my-3"></div>*@
+            <div class="pb-10 pb-lg-5 text-center">
+                <h5 class="font-weight-bolder text-dark-50 font-size-h3">@CMS.Localization.Common.TariffPreference</h5><hr class="my-4">
+                <div class="text-dark-50 font-weight font-size-h5 mt-5">
+                    @CMS.Localization.Common.TariffPreferenceDescription
+                </div>
+                <div id="AvailableTariffs"></div>
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.ServiceID, null, new { @class = "fv-help-block" })
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-center flex-row-fluid ">
-            @Html.Partial("_SubscriptionRegisterCommitmentPartial")
+            @Html.Partial("_SubscriptionRegisterReferencePartial")
         </div>
-        <div class="d-flex justify-content-center flex-row-fluid ">
-            @Html.Partial("_SetupAddressPartial")
+        <div class="d-flex justify-content-center flex-row-fluid">
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-success font-weight-bold py-2 px-6" value="@CMS.Localization.Common.ApplicationRegister" />
+                        <!--end::Form Group-->
+                    </div>
+                </div>
+            </div>
         </div>
     }
 </div>
@@ -27,26 +54,81 @@
     @Scripts.Render("~/Scripts/Custom/display-message-box.js")
 
     <script>
+        $(document).ready(function () {
+            if ($('#SetupAddress_ApartmentID').val()) {
+                $('#SetupAddress_ApartmentID').trigger("change");
+            }
+        })
         $('#SetupAddress_ProvinceID').change(function () {
             GetValues('#SetupAddress_ProvinceID', '#SetupAddress_DistrictID', '@Url.Action("GetDistrict","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_DistrictID').change(function () {
             GetValues('#SetupAddress_DistrictID', '#SetupAddress_RuralCode', '@Url.Action("GetRegions","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_RuralCode').change(function () {
             GetValues('#SetupAddress_RuralCode', '#SetupAddress_NeighbourhoodID', '@Url.Action("GetNeighborhoods","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_NeighbourhoodID').change(function () {
             GetValues('#SetupAddress_NeighbourhoodID', '#SetupAddress_StreetID', '@Url.Action("GetStreets","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_StreetID').change(function () {
             GetValues('#SetupAddress_StreetID', '#SetupAddress_DoorID', '@Url.Action("GetBuildings","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_DoorID').change(function () {
             GetValues('#SetupAddress_DoorID', '#SetupAddress_ApartmentID', '@Url.Action("GetApartments","Infrastructure")');
+            ClearTariffs();
         })
         $('#SetupAddress_ApartmentID').change(function () {
-
+            ClearTariffs();
+            var val = $(this).val();
+            if (val) {
+                $('#tariffContent').removeClass("d-none");
+                $('#tariffContent').addClass("d-flex");
+                $('#AvailableTariffs').html("@CMS.Localization.Errors.TariffsLoading");
+                $.ajax({
+                url: '@Url.Action("LoadTariffs","Home")',
+                method: 'GET',
+                data: { bbk: $('#SetupAddress_ApartmentID').val() },
+                complete: function (data, status) {
+                    if (status == "success") {
+                        if ($('#tariffContent').hasClass("d-none")) {
+                            $('#tariffContent').removeClass("d-none");
+                        }
+                        if (!$('#tariffContent').hasClass("d-flex")) {
+                            $('#tariffContent').addClass("d-flex");
+                        }
+                        $('#AvailableTariffs').html(data.responseText);
+                    } else {
+                        $('#AvailableTariffs').html('@Html.Raw(CMS.Localization.Errors.AvailabilityTariffNotFoundDescription)');
+                    }
+                }
+                });
+                $.ajax({
+                    url: '@Url.Action("GetAddressFromCode","Home")',
+                    method: 'GET',
+                    data: { bbk: $('#SetupAddress_ApartmentID').val() },
+                    complete: function (data, status) {
+                        if (status == "success") {
+                            $('#address-description').html(data.responseText);
+                        }
+                    }
+                })
+            }
         })
+        function ClearTariffs() {
+            if (!$('#tariffContent').hasClass("d-none")) {
+                $('#tariffContent').addClass("d-none");
+            }
+            if ($('#tariffContent').hasClass("d-flex")) {
+                $('#tariffContent').removeClass("d-flex");
+            }
+            $('#AvailableTariffs').html("");
+            $('#address-description').html("");
+        }
     </script>
 }
