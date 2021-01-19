@@ -252,6 +252,9 @@
   <data name="Download" xml:space="preserve">
     <value>Download</value>
   </data>
+  <data name="DownloadAndDisplay" xml:space="preserve">
+    <value>Download&amp;View</value>
+  </data>
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Download as PDF</value>
   </data>

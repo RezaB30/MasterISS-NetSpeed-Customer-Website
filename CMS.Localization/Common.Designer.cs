@@ -467,6 +467,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İndir&amp;Görüntüle.
+        /// </summary>
+        public static string DownloadAndDisplay {
+            get {
+                return ResourceManager.GetString("DownloadAndDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pdf Olarak İndir.
         /// </summary>
         public static string DownloadAsPdf {

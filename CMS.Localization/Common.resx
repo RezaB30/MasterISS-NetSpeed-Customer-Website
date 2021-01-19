@@ -253,6 +253,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="Download" xml:space="preserve">
     <value>Download</value>
   </data>
+  <data name="DownloadAndDisplay" xml:space="preserve">
+    <value>İndir&amp;Görüntüle</value>
+  </data>
   <data name="DownloadAsPdf" xml:space="preserve">
     <value>Pdf Olarak İndir</value>
   </data>

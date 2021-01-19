@@ -316,6 +316,18 @@
   <wsdl:message name="IGenericCustomerService_ServiceAvailability_OutputMessage">
     <wsdl:part name="parameters" element="tns:ServiceAvailabilityResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetCustomerFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerFiles" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetCustomerFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetClientAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetClientAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAttachmentResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetKeyFragment">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetKeyFragment" message="tns:IGenericCustomerService_GetKeyFragment_InputMessage" />
@@ -520,6 +532,14 @@
     <wsdl:operation name="ServiceAvailability">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ServiceAvailability" message="tns:IGenericCustomerService_ServiceAvailability_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ServiceAvailabilityResponse" message="tns:IGenericCustomerService_ServiceAvailability_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetCustomerFiles" message="tns:IGenericCustomerService_GetCustomerFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetCustomerFilesResponse" message="tns:IGenericCustomerService_GetCustomerFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetClientAttachment" message="tns:IGenericCustomerService_GetClientAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetClientAttachmentResponse" message="tns:IGenericCustomerService_GetClientAttachment_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -976,6 +996,24 @@
     </wsdl:operation>
     <wsdl:operation name="ServiceAvailability">
       <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/ServiceAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerFiles">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetCustomerFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAttachment">
+      <soap:operation soapAction="http://tempuri.org/IGenericCustomerService/GetClientAttachment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,4 +1,6 @@
-﻿@using CMS.Localization;
+﻿@model IEnumerable<CMS.ViewModels.Home.CustomerDocumentsViewModel>
+
+@using CMS.Localization;
 
 @{
     ViewBag.Title = Common.MyDocuments;
@@ -24,137 +26,36 @@
             <div class="container">
                 <div class="row ">
                     <br>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="card card-custom gutter-b card-stretch">
-                            <div class="card-body text-center pt-16">
-                                <div class="mt-7">
-                                    <div class="symbol symbol-circle symbol-lg-90">
-                                        <img src="/assets/media/svg/files/851432_document_512x512.svg"
-                                             alt="image">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                            @using (Html.BeginForm("DownloadAttachment", "Home"))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.Hidden("fileName", item.ServerSideName)
+                                <div class="card card-custom gutter-b card-stretch">
+                                    <div class="card-body text-center pt-16">
+                                        <div class="mt-7">
+                                            <div class="symbol symbol-circle symbol-lg-90">
+                                                <img src="/assets/media/svg/files/851432_document_512x512.svg" alt="image">
+                                            </div>
+                                        </div>
+                                        <div class="my-4">
+                                            <a href="#" class="text-dark font-weight-bold text-hover-primary font-size-h5">
+                                                @Html.DisplayFor(m => item.FileName)
+                                            </a>
+                                        </div>
+                                        <div class="mt-9">
+                                            <button type="submit" class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
+                                                @Common.DownloadAndDisplay
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="my-4">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h5">
-                                        Abonelik
-                                        Sözleşmesi
-                                    </a>
-                                </div>
-                                <div class="mt-9">
-                                    <a href="#" class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
-                                        İndir
-                                        & Görüntüle
-                                    </a>
-                                </div>
-                            </div>
+                            }
+
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="card card-custom gutter-b card-stretch">
-                            <div class="card-body text-center pt-16">
-                                <div class="mt-7">
-                                    <div class="symbol symbol-circle symbol-lg-90">
-                                        <img src="/assets/media/svg/files/851432_document_512x512.svg"
-                                             alt="image">
-                                    </div>
-                                </div>
-                                <div class="my-4">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h5">
-                                        Nakil
-                                        Dilekçesi
-                                    </a>
-                                </div>
-                                <div class="mt-9">
-                                    <a href="#"
-                                       class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
-                                        İndir
-                                        & Görüntüle
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="card card-custom gutter-b card-stretch">
-                            <div class="card-body text-center pt-16">
-                                <div class="mt-7">
-                                    <div class="symbol symbol-circle symbol-lg-90">
-                                        <img src="/assets/media/svg/files/851432_document_512x512.svg"
-                                             alt="image">
-                                    </div>
-                                </div>
-                                <div class="my-4">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h5">
-                                        Sözleşme
-                                        Ekleri
-                                    </a>
-                                </div>
-                                <div class="mt-9">
-                                    <a href="#"
-                                       class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
-                                        İndir
-                                        & Görüntüle
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="card card-custom gutter-b card-stretch">
-                            <div class="card-body text-center pt-16">
-                                <div class="mt-7">
-                                    <div class="symbol symbol-circle symbol-lg-90">
-                                        <img src="/assets/media/svg/files/851432_document_512x512.svg"
-                                             alt="image">
-                                    </div>
-                                </div>
-                                <div class="my-4">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h5">
-                                        Churn
-                                        Dilekçesi
-                                    </a>
-                                </div>
-                                <div class="mt-9">
-                                    <a href="#"
-                                       class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
-                                        İndir
-                                        & Görüntüle
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                        <div class="card card-custom gutter-b card-stretch">
-                            <div class="card-body text-center pt-16">
-                                <div class="mt-7">
-                                    <div class="symbol symbol-circle symbol-lg-90">
-                                        <img src="/assets/media/svg/files/851432_document_512x512.svg"
-                                             alt="image">
-                                    </div>
-                                </div>
-                                <div class="my-4">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h5">
-                                        Fiber
-                                        Kampanya Sözleşmesi
-                                    </a>
-                                </div>
-                                <div class="mt-9">
-                                    <a href="#"
-                                       class="btn btn-light-primary font-weight-bolder btn-sm py-3 px-6 text-uppercase">
-                                        İndir
-                                        & Görüntüle
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

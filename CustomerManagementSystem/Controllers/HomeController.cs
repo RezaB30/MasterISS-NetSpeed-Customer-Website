@@ -98,7 +98,33 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult Documents() // belgelerim.html
         {
-            return View();
+            var files = new ServiceUtilities().GetCustomerDocuments(User.GiveUserId());
+            if (files.ResponseMessage.ErrorCode != 0 || files.CustomerFiles == null)
+            {
+                return View(Enumerable.Empty<CustomerDocumentsViewModel>());
+            }
+            var customerFiles = files.CustomerFiles.Select(f => new CustomerDocumentsViewModel()
+            {
+                FileExtention = f.FileExtention,
+                FileName = f.FileInfo.Name,
+                MIMEType = f.MIMEType,
+                ServerSideName = f.ServerSideName
+            }).ToArray();
+            return View(customerFiles);
+        }
+        [HttpPost]
+        public ActionResult DownloadAttachment(string fileName)
+        {
+            var clientAttachment = new ServiceUtilities().GetClientAttachment(User.GiveUserId(), fileName);
+            if (clientAttachment.ResponseMessage.ErrorCode != 0)
+            {
+                if (clientAttachment.ResponseMessage.ErrorCode == 200 || clientAttachment.ResponseMessage.ErrorCode == 199)
+                {
+                    return ReturnMessageUrl(Url.Action("Documents", "Home"), CMS.Localization.Errors.InternalErrorDescription, false);
+                }
+                return ReturnMessageUrl(Url.Action("Documents", "Home"), clientAttachment.ResponseMessage.ErrorMessage, false);
+            }
+            return File(clientAttachment.GetClientAttachment.Content, clientAttachment.GetClientAttachment.MIMEType, clientAttachment.GetClientAttachment.FileInfo.Name);
         }
         public ActionResult MyAccount() //hesabim.html
         {
@@ -261,7 +287,6 @@ namespace CustomerManagementSystem.Controllers
                     var getAddress = address.AddressDetailsResponse;
                     var existingRegister = new SubcriptionRegisterViewModel()
                     {
-                        //BillingPeriod = 1,
                         SetupAddress = new AddressInfo()
                         {
                             AddressNo = getAddress.AddressNo,
@@ -298,7 +323,7 @@ namespace CustomerManagementSystem.Controllers
                         else
                         {
                             TempData["generic-error"] = registerResponse.ResponseMessage.ErrorMessage;
-                        }                        
+                        }
                     }
                     else
                     {
@@ -326,6 +351,10 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.BuildingList = new SelectList(buildings.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DoorID);
             ViewBag.ApartmentList = new SelectList(apartments.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ApartmentID);
             return View(register);
+        }
+        public ActionResult RegisterTracking()
+        {
+            return View();
         }
         public ActionResult QuickSearch(string query)
         {

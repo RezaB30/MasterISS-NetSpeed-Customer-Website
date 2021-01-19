@@ -320,8 +320,6 @@ namespace CustomerManagementSystem
                     SubscriberID = subscriptionId,
                     RegistrationInfo = new RegistrationInfo()
                     {
-                        //BillingPeriod = 1,
-                        DomainID = selectedTariff?.DomainID, // already sent in service
                         ServiceID = selectedTariff?.TariffID,
                         ReferralDiscount = register.ReferralDiscount == null ? null : new GenericCustomerServiceReference.ReferralDiscountInfo()
                         {
@@ -491,6 +489,39 @@ namespace CustomerManagementSystem
                 ServiceAvailabilityParameters = new ServiceAvailabilityRequest()
                 {
                     bbk = bbk
+                }
+            });
+            return result;
+        }
+        public CustomerServiceGetCustomerFileResponse GetCustomerDocuments(long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetCustomerFiles(new CustomerServiceBaseRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                SubscriptionParameters = new BaseSubscriptionRequest()
+                {
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
+        public CustomerServiceGetClientAttachmentResponse GetClientAttachment(long? subscriptionId , string fileName)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetClientAttachment(new CustomerServiceGetClientAttachmentRequest()
+            {
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                Username = baseRequest.Username,
+                GetClientAttachment = new GetClientAttachmentRequest()
+                {
+                    FileName = fileName,
+                    SubscriptionId = subscriptionId
                 }
             });
             return result;

@@ -192,7 +192,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MyExtensions.cs" />
-    <Compile Include="Helper\PageBuilder.cs" />
     <Compile Include="LanguageLinkHelper.cs" />
     <Compile Include="Utilities\DomainCache.cs" />
     <Compile Include="Utilities\InternalUtilities.cs" />
@@ -2532,6 +2531,12 @@
     <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceServiceAvailabilityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetClientAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.disco" />
     <None Include="Connected Services\GenericCustomerServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\GenericCustomerServiceReference\configuration.svcinfo" />
@@ -2702,6 +2707,7 @@
     <Content Include="Views\Home\SubscriptionRegister.cshtml" />
     <Content Include="Views\Home\_SubscriptionRegisterReferencePartial.cshtml" />
     <Content Include="Views\Home\_TariffListPartial.cshtml" />
+    <Content Include="Views\Home\RegisterTracking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

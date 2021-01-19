@@ -751,7 +751,6 @@
   <xs:complexType name="ExternalTariffResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DomainID" type="xs:int" />
       <xs:element minOccurs="0" name="HasFiber" type="xs:boolean" />
       <xs:element minOccurs="0" name="HasXDSL" type="xs:boolean" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
@@ -810,4 +809,57 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceAvailabilityResponse.VDSLInfo" nillable="true" type="tns:ServiceAvailabilityResponse.VDSLInfo" />
+  <xs:complexType name="CustomerServiceGetCustomerFileResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q48:BaseResponseOfArrayOfGetCustomerFilesResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerFiles" nillable="true" type="tns:ArrayOfGetCustomerFilesResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceGetCustomerFileResponse" nillable="true" type="tns:CustomerServiceGetCustomerFileResponse" />
+  <xs:complexType name="ArrayOfGetCustomerFilesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GetCustomerFilesResponse" nillable="true" type="tns:GetCustomerFilesResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGetCustomerFilesResponse" nillable="true" type="tns:ArrayOfGetCustomerFilesResponse" />
+  <xs:complexType name="GetCustomerFilesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileExtention" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileInfo" nillable="true" type="tns:FileInfo" />
+      <xs:element minOccurs="0" name="MIMEType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerSideName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCustomerFilesResponse" nillable="true" type="tns:GetCustomerFilesResponse" />
+  <xs:complexType name="FileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileInfo" nillable="true" type="tns:FileInfo" />
+  <xs:complexType name="CustomerServiceGetClientAttachmentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q49:BaseResponseOfGetClientAttachmentResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetClientAttachment" nillable="true" type="tns:GetClientAttachmentResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceGetClientAttachmentResponse" nillable="true" type="tns:CustomerServiceGetClientAttachmentResponse" />
+  <xs:complexType name="GetClientAttachmentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetCustomerFilesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="MD5" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetClientAttachmentResponse" nillable="true" type="tns:GetClientAttachmentResponse" />
 </xs:schema>

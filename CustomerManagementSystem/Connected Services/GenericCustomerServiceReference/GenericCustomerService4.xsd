@@ -528,7 +528,6 @@
   <xs:element name="ExistingCustomerRegisterRequest" nillable="true" type="tns:ExistingCustomerRegisterRequest" />
   <xs:complexType name="RegistrationInfo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DomainID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ReferralDiscount" nillable="true" type="tns:ReferralDiscountInfo" />
       <xs:element minOccurs="0" name="ServiceID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="SetupAddress" nillable="true" type="tns:AddressInfo" />
@@ -623,4 +622,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceAvailabilityRequest" nillable="true" type="tns:ServiceAvailabilityRequest" />
+  <xs:complexType name="CustomerServiceGetClientAttachmentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q39:BaseRequestOfGetClientAttachmentRequestSHA1CuT410mT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetClientAttachment" nillable="true" type="tns:GetClientAttachmentRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceGetClientAttachmentRequest" nillable="true" type="tns:CustomerServiceGetClientAttachmentRequest" />
+  <xs:complexType name="GetClientAttachmentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetClientAttachmentRequest" nillable="true" type="tns:GetClientAttachmentRequest" />
 </xs:schema>

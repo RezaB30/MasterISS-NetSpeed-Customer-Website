@@ -89,6 +89,7 @@
     <Compile Include="CustomAttributes\CardExpirationMonth.cs" />
     <Compile Include="CustomAttributes\CardExpirationYear.cs" />
     <Compile Include="CustomAttributes\CardNumberAttribute.cs" />
+    <Compile Include="Home\CustomerDocumentsViewModel.cs" />
     <Compile Include="Home\CustomerLineDetailsViewModel.cs" />
     <Compile Include="Home\IndexViewModel.cs" />
     <Compile Include="Home\MyAccountViewModel.cs" />
