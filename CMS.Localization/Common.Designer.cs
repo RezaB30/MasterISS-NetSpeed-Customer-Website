@@ -1278,6 +1278,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başvuru Takibi.
+        /// </summary>
+        public static string RegisterTracking {
+            get {
+                return ResourceManager.GetString("RegisterTracking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kalan Kota.
         /// </summary>
         public static string RemainingQuota {
@@ -1467,6 +1476,24 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kampanya katılım şartları ve örnek paylaşım görselleri.
+        /// </summary>
+        public static string SpecialOfferConditionsSubtitle {
+            get {
+                return ResourceManager.GetString("SpecialOfferConditionsSubtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Netspeed 12 Aylık İndirim Kodu.
+        /// </summary>
+        public static string SpecialOfferDiscountCodeHeader {
+            get {
+                return ResourceManager.GetString("SpecialOfferDiscountCodeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arkadaşını Getir.
         /// </summary>
         public static string SpecialOfferFriends {
@@ -1481,6 +1508,15 @@ namespace CMS.Localization {
         public static string SpecialOfferIntro {
             get {
                 return ResourceManager.GetString("SpecialOfferIntro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kampanya Özeti.
+        /// </summary>
+        public static string SpecialOfferSummary {
+            get {
+                return ResourceManager.GetString("SpecialOfferSummary", resourceCulture);
             }
         }
         

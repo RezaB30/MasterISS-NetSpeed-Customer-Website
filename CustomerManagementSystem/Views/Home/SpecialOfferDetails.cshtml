@@ -15,13 +15,12 @@
                         @SpecialOffer.SpecialOfferConditions
                     </h3>
                     <span class="text-muted font-weight-bold font-size-sm mt-1">
-                        Kampanya katılım
-                        şartları ve örnek paylaşım görselleri.
+                        @Common.SpecialOfferConditionsSubtitle
                     </span>
                 </div>
                 <div class="card-toolbar">
                     <a href="@Url.Action("SpecialOffer","Home")"
-                       class="btn btn-sm btn-light-info font-weight-bold mr-2">Kampanya Özeti</a>
+                       class="btn btn-sm btn-light-info font-weight-bold mr-2">@Common.SpecialOfferSummary</a>
                     <a href="/" class="btn btn-icon btn-sm btn-light-info">
                         <i class="flaticon-home-2"></i>
                     </a>
@@ -38,18 +37,13 @@
                         <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
                              style="background-color: #4b4e80; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/progress.svg)">
                             <h2 class="text-warning pb-5 font-weight-bolder">
-                                Netspeed 12 Aylık indirim
-                                Kodu
+                                @Common.SpecialOfferDiscountCodeHeader
                             </h2>
                             <p class="text-inverse-info pb-5 font-size-h6">
-                                Netspeed'e aşağıdaki kod ile
-                                başvuranlar, 12 ay indirimli internet kullanma hakkı kazanıyor, Davet
-                                kodumu kullanırsan hem sen hem de ben 12 ay indirimli internet kullanma
-                                hakkı kazanacağız. Üstelik katılım sınırı yok, sende arkadaşlarını davet
-                                et! ne kadar çok arkadaş, o kadar çok indirimli kullanım hakkı!<br>
+                                @SpecialOffer.SpecialOfferDiscountCodeDescription<br>
 
                                 <div class="font-size-h2 mb-7 text-white">
-                                    İNDİRİM KODU :
+                                    @Common.ReferenceCode.ToUpper() :
                                     <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
                                 </div>
                                 <img src="/assets/media/svg/logos/bejjpluslogonew.svg" alt="" class="align-self-end h-25px">
@@ -57,35 +51,35 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-12">
-                <div class="card card-custom gutter-b">
-                    <div class="card-body  p-0">
-                        <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
-                             style="background-color: #3f1b58; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/login-visual-5.svg)">
-                            <h2 class="text-warning pb-5 font-weight-bolder">
-                                Netspeed 12 Aylık indirim
-                                Kodu
-                            </h2>
-                            <p class="text-inverse-info pb-5 font-size-h6">
-                                Arkadaşını Getir Kampanyası,
-                                davet kodum ile Netspeed’e üye olursan ikimiz de 12 aylık fatura dönemi
-                                boyunca her faturamızda 5'er TL indirim hakkı kazanacağız. Üstelik
-                                katılım sınırı yok, sende arkadaşlarını davet et! ne kadar çok arkadaş,
-                                o kadar çok indirim hakkı!<br>
+            @*<div class="col-xl-12">
+                    <div class="card card-custom gutter-b">
+                        <div class="card-body  p-0">
+                            <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
+                                 style="background-color: #3f1b58; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/login-visual-5.svg)">
+                                <h2 class="text-warning pb-5 font-weight-bolder">
+                                    Netspeed 12 Aylık indirim
+                                    Kodu
+                                </h2>
+                                <p class="text-inverse-info pb-5 font-size-h6">
+                                    Arkadaşını Getir Kampanyası,
+                                    davet kodum ile Netspeed’e üye olursan ikimiz de 12 aylık fatura dönemi
+                                    boyunca her faturamızda 5'er TL indirim hakkı kazanacağız. Üstelik
+                                    katılım sınırı yok, sende arkadaşlarını davet et! ne kadar çok arkadaş,
+                                    o kadar çok indirim hakkı!<br>
 
-                                <div class="font-size-h2 mb-7 text-white">
-                                    İNDİRİM KODU :
-                                    <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
-                                </div>
-                                <img src="/assets/media/svg/logos/bejjpluslogonew.svg" alt=""
-                                     class="align-self-end h-25px"> <br>
+                                    <div class="font-size-h2 mb-7 text-white">
+                                        İNDİRİM KODU :
+                                        <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
+                                    </div>
+                                    <img src="/assets/media/svg/logos/bejjpluslogonew.svg" alt=""
+                                         class="align-self-end h-25px"> <br>
 
 
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
             <!--end::Engage Widget 8-->
 
         </div>
@@ -94,8 +88,7 @@
                 <div class="card-body">
                     <div class="p-5">
                         <h2 class="text-info mb-8 font-size-h3">
-                            Kampanya Şartları & Sıkça Sorulan
-                            Sorular
+                            @SpecialOffer.TermsAndFAQ
                         </h2>
                         <!--begin::Accordion-->
                         <div class="accordion accordion-light accordion-light-borderless accordion-svg-toggle"
@@ -124,8 +117,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Arkadaşını
-                                            Getir Nedir?
+                                            @SpecialOffer.Terms1
                                         </div>
                                     </div>
                                 </div>
@@ -134,10 +126,7 @@
                                 <div id="collapseonea7" class="collapse" aria-labelledby="headingonea7"
                                      data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Arkadaşını Getir Kampanyası, referans kodunuz ile Netspeed’e
-                                        davet ederek kazandırdığınız her bir yeni abonelik için 12 adet
-                                        fatura döneminde her faturanızda 5 TL indirim hakkı kazanmanızı
-                                        sağlayan bir indirim kampanyasıdır.
+                                        @SpecialOffer.Terms1Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -168,8 +157,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Nasıl
-                                            Çalışır?
+                                            @SpecialOffer.Terms2
                                         </div>
                                     </div>
                                 </div>
@@ -178,26 +166,7 @@
                                 <div id="collapseone7" class="collapse" aria-labelledby="headingone7"
                                      data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Online İşlem Merkezi üzerinden “arkadaşını getir” sekmesine
-                                        tıklayarak görebileceğiniz size özel referans kodunuz ile
-                                        arkadaşlarınızı davet edebilirsiniz. Önermiş olduğunuz
-                                        arkadaşınız indirim kodunu abonelik başlatırken başvuru
-                                        esnasında 444 0 217 Numaralı Başvuru Hattı üzerinden satış
-                                        temsilcimize beyan etmesi veya web sitemiz üzerinde yer alan
-                                        abone başvuru formunu doldururken “referans kodu” alanına sizin
-                                        verdiğiniz kodu yazması yeterlidir.
-                                        Başvurunun tamamlanması sonrasında referans olunan kişinin aktif
-                                        Netspeed müşterisi olması ve kullanıma başlaması ardından bir
-                                        sonraki fatura döneminde hem siz hem referans kodunuzu kullanan
-                                        arkadaşınız 12 adet fatura dönemi boyunca faturalarınızda
-                                        indirimli internet hizmeti almaya hak kazanırsınız. .
-                                        Referansınız ile gelen aboneler hatlarını iptal etmediği sürece
-                                        kazandığınız indirimler 12 fatura dönemi süresince faturanıza
-                                        yansıtılır.
-                                        Daha fazla kişiye referans olursanız kazandırdığınız her bir
-                                        abonelik için belirlenen indirim tutarı oranı referans olduğunuz
-                                        kişi sayısı ile çarpılır ve her kişi için 12 adet fatura dönemi
-                                        süresince fatura tutarınıza indirim olarak yansıtılır.
+                                        @SpecialOffer.Terms2Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -228,8 +197,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Örnek
-                                            İndirimli Fatura
+                                            @SpecialOffer.Terms3
                                         </div>
                                     </div>
                                 </div>
@@ -239,35 +207,34 @@
                                      data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
                                         <div class="col-lg-12">
-
                                             <div class="mb-5">
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
                                                     <table class="table table-light table-light-success">
                                                         <thead>
                                                             <tr>
-                                                                <th>Fatura Dönemi</th>
-                                                                <th class="table-center">Ocak 2020</th>
+                                                                <th>@Common.InvoicePeriod</th>
+                                                                <th class="table-center">@SpecialOffer.BillingPeriodExample</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
                                                                 <td class="font-weight-bold table-row-title">
-                                                                    75 Mbps'e Kadar Limitsiz
+                                                                    @SpecialOffer.TariffExample
                                                                 </td>
-                                                                <td class="table-center">94 TL</td>
+                                                                <td class="table-center">@SpecialOffer.TariffPriceExample</td>
                                                             </tr>
                                                             <tr class="bg-gray-100">
                                                                 <td class="font-weight-bold table-row-title">
-                                                                    5 referans x 5 TL İndirim toplamı
+                                                                    @SpecialOffer.SpecialOfferDiscountExample
                                                                 </td>
-                                                                <td class="table-center">-25 TL</td>
+                                                                <td class="table-center">@SpecialOffer.SpecialOfferDiscountTotalExample</td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="font-weight-bold table-row-title">
-                                                                    Ödenecek Tutar
+                                                                    @SpecialOffer.AmountToBePaid
                                                                 </td>
-                                                                <td class="table-center">69 TL</td>
+                                                                <td class="table-center">@SpecialOffer.AmountToBePaidTotal</td>
                                                             </tr>
                                                     </table>
                                                 </div>
@@ -305,8 +272,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Kimler
-                                            Katılabilir?
+                                            @SpecialOffer.Terms4
                                         </div>
                                     </div>
                                 </div>
@@ -315,8 +281,7 @@
                                 <div id="collapseThree7" class="collapse"
                                      aria-labelledby="headingThree7" data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Bireysel, aktif ve T.C uyruklu müşterilerimiz kampanyadan
-                                        faydalanabilirler.
+                                        @SpecialOffer.Terms4Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -347,7 +312,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Arkadaşlarınızı Nasıl Davet Edebilirsiniz?
+                                            @SpecialOffer.Terms5
                                         </div>
                                     </div>
                                 </div>
@@ -356,8 +321,7 @@
                                 <div id="collapsefour7" class="collapse" aria-labelledby="headingfour7"
                                      data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Online İşlem Merkezi üzerinden alabileceğiniz size özel referans
-                                        kodunuzu arkadaşınızla paylaşarak kampanyaya katılabilirsiniz.
+                                        @SpecialOffer.Terms5Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -388,8 +352,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            İndirimler
-                                            Faturalarınıza Ne Zaman Yansıtılır?
+                                            @SpecialOffer.Terms6
                                         </div>
                                     </div>
                                 </div>
@@ -398,11 +361,7 @@
                                 <div id="collapsefive7" class="collapse" aria-labelledby="headingfive7"
                                      data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6 ">
-                                        Kazanılan indirimler bir sonraki fatura döneminde
-                                        yansıtılacaktır. İndirimin yansıtılacağı fatura dönemi
-                                        içerisinde referans ile gelen abone ve referans kodu sahibinin
-                                        aboneliğini herhangi bir nedenle iptal etmesi veya aboneliğin
-                                        fesih edilmesi halinde her iki tarafında indirim hakkı kaybolur.
+                                        @SpecialOffer.Terms6Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -433,21 +392,15 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Kampanya
-                                            Kapsamında Davet Limiti Var mı?
+                                            @SpecialOffer.Terms7
                                         </div>
                                     </div>
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
-                                <div id="collapsesix7" class="collapse" aria-labelledby="headingsix7"
-                                     data-parent="#accordionExample7">
+                                <div id="collapsesix7" class="collapse" aria-labelledby="headingsix7" data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Davet sınırı bulunmamaktadır. Dilediğiniz kadar arkadaşınızı
-                                        davet edebilirsiniz. Ancak aylık ödeyeceğiniz fatura tutarından
-                                        daha fazla indirim kazanmanız durumunda indirimleriniz sonraki
-                                        aylara ait ödeme çıkan faturalarda yansıtılmak üzere devir
-                                        edilir.
+                                        @SpecialOffer.Terms7Answer
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -475,20 +428,13 @@
                                             </svg>
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Fatura
-                                            Ödemeleri Gecikirse Ne Olur?
+                                            @SpecialOffer.Terms8
                                         </div>
                                     </div>
                                 </div>
                                 <div id="collapseseven7" class="collapse" aria-labelledby="headingseven7" data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Arkadaşını getir kampanyası ile kazanılan indirimler referans
-                                        kodu ile gelen abone ve referans kodu sahibi abone faturalarının
-                                        düzenli ve zamanında ödenmesi durumunda geçerli olacaktır.
-                                        Ödemesi geciken ve ödenmeyen faturalar olması halinde bir
-                                        sonraki dönemin faturalarına indirim yansıtılmayacaktır.
-                                        Gecikmiş fatura borcu daha sonra ödense dahi ilgili döneme ait
-                                        indirim hakkı tamamen kaybedilir ve sonraki aylara yansıtılmaz.
+                                        @SpecialOffer.Terms8Answer
                                     </div>
                                 </div>
                             </div>
@@ -513,18 +459,13 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Arkadaşınız
-                                            Aboneliği İptal Ederse Ne Olacak?
+                                            @SpecialOffer.Terms9
                                         </div>
                                     </div>
                                 </div>
                                 <div id="collapseeight7" class="collapse" aria-labelledby="headingeight7" data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Referans kodunuz ile abone olan arkadaşınızın herhangi bir
-                                        sebeple aboneliğini sonlandırması halinde abonelik iptalinin
-                                        gerçekleştiği ay dâhil gelecek dönemlerde yansıtılmak üzere
-                                        iptali sağlanan abonelikten kazanılan tüm indirimler
-                                        silinecektir.
+                                        @SpecialOffer.Terms9Answer
                                     </div>
                                 </div>
                             </div>
@@ -548,15 +489,13 @@
                                             </svg>
                                         </span>
                                         <div class="card-label text-dark pl-4 font-size-h4">
-                                            Kazandığınız
-                                            İndirimleri Nasıl Takip Edebilirsiniz?
+                                            @SpecialOffer.Terms10
                                         </div>
                                     </div>
                                 </div>
                                 <div id="collapsenine7" class="collapse" aria-labelledby="headingnine7" data-parent="#accordionExample7">
                                     <div class="card-body text-dark-50 font-size-lg pl-12 font-size-h6">
-                                        Kazandığınız indirimleri Online İşlemler üzerinden takip
-                                        edebilirsiniz.
+                                        @SpecialOffer.Terms10Answer
                                     </div>
                                 </div>
                             </div>

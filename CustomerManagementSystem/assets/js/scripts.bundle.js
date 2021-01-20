@@ -10802,7 +10802,7 @@ var KTLayoutSearch = function () {
 
         setTimeout(function () {
             $.ajax({
-                url: navigator.language + '/Home/QuickSearch',
+                url: '/' + navigator.language + '/Home/QuickSearch',
                 data: {
                     query: _query
                 },

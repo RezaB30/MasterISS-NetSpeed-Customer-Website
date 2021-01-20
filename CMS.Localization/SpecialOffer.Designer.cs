@@ -61,6 +61,33 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount to be paid.
+        /// </summary>
+        public static string AmountToBePaid {
+            get {
+                return ResourceManager.GetString("AmountToBePaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 69 TL.
+        /// </summary>
+        public static string AmountToBePaidTotal {
+            get {
+                return ResourceManager.GetString("AmountToBePaidTotal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocak 2021.
+        /// </summary>
+        public static string BillingPeriodExample {
+            get {
+                return ResourceManager.GetString("BillingPeriodExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arkadaşını Getir Kampanyası, davet kodunuz ile referans olarak Netspeed’e kazandırdığınız her bir yeni abonelik için 12 aylık fatura dönemi boyunca hem sizin hem de arkadaşınızın her faturasında 5&apos;er TL indirim hakkı kazanmanızı sağlayan bir kampanyadır..
         /// </summary>
         public static string HowJoinExplain1 {
@@ -142,6 +169,33 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Netspeed&apos;e aşağıdaki kod ile başvuranlar, 12 ay indirimli internet kullanma hakkı kazanıyor, Davet kodumu kullanırsan hem sen hem de ben 12 ay indirimli internet kullanma hakkı kazanacağız. Üstelik katılım sınırı yok, sende arkadaşlarını davet et! ne kadar çok arkadaş, o kadar çok indirimli kullanım hakkı!.
+        /// </summary>
+        public static string SpecialOfferDiscountCodeDescription {
+            get {
+                return ResourceManager.GetString("SpecialOfferDiscountCodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 5 referans x 5 TL İndirim toplamı.
+        /// </summary>
+        public static string SpecialOfferDiscountExample {
+            get {
+                return ResourceManager.GetString("SpecialOfferDiscountExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - 25 TL.
+        /// </summary>
+        public static string SpecialOfferDiscountTotalExample {
+            get {
+                return ResourceManager.GetString("SpecialOfferDiscountTotalExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arkadaşını Getir Referans Kampanyası.
         /// </summary>
         public static string SpecialOfferHeader {
@@ -201,6 +255,204 @@ namespace CMS.Localization {
         public static string TableDescription {
             get {
                 return ResourceManager.GetString("TableDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 75 Mbps&apos;e Kadar Limitsiz.
+        /// </summary>
+        public static string TariffExample {
+            get {
+                return ResourceManager.GetString("TariffExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 94 TL.
+        /// </summary>
+        public static string TariffPriceExample {
+            get {
+                return ResourceManager.GetString("TariffPriceExample", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşını Getir Nedir?.
+        /// </summary>
+        public static string Terms1 {
+            get {
+                return ResourceManager.GetString("Terms1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kazandığınız İndirimleri Nasıl Takip Edebilirsiniz?.
+        /// </summary>
+        public static string Terms10 {
+            get {
+                return ResourceManager.GetString("Terms10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kazandığınız indirimleri Online İşlemler üzerinden takip edebilirsiniz..
+        /// </summary>
+        public static string Terms10Answer {
+            get {
+                return ResourceManager.GetString("Terms10Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşını Getir Kampanyası, referans kodunuz ile Netspeed’e davet ederek kazandırdığınız her bir yeni abonelik için 12 adet fatura döneminde her faturanızda 5 TL indirim hakkı kazanmanızı sağlayan bir indirim kampanyasıdır..
+        /// </summary>
+        public static string Terms1Answer {
+            get {
+                return ResourceManager.GetString("Terms1Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nasıl Çalışır?.
+        /// </summary>
+        public static string Terms2 {
+            get {
+                return ResourceManager.GetString("Terms2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online İşlem Merkezi üzerinden “arkadaşını getir” sekmesine tıklayarak görebileceğiniz size özel referans kodunuz ile arkadaşlarınızı davet edebilirsiniz. Önermiş olduğunuz arkadaşınız indirim kodunu abonelik başlatırken başvuru esnasında 444 0 217 Numaralı Başvuru Hattı üzerinden satış temsilcimize beyan etmesi veya web sitemiz üzerinde yer alan abone başvuru formunu doldururken “referans kodu” alanına sizin verdiğiniz kodu yazması yeterlidir. Başvurunun tamamlanması sonrasında referans olunan kişinin akti [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Terms2Answer {
+            get {
+                return ResourceManager.GetString("Terms2Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Örnek İndirimli Fatura.
+        /// </summary>
+        public static string Terms3 {
+            get {
+                return ResourceManager.GetString("Terms3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kimler Katılabilir?.
+        /// </summary>
+        public static string Terms4 {
+            get {
+                return ResourceManager.GetString("Terms4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bireysel, aktif ve T.C uyruklu müşterilerimiz kampanyadan faydalanabilirler..
+        /// </summary>
+        public static string Terms4Answer {
+            get {
+                return ResourceManager.GetString("Terms4Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşlarınızı Nasıl Davet Edebilirsiniz?.
+        /// </summary>
+        public static string Terms5 {
+            get {
+                return ResourceManager.GetString("Terms5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online İşlem Merkezi üzerinden alabileceğiniz size özel referans kodunuzu arkadaşınızla paylaşarak kampanyaya katılabilirsiniz..
+        /// </summary>
+        public static string Terms5Answer {
+            get {
+                return ResourceManager.GetString("Terms5Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İndirimler Faturalarınıza Ne Zaman Yansıtılır?.
+        /// </summary>
+        public static string Terms6 {
+            get {
+                return ResourceManager.GetString("Terms6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kazanılan indirimler bir sonraki fatura döneminde yansıtılacaktır. İndirimin yansıtılacağı fatura dönemi içerisinde referans ile gelen abone ve referans kodu sahibinin aboneliğini herhangi bir nedenle iptal etmesi veya aboneliğin fesih edilmesi halinde her iki tarafında indirim hakkı kaybolur..
+        /// </summary>
+        public static string Terms6Answer {
+            get {
+                return ResourceManager.GetString("Terms6Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kampanya Kapsamında Davet Limiti Var mı?.
+        /// </summary>
+        public static string Terms7 {
+            get {
+                return ResourceManager.GetString("Terms7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Davet sınırı bulunmamaktadır. Dilediğiniz kadar arkadaşınızı davet edebilirsiniz. Ancak aylık ödeyeceğiniz fatura tutarından daha fazla indirim kazanmanız durumunda indirimleriniz sonraki aylara ait ödeme çıkan faturalarda yansıtılmak üzere devir edilir..
+        /// </summary>
+        public static string Terms7Answer {
+            get {
+                return ResourceManager.GetString("Terms7Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatura Ödemeleri Gecikirse Ne Olur?.
+        /// </summary>
+        public static string Terms8 {
+            get {
+                return ResourceManager.GetString("Terms8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşını getir kampanyası ile kazanılan indirimler referans kodu ile gelen abone ve referans kodu sahibi abone faturalarının düzenli ve zamanında ödenmesi durumunda geçerli olacaktır. Ödemesi geciken ve ödenmeyen faturalar olması halinde bir sonraki dönemin faturalarına indirim yansıtılmayacaktır. Gecikmiş fatura borcu daha sonra ödense dahi ilgili döneme ait indirim hakkı tamamen kaybedilir ve sonraki aylara yansıtılmaz..
+        /// </summary>
+        public static string Terms8Answer {
+            get {
+                return ResourceManager.GetString("Terms8Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arkadaşınız Aboneliği İptal Ederse Ne Olacak?.
+        /// </summary>
+        public static string Terms9 {
+            get {
+                return ResourceManager.GetString("Terms9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Referans kodunuz ile abone olan arkadaşınızın herhangi bir sebeple aboneliğini sonlandırması halinde abonelik iptalinin gerçekleştiği ay dâhil gelecek dönemlerde yansıtılmak üzere iptali sağlanan abonelikten kazanılan tüm indirimler silinecektir..
+        /// </summary>
+        public static string Terms9Answer {
+            get {
+                return ResourceManager.GetString("Terms9Answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kampanya Şartları &amp; Sıkça Sorulan Sorular.
+        /// </summary>
+        public static string TermsAndFAQ {
+            get {
+                return ResourceManager.GetString("TermsAndFAQ", resourceCulture);
             }
         }
         

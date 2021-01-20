@@ -164,7 +164,7 @@
                                         @Common.AccountPrefers
                                     </h3>
 
-                                    <div class="form-group row align-items-center">
+                                    @*<div class="form-group row align-items-center">
                                         <label class="col-xl-3 col-lg-3 col-form-label">
                                             @Common.ContactPrefer
                                         </label>
@@ -182,7 +182,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*@
                                     <div class="form-group row align-items-center">
                                         <label class="col-xl-3 col-lg-3 col-form-label">
                                             @Html.DisplayNameFor(m => m.ContactPhoneNo)
@@ -194,7 +194,7 @@
                                                         <i class="la la-phone"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder } })
+                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder , @readonly = "readonly" } })
                                             </div>
                                         </div>
                                     </div>
@@ -207,11 +207,11 @@
                                                         <i class="la la-at"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder } })
+                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder, @readonly = "readonly" } })
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    @*<div class="form-group row">
                                         <label class="col-xl-3 col-lg-3 col-form-label">
                                             @Html.DisplayNameFor(m => m.CustomerServicePassword)
                                         </label>
@@ -222,11 +222,11 @@
                                                         <i class="la la-unlock-alt"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder } })
+                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder , @readonly = "readonly" } })
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between border-top pt-10 mt-15">
+                                    </div>*@
+                                    @*<div class="d-flex justify-content-between border-top pt-10 mt-15">
                                         <div class="mr-2"></div>
                                         <div>
                                             <button type="reset" class="btn btn-light-primary mr-2">
@@ -236,7 +236,7 @@
                                                 @Common.Cancel
                                             </button>
                                         </div>
-                                    </div>
+                                    </div>*@
                                 </div>
                             </form>
                         </div>

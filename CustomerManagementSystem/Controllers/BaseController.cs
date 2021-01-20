@@ -113,7 +113,6 @@ namespace CustomerManagementSystem.Controllers
                 logger.Error(ex, $"Error while connection web service");
                 return false;
             }
-
         }
         [AllowAnonymous]
         [HttpGet, ActionName("Language")]

@@ -131,7 +131,17 @@
                                     <td class="table-center">@Html.DisplayFor(m => item.UsedCount)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.MissedCount)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.RemainingCount)</td>
-                                    <td class="table-center">@Html.DisplayFor(m => item.IsApplicableThisPeriod)</td>
+                                    <td class="table-center">
+                                        @if (item.IsApplicableThisPeriod)
+                                        {
+                                            <img style="width:1.7em;" src="/Content/img/confirm-btn.svg" />
+                                        }
+                                        else
+                                        {
+                                            <img style="width:1.7em;" src="/Content/img/cancel-btn.svg" />
+                                        }
+                                        @*@Html.DisplayFor(m => item.IsApplicableThisPeriod)*@
+                                    </td>
                                     <td class="table-center">@Html.DisplayFor(m => item.ReferralSubscriberState)</td>
                                 </tr>
                             }

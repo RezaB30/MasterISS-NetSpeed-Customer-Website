@@ -524,6 +524,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="RegisteredCardsDescription" xml:space="preserve">
     <value>Otomatik ödeme için kart ekleyebilir veya kayıtlı kartları silebilirsiniz</value>
   </data>
+  <data name="RegisterTracking" xml:space="preserve">
+    <value>Başvuru Takibi</value>
+  </data>
   <data name="RemainingQuota" xml:space="preserve">
     <value>Kalan Kota</value>
   </data>
@@ -587,11 +590,20 @@ gerçekleştirebilirsiniz.</value>
   <data name="SpecialOffer" xml:space="preserve">
     <value>Kampanya</value>
   </data>
+  <data name="SpecialOfferConditionsSubtitle" xml:space="preserve">
+    <value>Kampanya katılım şartları ve örnek paylaşım görselleri</value>
+  </data>
+  <data name="SpecialOfferDiscountCodeHeader" xml:space="preserve">
+    <value>Netspeed 12 Aylık İndirim Kodu</value>
+  </data>
   <data name="SpecialOfferFriends" xml:space="preserve">
     <value>Arkadaşını Getir</value>
   </data>
   <data name="SpecialOfferIntro" xml:space="preserve">
     <value>12 ay boyunca daha az fatura öde!</value>
+  </data>
+  <data name="SpecialOfferSummary" xml:space="preserve">
+    <value>Kampanya Özeti</value>
   </data>
   <data name="StateInfo" xml:space="preserve">
     <value>DURUM | BİLGİ</value>

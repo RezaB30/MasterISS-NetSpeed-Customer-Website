@@ -191,7 +191,7 @@ namespace CustomerManagementSystem.Controllers
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult NewSupportMessage(RequestSupportMessage requestMessage)
+        public ActionResult NewSupportMessage(RequestSupportMessage requestMessage, HttpPostedFileBase[] attachments)
         {
             if (requestMessage.Message != null)
                 requestMessage.Message = requestMessage.Message.Trim(new char[] { ' ', '\n', '\r' });
@@ -213,7 +213,7 @@ namespace CustomerManagementSystem.Controllers
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
             }
             return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
-        }        
+        }
         private string ModelErrorMessages(ModelStateDictionary ModelState)
         {
             return string.Join(Environment.NewLine, ModelState.Values.Select(m => string.Join(Environment.NewLine, m.Errors.Where(s => !string.IsNullOrEmpty(s.ErrorMessage)).Select(s => $"<div class='text-red'>{s.ErrorMessage}<div>"))));

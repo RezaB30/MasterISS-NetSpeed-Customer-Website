@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AmountToBePaid" xml:space="preserve">
+    <value>Amount to be paid</value>
+  </data>
+  <data name="AmountToBePaidTotal" xml:space="preserve">
+    <value>69 TL</value>
+  </data>
+  <data name="BillingPeriodExample" xml:space="preserve">
+    <value>Ocak 2021</value>
+  </data>
   <data name="HowJoinExplain1" xml:space="preserve">
     <value>Arkadaşını Getir Kampanyası, davet kodunuz ile referans olarak Netspeed’e kazandırdığınız her bir yeni abonelik için 12 aylık fatura dönemi boyunca hem sizin hem de arkadaşınızın her faturasında 5'er TL indirim hakkı kazanmanızı sağlayan bir kampanyadır.</value>
   </data>
@@ -144,6 +153,15 @@
   <data name="SpecialOfferDetails" xml:space="preserve">
     <value>Kampanya Detayları</value>
   </data>
+  <data name="SpecialOfferDiscountCodeDescription" xml:space="preserve">
+    <value>Netspeed'e aşağıdaki kod ile başvuranlar, 12 ay indirimli internet kullanma hakkı kazanıyor, Davet kodumu kullanırsan hem sen hem de ben 12 ay indirimli internet kullanma hakkı kazanacağız. Üstelik katılım sınırı yok, sende arkadaşlarını davet et! ne kadar çok arkadaş, o kadar çok indirimli kullanım hakkı!</value>
+  </data>
+  <data name="SpecialOfferDiscountExample" xml:space="preserve">
+    <value>5 referans x 5 TL İndirim toplamı</value>
+  </data>
+  <data name="SpecialOfferDiscountTotalExample" xml:space="preserve">
+    <value>- 25 TL</value>
+  </data>
   <data name="SpecialOfferHeader" xml:space="preserve">
     <value>Arkadaşını Getir Referans Kampanyası</value>
   </data>
@@ -164,6 +182,72 @@
   </data>
   <data name="TableDescription" xml:space="preserve">
     <value>Arkadaşını getir kampanyası kapsamında kazandığınız toplam indirimleri ve bu dönem için faturanızdan düşülecek indirimlerin toplamını görebilirsiniz.</value>
+  </data>
+  <data name="TariffExample" xml:space="preserve">
+    <value>75 Mbps'e Kadar Limitsiz</value>
+  </data>
+  <data name="TariffPriceExample" xml:space="preserve">
+    <value>94 TL</value>
+  </data>
+  <data name="Terms1" xml:space="preserve">
+    <value>Arkadaşını Getir Nedir?</value>
+  </data>
+  <data name="Terms10" xml:space="preserve">
+    <value>Kazandığınız İndirimleri Nasıl Takip Edebilirsiniz?</value>
+  </data>
+  <data name="Terms10Answer" xml:space="preserve">
+    <value>Kazandığınız indirimleri Online İşlemler üzerinden takip edebilirsiniz.</value>
+  </data>
+  <data name="Terms1Answer" xml:space="preserve">
+    <value>Arkadaşını Getir Kampanyası, referans kodunuz ile Netspeed’e davet ederek kazandırdığınız her bir yeni abonelik için 12 adet fatura döneminde her faturanızda 5 TL indirim hakkı kazanmanızı sağlayan bir indirim kampanyasıdır.</value>
+  </data>
+  <data name="Terms2" xml:space="preserve">
+    <value>Nasıl Çalışır?</value>
+  </data>
+  <data name="Terms2Answer" xml:space="preserve">
+    <value>Online İşlem Merkezi üzerinden “arkadaşını getir” sekmesine tıklayarak görebileceğiniz size özel referans kodunuz ile arkadaşlarınızı davet edebilirsiniz. Önermiş olduğunuz arkadaşınız indirim kodunu abonelik başlatırken başvuru esnasında 444 0 217 Numaralı Başvuru Hattı üzerinden satış temsilcimize beyan etmesi veya web sitemiz üzerinde yer alan abone başvuru formunu doldururken “referans kodu” alanına sizin verdiğiniz kodu yazması yeterlidir. Başvurunun tamamlanması sonrasında referans olunan kişinin aktif Netspeed müşterisi olması ve kullanıma başlaması ardından bir sonraki fatura döneminde hem siz hem referans kodunuzu kullanan arkadaşınız 12 adet fatura dönemi boyunca faturalarınızda indirimli internet hizmeti almaya hak kazanırsınız. . Referansınız ile gelen aboneler hatlarını iptal etmediği sürece kazandığınız indirimler 12 fatura dönemi süresince faturanıza yansıtılır. Daha fazla kişiye referans olursanız kazandırdığınız her bir abonelik için belirlenen indirim tutarı oranı referans olduğunuz kişi sayısı ile çarpılır ve her kişi için 12 adet fatura dönemi süresince fatura tutarınıza indirim olarak yansıtılır.</value>
+  </data>
+  <data name="Terms3" xml:space="preserve">
+    <value>Örnek İndirimli Fatura</value>
+  </data>
+  <data name="Terms4" xml:space="preserve">
+    <value>Kimler Katılabilir?</value>
+  </data>
+  <data name="Terms4Answer" xml:space="preserve">
+    <value>Bireysel, aktif ve T.C uyruklu müşterilerimiz kampanyadan faydalanabilirler.</value>
+  </data>
+  <data name="Terms5" xml:space="preserve">
+    <value>Arkadaşlarınızı Nasıl Davet Edebilirsiniz?</value>
+  </data>
+  <data name="Terms5Answer" xml:space="preserve">
+    <value>Online İşlem Merkezi üzerinden alabileceğiniz size özel referans kodunuzu arkadaşınızla paylaşarak kampanyaya katılabilirsiniz.</value>
+  </data>
+  <data name="Terms6" xml:space="preserve">
+    <value>İndirimler Faturalarınıza Ne Zaman Yansıtılır?</value>
+  </data>
+  <data name="Terms6Answer" xml:space="preserve">
+    <value>Kazanılan indirimler bir sonraki fatura döneminde yansıtılacaktır. İndirimin yansıtılacağı fatura dönemi içerisinde referans ile gelen abone ve referans kodu sahibinin aboneliğini herhangi bir nedenle iptal etmesi veya aboneliğin fesih edilmesi halinde her iki tarafında indirim hakkı kaybolur.</value>
+  </data>
+  <data name="Terms7" xml:space="preserve">
+    <value>Kampanya Kapsamında Davet Limiti Var mı?</value>
+  </data>
+  <data name="Terms7Answer" xml:space="preserve">
+    <value>Davet sınırı bulunmamaktadır. Dilediğiniz kadar arkadaşınızı davet edebilirsiniz. Ancak aylık ödeyeceğiniz fatura tutarından daha fazla indirim kazanmanız durumunda indirimleriniz sonraki aylara ait ödeme çıkan faturalarda yansıtılmak üzere devir edilir.</value>
+  </data>
+  <data name="Terms8" xml:space="preserve">
+    <value>Fatura Ödemeleri Gecikirse Ne Olur?</value>
+  </data>
+  <data name="Terms8Answer" xml:space="preserve">
+    <value>Arkadaşını getir kampanyası ile kazanılan indirimler referans kodu ile gelen abone ve referans kodu sahibi abone faturalarının düzenli ve zamanında ödenmesi durumunda geçerli olacaktır. Ödemesi geciken ve ödenmeyen faturalar olması halinde bir sonraki dönemin faturalarına indirim yansıtılmayacaktır. Gecikmiş fatura borcu daha sonra ödense dahi ilgili döneme ait indirim hakkı tamamen kaybedilir ve sonraki aylara yansıtılmaz.</value>
+  </data>
+  <data name="Terms9" xml:space="preserve">
+    <value>Arkadaşınız Aboneliği İptal Ederse Ne Olacak?</value>
+  </data>
+  <data name="Terms9Answer" xml:space="preserve">
+    <value>Referans kodunuz ile abone olan arkadaşınızın herhangi bir sebeple aboneliğini sonlandırması halinde abonelik iptalinin gerçekleştiği ay dâhil gelecek dönemlerde yansıtılmak üzere iptali sağlanan abonelikten kazanılan tüm indirimler silinecektir.</value>
+  </data>
+  <data name="TermsAndFAQ" xml:space="preserve">
+    <value>Kampanya Şartları &amp; Sıkça Sorulan Sorular</value>
   </data>
   <data name="TotalDiscount" xml:space="preserve">
     <value>Toplam(Adet İndirim)</value>

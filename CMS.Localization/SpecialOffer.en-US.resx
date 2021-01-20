@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AmountToBePaid" xml:space="preserve">
+    <value>Ödenecek Tutar</value>
+  </data>
+  <data name="AmountToBePaidTotal" xml:space="preserve">
+    <value>69 TL</value>
+  </data>
+  <data name="BillingPeriodExample" xml:space="preserve">
+    <value>January 2021</value>
+  </data>
   <data name="HowJoinExplain1" xml:space="preserve">
     <value>The Bring Your Friend special offer is a special offer that allows you to earn a discount of 5 TL on each invoice of both you and your friend during the 12-month billing period for each new subscription you have earned to Netspeed as a reference with your invitation code.</value>
   </data>
@@ -144,6 +153,15 @@
   <data name="SpecialOfferDetails" xml:space="preserve">
     <value>Special Offer Details</value>
   </data>
+  <data name="SpecialOfferDiscountCodeDescription" xml:space="preserve">
+    <value>Those who apply to Netspeed with the following code are entitled to use discounted internet for 12 months. If you use my invitation code, both you and I will gain the right to use discounted internet for 12 months. Moreover, there is no participation limit, invite your friends too! the more friends, the more discounted usage rights!</value>
+  </data>
+  <data name="SpecialOfferDiscountExample" xml:space="preserve">
+    <value>5 reference x 5 TL Discount Total</value>
+  </data>
+  <data name="SpecialOfferDiscountTotalExample" xml:space="preserve">
+    <value>- 25 TL</value>
+  </data>
   <data name="SpecialOfferHeader" xml:space="preserve">
     <value>Bring Your Friend Reference Special Offer</value>
   </data>
@@ -164,6 +182,66 @@
   </data>
   <data name="TableDescription" xml:space="preserve">
     <value>You can see the total discounts you have earned as part of the bring a friend special offer and the discounts that will be deducted from your invoice for this period.</value>
+  </data>
+  <data name="TariffExample" xml:space="preserve">
+    <value>Up to 75 Mbps Unlimited</value>
+  </data>
+  <data name="TariffPriceExample" xml:space="preserve">
+    <value>94 TL</value>
+  </data>
+  <data name="Term2Answer" xml:space="preserve">
+    <value>You can invite your friends with your specific reference code, which you can see by clicking the "bring your friend" tab on the Online Operation Center. It is sufficient for your suggested friend to declare the discount code to our sales representative through the Application Line numbered 444 0 217 when starting the subscription or to write the code you provided in the "reference code" field while filling out the subscription application form on our website. After the completion of the application, the referenced person is an active Netspeed customer and after the start of use, both you and your friend using your reference code in the next billing period are entitled to receive discounted internet service on your bills for 12 billing periods. . As long as the subscribers who come with your reference do not cancel their lines, the discounts you earn are reflected on your invoice for 12 billing periods. If you refer to more people, the discount amount rate determined for each subscription you earn is multiplied by the number of people you refer and reflected as a discount on your invoice amount during the 12 billing period for each person.</value>
+  </data>
+  <data name="Terms10" xml:space="preserve">
+    <value>How Can You Track Your Discounts?</value>
+  </data>
+  <data name="Terms10Answer" xml:space="preserve">
+    <value>You can follow the discounts you have earned through Online Transactions.</value>
+  </data>
+  <data name="Terms2" xml:space="preserve">
+    <value>How does it work?</value>
+  </data>
+  <data name="Terms3" xml:space="preserve">
+    <value>Sample Discounted Invoice</value>
+  </data>
+  <data name="Terms4" xml:space="preserve">
+    <value>Who Can Participate?</value>
+  </data>
+  <data name="Terms4Answer" xml:space="preserve">
+    <value>Our individual, active and Turkish national customers can benefit from the Special offer.</value>
+  </data>
+  <data name="Terms5" xml:space="preserve">
+    <value>How to Invite Your Friends?</value>
+  </data>
+  <data name="Terms5Answer" xml:space="preserve">
+    <value>You can participate in the special offer by sharing your special reference code, which you can get through the Online Operation Center, with your friend.</value>
+  </data>
+  <data name="Terms6" xml:space="preserve">
+    <value>When Are The Discounts Reflected On Your Bills?</value>
+  </data>
+  <data name="Terms6Answer" xml:space="preserve">
+    <value>The discounts earned will be reflected in the next billing period. In the event that the subscriber and reference code holder, which comes with reference within the billing period during which the discount will be reflected, cancels their subscription for any reason or the subscription is terminated, the right of discount on both sides will be lost.</value>
+  </data>
+  <data name="Terms7" xml:space="preserve">
+    <value>Is there an invitation limit within the scope of the special offer?</value>
+  </data>
+  <data name="Terms7Answer" xml:space="preserve">
+    <value>There is no limit to invitation. You can invite as many friends as you want. However, if you get more discount than the monthly invoice amount you will pay, your discounts will be transferred to be reflected in the invoices of the next months.</value>
+  </data>
+  <data name="Terms8" xml:space="preserve">
+    <value>What Happens If Bill Payments Are Delayed?</value>
+  </data>
+  <data name="Terms8Answer" xml:space="preserve">
+    <value>The discounts earned with the bring-a-friend special offer will be valid if the subscriber with reference code and subscriber bills with reference code are paid regularly and on time. In case of delayed and unpaid invoices, no discount will be reflected on the invoices of the next period. Even if the overdue invoice debt is paid later, the discount right for the relevant period is completely lost and is not reflected in the following months.</value>
+  </data>
+  <data name="Terms9" xml:space="preserve">
+    <value>What Happens If Your Friend Cancels Subscription?</value>
+  </data>
+  <data name="Terms9Answer" xml:space="preserve">
+    <value>If your friend who subscribes with your reference code terminates his/her subscription for any reason, all discounts earned from the canceled subscription will be deleted to be reflected in the upcoming periods, including the month in which the subscription canceled.</value>
+  </data>
+  <data name="TermsAndFAQ" xml:space="preserve">
+    <value>Special Offer Terms &amp; Frequently Asked Questions</value>
   </data>
   <data name="TotalDiscount" xml:space="preserve">
     <value>Total (Discount)</value>

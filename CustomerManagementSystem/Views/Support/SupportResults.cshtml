@@ -1,5 +1,5 @@
 ﻿@model CMS.ViewModels.Supports.SupportMessagesViewModel
-
+@using RezaB.Web.Helpers;
 @using CMS.Localization;
 
 @{
@@ -130,7 +130,7 @@
                                 <div class="container">
                                     @if (Model.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.AddNoteDisplay)
                                     {
-                                        using (Html.BeginForm("NewSupportMessage", "Support", FormMethod.Post, new { @class = "form" }))
+                                        using (Html.BeginForm("NewSupportMessage", "Support", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
                                         {
                                             @Html.AntiForgeryToken()
                                             @Html.HiddenFor(m => m.ID)
@@ -145,9 +145,11 @@
                                                     <button type="button" onclick="FormSubmit(submitType.ADD);" class="btn btn-sm btn-light-danger font-weight-bold">
                                                         @Common.AddNote
                                                     </button>
-                                                    <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="kt_todo_reply_attachments_select">
+                                                    <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
                                                         <i class="flaticon2-clip-symbol"></i>
                                                     </span>
+                                                    <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple/>
+                                                    <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
                                                 </div>
                                             </div>
                                         }
@@ -276,5 +278,20 @@
                 $('form.form').submit();
             }
         }
+        $('#support-attachment-id').click(function () {
+            $('.upload-attachments').trigger("click");
+        });
+        $('.upload-attachments').change(function () {
+            var items = "";
+            //for (var i = 0; i < $(this).files.length; i++) {
+            //    items += '<li>' + $(this).files[i].name + '</li>';
+            //}
+            var inp = document.getElementsByClassName('upload-attachments')[0];
+            for (var i = 0; i < inp.files.length; ++i) {
+                var name = inp.files.item(i).name;
+                items += '<li class="list-item">' + name + '</li>';
+            }
+            $('.upload-attachment-list').html(items);
+        });
     </script>
 }

@@ -522,6 +522,9 @@
   <data name="RegisteredCardsDescription" xml:space="preserve">
     <value>You can add card or you can delete card for automatic payment</value>
   </data>
+  <data name="RegisterTracking" xml:space="preserve">
+    <value>Register Tracking</value>
+  </data>
   <data name="RemainingQuota" xml:space="preserve">
     <value>Remaining Quota</value>
   </data>
@@ -585,11 +588,20 @@
   <data name="SpecialOffer" xml:space="preserve">
     <value>Special Offer</value>
   </data>
+  <data name="SpecialOfferConditionsSubtitle" xml:space="preserve">
+    <value>Special offer participation conditions and sample sharing images</value>
+  </data>
+  <data name="SpecialOfferDiscountCodeHeader" xml:space="preserve">
+    <value>Netspeed 12 Month Discount Code</value>
+  </data>
   <data name="SpecialOfferFriends" xml:space="preserve">
     <value>Bring Your Friend</value>
   </data>
   <data name="SpecialOfferIntro" xml:space="preserve">
     <value>Pay less bills for 12 months!</value>
+  </data>
+  <data name="SpecialOfferSummary" xml:space="preserve">
+    <value>Special Offer Summary</value>
   </data>
   <data name="StateInfo" xml:space="preserve">
     <value>State | Info</value>
