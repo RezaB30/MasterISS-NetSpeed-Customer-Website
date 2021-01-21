@@ -135,6 +135,9 @@
   <data name="CreditSecureCodeRequired" xml:space="preserve">
     <value>CVV Gerekli</value>
   </data>
+  <data name="FileSizeError" xml:space="preserve">
+    <value>Dosya boyutu {0} mb'den fazla olamaz</value>
+  </data>
   <data name="GeneralError" xml:space="preserve">
     <value>Bir hata oluştu. Lütfen destek ekibimizle iletişime geçin.</value>
   </data>

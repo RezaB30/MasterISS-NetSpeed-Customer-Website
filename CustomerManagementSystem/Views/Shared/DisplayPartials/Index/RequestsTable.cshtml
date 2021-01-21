@@ -26,13 +26,13 @@
                         <thead>
                             <tr class="bg-gray-100 text-left">
                                 <th style="min-width: 250px" class="pl-7">
-                                    <span class="text-dark-75">@Common.SupportTopic</span>
+                                    <span class="text-dark-75">@Common.SupportTopic.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture)</span>
                                 </th>
                                 <th style="min-width: 110px">@Html.DisplayNameFor(m => m.SupportNo)</th>
                                 <th style="min-width: 130px">@Html.DisplayNameFor(m => m.Date)</th>
                                 <th style="min-width: 120px">@Html.DisplayNameFor(m => m.Department)</th>
                                 <th style="min-width: 110px">@Html.DisplayNameFor(m => m.State)</th>
-                                <th style="min-width: 110px">@Common.Details</th>
+                                <th style="min-width: 110px">@Common.Details.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture)</th>
                             </tr>
                         </thead>
                         <tbody>

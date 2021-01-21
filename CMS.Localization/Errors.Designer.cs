@@ -115,6 +115,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosya boyutu {0} mb&apos;den fazla olamaz.
+        /// </summary>
+        public static string FileSizeError {
+            get {
+                return ResourceManager.GetString("FileSizeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bir hata oluştu. Lütfen destek ekibimizle iletişime geçin..
         /// </summary>
         public static string GeneralError {

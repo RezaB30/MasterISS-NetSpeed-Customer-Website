@@ -251,6 +251,7 @@
       <xs:element minOccurs="0" name="IsCustomer" type="xs:boolean" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MessageDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StageId" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SupportDetailMessagesResponse.SupportMessageList" nillable="true" type="tns:SupportDetailMessagesResponse.SupportMessageList" />
@@ -279,9 +280,9 @@
   <xs:element name="SupportRegisterResponse" nillable="true" type="tns:SupportRegisterResponse" />
   <xs:complexType name="CustomerServiceSendSupportMessageResponse">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q10:BaseResponseOfNullableOfbooleanSHA1qBRhzOKh">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q10:BaseResponseOfNullableOflongSHA1qBRhzOKh">
         <xs:sequence>
-          <xs:element minOccurs="0" name="SendSupportMessageResponse" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SendSupportMessageResponse" nillable="true" type="xs:long" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -862,4 +863,23 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="GetClientAttachmentResponse" nillable="true" type="tns:GetClientAttachmentResponse" />
+  <xs:complexType name="CustomerServiceCustomerAuthenticationWithPasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q50:BaseResponseOfCustomerAuthenticationWithPasswordResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationWithPasswordResult" nillable="true" type="tns:CustomerAuthenticationWithPasswordResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceCustomerAuthenticationWithPasswordResponse" nillable="true" type="tns:CustomerServiceCustomerAuthenticationWithPasswordResponse" />
+  <xs:complexType name="CustomerAuthenticationWithPasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RelatedCustomers" nillable="true" type="q51:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SubscriberNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidDisplayName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerAuthenticationWithPasswordResponse" nillable="true" type="tns:CustomerAuthenticationWithPasswordResponse" />
 </xs:schema>

@@ -135,6 +135,9 @@
   <data name="CreditSecureCodeRequired" xml:space="preserve">
     <value>CVV is required</value>
   </data>
+  <data name="FileSizeError" xml:space="preserve">
+    <value>File size can't be more than {0} mb</value>
+  </data>
   <data name="GeneralError" xml:space="preserve">
     <value>Something went wrong. Please contact our support team</value>
   </data>

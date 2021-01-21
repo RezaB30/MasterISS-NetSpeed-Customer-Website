@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AmountToBePaid" xml:space="preserve">
-    <value>Ödenecek Tutar</value>
+    <value>Amount to be paid</value>
   </data>
   <data name="AmountToBePaidTotal" xml:space="preserve">
     <value>69 TL</value>
@@ -192,14 +192,23 @@
   <data name="Term2Answer" xml:space="preserve">
     <value>You can invite your friends with your specific reference code, which you can see by clicking the "bring your friend" tab on the Online Operation Center. It is sufficient for your suggested friend to declare the discount code to our sales representative through the Application Line numbered 444 0 217 when starting the subscription or to write the code you provided in the "reference code" field while filling out the subscription application form on our website. After the completion of the application, the referenced person is an active Netspeed customer and after the start of use, both you and your friend using your reference code in the next billing period are entitled to receive discounted internet service on your bills for 12 billing periods. . As long as the subscribers who come with your reference do not cancel their lines, the discounts you earn are reflected on your invoice for 12 billing periods. If you refer to more people, the discount amount rate determined for each subscription you earn is multiplied by the number of people you refer and reflected as a discount on your invoice amount during the 12 billing period for each person.</value>
   </data>
+  <data name="Terms1" xml:space="preserve">
+    <value>What is Bring Your Friend?</value>
+  </data>
   <data name="Terms10" xml:space="preserve">
     <value>How Can You Track Your Discounts?</value>
   </data>
   <data name="Terms10Answer" xml:space="preserve">
     <value>You can follow the discounts you have earned through Online Transactions.</value>
   </data>
+  <data name="Terms1Answer" xml:space="preserve">
+    <value>The Bring Your Friend Special offer is a discount special offer that allows you to earn a discount of 5 TL on each bill for 12 billing periods for each new subscription you earn by inviting it to Netspeed with your reference code.</value>
+  </data>
   <data name="Terms2" xml:space="preserve">
     <value>How does it work?</value>
+  </data>
+  <data name="Terms2Answer" xml:space="preserve">
+    <value>You can invite your friends with your specific reference code, which you can see by clicking the "bring your friend" tab on the Online Operation Center. It is sufficient for your suggested friend to declare the discount code to our sales representative through the Application Line numbered 444 0 217 when starting the subscription or to write the code you provided in the "reference code" field while filling out the subscription application form on our website. After the completion of the application, the referenced person is an active Netspeed customer and after the start of use, both you and your friend using your reference code in the next billing period are entitled to receive discounted internet service on your bills for 12 billing periods. . As long as the subscribers who come with your reference do not cancel their lines, the discounts you earn are reflected on your invoice for 12 billing periods. If you refer to more people, the discount amount rate determined for each subscription you earn is multiplied by the number of people you refer and reflected as a discount on your invoice amount during the 12 billing period for each person.</value>
   </data>
   <data name="Terms3" xml:space="preserve">
     <value>Sample Discounted Invoice</value>

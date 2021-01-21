@@ -2537,9 +2537,26 @@
     <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetClientAttachmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.disco" />
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetSupportAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSaveSupportAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicGetSupportAttachmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\GenericCustomerServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\GenericCustomerServiceReference\configuration.svcinfo" />
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\GenericCustomerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -2625,6 +2642,7 @@
     <Content Include="Scripts\Custom\display-message-box.js" />
     <Content Include="Scripts\Custom\get-infrastructure.js" />
     <Content Include="Scripts\Custom\resource-displayText.js" />
+    <Content Include="Scripts\Custom\support-attachment.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.js" />

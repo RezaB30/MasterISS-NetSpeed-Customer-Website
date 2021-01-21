@@ -163,7 +163,8 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult MyServices() //hizmetlerim.html
         {
-            return View();
+            return RedirectToAction("Index", "Home");
+            //return View();
         }
         public ActionResult SpecialOffer() // arkadasini-getir.html
         {
@@ -208,17 +209,10 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult SubscriptionList()
         {
-            var list = new List<SelectListItem>();
             var subscriptionBag = Utilities.InternalUtilities.GetSubscriptionBag(User);
-            foreach (var item in subscriptionBag)
-            {
-                list.Add(new SelectListItem()
-                {
-                    Text = item.SubscriberNo,
-                    Value = item.ID
-                });
-            }
-            return PartialView("~/Views/Shared/EditorPartials/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = list });
+            var selectedSubscription = User.GiveUserId();
+            var subscriptions = new SelectList(subscriptionBag.Select(s => new { Text = s.SubscriberNo, Value = s.ID }), "Value", "Text", selectedSubscription);
+            return PartialView("~/Views/Shared/EditorPartials/Home/SubscriptionList.cshtml", new SubscriptionListVM() { SubscriptionList = subscriptions });
         }
         public ActionResult CurrentSubscription(SubscriptionListVM subscription) // abone numarasını değiştirmek isterse
         {

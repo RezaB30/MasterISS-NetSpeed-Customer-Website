@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -90,7 +91,7 @@ namespace CustomerManagementSystem.Controllers
                           : CMS.Localization.Common.Agent,
                     Message = s.Message,
                     MessageDate = s.MessageDate,
-
+                    StageId = s.StageId
                 })
             };
             return View(supportMessages);
@@ -206,13 +207,55 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), ModelErrorMessages(ModelState), false);
             }
+            if (attachments != null && attachments.Where(att => att.ContentLength > Properties.Settings.Default.FileSizeByte).FirstOrDefault() != null)
+            {
+                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), string.Format(CMS.Localization.Errors.FileSizeError, (Properties.Settings.Default.FileSizeByte / 1000000)), false);
+            }
             var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, User.GiveUserId());
             requestsLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
             if (newMessageResponse.ResponseMessage.ErrorCode == 5) // has active request
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
             }
+            if (newMessageResponse.ResponseMessage.ErrorCode == 0)
+            {
+                // save attachment
+                foreach (var item in attachments)
+                {
+                    using (var binaryReader = new BinaryReader(item.InputStream))
+                    {
+                        var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+                        FileInfo fileInfo = new FileInfo(item.FileName);
+                        var fileExtension = fileInfo.Extension.Replace(".", "");
+                        var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
+                        requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+                    }
+                }
+            }
             return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
+        }
+        [HttpPost]
+        public ActionResult GetSupportAttachments(long supportId)
+        {
+            var attachments = new ServiceUtilities().GetSupportAttachmentList(supportId);
+            if (attachments.GetSupportAttachmentList == null)
+            {
+                return Json(Enumerable.Empty<object>(), JsonRequestBehavior.AllowGet);
+            }
+            return Json(attachments.GetSupportAttachmentList.Select(a => new { FileName = a.FileName, ServerName = a.ServerSideName, StageId = a.StageId }).ToArray(), JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult DownloadSupportAttachment(long? supportId, string fileName)
+        {
+            var attachment = new ServiceUtilities().GetSupportAttachment(supportId, fileName);
+            if (attachment.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { ID = supportId }), attachment.ResponseMessage.ErrorMessage, true);
+            }
+            if (attachment.GetSupportAttachment == null)
+            {
+                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { ID = supportId }), CMS.Localization.Errors.InternalErrorDescription, true);
+            }
+            return File(attachment.GetSupportAttachment.FileContent, attachment.GetSupportAttachment.MIMEType, $"{attachment.GetSupportAttachment.FileName}.{attachment.GetSupportAttachment.FileExtention}");
         }
         private string ModelErrorMessages(ModelStateDictionary ModelState)
         {

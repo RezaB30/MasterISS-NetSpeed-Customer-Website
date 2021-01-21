@@ -18,26 +18,25 @@ namespace CustomerManagementSystem.Controllers
         // GET: Account
         public ActionResult Login()
         {
-            return RedirectToAction("DirectLogin");
-            //return View();
+            return View();
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Login(LoginViewModel login)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View();
-            //}
-            //if (login.username == "123" && login.password == "123")
-            //{
-            //    return Json(new { valid = "", url = "/Home/Index" }, JsonRequestBehavior.AllowGet);
-            //}
-            //else
-            //{
-            //    return Json(new { valid = "Kullanıcı Adı veya Şifre Yanlış. Tekrar Deneyin" }, JsonRequestBehavior.AllowGet);
-            //}
-            return null;
+            ModelState.Remove("SMSPassword");
+            if (!ModelState.IsValid)
+            {
+                return View(login);
+            }
+            var result = new ServiceUtilities().AuthenticationWithPassword(login.CustomerCode, login.Password);
+            if (result.ResponseMessage.ErrorCode != 0)
+            {
+                return Json(new { valid = result.ResponseMessage.ErrorMessage }, JsonRequestBehavior.AllowGet);
+            }
+            // sign in
+            SignInUser(result.AuthenticationWithPasswordResult.ValidDisplayName, result.AuthenticationWithPasswordResult.ID.ToString(), result.AuthenticationWithPasswordResult.SubscriberNo, result.AuthenticationWithPasswordResult.RelatedCustomers, Request.GetOwinContext());
+            return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult DirectLogin()
         {
@@ -63,8 +62,7 @@ namespace CustomerManagementSystem.Controllers
                     Hash = baseRequest.Hash,
                     AuthenticationParameters = new GenericCustomerServiceReference.AuthenticationRequest()
                     {
-                        PhoneNo = login.CustomerCode,
-                        TCK = login.CustomerCode
+                        CustomerCode = login.CustomerCode,
                     }
                 });
                 if (result.ResponseMessage.ErrorCode == 0)
@@ -81,14 +79,6 @@ namespace CustomerManagementSystem.Controllers
             }
             var modelError = ModelState.Values.Select(m => m.Errors.Where(s => string.IsNullOrEmpty(s.ErrorMessage) == false).Select(s => s.ErrorMessage).FirstOrDefault()).FirstOrDefault();
             return Json(new { valid = modelError, }, JsonRequestBehavior.AllowGet);
-            //return View(login);
-
-            //if (string.IsNullOrEmpty(login.CustomerCode))
-            //{
-            //    var error = ModelState.Values.Select(m => m.Errors.Where(s => string.IsNullOrEmpty(s.ErrorMessage) == false).Select(s => s.ErrorMessage).FirstOrDefault()).FirstOrDefault();
-            //    return Json(new { valid = error, }, JsonRequestBehavior.AllowGet);
-            //}
-            //return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
         }
         [ValidateAntiForgeryToken]
         [HttpPost]

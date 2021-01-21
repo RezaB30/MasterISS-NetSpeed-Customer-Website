@@ -6,7 +6,14 @@
     ViewBag.Title = Common.RecipeUsageInfo;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@if (Model == null || Model.RecipeUsage.Count() == 0)
+{
+    <style>
+        .d-flex .flex-column-fluid {
+            flex: initial;
+        }
+    </style>
+}
 <div class="container">
     <div class="flex-row-fluid ">
         <div class="card card-custom card-stretch">
@@ -51,28 +58,28 @@
                         </div>
                     </div>
                     @*<div class="d-flex flex-column-fluid">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-color: #FFF4DE; background-position: right top; background-size: 30% auto;">
-                                        <div class="card-body">
-                                            <h4 class="text-danger mt-2 font-weight-bolder">
-                                                @Common.WeHaveSpecialOffer
-                                            </h4>
-                                            <p class="text-dark-75 font-weight-bolder my-6">
-                                                16 Mbps'e kadar limitsiz tarifemiz 66TL yerine
-                                                <br>
-                                                Size özel ayda sadece 58 TL
-                                            </p>
-                                            <a href="#" class="btn btn-danger font-weight-bold py-2 px-6">
-                                                @Common.AcceptOffer
-                                            </a>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="card card-custom bgi-no-repeat card-stretch gutter-b" style="background-color: #FFF4DE; background-position: right top; background-size: 30% auto;">
+                                            <div class="card-body">
+                                                <h4 class="text-danger mt-2 font-weight-bolder">
+                                                    @Common.WeHaveSpecialOffer
+                                                </h4>
+                                                <p class="text-dark-75 font-weight-bolder my-6">
+                                                    16 Mbps'e kadar limitsiz tarifemiz 66TL yerine
+                                                    <br>
+                                                    Size özel ayda sadece 58 TL
+                                                </p>
+                                                <a href="#" class="btn btn-danger font-weight-bold py-2 px-6">
+                                                    @Common.AcceptOffer
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>*@
+                        </div>*@
                 </div>
             </div>
             <div class="d-flex flex-column-fluid ">

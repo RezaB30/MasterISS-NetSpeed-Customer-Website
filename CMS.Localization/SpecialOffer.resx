@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AmountToBePaid" xml:space="preserve">
-    <value>Amount to be paid</value>
+    <value>Ödenecek Tutar</value>
   </data>
   <data name="AmountToBePaidTotal" xml:space="preserve">
     <value>69 TL</value>

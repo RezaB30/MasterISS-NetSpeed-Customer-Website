@@ -61,7 +61,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Amount to be paid.
+        ///   Looks up a localized string similar to Ödenecek Tutar.
         /// </summary>
         public static string AmountToBePaid {
             get {

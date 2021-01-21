@@ -261,6 +261,9 @@
   <data name="DSL" xml:space="preserve">
     <value>DSL</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
   <data name="ExtendPacket" xml:space="preserve">
     <value>Extend Packet</value>
   </data>
@@ -650,6 +653,9 @@
   </data>
   <data name="TotalAmount" xml:space="preserve">
     <value>Total Amount</value>
+  </data>
+  <data name="Turkish" xml:space="preserve">
+    <value>Turkish</value>
   </data>
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>

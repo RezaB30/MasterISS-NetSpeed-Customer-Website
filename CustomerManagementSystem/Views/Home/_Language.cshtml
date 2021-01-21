@@ -5,8 +5,8 @@
                    btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         @System.Threading.Thread.CurrentThread.CurrentCulture.NativeName
     </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
-        <a class="dropdown-item" href="@Url.LanguageLink("tr-tr",ViewContext)">Türkçe</a>
-        <a class="dropdown-item" href="@Url.LanguageLink("en-US",ViewContext)">İngilizce</a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:25em;">
+        <a class="dropdown-item" href="@Url.LanguageLink("tr-tr",ViewContext)">@CMS.Localization.Common.Turkish</a>
+        <a class="dropdown-item" href="@Url.LanguageLink("en-US",ViewContext)">@CMS.Localization.Common.English</a>
     </div>
 </div>

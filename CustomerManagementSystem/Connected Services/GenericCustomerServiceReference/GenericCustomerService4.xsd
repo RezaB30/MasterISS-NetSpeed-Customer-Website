@@ -31,8 +31,7 @@
   <xs:element name="CustomerServiceAuthenticationRequest" nillable="true" type="tns:CustomerServiceAuthenticationRequest" />
   <xs:complexType name="AuthenticationRequest">
     <xs:sequence>
-      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TCK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AuthenticationRequest" nillable="true" type="tns:AuthenticationRequest" />
@@ -639,4 +638,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GetClientAttachmentRequest" nillable="true" type="tns:GetClientAttachmentRequest" />
+  <xs:complexType name="CustomerServiceAuthenticationWithPasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q40:BaseRequestOfAuthenticationWithPasswordRequestSHA1CuT410mT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AuthenticationWithPasswordParameters" nillable="true" type="tns:AuthenticationWithPasswordRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceAuthenticationWithPasswordRequest" nillable="true" type="tns:CustomerServiceAuthenticationWithPasswordRequest" />
+  <xs:complexType name="AuthenticationWithPasswordRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationWithPasswordRequest" nillable="true" type="tns:AuthenticationWithPasswordRequest" />
 </xs:schema>

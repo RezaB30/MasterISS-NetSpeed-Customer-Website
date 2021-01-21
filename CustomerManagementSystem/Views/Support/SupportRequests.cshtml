@@ -7,6 +7,14 @@
     ViewBag.Title = Common.SupportAndRequests;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@if (Model == null || Model.Count() == 0)
+{
+    <style>
+        .d-flex .flex-column-fluid {
+            flex: initial;
+        }
+    </style>
+}
 <style>
     .page-link {
         display: inline-block !important;

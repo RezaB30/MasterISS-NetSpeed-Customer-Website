@@ -33,6 +33,7 @@ namespace CMS.ViewModels.Supports
         public string SenderName { get; set; } // agent or customer
         public bool IsCustomer { get; set; }
         public IEnumerable<SupportFileList> Files { get; set; }
+        public long StageId { get; set; }
     }
     public class SupportFileList
     {

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" />
+  <xs:complexType name="CustomerServiceGetSupportAttachmentListRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q1:BaseRequestOfGetSupportAttachmentListRequestSHA1Owyew9Fe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetSupportAttachmentsParameters" nillable="true" type="tns:GetSupportAttachmentListRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceGetSupportAttachmentListRequest" nillable="true" type="tns:CustomerServiceGetSupportAttachmentListRequest" />
+  <xs:complexType name="GetSupportAttachmentListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSupportAttachmentListRequest" nillable="true" type="tns:GetSupportAttachmentListRequest" />
+  <xs:complexType name="CustomerServiceGetSupportAttachmentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q2:BaseRequestOfGetSupportAttachmentRequestSHA1Owyew9Fe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GetSupportAttachmentParameters" nillable="true" type="tns:GetSupportAttachmentRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceGetSupportAttachmentRequest" nillable="true" type="tns:CustomerServiceGetSupportAttachmentRequest" />
+  <xs:complexType name="GetSupportAttachmentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportRequestId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSupportAttachmentRequest" nillable="true" type="tns:GetSupportAttachmentRequest" />
+  <xs:complexType name="CustomerServiceSaveSupportAttachmentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q3:BaseRequestOfSaveSupportAttachmentRequestSHA1Owyew9Fe">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SaveSupportAttachmentParameters" nillable="true" type="tns:SaveSupportAttachmentRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceSaveSupportAttachmentRequest" nillable="true" type="tns:CustomerServiceSaveSupportAttachmentRequest" />
+  <xs:complexType name="SaveSupportAttachmentRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileExtention" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StageId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SupportRequestId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveSupportAttachmentRequest" nillable="true" type="tns:SaveSupportAttachmentRequest" />
+</xs:schema>
