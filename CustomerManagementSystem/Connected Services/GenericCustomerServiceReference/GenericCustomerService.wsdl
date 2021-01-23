@@ -14,9 +14,11 @@
       <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
       <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" />
       <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
-      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
       <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
       <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGenericCustomerService_GetKeyFragment_InputMessage">
@@ -361,6 +363,12 @@
   <wsdl:message name="IGenericCustomerService_CustomerAuthenticationWithPassword_OutputMessage">
     <wsdl:part name="parameters" element="tns:CustomerAuthenticationWithPasswordResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_HasClientPreRegisterSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasClientPreRegisterSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_HasClientPreRegisterSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasClientPreRegisterSubscriptionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetKeyFragment">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetKeyFragment" message="tns:IGenericCustomerService_GetKeyFragment_InputMessage" />
@@ -589,6 +597,10 @@
     <wsdl:operation name="CustomerAuthenticationWithPassword">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/CustomerAuthenticationWithPassword" message="tns:IGenericCustomerService_CustomerAuthenticationWithPassword_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/CustomerAuthenticationWithPasswordResponse" message="tns:IGenericCustomerService_CustomerAuthenticationWithPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasClientPreRegisterSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription" message="tns:IGenericCustomerService_HasClientPreRegisterSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscriptionResponse" message="tns:IGenericCustomerService_HasClientPreRegisterSubscription_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -1100,6 +1112,15 @@
     </wsdl:operation>
     <wsdl:operation name="CustomerAuthenticationWithPassword">
       <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/CustomerAuthenticationWithPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasClientPreRegisterSubscription">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

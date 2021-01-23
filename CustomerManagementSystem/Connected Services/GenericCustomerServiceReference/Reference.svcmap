@@ -25,6 +25,8 @@
     <MetadataFile FileName="GenericCustomerService6.xsd" MetadataType="Schema" ID="4befe714-304e-4a5f-972a-b0904beda985" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd6" />
     <MetadataFile FileName="GenericCustomerService.xsd" MetadataType="Schema" ID="15efb175-5e67-4c65-99d5-609fadb1ca09" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd5" />
     <MetadataFile FileName="GenericCustomerService1.xsd" MetadataType="Schema" ID="31e6ac22-4d92-4c57-a2fc-f0eee4ae5104" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="GenericCustomerService7.xsd" MetadataType="Schema" ID="ad38411d-3eeb-4e9e-9ed1-a4a324bd059d" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd9" />
+    <MetadataFile FileName="GenericCustomerService71.xsd" MetadataType="Schema" ID="60e94dbc-28e6-4036-9a07-9e2efeedfe0b" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd8" />
     <MetadataFile FileName="GenericCustomerService2.xsd" MetadataType="Schema" ID="71fbd3af-6e01-49c9-ae34-3315b1661846" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd1" />
     <MetadataFile FileName="GenericCustomerService3.xsd" MetadataType="Schema" ID="d7e83447-3a67-4928-bab6-c515228e40c3" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd3" />
     <MetadataFile FileName="GenericCustomerService4.xsd" MetadataType="Schema" ID="81e9ae38-b2e1-4073-aa55-ded9e5a31aec" SourceId="1" SourceUrl="http://localhost:56365/GenericCustomerService.svc?xsd=xsd2" />

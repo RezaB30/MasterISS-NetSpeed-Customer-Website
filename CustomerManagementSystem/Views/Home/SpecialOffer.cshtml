@@ -45,7 +45,7 @@
                         </p>
                         <div class="font-size-h2 mb-7 text-dark-50">
                             @SpecialOffer.InviteCode
-                            <span class="text-info font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
+                            <div class="text-info font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</div>
                         </div>
                         <a href="@Url.Action("SpecialOfferDetails","Home")" class="btn btn-danger font-weight-bold py-2 px-6">@SpecialOffer.SpecialOfferDetails</a>
                     </div>
@@ -131,17 +131,7 @@
                                     <td class="table-center">@Html.DisplayFor(m => item.UsedCount)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.MissedCount)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.RemainingCount)</td>
-                                    <td class="table-center">
-                                        @if (item.IsApplicableThisPeriod)
-                                        {
-                                            <img style="width:1.7em;" src="/Content/img/confirm-btn.svg" />
-                                        }
-                                        else
-                                        {
-                                            <img style="width:1.7em;" src="/Content/img/cancel-btn.svg" />
-                                        }
-                                        @*@Html.DisplayFor(m => item.IsApplicableThisPeriod)*@
-                                    </td>
+                                    <td class="table-center">@Html.DisplayFor(m => item.IsApplicableThisPeriod)</td>
                                     <td class="table-center">@Html.DisplayFor(m => item.ReferralSubscriberState)</td>
                                 </tr>
                             }

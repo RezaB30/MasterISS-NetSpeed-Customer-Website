@@ -72,11 +72,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
-  <xs:complexType name="BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3">
+  <xs:complexType name="BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="GetCustomerBillInfo" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="GetCustomerBillInfo" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -87,7 +87,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3" />
+  <xs:element name="BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX" />
   <xs:complexType name="BaseRequestOfAuthenticationRequestSHA1CuT410mT">
     <xs:annotation>
       <xs:appinfo>
@@ -152,11 +152,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResponseOfGetCustomerTariffAndTrafficInfoResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfGetCustomerTariffAndTrafficInfoResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfSupportTypesRequestSHA1CuT410mT">
+  <xs:complexType name="BaseRequestOfSupportTypesRequestSHA1Owyew9Fe">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportTypesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="SupportTypesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -167,7 +167,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfSupportTypesRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSupportTypesRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfSupportTypesRequestSHA1Owyew9Fe" nillable="true" type="tns:BaseRequestOfSupportTypesRequestSHA1Owyew9Fe" />
   <xs:complexType name="BaseResponseOfArrayOfValueNamePairSHA1KVWl_PpN3">
     <xs:annotation>
       <xs:appinfo>
@@ -184,11 +184,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResponseOfArrayOfValueNamePairSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfArrayOfValueNamePairSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfSupportSubTypesRequestSHA1CuT410mT">
+  <xs:complexType name="BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportSubTypesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="SupportSubTypesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -199,12 +199,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfSupportSubTypesRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSupportSubTypesRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe" nillable="true" type="tns:BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe" />
+  <xs:complexType name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfGetCustomerSupportListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="ArrayOfGetCustomerSupportListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -215,12 +215,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR" nillable="true" type="tns:BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR" />
+  <xs:complexType name="BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportDetailMessagesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="SupportDetailMessagesRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -231,12 +231,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe" nillable="true" type="tns:BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe" />
+  <xs:complexType name="BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportDetailMessagesResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="SupportDetailMessagesResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -247,12 +247,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfSupportRegisterRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR" nillable="true" type="tns:BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR" />
+  <xs:complexType name="BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportRegisterRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="SupportRegisterRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -263,12 +263,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfSupportRegisterRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSupportRegisterRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe" nillable="true" type="tns:BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe" />
+  <xs:complexType name="BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportRegisterResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="SupportRegisterResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -279,12 +279,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfSendSupportMessageRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR" nillable="true" type="tns:BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR" />
+  <xs:complexType name="BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SendSupportMessageRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="SendSupportMessageRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -295,7 +295,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfSendSupportMessageRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSendSupportMessageRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe" nillable="true" type="tns:BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe" />
   <xs:complexType name="BaseResponseOfNullableOflongSHA1qBRhzOKh">
     <xs:annotation>
       <xs:appinfo>
@@ -330,11 +330,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResponseOfGetCustomerConnectionStatusResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfGetCustomerConnectionStatusResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfEArchivePDFRequestSHA1CuT410mT">
+  <xs:complexType name="BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="EArchivePDFRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="EArchivePDFRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -345,12 +345,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfEArchivePDFRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfEArchivePDFRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseResponseOfEArchivePDFResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="EArchivePDFResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="EArchivePDFResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -361,12 +361,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfPayBillsRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfEArchivePDFResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfEArchivePDFResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseRequestOfPayBillsRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="PayBillsRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="PayBillsRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -377,12 +377,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfPayBillsRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfPayBillsRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfPayBillsResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfPayBillsRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfPayBillsRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseResponseOfPayBillsResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="PayBillsResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="PayBillsResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -393,12 +393,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfPayBillsResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfPayBillsResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfVPOSFormRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfPayBillsResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfPayBillsResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="VPOSFormRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="VPOSFormRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -409,12 +409,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfVPOSFormRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfVPOSFormRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseResponseOfVPOSFormResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="VPOSFormResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="VPOSFormResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -425,12 +425,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseResponseOfVPOSFormResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfVPOSFormResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfQuotaPackageListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="ArrayOfQuotaPackageListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -441,12 +441,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfQuotaSaleRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="QuotaSaleRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="QuotaSaleRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -457,7 +457,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfQuotaSaleRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfQuotaSaleRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB" />
   <xs:complexType name="BaseResponseOfNullableOfbooleanSHA1qBRhzOKh">
     <xs:annotation>
       <xs:appinfo>
@@ -492,11 +492,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResponseOfstringSHA1Miy85_SUl" nillable="true" type="tns:BaseResponseOfstringSHA1Miy85_SUl" />
-  <xs:complexType name="BaseRequestOfAddCardRequestSHA1CuT410mT">
+  <xs:complexType name="BaseRequestOfAddCardRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="AddCardRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="AddCardRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -507,12 +507,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfAddCardRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfAddCardRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseRequestOfRegisteredCardsRequestSHA1CuT410mT">
+  <xs:element name="BaseRequestOfAddCardRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfAddCardRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="RegisteredCardsRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="RegisteredCardsRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -523,12 +523,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfRegisteredCardsRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfRegisteredCardsRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfRegisteredCardsResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="ArrayOfRegisteredCardsResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -539,12 +539,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="RemoveCardSMSCheckRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="RemoveCardSMSCheckRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -555,12 +555,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseRequestOfRemoveCardRequestSHA1CuT410mT">
+  <xs:element name="BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="RemoveCardRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="RemoveCardRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -571,12 +571,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfRemoveCardRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfRemoveCardRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT">
+  <xs:element name="BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ActivateAutomaticPaymentRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="ActivateAutomaticPaymentRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -587,7 +587,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB" />
   <xs:complexType name="BaseRequestOfAuthenticationSMSConfirmRequestSHA1CuT410mT">
     <xs:annotation>
       <xs:appinfo>
@@ -668,11 +668,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseResponseOfChangeSubClientResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfChangeSubClientResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3">
+  <xs:complexType name="BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="SupportStatusResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="SupportStatusResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -683,12 +683,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfBillPayableAmountRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR" nillable="true" type="tns:BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR" />
+  <xs:complexType name="BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="BillPayableAmountRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="BillPayableAmountRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -699,7 +699,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfBillPayableAmountRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfBillPayableAmountRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB" />
   <xs:complexType name="BaseResponseOfNullableOfdecimalSHA1qBRhzOKh">
     <xs:annotation>
       <xs:appinfo>
@@ -769,11 +769,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="BaseRequestOfSendSubscriberSMSRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfSendSubscriberSMSRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseRequestOfAutoPaymentListRequestSHA1CuT410mT">
+  <xs:complexType name="BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="AutoPaymentListRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="AutoPaymentListRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -784,12 +784,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfAutoPaymentListRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfAutoPaymentListRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3">
+  <xs:element name="BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseResponseOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfAutoPaymentListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+          <GenericParameter Name="ArrayOfAutoPaymentListResponse" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -800,12 +800,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3" nillable="true" type="tns:BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3" />
-  <xs:complexType name="BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT">
+  <xs:element name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX" nillable="true" type="tns:BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX" />
+  <xs:complexType name="BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="PaymentSystemLogRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="PaymentSystemLogRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -816,12 +816,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT" />
-  <xs:complexType name="BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT">
+  <xs:element name="BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB" />
+  <xs:complexType name="BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="BaseRequestOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="MobilexpressPayBillRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+          <GenericParameter Name="MobilexpressPayBillRequest" Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
           <GenericParameter Name="SHA1" Namespace="http://schemas.datacontract.org/2004/07/System.Security.Cryptography" />
         </GenericType>
       </xs:appinfo>
@@ -832,7 +832,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT" nillable="true" type="tns:BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT" />
+  <xs:element name="BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB" nillable="true" type="tns:BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB" />
   <xs:complexType name="BaseRequestOfExistingCustomerRegisterRequestSHA1CuT410mT">
     <xs:annotation>
       <xs:appinfo>

@@ -138,6 +138,9 @@
   <data name="FileSizeError" xml:space="preserve">
     <value>File size can't be more than {0} mb</value>
   </data>
+  <data name="FileUploadError" xml:space="preserve">
+    <value>File upload failed. The maximum number of files that can be uploaded has been reached.</value>
+  </data>
   <data name="GeneralError" xml:space="preserve">
     <value>Something went wrong. Please contact our support team</value>
   </data>

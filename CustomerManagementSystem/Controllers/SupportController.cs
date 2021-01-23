@@ -72,6 +72,16 @@ namespace CustomerManagementSystem.Controllers
             {
                 return RedirectToAction("SupportRequests", "Support");
             }
+            var attachments = new ServiceUtilities().GetSupportAttachmentList(ID);
+            var genericAppSetting = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
+            var fileMaxSize = genericAppSetting.GenericAppSettings == null ? 5242880 : genericAppSetting.GenericAppSettings.FileMaxSize;
+            ViewBag.FileMaxSize = fileMaxSize;
+            ViewBag.CanSendFile = false;
+            if (attachments.GetSupportAttachmentList == null || attachments.GetSupportAttachmentList.Count() == 0 || attachments.GetSupportAttachmentList.Count() < fileMaxCount)
+            {
+                ViewBag.CanSendFile = true;
+            }
             SupportMessagesViewModel supportMessages = new SupportMessagesViewModel()
             {
                 SupportDisplayType = (SupportRequestDisplayTypes)supportDetails.SupportDetailMessagesResponse.SupportRequestDisplayType.SupportRequestDisplayTypeId,
@@ -207,9 +217,12 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), ModelErrorMessages(ModelState), false);
             }
-            if (attachments != null && attachments.Where(att => att.ContentLength > Properties.Settings.Default.FileSizeByte).FirstOrDefault() != null)
+            attachments = attachments != null ? attachments.Where(att => att != null).FirstOrDefault() == null ? null : attachments : attachments;
+            var genericAppSetting = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            var fileMaxSize = genericAppSetting.GenericAppSettings == null ? 5242880 : genericAppSetting.GenericAppSettings.FileMaxSize;
+            if (attachments != null && attachments.Where(att => att.ContentLength > fileMaxSize).FirstOrDefault() != null)
             {
-                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), string.Format(CMS.Localization.Errors.FileSizeError, (Properties.Settings.Default.FileSizeByte / 1000000)), false);
+                return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
             }
             var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, User.GiveUserId());
             requestsLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
@@ -217,21 +230,35 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
             }
-            if (newMessageResponse.ResponseMessage.ErrorCode == 0)
+            if (attachments != null && attachments.Count() != 0)
             {
-                // save attachment
-                foreach (var item in attachments)
+                var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
+                var attachmentsList = new ServiceUtilities().GetSupportAttachmentList(requestMessage.ID);
+                if (attachmentsList.GetSupportAttachmentList == null || attachmentsList.GetSupportAttachmentList.Count() == 0
+                    || (attachments.Count() + attachmentsList.GetSupportAttachmentList.Count()) <= fileMaxCount)
                 {
-                    using (var binaryReader = new BinaryReader(item.InputStream))
+                    if (newMessageResponse.ResponseMessage.ErrorCode == 0)
                     {
-                        var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
-                        FileInfo fileInfo = new FileInfo(item.FileName);
-                        var fileExtension = fileInfo.Extension.Replace(".", "");
-                        var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
-                        requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+                        // save attachment
+                        foreach (var item in attachments)
+                        {
+                            using (var binaryReader = new BinaryReader(item.InputStream))
+                            {
+                                var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+                                FileInfo fileInfo = new FileInfo(item.FileName);
+                                var fileExtension = fileInfo.Extension.Replace(".", "");
+                                var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
+                                requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+                            }
+                        }
                     }
                 }
+                else
+                {
+                    return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), CMS.Localization.Errors.FileUploadError, false);
+                }
             }
+
             return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
         }
         [HttpPost]

@@ -1926,7 +1926,7 @@
     <Content Include="assets\media\svg\logos\avocode-inc.svg" />
     <Content Include="assets\media\svg\logos\banco-santander-logo.svg" />
     <Content Include="assets\media\svg\logos\beats-electronics.svg" />
-    <Content Include="assets\media\svg\logos\bejjpluslogonew.svg" />
+    <Content Include="assets\media\svg\logos\netspeed.svg" />
     <Content Include="assets\media\svg\logos\biman-airlines-classic-logo.svg" />
     <Content Include="assets\media\svg\logos\bookingcom-1.svg" />
     <Content Include="assets\media\svg\logos\bootstrap-4.svg" />
@@ -2551,10 +2551,19 @@
     <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\GenericCustomerServiceReference\CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService61.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService71.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\GenericCustomerServiceReference\Reference.svcmap">
@@ -2562,7 +2571,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Content\img\cancel-btn.svg" />
+    <Content Include="Content\img\check.svg" />
     <Content Include="Content\img\confirm-btn.svg" />
+    <Content Include="Content\img\crossed.svg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />

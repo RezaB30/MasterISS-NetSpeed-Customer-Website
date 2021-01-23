@@ -509,7 +509,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceGetClientAttachmentResponse GetClientAttachment(long? subscriptionId , string fileName)
+        public CustomerServiceGetClientAttachmentResponse GetClientAttachment(long? subscriptionId, string fileName)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetClientAttachment(new CustomerServiceGetClientAttachmentRequest()
@@ -526,7 +526,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceSaveSupportAttachmentResponse SaveSupportAttachment(long stageId , string fileName , byte[] fileContent , string fileExtention , long? supportRequestId)
+        public CustomerServiceSaveSupportAttachmentResponse SaveSupportAttachment(long stageId, string fileName, byte[] fileContent, string fileExtention, long? supportRequestId)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.SaveSupportAttachment(new CustomerServiceSaveSupportAttachmentRequest()
@@ -579,7 +579,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceCustomerAuthenticationWithPasswordResponse AuthenticationWithPassword(string customerCode , string password)
+        public CustomerServiceCustomerAuthenticationWithPasswordResponse AuthenticationWithPassword(string customerCode, string password)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.CustomerAuthenticationWithPassword(new CustomerServiceAuthenticationWithPasswordRequest()
@@ -593,6 +593,18 @@ namespace CustomerManagementSystem
                     CustomerCode = customerCode,
                     Password = password
                 }
+            });
+            return result;
+        }
+        public CustomerServiceGenericAppSettingsResponse CustomerWebsiteGenericSettings()
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand
             });
             return result;
         }

@@ -17,49 +17,50 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSHA1o_Pr6u_PMh", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentTypeListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAuthenticationRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportTypesRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportTypesRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportTypesRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportSubTypesRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportSubTypesRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportRegisterRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportRegisterRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSendSupportMessageRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSupportMessageRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfEArchivePDFRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceEArchivePDFRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPayBillsRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPayBillsRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePayBillsRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfVPOSFormRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSFormRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfQuotaSaleRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaSaleRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAddCardRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAddCardRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRegisteredCardsRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRegisteredCardsRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardSMSCheckRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAuthenticationSMSConfirmRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfChangeSubClientRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceChangeSubClientRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfBillPayableAmountRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBillPayableAmountRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSendSubscriberSMSRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAutoPaymentListRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAutoPaymentListRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentSystemLogRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfExistingCustomerRegisterRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest))]
@@ -79,7 +80,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAuthenticationWithPasswordRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationWithPasswordRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaPackagesRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentTypeListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSErrorParameterNameRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCommitmentLengthsRequest))]
@@ -178,6 +178,14 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentTypeListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServicePaymentTypeListRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfAuthenticationRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationRequest))]
@@ -209,17 +217,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportTypesRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportTypesRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportTypesRequest))]
-    public partial class BaseRequestOfSupportTypesRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfSupportTypesRequestSHA1Owyew9Fe : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportTypesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportTypesRequestSHA1CuT410mT {
+    public partial class CustomerServiceSupportTypesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportTypesRequestSHA1Owyew9Fe {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportTypesRequest SupportTypesParametersField;
@@ -240,17 +249,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportSubTypesRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportSubTypesRequest))]
-    public partial class BaseRequestOfSupportSubTypesRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportSubTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportSubTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportSubTypesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportSubTypesRequestSHA1CuT410mT {
+    public partial class CustomerServiceSupportSubTypesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportSubTypesRequest SupportSubTypesParametersField;
@@ -271,17 +281,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesRequest))]
-    public partial class BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportDetailMessagesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportDetailMessagesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportDetailMessagesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportDetailMessagesRequestSHA1CuT410mT {
+    public partial class CustomerServiceSupportDetailMessagesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportDetailMessagesRequest SupportDetailMessagesParametersField;
@@ -302,17 +313,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportRegisterRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportRegisterRequest))]
-    public partial class BaseRequestOfSupportRegisterRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportRegisterRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportRegisterRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportRegisterRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportRegisterRequestSHA1CuT410mT {
+    public partial class CustomerServiceSupportRegisterRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportRegisterRequest SupportRegisterParametersField;
@@ -333,17 +345,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSendSupportMessageRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSupportMessageRequest))]
-    public partial class BaseRequestOfSendSupportMessageRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSendSupportMessageRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSendSupportMessageRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSendSupportMessageRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSendSupportMessageRequestSHA1CuT410mT {
+    public partial class CustomerServiceSendSupportMessageRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSendSupportMessageRequestSHA1Owyew9Fe {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SendSupportMessageRequest SendSupportMessageParametersField;
@@ -364,17 +377,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfEArchivePDFRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceEArchivePDFRequest))]
-    public partial class BaseRequestOfEArchivePDFRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceEArchivePDFRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceEArchivePDFRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceEArchivePDFRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfEArchivePDFRequestSHA1CuT410mT {
+    public partial class CustomerServiceEArchivePDFRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfEArchivePDFRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.EArchivePDFRequest EArchivePDFParametersField;
@@ -395,17 +409,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfPayBillsRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfPayBillsRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePayBillsRequest))]
-    public partial class BaseRequestOfPayBillsRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfPayBillsRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePayBillsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePayBillsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServicePayBillsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPayBillsRequestSHA1CuT410mT {
+    public partial class CustomerServicePayBillsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPayBillsRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.PayBillsRequest PayBillsParametersField;
@@ -426,17 +441,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfVPOSFormRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSFormRequest))]
-    public partial class BaseRequestOfVPOSFormRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceVPOSFormRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceVPOSFormRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceVPOSFormRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfVPOSFormRequestSHA1CuT410mT {
+    public partial class CustomerServiceVPOSFormRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfVPOSFormRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.VPOSFormRequest VPOSFormParametersField;
@@ -457,17 +473,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfQuotaSaleRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaSaleRequest))]
-    public partial class BaseRequestOfQuotaSaleRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaSaleRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaSaleRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceQuotaSaleRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfQuotaSaleRequestSHA1CuT410mT {
+    public partial class CustomerServiceQuotaSaleRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfQuotaSaleRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.QuotaSaleRequest QuotaSaleParametersField;
@@ -488,17 +505,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfAddCardRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfAddCardRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardRequest))]
-    public partial class BaseRequestOfAddCardRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfAddCardRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceAddCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAddCardRequestSHA1CuT410mT {
+    public partial class CustomerServiceAddCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAddCardRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.AddCardRequest AddCardParametersField;
@@ -519,17 +537,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRegisteredCardsRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRegisteredCardsRequest))]
-    public partial class BaseRequestOfRegisteredCardsRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRegisteredCardsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRegisteredCardsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceRegisteredCardsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRegisteredCardsRequestSHA1CuT410mT {
+    public partial class CustomerServiceRegisteredCardsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRegisteredCardsRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.RegisteredCardsRequest RegisteredCardsParametersField;
@@ -550,17 +569,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardSMSCheckRequest))]
-    public partial class BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardSMSCheckRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardSMSCheckRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceRemoveCardSMSCheckRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardSMSCheckRequestSHA1CuT410mT {
+    public partial class CustomerServiceRemoveCardSMSCheckRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardSMSCheckRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.RemoveCardSMSCheckRequest RemoveCardSMSCheckParametersField;
@@ -581,17 +601,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRemoveCardRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardRequest))]
-    public partial class BaseRequestOfRemoveCardRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceRemoveCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardRequestSHA1CuT410mT {
+    public partial class CustomerServiceRemoveCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfRemoveCardRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.RemoveCardRequest RemoveCardParametersField;
@@ -612,17 +633,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentRequest))]
-    public partial class BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceActivateAutomaticPaymentRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceActivateAutomaticPaymentRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceActivateAutomaticPaymentRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfActivateAutomaticPaymentRequestSHA1CuT410mT {
+    public partial class CustomerServiceActivateAutomaticPaymentRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfActivateAutomaticPaymentRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.ActivateAutomaticPaymentRequest ActivateAutomaticPaymentParametersField;
@@ -705,17 +727,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfBillPayableAmountRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBillPayableAmountRequest))]
-    public partial class BaseRequestOfBillPayableAmountRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceBillPayableAmountRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceBillPayableAmountRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceBillPayableAmountRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfBillPayableAmountRequestSHA1CuT410mT {
+    public partial class CustomerServiceBillPayableAmountRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfBillPayableAmountRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.BillPayableAmountRequest BillPayableAmountParametersField;
@@ -767,17 +790,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfAutoPaymentListRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAutoPaymentListRequest))]
-    public partial class BaseRequestOfAutoPaymentListRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAutoPaymentListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAutoPaymentListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceAutoPaymentListRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAutoPaymentListRequestSHA1CuT410mT {
+    public partial class CustomerServiceAutoPaymentListRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfAutoPaymentListRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.AutoPaymentListRequest AutoPaymentListParametersField;
@@ -798,17 +822,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentSystemLogRequest))]
-    public partial class BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentSystemLogRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentSystemLogRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServicePaymentSystemLogRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPaymentSystemLogRequestSHA1CuT410mT {
+    public partial class CustomerServicePaymentSystemLogRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfPaymentSystemLogRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.PaymentSystemLogRequest PaymentSystemLogParametersField;
@@ -829,17 +854,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillRequest))]
-    public partial class BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    public partial class BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceMobilexpressPayBillRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceMobilexpressPayBillRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceMobilexpressPayBillRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfMobilexpressPayBillRequestSHA1CuT410mT {
+    public partial class CustomerServiceMobilexpressPayBillRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfMobilexpressPayBillRequestSHA1_Sce8qIMB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.MobilexpressPayBillRequest MobileExpressPayBillParametersField;
@@ -1142,13 +1168,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentTypeListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServicePaymentTypeListRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGenericAppSettingsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceGenericAppSettingsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
@@ -1226,10 +1245,10 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.RemoveCardRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.ActivateAutomaticPaymentRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BillPayableAmountRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.SendSubscriberSMSRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.AutoPaymentListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.PaymentSystemLogRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.MobilexpressPayBillRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.SendSubscriberSMSRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.SupportDetailMessagesRequest))]
     public partial class BaseSubscriptionRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1319,7 +1338,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
     public partial class SupportTypesRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1380,7 +1400,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportSubTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportSubTypesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
     public partial class SupportSubTypesRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -1441,7 +1462,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
     public partial class SupportDetailMessagesRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1464,7 +1486,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportRegisterRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportRegisterRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
     public partial class SupportRegisterRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1519,7 +1542,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EArchivePDFRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EArchivePDFRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class EArchivePDFRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1542,7 +1566,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PayBillsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PayBillsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class PayBillsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1613,7 +1638,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QuotaSaleRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QuotaSaleRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class QuotaSaleRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1636,7 +1662,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegisteredCardsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegisteredCardsRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class RegisteredCardsRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1659,7 +1686,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCardSMSCheckRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCardSMSCheckRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class RemoveCardSMSCheckRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1682,7 +1710,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RemoveCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class RemoveCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1737,7 +1766,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ActivateAutomaticPaymentRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ActivateAutomaticPaymentRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class ActivateAutomaticPaymentRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1792,7 +1822,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BillPayableAmountRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BillPayableAmountRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class BillPayableAmountRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1815,62 +1846,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SendSubscriberSMSRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
-    [System.SerializableAttribute()]
-    public partial class SendSubscriberSMSRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] BillIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> PayableAmountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<short> SubscriptionPaidTypeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] BillIds {
-            get {
-                return this.BillIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BillIdsField, value) != true)) {
-                    this.BillIdsField = value;
-                    this.RaisePropertyChanged("BillIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> PayableAmount {
-            get {
-                return this.PayableAmountField;
-            }
-            set {
-                if ((this.PayableAmountField.Equals(value) != true)) {
-                    this.PayableAmountField = value;
-                    this.RaisePropertyChanged("PayableAmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<short> SubscriptionPaidType {
-            get {
-                return this.SubscriptionPaidTypeField;
-            }
-            set {
-                if ((this.SubscriptionPaidTypeField.Equals(value) != true)) {
-                    this.SubscriptionPaidTypeField = value;
-                    this.RaisePropertyChanged("SubscriptionPaidType");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class AutoPaymentListRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1893,7 +1870,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentSystemLogRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentSystemLogRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class PaymentSystemLogRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -1964,7 +1942,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MobilexpressPayBillRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MobilexpressPayBillRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class MobilexpressPayBillRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
         
@@ -2035,6 +2014,61 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SendSubscriberSMSRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class SendSubscriberSMSRequest : CustomerManagementSystem.GenericCustomerServiceReference.BaseSubscriptionRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] BillIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> PayableAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<short> SubscriptionPaidTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] BillIds {
+            get {
+                return this.BillIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BillIdsField, value) != true)) {
+                    this.BillIdsField = value;
+                    this.RaisePropertyChanged("BillIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> PayableAmount {
+            get {
+                return this.PayableAmountField;
+            }
+            set {
+                if ((this.PayableAmountField.Equals(value) != true)) {
+                    this.PayableAmountField = value;
+                    this.RaisePropertyChanged("PayableAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<short> SubscriptionPaidType {
+            get {
+                return this.SubscriptionPaidTypeField;
+            }
+            set {
+                if ((this.SubscriptionPaidTypeField.Equals(value) != true)) {
+                    this.SubscriptionPaidTypeField = value;
+                    this.RaisePropertyChanged("SubscriptionPaidType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="HttpContextParameters", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
     [System.SerializableAttribute()]
     public partial class HttpContextParameters : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2096,7 +2130,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegisteredCardsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegisteredCardsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class RegisteredCardsResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2173,7 +2208,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SendSupportMessageRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SendSupportMessageRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
     [System.SerializableAttribute()]
     public partial class SendSupportMessageRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2266,7 +2302,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VPOSFormRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VPOSFormRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class VPOSFormRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2359,7 +2396,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AddCardRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     public partial class AddCardRequest : CustomerManagementSystem.GenericCustomerServiceReference.CreditCardParameters {
         
@@ -2414,7 +2452,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CreditCardParameters", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreditCardParameters", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.P" +
+        "ayment")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.AddCardRequest))]
     public partial class CreditCardParameters : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3501,7 +3540,7 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSHA1o_Pr6u_PMh", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerBillsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfCustomerAuthenticationResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationResponse))]
@@ -3511,40 +3550,41 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerTariffAndTrafficInfoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfValueNamePairSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceNameValuePair))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportRegisterResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOflongSHA1qBRhzOKh))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSupportMessageResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGetCustomerConnectionStatusResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceConnectionStatusResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfEArchivePDFResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceEArchivePDFResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfPayBillsResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfPayBillsResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePayBillsResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfVPOSFormResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSFormResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaPackagesResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceDeactivateAutomaticPaymentResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentSystemLogResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfstringSHA1Miy85_SUl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardSMSValidationResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardSMSValidationResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSErrorParameterNameResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRegisteredCardsResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfAuthenticationSMSConfirmResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmResponse))]
@@ -3552,7 +3592,7 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSubscriptionBasicInformationResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfChangeSubClientResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceChangeSubClientResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportStatusResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfdecimalSHA1qBRhzOKh))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBillPayableAmountResponse))]
@@ -3560,7 +3600,7 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentTypeListResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGenericAppSettingsResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAutoPaymentListResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfKeyValueOfstringstringSHA1PGu3YCeQ))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse))]
@@ -3752,17 +3792,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerBillsResponse))]
-    public partial class BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGetCustomerBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGetCustomerBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceGetCustomerBillsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGetCustomerBillInfoSHA1KVWl_PpN3 {
+    public partial class CustomerServiceGetCustomerBillsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.GetCustomerBillInfo GetCustomerBillsResponseField;
@@ -3907,17 +3948,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse))]
-    public partial class BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGetCustomerSupportListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGetCustomerSupportListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceGetCustomerSupportListResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceGetCustomerSupportListResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfGetCustomerSupportListResponseSHA1Tzfx7AaR {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.GetCustomerSupportListResponse[] GetCustomerSupportListResponseField;
@@ -3938,17 +3980,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse))]
-    public partial class BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportDetailMessagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportDetailMessagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportDetailMessagesResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportDetailMessagesResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceSupportDetailMessagesResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportDetailMessagesResponseSHA1Tzfx7AaR {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportDetailMessagesResponse SupportDetailMessagesResponseField;
@@ -3969,17 +4012,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportRegisterResponse))]
-    public partial class BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportRegisterResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportRegisterResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportRegisterResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportRegisterResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceSupportRegisterResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportRegisterResponseSHA1Tzfx7AaR {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportRegisterResponse SupportRegisterResponseField;
@@ -4062,17 +4106,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfEArchivePDFResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceEArchivePDFResponse))]
-    public partial class BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfEArchivePDFResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceEArchivePDFResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceEArchivePDFResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceEArchivePDFResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfEArchivePDFResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceEArchivePDFResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfEArchivePDFResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.EArchivePDFResponse EArchivePDFResponseField;
@@ -4093,17 +4138,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfPayBillsResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfPayBillsResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePayBillsResponse))]
-    public partial class BaseResponseOfPayBillsResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfPayBillsResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePayBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePayBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServicePayBillsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfPayBillsResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServicePayBillsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfPayBillsResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.PayBillsResponse PayBillsResponseField;
@@ -4124,17 +4170,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfVPOSFormResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceVPOSFormResponse))]
-    public partial class BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfVPOSFormResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceVPOSFormResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceVPOSFormResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceVPOSFormResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfVPOSFormResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceVPOSFormResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfVPOSFormResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.VPOSFormResponse VPOSFormResponseField;
@@ -4155,17 +4202,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaPackagesResponse))]
-    public partial class BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaPackagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaPackagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceQuotaPackagesResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfQuotaPackageListResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceQuotaPackagesResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfQuotaPackageListResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.QuotaPackageListResponse[] QuotaPackageListResponseField;
@@ -4189,21 +4237,23 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfNullableOfbooleanSHA1qBRhzOKh", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRemoveCardResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceDeactivateAutomaticPaymentResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServicePaymentSystemLogResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     public partial class BaseResponseOfNullableOfbooleanSHA1qBRhzOKh : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaSaleResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceQuotaSaleResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceQuotaSaleResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
         
@@ -4219,6 +4269,150 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
                 if ((this.IsQuotaSaleField.Equals(value) != true)) {
                     this.IsQuotaSaleField = value;
                     this.RaisePropertyChanged("IsQuotaSale");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceAddCardResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsSuccessField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsSuccess {
+            get {
+                return this.IsSuccessField;
+            }
+            set {
+                if ((this.IsSuccessField.Equals(value) != true)) {
+                    this.IsSuccessField = value;
+                    this.RaisePropertyChanged("IsSuccess");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceRemoveCardResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsSuccessField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsSuccess {
+            get {
+                return this.IsSuccessField;
+            }
+            set {
+                if ((this.IsSuccessField.Equals(value) != true)) {
+                    this.IsSuccessField = value;
+                    this.RaisePropertyChanged("IsSuccess");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceActivateAutomaticPaymentResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceActivateAutomaticPaymentResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsSuccessField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsSuccess {
+            get {
+                return this.IsSuccessField;
+            }
+            set {
+                if ((this.IsSuccessField.Equals(value) != true)) {
+                    this.IsSuccessField = value;
+                    this.RaisePropertyChanged("IsSuccess");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceDeactivateAutomaticPaymentResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceDeactivateAutomaticPaymentResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsSuccessField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsSuccess {
+            get {
+                return this.IsSuccessField;
+            }
+            set {
+                if ((this.IsSuccessField.Equals(value) != true)) {
+                    this.IsSuccessField = value;
+                    this.RaisePropertyChanged("IsSuccess");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentSystemLogResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServicePaymentSystemLogResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> PaymentSystemLogResultField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> PaymentSystemLogResult {
+            get {
+                return this.PaymentSystemLogResultField;
+            }
+            set {
+                if ((this.PaymentSystemLogResultField.Equals(value) != true)) {
+                    this.PaymentSystemLogResultField = value;
+                    this.RaisePropertyChanged("PaymentSystemLogResult");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceMobilexpressPayBillResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceMobilexpressPayBillResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> MobilexpressPayBillResultField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> MobilexpressPayBillResult {
+            get {
+                return this.MobilexpressPayBillResultField;
+            }
+            set {
+                if ((this.MobilexpressPayBillResultField.Equals(value) != true)) {
+                    this.MobilexpressPayBillResultField = value;
+                    this.RaisePropertyChanged("MobilexpressPayBillResult");
                 }
             }
         }
@@ -4249,22 +4443,22 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceHasClientPreRegisterResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceAddCardResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+    public partial class CustomerServiceHasClientPreRegisterResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> IsSuccessField;
+        private System.Nullable<bool> HasClientPreRegisterField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> IsSuccess {
+        public System.Nullable<bool> HasClientPreRegister {
             get {
-                return this.IsSuccessField;
+                return this.HasClientPreRegisterField;
             }
             set {
-                if ((this.IsSuccessField.Equals(value) != true)) {
-                    this.IsSuccessField = value;
-                    this.RaisePropertyChanged("IsSuccess");
+                if ((this.HasClientPreRegisterField.Equals(value) != true)) {
+                    this.HasClientPreRegisterField = value;
+                    this.RaisePropertyChanged("HasClientPreRegister");
                 }
             }
         }
@@ -4272,76 +4466,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServiceRemoveCardResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> IsSuccessField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> IsSuccess {
-            get {
-                return this.IsSuccessField;
-            }
-            set {
-                if ((this.IsSuccessField.Equals(value) != true)) {
-                    this.IsSuccessField = value;
-                    this.RaisePropertyChanged("IsSuccess");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceActivateAutomaticPaymentResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServiceActivateAutomaticPaymentResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> IsSuccessField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> IsSuccess {
-            get {
-                return this.IsSuccessField;
-            }
-            set {
-                if ((this.IsSuccessField.Equals(value) != true)) {
-                    this.IsSuccessField = value;
-                    this.RaisePropertyChanged("IsSuccess");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceDeactivateAutomaticPaymentResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServiceDeactivateAutomaticPaymentResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> IsSuccessField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> IsSuccess {
-            get {
-                return this.IsSuccessField;
-            }
-            set {
-                if ((this.IsSuccessField.Equals(value) != true)) {
-                    this.IsSuccessField = value;
-                    this.RaisePropertyChanged("IsSuccess");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceHasActiveRequestResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceHasActiveRequestResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceHasActiveRequestResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
         
@@ -4364,7 +4490,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSendSubscriberSMSResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSendSubscriberSMSResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceSendSubscriberSMSResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
         
@@ -4387,52 +4514,6 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentSystemLogResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServicePaymentSystemLogResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> PaymentSystemLogResultField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> PaymentSystemLogResult {
-            get {
-                return this.PaymentSystemLogResultField;
-            }
-            set {
-                if ((this.PaymentSystemLogResultField.Equals(value) != true)) {
-                    this.PaymentSystemLogResultField = value;
-                    this.RaisePropertyChanged("PaymentSystemLogResult");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceMobilexpressPayBillResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
-    [System.SerializableAttribute()]
-    public partial class CustomerServiceMobilexpressPayBillResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> MobilexpressPayBillResultField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> MobilexpressPayBillResult {
-            get {
-                return this.MobilexpressPayBillResultField;
-            }
-            set {
-                if ((this.MobilexpressPayBillResultField.Equals(value) != true)) {
-                    this.MobilexpressPayBillResultField = value;
-                    this.RaisePropertyChanged("MobilexpressPayBillResult");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfstringSHA1Miy85_SUl", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAddCardSMSValidationResponse))]
@@ -4443,7 +4524,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardSMSValidationResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAddCardSMSValidationResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceAddCardSMSValidationResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfstringSHA1Miy85_SUl {
         
@@ -4466,7 +4548,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardSMSValidationResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRemoveCardSMSValidationResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceRemoveCardSMSValidationResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfstringSHA1Miy85_SUl {
         
@@ -4512,17 +4595,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceRegisteredCardsResponse))]
-    public partial class BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRegisteredCardsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceRegisteredCardsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceRegisteredCardsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfRegisteredCardsResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceRegisteredCardsResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfRegisteredCardsResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.RegisteredCardsResponse[] RegisteredCardListField;
@@ -4636,17 +4720,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceSupportStatusResponse))]
-    public partial class BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportStatusResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSupportStatusResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceSupportStatusResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportStatusResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceSupportStatusResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSupportStatusResponseSHA1Tzfx7AaR {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.SupportStatusResponse SupportStatusResponseField;
@@ -4675,7 +4760,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceBillPayableAmountResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceBillPayableAmountResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceBillPayableAmountResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfNullableOfdecimalSHA1qBRhzOKh {
         
@@ -4706,7 +4792,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentTypeListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServicePaymentTypeListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class CustomerServicePaymentTypeListResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfKeyValueOfintstringSHA1PGu3YCeQ {
         
@@ -4760,17 +4847,18 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAutoPaymentListResponse))]
-    public partial class BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3 : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    public partial class BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAutoPaymentListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAutoPaymentListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
-    public partial class CustomerServiceAutoPaymentListResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfAutoPaymentListResponseSHA1KVWl_PpN3 {
+    public partial class CustomerServiceAutoPaymentListResponse : CustomerManagementSystem.GenericCustomerServiceReference.BaseResponseOfArrayOfAutoPaymentListResponseSHA1m7dItXwX {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private CustomerManagementSystem.GenericCustomerServiceReference.AutoPaymentListResponse[] AutoPaymentListResultField;
@@ -5404,7 +5492,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerBillInfo", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerBillInfo", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class GetCustomerBillInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -5513,7 +5602,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class GetCustomerBillsResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6231,7 +6321,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerSupportListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetCustomerSupportListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class GetCustomerSupportListResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6388,7 +6479,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class SupportDetailMessagesResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6560,7 +6652,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.StateType", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.StateType", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+            "Support")]
         [System.SerializableAttribute()]
         public partial class StateType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
             
@@ -6620,7 +6713,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.SupportRequestDisplay", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.SupportRequestDisplay", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+            "Support")]
         [System.SerializableAttribute()]
         public partial class SupportRequestDisplay : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
             
@@ -6680,7 +6774,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.SupportMessageList", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="SupportDetailMessagesResponse.SupportMessageList", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+            "Support")]
         [System.SerializableAttribute()]
         public partial class SupportMessageList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
             
@@ -6773,7 +6868,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportRegisterResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportRegisterResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class SupportRegisterResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -6991,7 +7087,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EArchivePDFResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EArchivePDFResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class EArchivePDFResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7068,7 +7165,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PayBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PayBillsResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class PayBillsResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7113,7 +7211,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VPOSFormResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VPOSFormResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class VPOSFormResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7158,7 +7257,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QuotaPackageListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QuotaPackageListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class QuotaPackageListResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7638,7 +7738,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SupportStatusResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SupportStatusResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Support")]
     [System.SerializableAttribute()]
     public partial class SupportStatusResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7707,6 +7808,12 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long FileMaxCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long FileMaxSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool HasAnyTelekomDomainsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7719,6 +7826,32 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long FileMaxCount {
+            get {
+                return this.FileMaxCountField;
+            }
+            set {
+                if ((this.FileMaxCountField.Equals(value) != true)) {
+                    this.FileMaxCountField = value;
+                    this.RaisePropertyChanged("FileMaxCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long FileMaxSize {
+            get {
+                return this.FileMaxSizeField;
+            }
+            set {
+                if ((this.FileMaxSizeField.Equals(value) != true)) {
+                    this.FileMaxSizeField = value;
+                    this.RaisePropertyChanged("FileMaxSize");
+                }
             }
         }
         
@@ -7760,7 +7893,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+        "Payment")]
     [System.SerializableAttribute()]
     public partial class AutoPaymentListResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -7836,7 +7970,8 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         
         [System.Diagnostics.DebuggerStepThroughAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-        [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListResponse.Card", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="AutoPaymentListResponse.Card", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses." +
+            "Payment")]
         [System.SerializableAttribute()]
         public partial class Card : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
             
@@ -9660,6 +9795,14 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/CustomerAuthenticationWithPassword", ReplyAction="http://tempuri.org/IGenericCustomerService/CustomerAuthenticationWithPasswordResp" +
             "onse")]
         System.Threading.Tasks.Task<CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse> CustomerAuthenticationWithPasswordAsync(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationWithPasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription", ReplyAction="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscriptionRespon" +
+            "se")]
+        CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse HasClientPreRegisterSubscription(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBaseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription", ReplyAction="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscriptionRespon" +
+            "se")]
+        System.Threading.Tasks.Task<CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse> HasClientPreRegisterSubscriptionAsync(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBaseRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10143,6 +10286,14 @@ namespace CustomerManagementSystem.GenericCustomerServiceReference {
         
         public System.Threading.Tasks.Task<CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse> CustomerAuthenticationWithPasswordAsync(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceAuthenticationWithPasswordRequest request) {
             return base.Channel.CustomerAuthenticationWithPasswordAsync(request);
+        }
+        
+        public CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse HasClientPreRegisterSubscription(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBaseRequest request) {
+            return base.Channel.HasClientPreRegisterSubscription(request);
+        }
+        
+        public System.Threading.Tasks.Task<CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse> HasClientPreRegisterSubscriptionAsync(CustomerManagementSystem.GenericCustomerServiceReference.CustomerServiceBaseRequest request) {
+            return base.Channel.HasClientPreRegisterSubscriptionAsync(request);
         }
     }
 }

@@ -124,6 +124,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosya yükleme işlemi başarısız. Yüklenebilecek maksimum dosya sayısına ulaşıldı..
+        /// </summary>
+        public static string FileUploadError {
+            get {
+                return ResourceManager.GetString("FileUploadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bir hata oluştu. Lütfen destek ekibimizle iletişime geçin..
         /// </summary>
         public static string GeneralError {

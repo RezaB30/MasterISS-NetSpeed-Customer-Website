@@ -5,6 +5,8 @@
 @{
     ViewBag.Title = CMS.Localization.Common.SupportAndRequests;
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var FileMaxSize = (long)ViewBag.FileMaxSize;
 }
 
 <div class="container">
@@ -136,9 +138,12 @@
                                             @Html.HiddenFor(m => m.ID)
                                             <div class="form-group">
                                                 @Html.TextAreaFor(m => m.Message, new { @placeholder = Common.WriteNote, @maxlength = "250", @class = "form-control form-control-lg form-control-solid", @rows = 3 })
-                                                <div class="mt-1" style="color:mediumpurple">
-                                                    @string.Format(Errors.FileSizeError, (CustomerManagementSystem.Properties.Settings.Default.FileSizeByte / 1000000))
-                                                </div>
+                                                @if (ViewBag.CanSendFile)
+                                                {
+                                                    <div class="mt-1" style="color:mediumpurple">
+                                                        @string.Format(Errors.FileSizeError, (FileMaxSize / 1000000))
+                                                    </div>
+                                                }
                                             </div>
                                             <div class="row">
                                                 <div class="col">
@@ -148,11 +153,15 @@
                                                     <button type="button" onclick="FormSubmit(submitType.ADD);" class="btn btn-sm btn-light-danger font-weight-bold">
                                                         @Common.AddNote
                                                     </button>
-                                                    <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
-                                                        <i class="flaticon2-clip-symbol"></i>
-                                                    </span>
-                                                    <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple />
-                                                    <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
+                                                    @if (ViewBag.CanSendFile)
+                                                    {
+                                                        <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
+                                                            <i class="flaticon2-clip-symbol"></i>
+                                                        </span>
+                                                        <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple />
+                                                        <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
+                                                    }
+
                                                 </div>
                                             </div>
                                         }
@@ -166,9 +175,6 @@
                                             @Html.HiddenFor(m => m.ID)
                                             <div class="form-group">
                                                 @Html.TextAreaFor(m => m.Message, new { @placeholder = Common.WriteNote, @maxlength = "250", @class = "form-control", @rows = 3 })
-                                                <div class="mt-1" style="color:mediumpurple">
-                                                    @string.Format(Errors.FileSizeError, (CustomerManagementSystem.Properties.Settings.Default.FileSizeByte / 1000000))
-                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">

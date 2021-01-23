@@ -37,9 +37,9 @@
                                     Başvurunuz başarılı bir şekilde tamamlandı. Bu aşamada Hizmetlerimizden faydalanmaya başlamanız için öncelikle sözleşmeyi indirmeniz, yazıcıdan çıktıları aldıktan sonra sözleşmenin tüm sayfalarına imza atmanız ve tarafımıza iletmeniz gerekmektedir. Önlü-Arkalı kimlik fotokopinizi aşağıdaki alana sürükleyerek veya tıklayarak yüklemeniz gerekmektedir.
                                     <div class="form-group row">
                                         <div class="col-lg-4 col-md-9 col-sm-12">
-                                            <div class="dropzone dropzone-default dropzone-primary dz-clickable" ondragover="dropHandler(event);" ondrop="dropHandler(event);">
+                                            <div id="dropzone" class="dropzone dropzone-default dropzone-primary dz-clickable">
                                                 <div class="dropzone-msg dz-message needsclick">
-                                                    <input type="file" style="visibility:hidden" name="customerContract" />
+                                                    <input type="file" style="visibility:hidden" id="customerContract" name="customerContract" />
                                                     <h3 class="dropzone-msg-title">Kimlik fotokopinizi buraya sürükleyin veya gözatmak için tıklayın</h3>
                                                     <span class="dropzone-msg-desc">Kimliğinizin ön ve arka fotokopisini yüklemeniz gerekiyor</span>
                                                 </div>
@@ -178,27 +178,26 @@
 @section scripts{
 
     <script>
-        function dropHandler(ev) {
-            console.log('File(s) dropped');
+        var customerZone = document.getElementsByName("customerContract")[0];
+        customerZone.addEventListener('dragover', function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
 
-            // Prevent default behavior (Prevent file from being opened)
-            ev.preventDefault();
+        });
+        customerZone.addEventListener("drop", function (e) {
+            e.stopPropagation();
+            var files = e.dataTransfer.files;
+            $('input[name=customerContract]').files = files;
+        });
 
-            if (ev.dataTransfer.items) {
-                // Use DataTransferItemList interface to access the file(s)
-                for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-                    // If dropped items aren't files, reject them
-                    if (ev.dataTransfer.items[i].kind === 'file') {
-                        var file = ev.dataTransfer.items[i].getAsFile();
-                        console.log('... file[' + i + '].name = ' + file.name);
-                    }
-                }
-            } else {
-                // Use DataTransfer interface to access the file(s)
-                for (var i = 0; i < ev.dataTransfer.files.length; i++) {
-                    console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
-                }
-            }
-        }
+        var dropzone = document.getElementById("dropzone");
+        dropzone.addEventListener('dragover', function (e) {
+            $('#customerContract').trigger("dragover");
+        });
+        dropzone.addEventListener("drop", function (e) {
+            $('#customerContract').trigger("drop");
+        });
+
     </script>
 }

@@ -104,14 +104,5 @@ namespace CustomerManagementSystem.Properties {
                 return ((string)(this["WebServicePassword"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5242880")]
-        public long FileSizeByte {
-            get {
-                return ((long)(this["FileSizeByte"]));
-            }
-        }
     }
 }
