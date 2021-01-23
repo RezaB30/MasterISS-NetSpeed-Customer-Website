@@ -151,6 +151,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İşlemde olan başvurunuz mevcut. Yeni başvuru yapılamaz..
+        /// </summary>
+        public static string HasPreRegisterInProgress {
+            get {
+                return ResourceManager.GetString("HasPreRegisterInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İç Hata.
         /// </summary>
         public static string InternalError {

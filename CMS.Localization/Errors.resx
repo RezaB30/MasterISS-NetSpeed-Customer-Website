@@ -147,6 +147,9 @@
   <data name="HasActiveRequest" xml:space="preserve">
     <value>Aktif bir destek talebiniz var. Yeni bir tane gönderemezsiniz.</value>
   </data>
+  <data name="HasPreRegisterInProgress" xml:space="preserve">
+    <value>İşlemde olan başvurunuz mevcut. Yeni başvuru yapılamaz.</value>
+  </data>
   <data name="InternalError" xml:space="preserve">
     <value>İç Hata</value>
   </data>

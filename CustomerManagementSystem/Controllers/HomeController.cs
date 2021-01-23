@@ -263,6 +263,11 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult SubscriptionRegister()
         {
+            var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
+            if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister == true)
+            {
+                return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
+            }
             var provinces = new ServiceUtilities().GetProvinces();
             ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
@@ -275,6 +280,11 @@ namespace CustomerManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
+                var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
+                if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister == true)
+                {
+                    return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
+                }
                 var address = new ServiceUtilities().GetApartmentAddress(register.SetupAddress.ApartmentID);
                 if (address.ResponseMessage.ErrorCode == 0)
                 {

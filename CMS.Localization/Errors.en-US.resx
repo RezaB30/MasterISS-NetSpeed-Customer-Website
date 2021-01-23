@@ -147,6 +147,9 @@
   <data name="HasActiveRequest" xml:space="preserve">
     <value>You have an active support request. You cannot post a new one</value>
   </data>
+  <data name="HasPreRegisterInProgress" xml:space="preserve">
+    <value>You have an application in progress. New applications cannot be made.</value>
+  </data>
   <data name="InternalError" xml:space="preserve">
     <value>System Error</value>
   </data>

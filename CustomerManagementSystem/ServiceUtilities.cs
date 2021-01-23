@@ -608,5 +608,21 @@ namespace CustomerManagementSystem
             });
             return result;
         }
+        public CustomerServiceHasClientPreRegisterResponse HasClientPreRegister(long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.HasClientPreRegisterSubscription(new CustomerServiceBaseRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                SubscriptionParameters = new BaseSubscriptionRequest()
+                {
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
     }
 }
