@@ -1,5 +1,5 @@
 ﻿using CMS.ViewModels.Payment;
-using CustomerManagementSystem.GenericCustomerServiceReference;
+using CustomerManagementSystem.GenericCustomerServiceRef;
 using CustomerManagementSystem.VPOSToken;
 using NLog;
 using PagedList;

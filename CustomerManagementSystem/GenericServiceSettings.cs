@@ -10,7 +10,7 @@ namespace CustomerManagementSystem
 {
     public class GenericServiceSettings
     {
-        GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
+        GenericCustomerServiceRef.GenericCustomerServiceClient client = new GenericCustomerServiceRef.GenericCustomerServiceClient();
         public string Culture { get; set; }
         public string Rand { get; set; }
         public string Username { get; set; }

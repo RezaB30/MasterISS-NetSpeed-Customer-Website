@@ -1,5 +1,5 @@
 ﻿using CMS.ViewModels.Auth;
-using CustomerManagementSystem.GenericCustomerServiceReference;
+using CustomerManagementSystem.GenericCustomerServiceRef;
 using Microsoft.Owin;
 using RezaB.Web.Authentication;
 using System;
@@ -14,7 +14,7 @@ namespace CustomerManagementSystem.Controllers
     [AllowAnonymous]
     public class AuthController : BaseController
     {
-        GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
+        GenericCustomerServiceRef.GenericCustomerServiceClient client = new GenericCustomerServiceRef.GenericCustomerServiceClient();
         // GET: Account
         public ActionResult Login()
         {
@@ -54,13 +54,13 @@ namespace CustomerManagementSystem.Controllers
                     login.CustomerCode = login.CustomerCode.TrimStart('0');
 
                 var baseRequest = new GenericServiceSettings();
-                var result = client.CustomerAuthentication(new GenericCustomerServiceReference.CustomerServiceAuthenticationRequest()
+                var result = client.CustomerAuthentication(new GenericCustomerServiceRef.CustomerServiceAuthenticationRequest()
                 {
                     Culture = baseRequest.Culture,
                     Rand = baseRequest.Rand,
                     Username = baseRequest.Username,
                     Hash = baseRequest.Hash,
-                    AuthenticationParameters = new GenericCustomerServiceReference.AuthenticationRequest()
+                    AuthenticationParameters = new GenericCustomerServiceRef.AuthenticationRequest()
                     {
                         CustomerCode = login.CustomerCode,
                     }
@@ -91,13 +91,13 @@ namespace CustomerManagementSystem.Controllers
                     login.CustomerCode = login.CustomerCode.TrimStart('0');
 
                 var baseRequest = new GenericServiceSettings();
-                var result = client.AuthenticationSMSConfirm(new GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmRequest()
+                var result = client.AuthenticationSMSConfirm(new GenericCustomerServiceRef.CustomerServiceAuthenticationSMSConfirmRequest()
                 {
                     Culture = baseRequest.Culture,
                     Hash = baseRequest.Hash,
                     Rand = baseRequest.Rand,
                     Username = baseRequest.Username,
-                    AuthenticationSMSConfirmParameters = new GenericCustomerServiceReference.AuthenticationSMSConfirmRequest()
+                    AuthenticationSMSConfirmParameters = new GenericCustomerServiceRef.AuthenticationSMSConfirmRequest()
                     {
                         CustomerCode = login.CustomerCode,
                         SMSPassword = login.SMSPassword

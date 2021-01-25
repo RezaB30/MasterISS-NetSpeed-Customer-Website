@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="58b31ddd-f539-4549-bbff-8d968510e133" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\user\Desktop\PROJECTS\CustomerWebService wsdl\GenericCustomerService_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GenericCustomerService.xsd" MetadataType="Schema" ID="e4d6de91-701c-40cd-a4c6-fd8786f87e95" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3.xsd" MetadataType="Schema" ID="524f02e8-3f45-4ce6-84f5-35610978ee24" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4_5_6_7.xsd" MetadataType="Schema" ID="963a7023-7c58-4eb7-9b53-fe34ee458007" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4_5_6_7.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4_5_6_7_8.xsd" MetadataType="Schema" ID="c20824a5-de22-4b51-a8d0-1285e4ca4c1e" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4_5_6_7_8.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4_5.xsd" MetadataType="Schema" ID="5d062801-e271-4dcd-820a-fec09bf933d5" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4_5.xsd" />
+    <MetadataFile FileName="GenericCustomerService.wsdl" MetadataType="Wsdl" ID="983840f8-7711-4101-b440-772bf8ae4e16" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1.wsdl" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4.xsd" MetadataType="Schema" ID="95a5bbf3-37cf-4c78-b53e-b57886606a41" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4_5_6_7_8_9.xsd" MetadataType="Schema" ID="eb771633-fa93-4528-b2f2-86d4aaff0b8f" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4_5_6_7_8_9.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2_3_4_5_6.xsd" MetadataType="Schema" ID="ded01ec5-74e9-4ec7-8dc5-75be174b51c0" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2_3_4_5_6.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1_2.xsd" MetadataType="Schema" ID="8abff202-28dc-4087-b6d1-076f4044c301" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1_2.xsd" />
+    <MetadataFile FileName="GenericCustomerService_1.xsd" MetadataType="Schema" ID="8571ca40-136e-4b6b-a285-eff140eb6ef8" SourceId="1" SourceUrl="file:///C:/Users/user/Desktop/PROJECTS/CustomerWebService wsdl/GenericCustomerService_1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

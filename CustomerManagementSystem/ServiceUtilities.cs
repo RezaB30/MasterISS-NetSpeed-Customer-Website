@@ -1,6 +1,6 @@
 ﻿using CMS.ViewModels.Home;
 using CMS.ViewModels.Supports;
-using CustomerManagementSystem.GenericCustomerServiceReference;
+using CustomerManagementSystem.GenericCustomerServiceRef;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace CustomerManagementSystem
 {
     public class ServiceUtilities
     {
-        GenericCustomerServiceReference.GenericCustomerServiceClient client = new GenericCustomerServiceReference.GenericCustomerServiceClient();
+        GenericCustomerServiceRef.GenericCustomerServiceClient client = new GenericCustomerServiceRef.GenericCustomerServiceClient();
         public CustomerServiceSubscriptionBasicInformationResponse GetSubscriptionInfo(long? id)
         {
             var subBaseRequest = new GenericServiceSettings();
@@ -321,11 +321,11 @@ namespace CustomerManagementSystem
                     RegistrationInfo = new RegistrationInfo()
                     {
                         ServiceID = selectedTariff?.TariffID,
-                        ReferralDiscount = register.ReferralDiscount == null ? null : new GenericCustomerServiceReference.ReferralDiscountInfo()
+                        ReferralDiscount = register.ReferralDiscount == null ? null : new GenericCustomerServiceRef.ReferralDiscountInfo()
                         {
                             ReferenceNo = register.ReferralDiscount.ReferenceNo
                         },
-                        SetupAddress = new GenericCustomerServiceReference.AddressInfo()
+                        SetupAddress = new GenericCustomerServiceRef.AddressInfo()
                         {
                             AddressNo = register.SetupAddress.AddressNo,
                             AddressText = register.SetupAddress.AddressText,

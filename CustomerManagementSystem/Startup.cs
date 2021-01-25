@@ -48,7 +48,7 @@ namespace CustomerManagementSystem
                 Provider = provider,
                 CookieName = "RadiusRCustomCustomer",
                 ExpireTimeSpan = Properties.Settings.Default.CookieExpiration,
-                CookieSameSite = SameSiteMode.None,
+                CookieSameSite = Microsoft.Owin.SameSiteMode.None,
                 CookieHttpOnly = true,
                 CookieSecure = CookieSecureOption.SameAsRequest
             });

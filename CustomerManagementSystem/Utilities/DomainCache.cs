@@ -1,4 +1,4 @@
-﻿using CustomerManagementSystem.GenericCustomerServiceReference;
+﻿using CustomerManagementSystem.GenericCustomerServiceRef;
 using System;
 using System.Collections.Generic;
 using System.Linq;
