@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace CustomerManagementSystem.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class InfrastructureController : Controller
     {
         // GET: Infrastructure

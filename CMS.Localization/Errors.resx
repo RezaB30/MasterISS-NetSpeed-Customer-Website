@@ -186,4 +186,10 @@
   <data name="TariffsLoading" xml:space="preserve">
     <value>Tarifeler yükleniyor. Lütfen bekleyin...</value>
   </data>
+  <data name="UploadCustomerCardFail" xml:space="preserve">
+    <value>{0} adet dosya yüklenemedi.</value>
+  </data>
+  <data name="UploadCustomerCardSuccess" xml:space="preserve">
+    <value>{0} adet dosya yüklendi.</value>
+  </data>
 </root>

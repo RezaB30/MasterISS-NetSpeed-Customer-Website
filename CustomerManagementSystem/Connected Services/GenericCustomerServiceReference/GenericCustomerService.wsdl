@@ -369,6 +369,18 @@
   <wsdl:message name="IGenericCustomerService_HasClientPreRegisterSubscription_OutputMessage">
     <wsdl:part name="parameters" element="tns:HasClientPreRegisterSubscriptionResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_SaveClientAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClientAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_SaveClientAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClientAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetClientPDFForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPDFForm" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_GetClientPDFForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPDFFormResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetKeyFragment">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetKeyFragment" message="tns:IGenericCustomerService_GetKeyFragment_InputMessage" />
@@ -601,6 +613,14 @@
     <wsdl:operation name="HasClientPreRegisterSubscription">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription" message="tns:IGenericCustomerService_HasClientPreRegisterSubscription_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscriptionResponse" message="tns:IGenericCustomerService_HasClientPreRegisterSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/SaveClientAttachment" message="tns:IGenericCustomerService_SaveClientAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/SaveClientAttachmentResponse" message="tns:IGenericCustomerService_SaveClientAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPDFForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetClientPDFForm" message="tns:IGenericCustomerService_GetClientPDFForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/GetClientPDFFormResponse" message="tns:IGenericCustomerService_GetClientPDFForm_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -1121,6 +1141,24 @@
     </wsdl:operation>
     <wsdl:operation name="HasClientPreRegisterSubscription">
       <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/HasClientPreRegisterSubscription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientAttachment">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/SaveClientAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPDFForm">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/GetClientPDFForm" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

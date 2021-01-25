@@ -153,8 +153,14 @@
   <data name="Amount" xml:space="preserve">
     <value>Tutar</value>
   </data>
+  <data name="ApplicationCompletedDescription" xml:space="preserve">
+    <value>Memnuniyet duyacağınızı düşündüğümüz ve ihtiyaç duyduğunuz internet gereksinimlerinizi en iyi şekilde karşılayacağına inandığımız hizmetimizi size sunmaktan mutluluk duyacağız. Bizi tercih ettiğiniz için teşekkür ederiz.</value>
+  </data>
   <data name="ApplicationRegister" xml:space="preserve">
     <value>Başvur</value>
+  </data>
+  <data name="ApplicationRegisteredDescription" xml:space="preserve">
+    <value>Başvurunuz başarılı bir şekilde tamamlandı. Bu aşamada Hizmetlerimizden faydalanmaya başlamanız için öncelikle sözleşmeyi indirmeniz, yazıcıdan çıktıları aldıktan sonra sözleşmenin tüm sayfalarına imza atmanız ve tarafımıza iletmeniz gerekmektedir. Önlü-Arkalı kimlik fotokopinizi aşağıdaki alana sürükleyerek veya tıklayarak yüklemeniz gerekmektedir.</value>
   </data>
   <data name="AutomaticPayment" xml:space="preserve">
     <value>Otomatik Ödeme</value>
@@ -217,7 +223,7 @@
     <value>Hızlı Giriş İçin Tıklayın</value>
   </data>
   <data name="Completed" xml:space="preserve">
-    <value>TAMAMLANDI</value>
+    <value>Tamamlandı</value>
   </data>
   <data name="ContactPrefer" xml:space="preserve">
     <value>İletişim Tercihi</value>
@@ -235,20 +241,26 @@
     <value>Kartı Sil</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>AÇIKLAMA</value>
+    <value>Açıklama</value>
   </data>
   <data name="DescriptionCustomerService" xml:space="preserve">
     <value>Netspeed Online İşlemler'de kredi kartı ile faturanızı anında ödeyebilir, Destek talebi oluşturabilir ve daha bir çok işlemi 7/24 hızlı ve güvenli bir şekilde
 gerçekleştirebilirsiniz.</value>
   </data>
   <data name="Details" xml:space="preserve">
-    <value>DETAYLAR</value>
+    <value>Detaylar</value>
   </data>
   <data name="DiscountAmount" xml:space="preserve">
     <value>İndirim toplamı</value>
   </data>
   <data name="DocumentsDescription" xml:space="preserve">
     <value>Abonelik ile ilgili evrak ve belgelerinize erişim sağlayabilir ve indirebilirsiniz.</value>
+  </data>
+  <data name="DoInternetConnection" xml:space="preserve">
+    <value>İnternet Bağlantınızı Yapıyoruz</value>
+  </data>
+  <data name="DoInternetConnectionDescription" xml:space="preserve">
+    <value>Bu aşamada saha ekiplerimiz internet bağlantınızı yapacak. Diğer bir operatörden geçiş yaptıysanız tarafınıza SMS ile gönderilecek Kullanıcı adı ve şifrenizi Modem arayüzüne giriş yaparak tanımlamanız gerekmektedir. Bu aşamada bir sorun yaşarsanız 0850 800 5 800 numaralı müşteri destek hattımızdan destek alabilirsiniz.</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Download</value>
@@ -297,6 +309,12 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>Ana Sayfa</value>
+  </data>
+  <data name="IDCardDropDescription" xml:space="preserve">
+    <value>Kimlik fotokopinizi buraya sürükleyin veya gözatmak için tıklayın</value>
+  </data>
+  <data name="IDCardRequiredPhotoDescription" xml:space="preserve">
+    <value>Kimliğinizin ön ve arka fotokopisini yüklemeniz gerekiyor</value>
   </data>
   <data name="InfoServices" xml:space="preserve">
     <value>BİLGİ &amp; HİZMETLER</value>
@@ -438,7 +456,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Online Fatura Ödeme</value>
   </data>
   <data name="OpenRequestAgain" xml:space="preserve">
-    <value>TALEBİ TEKRAR AÇ</value>
+    <value>Talebi Tekrar Aç</value>
   </data>
   <data name="Optional" xml:space="preserve">
     <value>İsteğe bağlı</value>
@@ -495,7 +513,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Önceki</value>
   </data>
   <data name="ProblemSolved" xml:space="preserve">
-    <value>SORUNUM ÇÖZÜLDÜ</value>
+    <value>Sorunum Çözüldü</value>
   </data>
   <data name="QuickActions" xml:space="preserve">
     <value>Hızlı İşlemler</value>
@@ -532,6 +550,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="RemainingQuota" xml:space="preserve">
     <value>Kalan Kota</value>
+  </data>
+  <data name="SavedYourApplication" xml:space="preserve">
+    <value>Başvurunuzu Aldık</value>
   </data>
   <data name="SearchPlaceholder" xml:space="preserve">
     <value>Nasıl yardımcı olabiliriz?</value>
@@ -608,6 +629,12 @@ gerçekleştirebilirsiniz.</value>
   <data name="SpecialOfferSummary" xml:space="preserve">
     <value>Kampanya Özeti</value>
   </data>
+  <data name="StartedActivation" xml:space="preserve">
+    <value>Aktivasyon Sürecini Başlattık</value>
+  </data>
+  <data name="StartedActivationDescription" xml:space="preserve">
+    <value>Başvurunuz sistemlerimize kayıt ediliyor hemen ardından internet bağlantınızın sağlanması için süreç başlayacak.</value>
+  </data>
   <data name="StateInfo" xml:space="preserve">
     <value>DURUM | BİLGİ</value>
   </data>
@@ -616,6 +643,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="SubscriberNotFound" xml:space="preserve">
     <value>Abone bulunamadı!</value>
+  </data>
+  <data name="SubscriptionFormAndContract" xml:space="preserve">
+    <value>Abone Form &amp; Sözleşme</value>
   </data>
   <data name="SupportAndRequests" xml:space="preserve">
     <value>Destek &amp; Talepler</value>
@@ -662,11 +692,24 @@ gerçekleştirebilirsiniz.</value>
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Dosyaları Yükle</value>
+  </data>
   <data name="UsageInfoHeader" xml:space="preserve">
     <value>SON 3 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ</value>
   </data>
   <data name="ValidationAndSave" xml:space="preserve">
     <value>Doğrulama ve Kaydetme</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Bekliyor</value>
+  </data>
+  <data name="WaitingYourDocuments" xml:space="preserve">
+    <value>Belgelerinizi Bekliyoruz</value>
+  </data>
+  <data name="WaitingYourDocumentsDescription" xml:space="preserve">
+    <value>Evde kurulum hizmeti aldıysanız bu aşamada bir şey yapmanız gerekmiyor. Ekiplerimiz evraklarınızı sizden teslim alacaklar.&lt;br&gt;
+                                    Kurulum hizmeti almadıysanız belgelerinizi anlaşmalı olduğumuz MNG Kargo 289 192 075 gönderi kodu ile ücretsiz olarak gönderebilirsiniz. Belgelerinizi farklı bir kargo firması ile ücretini ödeyerek göndermek isterseniz Adresimiz : Netspeed İnternet A.Ş Saraylar Mah. 464. Sokak No:1 Durmuş Ali Çoban İş Merkezi Kat:3 No:9 20010 Merkezefendi/Denizli</value>
   </data>
   <data name="WeHaveSpecialOffer" xml:space="preserve">
     <value>Size özel tarife teklifimiz var!</value>
@@ -682,6 +725,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="WriteNote" xml:space="preserve">
     <value>Not Yazın</value>
+  </data>
+  <data name="YourApplicationState" xml:space="preserve">
+    <value>Başvuru Durumunuz</value>
   </data>
   <data name="YourRecipe" xml:space="preserve">
     <value>Tarifeniz</value>

@@ -153,8 +153,14 @@
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="ApplicationCompletedDescription" xml:space="preserve">
+    <value>We will be happy to offer you our service, which we think you will be pleased with and that we believe will best meet your internet needs. Thank you for choosing us.</value>
+  </data>
   <data name="ApplicationRegister" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="ApplicationRegisteredDescription" xml:space="preserve">
+    <value>Your application has been successfully completed. At this stage, in order to start using our services, you must first download the contract, print it out and sign all pages of the contract and forward it to us. You need to upload your double-sided identity copy by dragging or clicking to the area below.</value>
   </data>
   <data name="AutomaticPayment" xml:space="preserve">
     <value>Automatic Payment</value>
@@ -249,6 +255,12 @@
   <data name="DocumentsDescription" xml:space="preserve">
     <value>You can access and download your documents about subscription</value>
   </data>
+  <data name="DoInternetConnection" xml:space="preserve">
+    <value>We make your internet connection</value>
+  </data>
+  <data name="DoInternetConnectionDescription" xml:space="preserve">
+    <value>At this stage, our field teams will make your internet connection. If you have switched from another operator, you must define your user name and password, which will be sent to you via SMS, by logging into the Modem interface. If you have any problems at this stage, you can get support from our customer support service at 0850 800 5 800.</value>
+  </data>
   <data name="Download" xml:space="preserve">
     <value>Download</value>
   </data>
@@ -296,6 +308,12 @@
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>Homepage</value>
+  </data>
+  <data name="IDCardDropDescription" xml:space="preserve">
+    <value>Drag your ID Card copy here or click to browse</value>
+  </data>
+  <data name="IDCardRequiredPhotoDescription" xml:space="preserve">
+    <value>You need to upload a front and back copy of your ID.</value>
   </data>
   <data name="InfoServices" xml:space="preserve">
     <value>Info &amp; Services</value>
@@ -531,6 +549,9 @@
   <data name="RemainingQuota" xml:space="preserve">
     <value>Remaining Quota</value>
   </data>
+  <data name="SavedYourApplication" xml:space="preserve">
+    <value>We received your application</value>
+  </data>
   <data name="SearchPlaceholder" xml:space="preserve">
     <value>How we can help you ?</value>
   </data>
@@ -606,6 +627,12 @@
   <data name="SpecialOfferSummary" xml:space="preserve">
     <value>Special Offer Summary</value>
   </data>
+  <data name="StartedActivation" xml:space="preserve">
+    <value>We started the activation process</value>
+  </data>
+  <data name="StartedActivationDescription" xml:space="preserve">
+    <value>Your application is recorded in our systems and the process will begin to ensure your internet connection.</value>
+  </data>
   <data name="StateInfo" xml:space="preserve">
     <value>State | Info</value>
   </data>
@@ -614,6 +641,9 @@
   </data>
   <data name="SubscriberNotFound" xml:space="preserve">
     <value>Subscriber not found</value>
+  </data>
+  <data name="SubscriptionFormAndContract" xml:space="preserve">
+    <value>Subscription Form &amp; Contract</value>
   </data>
   <data name="SupportAndRequests" xml:space="preserve">
     <value>Support &amp; Requests</value>
@@ -660,11 +690,23 @@
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Upload Files</value>
+  </data>
   <data name="UsageInfoHeader" xml:space="preserve">
     <value>Traffic Usage Information for the last 3 Terms</value>
   </data>
   <data name="ValidationAndSave" xml:space="preserve">
     <value>Validation and Save</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="WaitingYourDocuments" xml:space="preserve">
+    <value>We are waiting your documents.</value>
+  </data>
+  <data name="WaitingYourDocumentsDescription" xml:space="preserve">
+    <value>If you have received installation service, you do not need to do anything at this stage. Our teams will receive your documents from you.&lt;br&gt;If you have not received the installation service, you can send your documents free of charge with the contracted MNG Kargo 289 192 075 shipping code. If you want to send your documents with a different shipping company by paying the fee, Our Address: Netspeed İnternet A.Ş Saraylar Mah. 464. Sokak No:1 Durmuş Ali Çoban İş Merkezi Kat:3 No:9 20010 Merkezefendi/Denizli</value>
   </data>
   <data name="WeHaveSpecialOffer" xml:space="preserve">
     <value>We have special offer for you</value>
@@ -680,6 +722,9 @@
   </data>
   <data name="WriteNote" xml:space="preserve">
     <value>Write Note</value>
+  </data>
+  <data name="YourApplicationState" xml:space="preserve">
+    <value>Application Status</value>
   </data>
   <data name="YourRecipe" xml:space="preserve">
     <value>Your Tariff</value>

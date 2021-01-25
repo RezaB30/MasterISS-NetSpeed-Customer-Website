@@ -186,4 +186,10 @@
   <data name="TariffsLoading" xml:space="preserve">
     <value>Tariffs are loading. Please wait...</value>
   </data>
+  <data name="UploadCustomerCardFail" xml:space="preserve">
+    <value>{0} file could not upload</value>
+  </data>
+  <data name="UploadCustomerCardSuccess" xml:space="preserve">
+    <value>{0} file uploaded</value>
+  </data>
 </root>

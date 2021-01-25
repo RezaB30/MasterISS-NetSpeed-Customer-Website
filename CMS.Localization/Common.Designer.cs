@@ -169,11 +169,29 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Memnuniyet duyacağınızı düşündüğümüz ve ihtiyaç duyduğunuz internet gereksinimlerinizi en iyi şekilde karşılayacağına inandığımız hizmetimizi size sunmaktan mutluluk duyacağız. Bizi tercih ettiğiniz için teşekkür ederiz..
+        /// </summary>
+        public static string ApplicationCompletedDescription {
+            get {
+                return ResourceManager.GetString("ApplicationCompletedDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Başvur.
         /// </summary>
         public static string ApplicationRegister {
             get {
                 return ResourceManager.GetString("ApplicationRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başvurunuz başarılı bir şekilde tamamlandı. Bu aşamada Hizmetlerimizden faydalanmaya başlamanız için öncelikle sözleşmeyi indirmeniz, yazıcıdan çıktıları aldıktan sonra sözleşmenin tüm sayfalarına imza atmanız ve tarafımıza iletmeniz gerekmektedir. Önlü-Arkalı kimlik fotokopinizi aşağıdaki alana sürükleyerek veya tıklayarak yüklemeniz gerekmektedir..
+        /// </summary>
+        public static string ApplicationRegisteredDescription {
+            get {
+                return ResourceManager.GetString("ApplicationRegisteredDescription", resourceCulture);
             }
         }
         
@@ -358,7 +376,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TAMAMLANDI.
+        ///   Looks up a localized string similar to Tamamlandı.
         /// </summary>
         public static string Completed {
             get {
@@ -412,7 +430,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AÇIKLAMA.
+        ///   Looks up a localized string similar to Açıklama.
         /// </summary>
         public static string Description {
             get {
@@ -431,7 +449,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DETAYLAR.
+        ///   Looks up a localized string similar to Detaylar.
         /// </summary>
         public static string Details {
             get {
@@ -454,6 +472,24 @@ namespace CMS.Localization {
         public static string DocumentsDescription {
             get {
                 return ResourceManager.GetString("DocumentsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İnternet Bağlantınızı Yapıyoruz.
+        /// </summary>
+        public static string DoInternetConnection {
+            get {
+                return ResourceManager.GetString("DoInternetConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bu aşamada saha ekiplerimiz internet bağlantınızı yapacak. Diğer bir operatörden geçiş yaptıysanız tarafınıza SMS ile gönderilecek Kullanıcı adı ve şifrenizi Modem arayüzüne giriş yaparak tanımlamanız gerekmektedir. Bu aşamada bir sorun yaşarsanız 0850 800 5 800 numaralı müşteri destek hattımızdan destek alabilirsiniz..
+        /// </summary>
+        public static string DoInternetConnectionDescription {
+            get {
+                return ResourceManager.GetString("DoInternetConnectionDescription", resourceCulture);
             }
         }
         
@@ -598,6 +634,24 @@ namespace CMS.Localization {
         public static string Homepage {
             get {
                 return ResourceManager.GetString("Homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kimlik fotokopinizi buraya sürükleyin veya gözatmak için tıklayın.
+        /// </summary>
+        public static string IDCardDropDescription {
+            get {
+                return ResourceManager.GetString("IDCardDropDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kimliğinizin ön ve arka fotokopisini yüklemeniz gerekiyor.
+        /// </summary>
+        public static string IDCardRequiredPhotoDescription {
+            get {
+                return ResourceManager.GetString("IDCardRequiredPhotoDescription", resourceCulture);
             }
         }
         
@@ -1017,7 +1071,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TALEBİ TEKRAR AÇ.
+        ///   Looks up a localized string similar to Talebi Tekrar Aç.
         /// </summary>
         public static string OpenRequestAgain {
             get {
@@ -1188,7 +1242,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SORUNUM ÇÖZÜLDÜ.
+        ///   Looks up a localized string similar to Sorunum Çözüldü.
         /// </summary>
         public static string ProblemSolved {
             get {
@@ -1301,6 +1355,15 @@ namespace CMS.Localization {
         public static string RemainingQuota {
             get {
                 return ResourceManager.GetString("RemainingQuota", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başvurunuzu Aldık.
+        /// </summary>
+        public static string SavedYourApplication {
+            get {
+                return ResourceManager.GetString("SavedYourApplication", resourceCulture);
             }
         }
         
@@ -1530,6 +1593,24 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aktivasyon Sürecini Başlattık.
+        /// </summary>
+        public static string StartedActivation {
+            get {
+                return ResourceManager.GetString("StartedActivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başvurunuz sistemlerimize kayıt ediliyor hemen ardından internet bağlantınızın sağlanması için süreç başlayacak..
+        /// </summary>
+        public static string StartedActivationDescription {
+            get {
+                return ResourceManager.GetString("StartedActivationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DURUM | BİLGİ.
         /// </summary>
         public static string StateInfo {
@@ -1553,6 +1634,15 @@ namespace CMS.Localization {
         public static string SubscriberNotFound {
             get {
                 return ResourceManager.GetString("SubscriberNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abone Form &amp; Sözleşme.
+        /// </summary>
+        public static string SubscriptionFormAndContract {
+            get {
+                return ResourceManager.GetString("SubscriptionFormAndContract", resourceCulture);
             }
         }
         
@@ -1692,6 +1782,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosyaları Yükle.
+        /// </summary>
+        public static string UploadFiles {
+            get {
+                return ResourceManager.GetString("UploadFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SON 3 DÖNEME AİT TRAFİK KULLANIM BİLGİSİ.
         /// </summary>
         public static string UsageInfoHeader {
@@ -1706,6 +1805,34 @@ namespace CMS.Localization {
         public static string ValidationAndSave {
             get {
                 return ResourceManager.GetString("ValidationAndSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bekliyor.
+        /// </summary>
+        public static string Waiting {
+            get {
+                return ResourceManager.GetString("Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Belgelerinizi Bekliyoruz.
+        /// </summary>
+        public static string WaitingYourDocuments {
+            get {
+                return ResourceManager.GetString("WaitingYourDocuments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evde kurulum hizmeti aldıysanız bu aşamada bir şey yapmanız gerekmiyor. Ekiplerimiz evraklarınızı sizden teslim alacaklar.&lt;br&gt;
+        ///                                    Kurulum hizmeti almadıysanız belgelerinizi anlaşmalı olduğumuz MNG Kargo 289 192 075 gönderi kodu ile ücretsiz olarak gönderebilirsiniz. Belgelerinizi farklı bir kargo firması ile ücretini ödeyerek göndermek isterseniz Adresimiz : Netspeed İnternet A.Ş Saraylar Mah. 464. Sokak No:1 Durmuş Ali Çoban İş Merkezi Kat:3 No:9 20010 Merkezefendi/Denizli.
+        /// </summary>
+        public static string WaitingYourDocumentsDescription {
+            get {
+                return ResourceManager.GetString("WaitingYourDocumentsDescription", resourceCulture);
             }
         }
         
@@ -1751,6 +1878,15 @@ namespace CMS.Localization {
         public static string WriteNote {
             get {
                 return ResourceManager.GetString("WriteNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başvuru Durumunuz.
+        /// </summary>
+        public static string YourApplicationState {
+            get {
+                return ResourceManager.GetString("YourApplicationState", resourceCulture);
             }
         }
         

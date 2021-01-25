@@ -95,6 +95,7 @@
     <Compile Include="Home\MyAccountViewModel.cs" />
     <Compile Include="Home\QuickSearch.cs" />
     <Compile Include="Home\RecipeUsageViewModel.cs" />
+    <Compile Include="Home\SaveClientAttachmentViewModel.cs" />
     <Compile Include="Home\SpecialOfferDetailsViewModel.cs" />
     <Compile Include="Home\SpecialOfferViewModel.cs" />
     <Compile Include="Home\SubcriptionRegisterViewModel.cs" />

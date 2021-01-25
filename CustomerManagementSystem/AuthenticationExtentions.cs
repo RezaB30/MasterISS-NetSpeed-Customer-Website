@@ -22,5 +22,9 @@ namespace CustomerManagementSystem
         {
             return Convert.ToDateTime((user.Identity as ClaimsIdentity).Claims.FirstOrDefault(c => c.Type == "LastLogin").Value);
         }
+        public static bool IsSubscriptionNotActive(this IPrincipal user)
+        {
+            return Convert.ToBoolean((user.Identity as ClaimsIdentity).Claims.FirstOrDefault(c => c.Type == "CurrentSubscriptionIsActive").Value);
+        }
     }
 }

@@ -266,5 +266,23 @@ namespace CMS.Localization {
                 return ResourceManager.GetString("TariffsLoading", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} adet dosya yüklenemedi..
+        /// </summary>
+        public static string UploadCustomerCardFail {
+            get {
+                return ResourceManager.GetString("UploadCustomerCardFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} adet dosya yüklendi..
+        /// </summary>
+        public static string UploadCustomerCardSuccess {
+            get {
+                return ResourceManager.GetString("UploadCustomerCardSuccess", resourceCulture);
+            }
+        }
     }
 }

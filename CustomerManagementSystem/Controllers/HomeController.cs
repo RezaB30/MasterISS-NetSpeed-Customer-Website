@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -15,6 +16,8 @@ namespace CustomerManagementSystem.Controllers
         Logger generalLogger = LogManager.GetLogger("general");
         public ActionResult Index()
         {
+            if (User.IsSubscriptionNotActive())
+                return RedirectToAction("RegisterTracking", "Home");
             var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
             if (customerInfo.ResponseMessage.ErrorCode != 0)
             {
@@ -37,6 +40,7 @@ namespace CustomerManagementSystem.Controllers
             };
             return View(index);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult CustomerLineDetails() //hat-durumu.html
         {
             if (Request.IsAjaxRequest())
@@ -64,6 +68,7 @@ namespace CustomerManagementSystem.Controllers
                 return View(new CustomerLineDetailsViewModel());
             }
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult RecipeUsage() // tarife-kullanim.html
         {
             var tariffAndtraffic = new ServiceUtilities().GetTariffAndTrafficInfo(User.GiveUserId());
@@ -96,9 +101,10 @@ namespace CustomerManagementSystem.Controllers
 
             return View(recipe);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult Documents() // belgelerim.html
         {
-            var files = new ServiceUtilities().GetCustomerDocuments(User.GiveUserId());
+            var files = new ServiceUtilities().GetClientAttachmentList(User.GiveUserId());
             if (files.ResponseMessage.ErrorCode != 0 || files.CustomerFiles == null)
             {
                 return View(Enumerable.Empty<CustomerDocumentsViewModel>());
@@ -112,6 +118,7 @@ namespace CustomerManagementSystem.Controllers
             }).ToArray();
             return View(customerFiles);
         }
+        [Authorize(Roles = "Customer")]
         [HttpPost]
         public ActionResult DownloadAttachment(string fileName)
         {
@@ -126,6 +133,7 @@ namespace CustomerManagementSystem.Controllers
             }
             return File(clientAttachment.GetClientAttachment.Content, clientAttachment.GetClientAttachment.MIMEType, clientAttachment.GetClientAttachment.FileInfo.Name);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult MyAccount() //hesabim.html
         {
             var getCustomerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
@@ -161,11 +169,13 @@ namespace CustomerManagementSystem.Controllers
             };
             return View(account);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult MyServices() //hizmetlerim.html
         {
             return RedirectToAction("Index", "Home");
             //return View();
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult SpecialOffer() // arkadasini-getir.html
         {
             var customerSpecialOffer = new ServiceUtilities().CustomerSpecialOffers(User.GiveUserId());
@@ -197,6 +207,7 @@ namespace CustomerManagementSystem.Controllers
             };
             return View(specialOffer);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult SpecialOfferDetails() // arkadasini-getir-sss.html
         {
             var customerInfo = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
@@ -231,6 +242,7 @@ namespace CustomerManagementSystem.Controllers
                 Request.GetOwinContext());
             return RedirectToAction("Index", "Home");
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult GetAddressFromCode(string bbk)
         {
             var availability = new ServiceUtilities().ServiceAvailability(bbk);
@@ -240,6 +252,7 @@ namespace CustomerManagementSystem.Controllers
             }
             return Content(string.Format(CMS.Localization.Message.AddressDescription, availability.ServiceAvailabilityResponse.address));
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult LoadTariffs(string bbk)
         {
             var availability = new ServiceUtilities().ServiceAvailability(bbk);
@@ -261,10 +274,11 @@ namespace CustomerManagementSystem.Controllers
             }
             return Content(CMS.Localization.Errors.AvailabilityTariffNotFoundDescription);
         }
+        [Authorize(Roles = "Customer")]
         public ActionResult SubscriptionRegister()
         {
             var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
-            if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister == true)
+            if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister.HasPreRegister == true)
             {
                 return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
             }
@@ -274,6 +288,7 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             return View();
         }
+        [Authorize(Roles = "Customer")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult SubscriptionRegister(SubcriptionRegisterViewModel register)
@@ -281,7 +296,7 @@ namespace CustomerManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
-                if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister == true)
+                if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister.HasPreRegister == true)
                 {
                     return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
                 }
@@ -358,8 +373,109 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult RegisterTracking()
         {
+            var applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+            var checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Passive;
+            var activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Passive;
+            var connectionStage = CMS.Localization.Enums.RegisterTrackingTypes.Passive;
+            var completedStage = CMS.Localization.Enums.RegisterTrackingTypes.Passive;
+            var clientFiles = new ServiceUtilities().GetClientAttachmentList(User.GiveUserId());
+            if (clientFiles.CustomerFiles != null && clientFiles.CustomerFiles.Where(cl => cl.FileInfo.Type == (int)CMS.Localization.Enums.ClientAttachmentTypes.IDCard).Any())
+            {
+                ViewBag.HasIDCardForm = true;
+            }
+            else
+            {
+                ViewBag.HasIDCardForm = false;
+            }
+            var customer = new ServiceUtilities().GetCustomerInfo(User.GiveUserId());
+            if (customer.GetCustomerInfoResponse != null && customer.GetCustomerInfoResponse.CustomerState == (short)CMS.Localization.Enums.CustomerState.PreRegisterd)
+            {
+                applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Waiting;
+            }
+            else if (customer.GetCustomerInfoResponse != null && customer.GetCustomerInfoResponse.CustomerState == (short)CMS.Localization.Enums.CustomerState.Registered)
+            {
+                applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Waiting;
+            }
+            else if (customer.GetCustomerInfoResponse != null && customer.GetCustomerInfoResponse.CustomerState == (short)CMS.Localization.Enums.CustomerState.Reserved)
+            {
+                applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                connectionStage = CMS.Localization.Enums.RegisterTrackingTypes.Waiting;
+            }
+            else
+            {
+                applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                connectionStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                completedStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+            }
+            ViewBag.ApplicationRegisteredStage = applicationRegisteredStage;
+            ViewBag.CheckingDocumentsStage = checkingDocumentsStage;
+            ViewBag.ActivationStage = activationStage;
+            ViewBag.ConnectionStage = connectionStage;
+            ViewBag.CompletedStage = completedStage;
             return View();
         }
+        public ActionResult GetPDFForm()
+        {
+            var pdfForm = new ServiceUtilities().GetClientPDFForm(User.GiveUserId());
+            if (pdfForm.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("Index", "Home"), pdfForm.ResponseMessage.ErrorMessage, false);
+            }
+            return File(pdfForm.GetClientPDFFormResult.FileContent, pdfForm.GetClientPDFFormResult.MIMEType, pdfForm.GetClientPDFFormResult.FileName);
+        }
+        [HttpPost]
+        public ActionResult UploadCustomerFile(HttpPostedFileBase[] customerContract, HttpPostedFileBase[] customerDropFile, string[] selectedFiles)
+        {
+            if (customerContract == null || customerContract.Count() == 0 || selectedFiles == null || selectedFiles.Count() == 0)
+            {
+                return RedirectToAction("RegisterTracking", "Home");
+            }
+            var uploadFiles = customerContract.Where(c => selectedFiles.Contains(c.FileName)).ToList();
+            var uplodDropFiles = customerDropFile.Where(c => selectedFiles.Contains(c.FileName)).ToArray();
+            foreach (var item in uplodDropFiles)
+            {
+                uploadFiles.Add(item);
+            }
+            var successUploadFile = 0;
+            var failUploadFile = 0;
+            foreach (var file in uploadFiles)
+            {
+                using (var binaryReader = new BinaryReader(file.InputStream))
+                {
+                    var attachmentByte = binaryReader.ReadBytes(file.ContentLength);
+                    FileInfo fileInfo = new FileInfo(file.FileName);
+                    var fileExtention = fileInfo.Extension.Replace(".", "");
+                    var upload = new ServiceUtilities().SaveClientAttachment(new SaveClientAttachmentViewModel()
+                    {
+                        AttachmentType = (int)CMS.Localization.Enums.ClientAttachmentTypes.IDCard,
+                        FileExtention = fileExtention,
+                        SubscriptionId = User.GiveUserId(),
+                        FileContent = attachmentByte
+                    });
+                    generalLogger.Info($"Upload client Attachment Service Response | Error Code : {upload.ResponseMessage.ErrorCode} - Error Message : {upload.ResponseMessage.ErrorMessage}");
+                    if (upload.ResponseMessage.ErrorCode != 0)
+                    {
+                        failUploadFile++;
+                    }
+                    else
+                    {
+                        successUploadFile++;
+                    }
+                }
+
+            }
+            var failMessage = failUploadFile != 0 ? string.Format(CMS.Localization.Errors.UploadCustomerCardFail, failUploadFile) : null;
+            var successMessage = successUploadFile != 0 ? string.Format(CMS.Localization.Errors.UploadCustomerCardSuccess, successUploadFile) : null;
+            return ReturnMessageUrl(Url.Action("RegisterTracking", "Home"), $"{successMessage}{Environment.NewLine}{failMessage}", successMessage != null);
+        }
+        [Authorize(Roles = "Customer")]
         public ActionResult QuickSearch(string query)
         {
             try

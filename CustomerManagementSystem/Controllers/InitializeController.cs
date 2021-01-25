@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CustomerManagementSystem.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class InitializeController : BaseController
     {
         // GET: Initialize

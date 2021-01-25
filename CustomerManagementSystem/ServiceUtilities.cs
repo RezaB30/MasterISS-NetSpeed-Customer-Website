@@ -493,7 +493,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceGetCustomerFileResponse GetCustomerDocuments(long? subscriptionId)
+        public CustomerServiceGetCustomerFileResponse GetClientAttachmentList(long? subscriptionId)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetCustomerFiles(new CustomerServiceBaseRequest()
@@ -612,6 +612,41 @@ namespace CustomerManagementSystem
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.HasClientPreRegisterSubscription(new CustomerServiceBaseRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                SubscriptionParameters = new BaseSubscriptionRequest()
+                {
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
+        public CustomerServiceSaveClientAttachmentResponse SaveClientAttachment(SaveClientAttachmentViewModel attachment)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.SaveClientAttachment(new CustomerServiceSaveClientAttachmentRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                SaveClientAttachmentParameters = new SaveClientAttachmentRequest()
+                {
+                    AttachmentType = attachment.AttachmentType,
+                    FileContent = attachment.FileContent,
+                    FileExtention = attachment.FileExtention,
+                    SubscriptionId = attachment.SubscriptionId
+                }
+            });
+            return result;
+        }
+        public CustomerServiceGetClientPDFFormResponse GetClientPDFForm(long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.GetClientPDFForm(new CustomerServiceBaseRequest()
             {
                 Username = baseRequest.Username,
                 Culture = baseRequest.Culture,

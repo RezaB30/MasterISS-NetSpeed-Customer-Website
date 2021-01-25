@@ -12,6 +12,7 @@ using RezaB.Web.Authentication;
 
 namespace CustomerManagementSystem.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class SupportController : BaseController
     {
         Logger requestsLogger = LogManager.GetLogger("requests");

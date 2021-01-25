@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace CustomerManagementSystem.Controllers
 {
+    [Authorize(Roles = "Customer")]
     public class PaymentController : BaseController
     {
         Logger paymentLogger = LogManager.GetLogger("payments");

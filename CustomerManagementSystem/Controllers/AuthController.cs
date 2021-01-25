@@ -117,14 +117,7 @@ namespace CustomerManagementSystem.Controllers
                 }
 
             }
-            return Json(new { valid = "Eksik yada Hatalı Şifre" }, JsonRequestBehavior.AllowGet);
-            //return View(login);
-
-            //if (password == "1")
-            //{
-            //    return Json(new { valid = "Eksik yada Hatalı Şifre" }, JsonRequestBehavior.AllowGet);
-            //}
-            //return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+            return Json(new { valid = CMS.Localization.Errors.SMSPasswordWrong }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Logout()
         {
@@ -141,14 +134,22 @@ namespace CustomerManagementSystem.Controllers
         }
         internal static void SignInUser(string ValidDisplayName, string ID, string SubscriberNo, IEnumerable<string> relatedCustomers, IOwinContext context)
         {
+            var subscriptionId = Convert.ToInt64(ID);
+            var customer = new ServiceUtilities().GetCustomerInfo(subscriptionId).GetCustomerInfoResponse;
+            var isNotActive = customer == null || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.PreRegisterd || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Registered || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Reserved)));
             var identity = new ClaimsIdentity(new[]
             {
                 new Claim(ClaimTypes.Name, ValidDisplayName),
                 new Claim(ClaimTypes.NameIdentifier, ID),
                 new Claim(ClaimTypes.SerialNumber, SubscriberNo),
                 new Claim("LastLogin",DateTime.Now.ToString("yyyy-MM-dd HH:mm")),
-                new Claim("SubscriptionBag", string.Join(";", relatedCustomers))
+                new Claim("SubscriptionBag", string.Join(";", relatedCustomers)),
+                new Claim("CurrentSubscriptionIsActive",isNotActive.ToString(),ClaimValueTypes.Boolean)
             }, "ApplicationCookie");
+            if (!isNotActive)
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, "Customer"));
+            }
             context.Authentication.SignIn(identity);
         }
 
