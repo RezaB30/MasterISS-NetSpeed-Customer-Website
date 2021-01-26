@@ -2560,6 +2560,37 @@
     <Content Include="Connected Services\GenericCustomerServiceRef\CustomerManagementSystem.GenericCustomerServiceRef.CustomerServicGetSupportAttachmentListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService1.wsdl" />
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService19.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\GenericCustomerServiceRef\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -2617,37 +2648,6 @@
     <Content Include="assets\plugins\global\fonts\summernote\summernote.ttf" />
     <Content Include="assets\plugins\global\fonts\summernote\summernote.woff" />
     <Content Include="assets\plugins\global\fonts\summernote\summernote.woff2" />
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService.wsdl" />
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4_5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4_5_6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4_5_6_7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4_5_6_7_8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceRef\GenericCustomerService_1_2_3_4_5_6_7_8_9.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2807,16 +2807,16 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

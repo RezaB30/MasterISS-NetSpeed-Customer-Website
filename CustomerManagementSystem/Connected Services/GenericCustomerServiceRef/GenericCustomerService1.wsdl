@@ -9,16 +9,16 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="GenericCustomerService.xsd" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4_5_6_7_8_9.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="GenericCustomerService_1.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2.xsd" namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4_5.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4_5_6.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4_5_6_7.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3_4_5_6_7_8.xsd" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
-      <xsd:import schemaLocation="GenericCustomerService_1_2_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Payment" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses.Support" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Payment" />
+      <xsd:import schemaLocation="http://localhost:56365/GenericCustomerService.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGenericCustomerService_GetKeyFragment_InputMessage">
