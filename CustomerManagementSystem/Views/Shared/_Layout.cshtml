@@ -13,7 +13,11 @@
     <link rel="canonical" href="https://netspeed.com.tr" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/bundles/css")*@
+    @Styles.Render("~/Content/assets/css/style.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/custom/prismjs/prismjs.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/global/plugins.bundle.css")
     <link rel="shortcut icon" href="/Content/assets/media/logos/favicon.ico" />
 </head>
 

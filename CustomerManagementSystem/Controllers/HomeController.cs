@@ -494,31 +494,31 @@ namespace CustomerManagementSystem.Controllers
                 {
                     Content = "oto",
                     Header = "Otomatik Ödeme Talimatı",
-                    Url = "/Payment/AutomaticPayment"
+                    Url = Url.Action("AutomaticPayment", "Payment")
                 });
                 SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
                 {
                     Content = "öde",
                     Header = "Otomatik Ödeme Talimatı",
-                    Url = "/Payment/AutomaticPayment"
+                    Url = Url.Action("AutomaticPayment", "Payment")
                 });
                 SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
                 {
                     Content = "öde",
                     Header = "Fatura & Ödemeler",
-                    Url = "/Payment/BillsAndPayments"
+                    Url = Url.Action("BillsAndPayments", "Payment")
                 });
                 SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
                 {
                     Content = "fat",
                     Header = "Otomatik Ödeme Talimatı",
-                    Url = "/Payment/AutomaticPayment"
+                    Url = Url.Action("AutomaticPayment", "Payment")
                 });
                 SearchList.Add(new CMS.ViewModels.Home.QuickSearch()
                 {
                     Content = "fat",
                     Header = "Fatura & Ödemeler",
-                    Url = "/Payment/BillsAndPayments"
+                    Url = Url.Action("BillsAndPayments", "Payment")
 
                 });
                 var contentList = new List<string>();
@@ -528,7 +528,7 @@ namespace CustomerManagementSystem.Controllers
                     {
                         contentList.Add("<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
                             "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
-                            "<img src='/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
+                            "<img src='/Content/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
                             "</div>" +
                             "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
                             "<a href='" + item.Url + "' class='font-weight-bold text-dark text-hover-primary'>" + item.Header + "</a>" +

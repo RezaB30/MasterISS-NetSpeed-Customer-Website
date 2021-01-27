@@ -2409,6 +2409,7 @@
     <Content Include="Content\assets\plugins\global\fonts\socicon\socicon.svg" />
     <Content Include="Content\assets\plugins\global\plugins.bundle.css" />
     <Content Include="Content\assets\plugins\global\plugins.bundle.js" />
+    <Content Include="Content\header.css" />
     <Content Include="Content\img\back-icon.svg" />
     <Content Include="Content\img\cancel-btn.svg" />
     <Content Include="Content\img\check.svg" />
