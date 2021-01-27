@@ -5,12 +5,13 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Web;
+//using CustomerManagementSystem.GenericCustomerServiceReference;
 
 namespace CustomerManagementSystem
 {
     public class GenericServiceSettings
     {
-        GenericCustomerServiceRef.GenericCustomerServiceClient client = new GenericCustomerServiceRef.GenericCustomerServiceClient();
+        MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient client = new MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient();
         public string Culture { get; set; }
         public string Rand { get; set; }
         public string Username { get; set; }

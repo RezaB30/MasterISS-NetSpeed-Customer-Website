@@ -6,7 +6,7 @@
     ViewBag.Title = Common.MyAccount;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Styles.Render("~/assets/css/pages/wizard/wizard-4.css")
+@Styles.Render("~/Content/assets/css/pages/wizard/wizard-4.css")
 
 <div class="container">
     <div class="flex-row-fluid">
@@ -248,7 +248,7 @@
 </div>
 
 @section scripts{
-    @Scripts.Render("~/assets/js/pages/features/custom/spinners.js")
+    @Scripts.Render("~/Content/assets/js/pages/features/custom/spinners.js")
     <script>
         $('#ContactPhoneNo').keypress(function () {
             var reg = /^\d+$/;

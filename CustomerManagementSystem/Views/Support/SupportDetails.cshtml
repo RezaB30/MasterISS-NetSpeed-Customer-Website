@@ -1,221 +1,221 @@
-﻿
-@*@{
-    ViewBag.Title = "SupportDetails";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@*@{
+        ViewBag.Title = "SupportDetails";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-<div class="container">
-    <div class="flex-row-fluid ">
-        <div class="card card-custom card-stretch">
-            <div class="card-header py-3">
-                <div class="card-title align-items-start flex-column">
-                    <h3 class="card-label font-weight-bolder text-dark">Destek & Talepler</h3>
-                    <span class="text-muted font-weight-bold font-size-sm mt-1">
-                        Destek talebinde bulunabilir ve takip edebilirsiniz.
-                    </span>
-                </div>
-                <div class="card-toolbar">
-                    <a href="@Url.Action("SupportRequests","Support")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
-                        Destek Kayıtları
-                    </a>
-                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
-                        <i class="flaticon-home-2"></i>
-                    </a>
+    <div class="container">
+        <div class="flex-row-fluid ">
+            <div class="card card-custom card-stretch">
+                <div class="card-header py-3">
+                    <div class="card-title align-items-start flex-column">
+                        <h3 class="card-label font-weight-bolder text-dark">Destek & Talepler</h3>
+                        <span class="text-muted font-weight-bold font-size-sm mt-1">
+                            Destek talebinde bulunabilir ve takip edebilirsiniz.
+                        </span>
+                    </div>
+                    <div class="card-toolbar">
+                        <a href="@Url.Action("SupportRequests","Support")" class="btn btn-sm btn-light-info font-weight-bold mr-2">
+                            Destek Kayıtları
+                        </a>
+                        <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                            <i class="flaticon-home-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-xl-4">
-                <div class="card card-custom">
-                    <div class="card-header h-auto py-4">
-                        <div class="card-body pt-15 d-flex flex-column justify-content-between">
-                            <div class="d-flex align-items-center mb-7">
-                                <div class="flex-shrink-0 mr-4 mt-lg-0 mt-3">
-                                    <span class="svg-icon svg-icon-danger svg-icon-4x">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none"
-                                               fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <circle fill="#000000" opacity="0.3" cx="12" cy="12"
-                                                        r="10" />
-                                                <rect fill="#000000" x="11" y="10" width="2" height="7"
-                                                      rx="1" />
-                                                <rect fill="#000000" x="11" y="7" width="2" height="2"
-                                                      rx="1" />
-                                            </g>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <a href="#"
-                                       class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
-                                        Hat Dondurma
-                                    </a>
-                                    <span class="text-muted font-weight-bold">
-                                        Hattımı bir süreliğine dondurmak istiyorum
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="pt-0 ">
-                                <div class="mb-7">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">
-                                            DESTEK NO
+            <br>
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="card card-custom">
+                        <div class="card-header h-auto py-4">
+                            <div class="card-body pt-15 d-flex flex-column justify-content-between">
+                                <div class="d-flex align-items-center mb-7">
+                                    <div class="flex-shrink-0 mr-4 mt-lg-0 mt-3">
+                                        <span class="svg-icon svg-icon-danger svg-icon-4x">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none"
+                                                   fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <circle fill="#000000" opacity="0.3" cx="12" cy="12"
+                                                            r="10" />
+                                                    <rect fill="#000000" x="11" y="10" width="2" height="7"
+                                                          rx="1" />
+                                                    <rect fill="#000000" x="11" y="7" width="2" height="2"
+                                                          rx="1" />
+                                                </g>
+                                            </svg>
                                         </span>
-                                        <a href="#" class="text-muted text-hover-primary">124514</a>
                                     </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">TARİH</span>
-                                        <a href="#" class="text-muted text-hover-primary">15.09.2020</a>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-cente my-1">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">BİRİM</span>
-                                        <a href="#" class="text-muted text-hover-primary">
-                                            TEKNİK DESTEK
+                                    <div class="d-flex flex-column">
+                                        <a href="#"
+                                           class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
+                                            Hat Dondurma
                                         </a>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">DURUM</span>
-                                        <span class="label label-lg label-light-warning label-inline">İŞLEMDE</span>
+                                        <span class="text-muted font-weight-bold">
+                                            Hattımı bir süreliğine dondurmak istiyorum
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-toolbar">
-                                <a href="@Url.Action("SupportRequests","Support")"
-                                   class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
-                                    TÜM DESTEK KAYITLARI
-                                </a>
+                                <div class="pt-0 ">
+                                    <div class="mb-7">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="text-dark-75 font-weight-bolder mr-2">
+                                                DESTEK NO
+                                            </span>
+                                            <a href="#" class="text-muted text-hover-primary">124514</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="text-dark-75 font-weight-bolder mr-2">TARİH</span>
+                                            <a href="#" class="text-muted text-hover-primary">15.09.2020</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-cente my-1">
+                                            <span class="text-dark-75 font-weight-bolder mr-2">BİRİM</span>
+                                            <a href="#" class="text-muted text-hover-primary">
+                                                TEKNİK DESTEK
+                                            </a>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="text-dark-75 font-weight-bolder mr-2">DURUM</span>
+                                            <span class="label label-lg label-light-warning label-inline">İŞLEMDE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-toolbar">
+                                    <a href="@Url.Action("SupportRequests","Support")"
+                                       class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
+                                        TÜM DESTEK KAYITLARI
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-8">
-                <div class="card card-custom gutter-b">
-                    <div class="card-body px-0">
-                        <div class="tab-content pt-5">
-                            <div class="tab-pane active" id="kt_apps_contacts_view_tab_1"
-                                 role="tabpanel">
-                                <div class="container">
-                                    <form class="form">
-                                        <div class="form-group">
-                                            <textarea class="form-control form-control-lg form-control-solid" id="exampleTextarea" rows="3" placeholder="Not Yazın"></textarea>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href="#" class="btn btn-sm btn-primary font-weight-bold">
-                                                    Not Ekle
-                                                </a>
-                                                <a href="#" class="btn btn-sm btn-clean font-weight-bold">İptal</a>
-                                                <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="kt_todo_reply_attachments_select">
-                                                    <i class="flaticon2-clip-symbol"></i>
-                                                </span>
+                <div class="col-xl-8">
+                    <div class="card card-custom gutter-b">
+                        <div class="card-body px-0">
+                            <div class="tab-content pt-5">
+                                <div class="tab-pane active" id="kt_apps_contacts_view_tab_1"
+                                     role="tabpanel">
+                                    <div class="container">
+                                        <form class="form">
+                                            <div class="form-group">
+                                                <textarea class="form-control form-control-lg form-control-solid" id="exampleTextarea" rows="3" placeholder="Not Yazın"></textarea>
                                             </div>
-                                        </div>
-                                    </form>
-                                    <div class="separator separator-dashed my-10"></div>
-                                    <div class="timeline timeline-3">
-                                        <div class="timeline-items">
-                                            <div class="timeline-item">
-                                                <div class="timeline-media">
-                                                    <img alt="Pic" src="/assets/media/users/default.jpg">
-                                                </div>
-                                                <div class="timeline-content">
-                                                    <div class="d-flex align-items-center justify-content-between mb-3">
-                                                        <div class="mr-2">
-                                                            <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
-                                                                Avni
-                                                                ALKAN
-                                                            </a>
-                                                            <span class="text-muted ml-2">
-                                                                16.09.2020
-                                                                01:42
-                                                            </span>
-                                                            <span class="label label-light-info font-weight-bolder label-inline ml-2">
-                                                                Yeni
-                                                                Destek Talebi
-                                                            </span>
-                                                        </div>
-
-                                                    </div>
-                                                    <p class="p-0">
-                                                        35 mbps internet bağlatmama rağmen
-                                                        sık sık bu hızlarda düşüş yaşıyor ve 15 mbps
-                                                        hızları zor görüyorum. Sanırım kuruluma gelen
-                                                        arkadaş kabloları bağlarken bir hata yaptı.
-                                                        Kurulumun kontrol edilmesi için destek talep
-                                                        ediyorum.
-                                                    </p>
-                                                    <div class="d-flex flex-column font-size-sm font-weight-bold">
-                                                        <a href="#" class="d-flex align-items-center text-primary text-hover-primary py-1">
-                                                            <span class="flaticon2-clip-symbol text-warning icon-1x mr-2"></span>
-                                                            Abonelik sözleşmesi.pdf
-                                                        </a>
-                                                        <a href="#" class="d-flex align-items-center text-primary text-hover-primary py-1">
-                                                            <span class="flaticon2-clip-symbol text-warning icon-1x mr-2"></span>hiztesti.jpg
-                                                        </a>
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-sm btn-primary font-weight-bold">
+                                                        Not Ekle
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm btn-clean font-weight-bold">İptal</a>
+                                                    <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="kt_todo_reply_attachments_select">
+                                                        <i class="flaticon2-clip-symbol"></i>
+                                                    </span>
                                                 </div>
                                             </div>
-                                            <div class="timeline timeline-3">
-                                                <div class="timeline-items">
-                                                    <div class="timeline-item">
-                                                        <div class="timeline-media">
-                                                            <img alt="Pic" src="/assets/media/users/52755289_772618326428147_6148716253725851648_n.png">
-                                                        </div>
-                                                        <div class="timeline-content">
-                                                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                                                <div class="mr-2">
-                                                                    <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
-                                                                        Müşteri Temsilcisi
-                                                                    </a>
-                                                                    <span class="text-muted ml-2">
-                                                                        16.09.2020
-                                                                        01:45
-                                                                    </span>
-                                                                    <span class="label label-light-success font-weight-bolder label-inline ml-2">Tamamlandı</span>
-                                                                </div>
+                                        </form>
+                                        <div class="separator separator-dashed my-10"></div>
+                                        <div class="timeline timeline-3">
+                                            <div class="timeline-items">
+                                                <div class="timeline-item">
+                                                    <div class="timeline-media">
+                                                        <img alt="Pic" src="/Content/assets/media/users/default.jpg">
+                                                    </div>
+                                                    <div class="timeline-content">
+                                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                                            <div class="mr-2">
+                                                                <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                                    Avni
+                                                                    ALKAN
+                                                                </a>
+                                                                <span class="text-muted ml-2">
+                                                                    16.09.2020
+                                                                    01:42
+                                                                </span>
+                                                                <span class="label label-light-info font-weight-bolder label-inline ml-2">
+                                                                    Yeni
+                                                                    Destek Talebi
+                                                                </span>
                                                             </div>
-                                                            <p class="p-0">
-                                                                Merhaba destek talebiniz tamamlanmıştır iyi günler dileriz.
-                                                            </p>
+
+                                                        </div>
+                                                        <p class="p-0">
+                                                            35 mbps internet bağlatmama rağmen
+                                                            sık sık bu hızlarda düşüş yaşıyor ve 15 mbps
+                                                            hızları zor görüyorum. Sanırım kuruluma gelen
+                                                            arkadaş kabloları bağlarken bir hata yaptı.
+                                                            Kurulumun kontrol edilmesi için destek talep
+                                                            ediyorum.
+                                                        </p>
+                                                        <div class="d-flex flex-column font-size-sm font-weight-bold">
+                                                            <a href="#" class="d-flex align-items-center text-primary text-hover-primary py-1">
+                                                                <span class="flaticon2-clip-symbol text-warning icon-1x mr-2"></span>
+                                                                Abonelik sözleşmesi.pdf
+                                                            </a>
+                                                            <a href="#" class="d-flex align-items-center text-primary text-hover-primary py-1">
+                                                                <span class="flaticon2-clip-symbol text-warning icon-1x mr-2"></span>hiztesti.jpg
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                    <div class="timeline timeline-3">
-                                                        <div class="timeline-items">
-                                                            <div class="timeline-item">
-                                                                <div class="timeline-media">
-                                                                    <img alt="Pic" src="/assets/media/users/default.jpg">
-                                                                </div>
-                                                                <div class="timeline-content">
-                                                                    <div class="d-flex align-items-center justify-content-between mb-3">
-                                                                        <div class="mr-2">
-                                                                            <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
-                                                                                Avni
-                                                                                ALKAN
-                                                                            </a>
-                                                                            <span class="text-muted ml-2">
-                                                                                16.09.2020
-                                                                                01:42
-                                                                            </span>
-                                                                            <span class="label label-light-info font-weight-bolder label-inline ml-2">
-                                                                                Yeni
-                                                                                Destek Talebi
-                                                                            </span>
-                                                                        </div>
+                                                </div>
+                                                <div class="timeline timeline-3">
+                                                    <div class="timeline-items">
+                                                        <div class="timeline-item">
+                                                            <div class="timeline-media">
+                                                                <img alt="Pic" src="/assets/media/users/52755289_772618326428147_6148716253725851648_n.png">
+                                                            </div>
+                                                            <div class="timeline-content">
+                                                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                                                    <div class="mr-2">
+                                                                        <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                                            Müşteri Temsilcisi
+                                                                        </a>
+                                                                        <span class="text-muted ml-2">
+                                                                            16.09.2020
+                                                                            01:45
+                                                                        </span>
+                                                                        <span class="label label-light-success font-weight-bolder label-inline ml-2">Tamamlandı</span>
                                                                     </div>
-                                                                    <p class="p-0">
-                                                                        35 mbps internet
-                                                                        bağlatmama rağmen sık sık bu
-                                                                        hızlarda düşüş yaşıyor ve 15
-                                                                        mbps hızları zor görüyorum.
-                                                                        Sanırım kuruluma gelen arkadaş
-                                                                        kabloları bağlarken bir hata
-                                                                        yaptı. Kurulumun kontrol
-                                                                        edilmesi için destek talep
-                                                                        ediyorum.
-                                                                    </p>
+                                                                </div>
+                                                                <p class="p-0">
+                                                                    Merhaba destek talebiniz tamamlanmıştır iyi günler dileriz.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline timeline-3">
+                                                            <div class="timeline-items">
+                                                                <div class="timeline-item">
+                                                                    <div class="timeline-media">
+                                                                        <img alt="Pic" src="/assets/media/users/default.jpg">
+                                                                    </div>
+                                                                    <div class="timeline-content">
+                                                                        <div class="d-flex align-items-center justify-content-between mb-3">
+                                                                            <div class="mr-2">
+                                                                                <a href="#" class="text-dark-75 text-hover-primary font-weight-bold">
+                                                                                    Avni
+                                                                                    ALKAN
+                                                                                </a>
+                                                                                <span class="text-muted ml-2">
+                                                                                    16.09.2020
+                                                                                    01:42
+                                                                                </span>
+                                                                                <span class="label label-light-info font-weight-bolder label-inline ml-2">
+                                                                                    Yeni
+                                                                                    Destek Talebi
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p class="p-0">
+                                                                            35 mbps internet
+                                                                            bağlatmama rağmen sık sık bu
+                                                                            hızlarda düşüş yaşıyor ve 15
+                                                                            mbps hızları zor görüyorum.
+                                                                            Sanırım kuruluma gelen arkadaş
+                                                                            kabloları bağlarken bir hata
+                                                                            yaptı. Kurulumun kontrol
+                                                                            edilmesi için destek talep
+                                                                            ediyorum.
+                                                                        </p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -231,5 +231,4 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@

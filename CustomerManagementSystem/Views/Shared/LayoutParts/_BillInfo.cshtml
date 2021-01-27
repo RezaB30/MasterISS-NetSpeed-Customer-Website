@@ -5,7 +5,7 @@
 <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-xl dropdown-menu-anim-up">
     <form>
         <div class="d-flex align-items-center py-10 px-8 bgi-size-cover bgi-no-repeat rounded-top"
-             style="background-image: url(/assets/media/misc/bg-1.jpg)">
+             style="background-image: url(/Content/assets/media/misc/bg-1.jpg)">
             <span class="btn btn-md btn-icon bg-white-o-15 mr-4">
                 <i class="flaticon-list-1 text-success"></i>
             </span>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <a href="#" class="symbol symbol-70 flex-shrink-0">
-                            <img src="/assets/media/project-logos/google-forms.png" title="" alt="" />
+                            <img src="/Content/assets/media/project-logos/google-forms.png" title="" alt="" />
                         </a>
                     </div>
                     <div class="separator separator-solid"></div>
@@ -46,7 +46,7 @@
                     @Html.DisplayFor(m => m.TotalAmount)
                 </span>
             </div>
-            @if ( Model.Bills != null && Model.Bills.Count() != 0)
+            @if (Model.Bills != null && Model.Bills.Count() != 0)
             {
                 <div class="text-right">
                     <a href="@Url.Action("PaymentSelection","Payment")" class="btn btn-primary font-weight-bold mr-2">@Common.QuickPay</a>

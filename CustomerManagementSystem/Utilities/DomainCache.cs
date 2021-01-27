@@ -1,4 +1,5 @@
-﻿using CustomerManagementSystem.GenericCustomerServiceRef;
+﻿using MasterISS.CustomerService.GenericCustomerServiceReference;
+//using CustomerManagementSystem.GenericCustomerServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;

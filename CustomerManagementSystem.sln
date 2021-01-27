@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.ViewModels", "CMS.ViewM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Localization", "CMS.Localization\CMS.Localization.csproj", "{69633573-47FE-43C1-B817-A51B984E0831}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterISS.CustomerService", "MasterISS.CustomerService\MasterISS.CustomerService.csproj", "{F58F9613-98BC-4001-9AD5-6AD738A37D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{69633573-47FE-43C1-B817-A51B984E0831}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69633573-47FE-43C1-B817-A51B984E0831}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69633573-47FE-43C1-B817-A51B984E0831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58F9613-98BC-4001-9AD5-6AD738A37D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58F9613-98BC-4001-9AD5-6AD738A37D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58F9613-98BC-4001-9AD5-6AD738A37D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58F9613-98BC-4001-9AD5-6AD738A37D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

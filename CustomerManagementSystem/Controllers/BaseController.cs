@@ -98,7 +98,7 @@ namespace CustomerManagementSystem.Controllers
         {
             try
             {
-                GenericCustomerServiceRef.GenericCustomerServiceClient client = new GenericCustomerServiceRef.GenericCustomerServiceClient();
+                MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient client = new MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient();
                 var webServiceRequest = (HttpWebRequest)WebRequest.Create(client.Endpoint.ListenUri);
                 var response = (HttpWebResponse)webServiceRequest.GetResponse();
                 if (response.StatusCode == HttpStatusCode.OK)

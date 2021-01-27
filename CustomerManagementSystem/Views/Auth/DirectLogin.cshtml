@@ -4,18 +4,18 @@
     ViewBag.Title = "DirectLogin";
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
-
 <!--begin:Aside Content-->
 <div class="text-dark-75 text-left">
     <a href="https://netspeed.com.tr/">
-        <img src="/assets/media/svg/logos/bejjpluslogonew.svg" class="max-h-40px" alt="" />
+        <img src="/Content/assets/media/svg/logos/bejjpluslogonew.svg" class="max-h-40px" alt="" />
     </a>
     <h3 class="mb-8 mt-10 text-left text-muted font-weight-bold">
         @Common.LoginDescription
     </h3>
 
     <a href="@Url.Action("Login","Auth")" class="btn btn-block btn-light-primary py-2 px-9 mt-0 font-weight-bold">
-        <i class="flaticon2-back"></i> @Common.LoginWithRegisteredPasssword
+        <i class="flaticon2-back"></i>
+        @Common.LoginWithRegisteredPasssword
     </a>
     <div>
     </div>

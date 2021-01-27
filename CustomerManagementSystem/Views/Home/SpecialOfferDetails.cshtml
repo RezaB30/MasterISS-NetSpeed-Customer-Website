@@ -35,7 +35,7 @@
                 <div class="card card-custom gutter-b">
                     <div class="card-body  p-0">
                         <div class="flex-grow-6 p-10 pb-10 flex-grow-1 bgi-no-repeat"
-                             style="background-color: #4b4e80; background-position: right bottom; background-size: 30% auto; background-image: url(/assets/media/svg/illustrations/progress.svg)">
+                             style="background-color: #4b4e80; background-position: right bottom; background-size: 30% auto; background-image: url(/Content/assets/media/svg/illustrations/progress.svg)">
                             <h2 class="text-warning pb-5 font-weight-bolder">
                                 @Common.SpecialOfferDiscountCodeHeader
                             </h2>
@@ -46,7 +46,7 @@
                                     @Common.ReferenceCode.ToUpper() :
                                     <span class="text-warning font-weight-boldest ml-2">@Html.DisplayFor(m => m.ReferenceNo)</span>
                                 </div>
-                                <img src="@Url.Content("~/assets/media/svg/logos/netspeed.svg")" alt="" class="align-self-end h-25px">
+                                <img src="@Url.Content("~/Content/assets/media/svg/logos/netspeed.svg")" alt="" class="align-self-end h-25px">
                         </div>
                     </div>
                 </div>
@@ -508,6 +508,6 @@
 </div>
 
 @section scripts{
-    @Scripts.Render("~/assets/js/pages/widgets.js")
-    @Scripts.Render("~/assets/js/pages/custom/todo/todo.js")
+    @Scripts.Render("~/Content/assets/js/pages/widgets.js")
+    @Scripts.Render("~/Content/assets/js/pages/custom/todo/todo.js")
 }
