@@ -80,8 +80,7 @@ namespace CustomerManagementSystem.Controllers
             }
             var modelError = ModelState.Values.Select(m => m.Errors.Where(s => string.IsNullOrEmpty(s.ErrorMessage) == false).Select(s => s.ErrorMessage).FirstOrDefault()).FirstOrDefault();
             return Json(new { valid = modelError, }, JsonRequestBehavior.AllowGet);
-        }
-        [ValidateAntiForgeryToken]
+        }       
         [HttpPost]
         public ActionResult CustomerLogin([Bind(Include = "CustomerCode,SMSPassword")] LoginViewModel login)
         {

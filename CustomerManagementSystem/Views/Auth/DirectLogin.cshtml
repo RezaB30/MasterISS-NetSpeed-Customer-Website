@@ -7,7 +7,7 @@
 <!--begin:Aside Content-->
 <div class="text-dark-75 text-left">
     <a href="https://netspeed.com.tr/">
-        <img src="/Content/assets/media/svg/logos/bejjpluslogonew.svg" class="max-h-40px" alt="" />
+        <img src="/Content/assets/media/svg/logos/netspeed.svg" class="max-h-40px" alt="" />
     </a>
     <h3 class="mb-8 mt-10 text-left text-muted font-weight-bold">
         @Common.LoginDescription
@@ -87,11 +87,11 @@
                             }
                             else {
                                 var error = "";
-                                var token = $('input[name="__RequestVerificationToken"]').val();
+                                //var token = $('input[name="__RequestVerificationToken"]').val();
                                 $.ajax({
                                     url: '@Url.Action("CustomerLogin","Auth")',
                                     method: 'POST',
-                                    data: { CustomerCode: $('#CustomerCode').val(), SMSPassword: value, __RequestVerificationToken: token },
+                                    data: { CustomerCode: $('#CustomerCode').val(), SMSPassword: value/* __RequestVerificationToken: token */},
                                     complete: function (data, status) {
                                         if (status == "success") {
                                             var result = data.responseJSON;

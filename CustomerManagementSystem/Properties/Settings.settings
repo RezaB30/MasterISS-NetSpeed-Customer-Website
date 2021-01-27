@@ -12,7 +12,7 @@
       <Value Profile="(Default)">© Netspeed İnternet A.Ş</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">1.0.0</Value>
+      <Value Profile="(Default)">2.0.0</Value>
     </Setting>
     <Setting Name="WebSite" Type="System.String" Scope="Application">
       <Value Profile="(Default)">&lt;a href="https://www.netspeed.com.tr" title="Netspeed" class="nav-link pr-3 pl-0" target="_blank"&gt;www.netspeed.com.tr&lt;/a&gt;</Value>
