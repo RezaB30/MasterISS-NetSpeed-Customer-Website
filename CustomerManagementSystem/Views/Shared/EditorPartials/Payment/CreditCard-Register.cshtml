@@ -41,7 +41,7 @@
                     <label>
                         @Html.DisplayNameFor(m => m.ExpirationMonth)
                     </label>
-                    @Html.EditorFor(m => m.ExpirationMonth, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationMonth), autocomplete = "off" } })
+                    @Html.EditorFor(m => m.ExpirationMonth, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationMonth), autocomplete = "off", maxlength = "2" } })
                     <span class="form-text text-muted">
                         @Common.SetCardExpirationMonth
                     </span>
@@ -55,7 +55,7 @@
                     <label>
                         @Html.DisplayNameFor(m => m.ExpirationYear)
                     </label>
-                    @Html.EditorFor(m => m.ExpirationYear, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationYear), autocomplete = "off" } })
+                    @Html.EditorFor(m => m.ExpirationYear, new { htmlAttributes = new { @class = "form-control form-control-solid form-control-lg", @placeholder = Html.DisplayNameFor(m => m.ExpirationYear), autocomplete = "off", @maxlength = "2" } })
                     <span class="form-text text-muted">
                         @Common.SetCardExpirationYear
                     </span>
