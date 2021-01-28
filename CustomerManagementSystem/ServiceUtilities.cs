@@ -660,5 +660,22 @@ namespace CustomerManagementSystem
             });
             return result;
         }
+        public CustomerServiceEArchivePDFMailResponse EArchivePDFMail(long? billId , long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.EArchivePDFMail(new CustomerServiceEArchivePDFRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                EArchivePDFParameters = new EArchivePDFRequest()
+                {
+                    BillId = billId,
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
     }
 }

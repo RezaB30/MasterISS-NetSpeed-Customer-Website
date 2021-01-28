@@ -948,6 +948,17 @@ namespace CustomerManagementSystem.Controllers
             return File(response.EArchivePDFResponse.FileContent, response.EArchivePDFResponse.ContentType, response.EArchivePDFResponse.FileDownloadName);
 
         }
+        [ValidateAntiForgeryToken]
+        public ActionResult EArchivePDFMail(long id)
+        {
+            var response = new ServiceUtilities().EArchivePDFMail(id, User.GiveUserId());
+            if (response.ResponseMessage.ErrorCode != 0)
+            {
+                generalLogger.Error(response.ResponseMessage.ErrorMessage);
+                return ReturnMessageUrl(Url.Action("BillsAndPayments", "Payment"), response.ResponseMessage.ErrorMessage, false);
+            }
+            return ReturnMessageUrl(Url.Action("BillsAndPayments", "Payment"), response.ResponseMessage.ErrorMessage, true);
+        }
 
         //public ActionResult RegisteredCards()
         //{

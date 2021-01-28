@@ -433,12 +433,15 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult UploadCustomerFile(HttpPostedFileBase[] customerContract, HttpPostedFileBase[] customerDropFile, string[] selectedFiles)
         {
-            if (customerContract == null || customerContract.Count() == 0 || selectedFiles == null || selectedFiles.Count() == 0)
+            if (selectedFiles == null || selectedFiles.Count() == 0)
             {
+                generalLogger.Info("not found selected files");
                 return RedirectToAction("RegisterTracking", "Home");
             }
-            var uploadFiles = customerContract.Where(c => selectedFiles.Contains(c.FileName)).ToList();
-            var uplodDropFiles = customerDropFile.Where(c => selectedFiles.Contains(c.FileName)).ToArray();
+            customerContract = customerContract == null ? null : customerContract.Where(c => c != null).FirstOrDefault() == null ? null : customerContract;
+            customerDropFile = customerDropFile == null ? null : customerDropFile.Where(c => c != null).FirstOrDefault() == null ? null : customerDropFile;
+            var uploadFiles = customerContract == null ? new List<HttpPostedFileBase>() : customerContract.Where(c => selectedFiles.Contains(c.FileName)).ToList();
+            var uplodDropFiles = customerDropFile == null ? Enumerable.Empty<HttpPostedFileBase>() : customerDropFile.Where(c => selectedFiles.Contains(c.FileName)).ToArray();
             foreach (var item in uplodDropFiles)
             {
                 uploadFiles.Add(item);

@@ -169,10 +169,10 @@
                             </div>
                             <div class="mb-7">
                                 @*<div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.ID)</span>
-                                        <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.ID)</a>
-                                    </div>
-                                    <p> </p>*@
+                <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.ID)</span>
+                <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.ID)</a>
+            </div>
+            <p> </p>*@
                                 <div class="d-flex justify-content-between align-items-cente my-1">
                                     <span class="text-dark-100 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Total)</span>
                                     <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.Total)</a>
@@ -193,11 +193,11 @@
                                 </div>
                                 <p></p>
                                 @*<div class="d-flex justify-content-between align-items-center">
-                                        <span class="text-dark-75 font-weight-bolder mr-2">
-                                            @Html.DisplayNameFor(m => m.InvoicingPeriod)
-                                        </span>
-                                        <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.)</a>
-                                    </div>*@
+                <span class="text-dark-75 font-weight-bolder mr-2">
+                    @Html.DisplayNameFor(m => m.InvoicingPeriod)
+                </span>
+                <a href="#" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.)</a>
+            </div>*@
                             </div>
                             @if (item.Status == (short)CMS.Localization.Enums.BillState.Cancelled)
                             {
@@ -230,14 +230,17 @@
                                     @Html.Hidden("id", item.ID)
                                     <input type="submit" value="@Common.DownloadAsPdf" class="btn btn-block btn-sm btn-light-primary font-weight-bold" />
                                 }
-                                @*<p></p>
-                                <a href="javascript:void(0);" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
-                                    @Common.SendPdfToMail
-                                </a>*@
+                                <p></p>
+                                using (Html.BeginForm("EArchivePDFMail", "Payment", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.Hidden("id", item.ID)
+                                    <input type="submit" value="@Common.SendPdfToMail" class="btn btn-block btn-sm btn-light-primary font-weight-bold" />
+                                }
                             }
                             @*<a href="#" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
-                                    @Common.DownloadAsPdf
-                                </a>*@
+            @Common.DownloadAsPdf
+        </a>*@
 
                         </div>
                     </div>

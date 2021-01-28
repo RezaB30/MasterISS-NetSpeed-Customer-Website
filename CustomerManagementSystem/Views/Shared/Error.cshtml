@@ -1,14 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
+    <base href="">
+    <meta charset="utf-8" />
+    <title>@CMS.Localization.Common.HeadTitle</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://netspeed.com.tr" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    @*@Styles.Render("~/bundles/css")*@
+    @Styles.Render("~/Content/assets/css/style.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/custom/prismjs/prismjs.bundle.css")
+    @Styles.Render("~/Content/assets/plugins/global/plugins.bundle.css")
+    <link rel="shortcut icon" href="/Content/assets/media/logos/favicon.ico" />
 </head>
 <body>
-    <div class="error-wrapper">
-        <div class="error-title">@CMS.Localization.Errors.InternalError</div>
-        <div>
-            @CMS.Localization.Errors.InternalErrorDescription
+    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+        <div class="subheader py-2 py-lg-6 subheader-transparent" id="kt_subheader">
+            <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                <div class="d-flex align-items-center flex-wrap mr-1">
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column-fluid">
+            <div class="container">
+                <div class="card text-center">
+                    <div class="card-header h2">
+                        @CMS.Localization.Errors.InternalError
+                    </div>
+                    <div class="card-body h3">
+                        @CMS.Localization.Errors.InternalErrorDescription
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

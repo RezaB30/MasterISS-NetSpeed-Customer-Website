@@ -57,7 +57,7 @@
                     <div class="row">
                         @foreach (var item in Model.Cards.Where(c => !c.HasAutoPayments).ToArray())
                         {
-                            <div class="@Html.Raw(string.Format("col-lg-{0}",Model.AutomaticPayments.Count() < 4 ? (12/Model.Cards.Count()) : 4))">
+                            <div class="@Html.Raw(string.Format("col-lg-{0}",Model.Cards.Where(c => !c.HasAutoPayments).Count() < 4 ? (12/Model.Cards.Where(c => !c.HasAutoPayments).Count()) : 4))">
                                 <div class="option">
                                     <!-- label -->
                                     <span class="option-label">
@@ -142,7 +142,7 @@
                             {
                                 if (item.Card != null)
                                 {
-                                    <div class="@Html.Raw(string.Format("col-lg-{0}",Model.AutomaticPayments.Count() < 4 ? (12/Model.AutomaticPayments.Count()) : 4))">
+                                    <div class="@Html.Raw(string.Format("col-lg-{0}",Model.AutomaticPayments.Where(a=>a.Card != null).Count() < 4 ? (12/Model.AutomaticPayments.Where(a=>a.Card != null).Count()) : 4))">
                                         <div class="option">
                                             <span class="option-label">
                                                 <span class="option-head">

@@ -24,6 +24,15 @@ namespace CustomerManagementSystem.Controllers
         protected override void OnException(ExceptionContext filterContext)
         {
             logger.Error(filterContext.Exception);
+            if (filterContext.ExceptionHandled)
+            {
+                return;
+            }
+            filterContext.Result = new ViewResult
+            {
+                ViewName = "~/Views/Shared/Error.cshtml"
+            };
+            filterContext.ExceptionHandled = true;
         }
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
