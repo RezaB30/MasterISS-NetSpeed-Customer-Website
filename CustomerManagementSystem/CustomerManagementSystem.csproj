@@ -2410,12 +2410,14 @@
     <Content Include="Content\assets\plugins\global\plugins.bundle.css" />
     <Content Include="Content\assets\plugins\global\plugins.bundle.js" />
     <Content Include="Content\header.css" />
+    <Content Include="Content\img\ajax-loading.gif" />
     <Content Include="Content\img\back-icon.svg" />
     <Content Include="Content\img\cancel-btn.svg" />
     <Content Include="Content\img\check.svg" />
     <Content Include="Content\img\confirm-btn.svg" />
     <Content Include="Content\img\crossed.svg" />
     <Content Include="Content\img\remove-file.svg" />
+    <Content Include="Content\img\spinner-loading.gif" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -2475,6 +2477,7 @@
     <Content Include="Scripts\Custom\current-subscription.js" />
     <Content Include="Scripts\Custom\display-message-box.js" />
     <Content Include="Scripts\Custom\get-infrastructure.js" />
+    <Content Include="Scripts\Custom\login-screen-loading.js" />
     <Content Include="Scripts\Custom\resource-displayText.js" />
     <Content Include="Scripts\Custom\support-attachment.js" />
     <Content Include="Scripts\Custom\upload-attachment.js" />

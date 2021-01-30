@@ -38,6 +38,7 @@
                         @Html.ValidationMessageFor(m => m.Password, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
+                @*<div class="g-recaptcha" data-sitekey="6LemlQwaAAAAAFqlAuPzuuBF-gF0HrNBeelSS2xJ"></div>*@
                 <div class="text-center mt-5">
                     <button type="submit" class="btn btn-block btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">@Common.Login</button>
                 </div>
@@ -48,6 +49,7 @@
 @section scripts{
     <script>
         function LoginResult(data, status) {
+            DisableLoadingScreen();
             if (data.responseJSON) {
                 var result = data.responseJSON;
                 if (result.valid) {

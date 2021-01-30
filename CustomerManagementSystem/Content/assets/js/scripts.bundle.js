@@ -10801,29 +10801,70 @@ var KTLayoutSearch = function () {
         _hideDropdown();
 
         setTimeout(function () {
-            $.ajax({
-                url: '/' + navigator.language + '/Home/QuickSearch',
-                data: {
-                    query: _query
-                },
-                dataType: 'html',
-                success: function (res) {
-                    _hasResult = true;
-                    _hideProgress();
-                    KTUtil.addClass(_target, _resultClass);
-                    KTUtil.setHTML(_resultWrapper, res);
-                    _showDropdown();
-                    KTUtil.scrollUpdate(_resultWrapper);
-                },
-                error: function (res) {
-                    _hasResult = false;
-                    _hideProgress();
-                    KTUtil.addClass(_target, _resultClass);
-                    KTUtil.setHTML(_resultWrapper, '<span class="font-weight-bold text-muted">???</div>');
-                    _showDropdown();
-                    KTUtil.scrollUpdate(_resultWrapper);
+            var contains = "";
+            var count = 0;
+            $('div#kt_header_menu > ul.menu-nav > li.menu-item').each(function () {
+                count++;
+                var searchQuery = $(this).find('span').text();
+                if (searchQuery.toLowerCase().includes(_query)) {
+                    var url = $(this).find('a').attr("href");
+                    if (url) {
+                        contains += "<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
+                            "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
+                            "<img src='/Content/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
+                            "</div>" +
+                            "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
+                            "<a href='" + url + "' class='font-weight-bold text-dark text-hover-primary'>" + searchQuery + "</a>" +
+                            "</div>" + "</div>";
+                    }
                 }
             });
+            if (count == 0) {
+                $('div#kt_quick_actions').find('div.col-6').each(function () {
+                    var url = $(this).find('a').attr("href");
+                    var searchQuery = $(this).find('span').last().text();
+                    if (searchQuery.toLowerCase().includes(_query)) {
+                        if (url) {
+                            contains += "<div class='d-flex align-items-center flex-grow-1 mb-2'>" +
+                                "<div class='symbol symbol-30 bg-transparent flex-shrink-0'>" +
+                                "<img src='/Content/assets/media/svg/icons/Navigation/Arrow-right.svg' alt='' >" +
+                                "</div>" +
+                                "<div class='d-flex flex-column ml-3 mt-2 mb-2'>" +
+                                "<a href='" + url + "' class='font-weight-bold text-dark text-hover-primary'>" + searchQuery + "</a>" +
+                                "</div>" + "</div>";
+                        }
+                    }
+                });
+            }
+            _hasResult = true;
+            _hideProgress();
+            KTUtil.addClass(_target, _resultClass);
+            KTUtil.setHTML(_resultWrapper, contains);
+            _showDropdown();
+            KTUtil.scrollUpdate(_resultWrapper);
+            //$.ajax({
+            //    url: '/' + navigator.language + '/Home/QuickSearch',
+            //    data: {
+            //        query: _query
+            //    },
+            //    dataType: 'html',
+            //    success: function (res) {
+            //        _hasResult = true;
+            //        _hideProgress();
+            //        KTUtil.addClass(_target, _resultClass);
+            //        KTUtil.setHTML(_resultWrapper, res);
+            //        _showDropdown();
+            //        KTUtil.scrollUpdate(_resultWrapper);
+            //    },
+            //    error: function (res) {
+            //        _hasResult = false;
+            //        _hideProgress();
+            //        KTUtil.addClass(_target, _resultClass);
+            //        KTUtil.setHTML(_resultWrapper, '<span class="font-weight-bold text-muted">???</div>');
+            //        _showDropdown();
+            //        KTUtil.scrollUpdate(_resultWrapper);
+            //    }
+            //});
         }, 1000);
     }
 

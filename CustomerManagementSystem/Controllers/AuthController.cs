@@ -30,6 +30,10 @@ namespace CustomerManagementSystem.Controllers
             {
                 return View(login);
             }
+            if (User.GiveUserId() != null)
+            {
+                SignoutUser(Request.GetOwinContext());
+            }
             var result = new ServiceUtilities().AuthenticationWithPassword(login.CustomerCode, login.Password);
             if (result.ResponseMessage.ErrorCode != 0)
             {
@@ -51,6 +55,10 @@ namespace CustomerManagementSystem.Controllers
             ModelState.Remove("Password");
             if (ModelState.IsValid)
             {
+                if (User.GiveUserId() != null)
+                {
+                    SignoutUser(Request.GetOwinContext());
+                }
                 if (login.CustomerCode.StartsWith("0"))
                     login.CustomerCode = login.CustomerCode.TrimStart('0');
 
@@ -80,7 +88,7 @@ namespace CustomerManagementSystem.Controllers
             }
             var modelError = ModelState.Values.Select(m => m.Errors.Where(s => string.IsNullOrEmpty(s.ErrorMessage) == false).Select(s => s.ErrorMessage).FirstOrDefault()).FirstOrDefault();
             return Json(new { valid = modelError, }, JsonRequestBehavior.AllowGet);
-        }       
+        }
         [HttpPost]
         public ActionResult CustomerLogin([Bind(Include = "CustomerCode,SMSPassword")] LoginViewModel login)
         {

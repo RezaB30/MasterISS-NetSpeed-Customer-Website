@@ -29,7 +29,8 @@ namespace CustomerManagementSystem
                 "~/Content/assets/plugins/global/plugins.bundle.js",
                 "~/Content/assets/plugins/custom/prismjs/prismjs.bundle.js",
                 "~/Content/assets/js/scripts.bundle.js",
-                "~/Scripts/Custom/resource-displayText.js"
+                "~/Scripts/Custom/resource-displayText.js",
+                "~/Scripts/Custom/login-screen-loading.js"
                 //"~/assets/js/pages/custom/login/login-general.js"
                 ));
             bundles.Add(new StyleBundle("~/bundles/logincss").Include(

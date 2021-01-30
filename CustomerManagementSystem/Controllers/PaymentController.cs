@@ -312,7 +312,7 @@ namespace CustomerManagementSystem.Controllers
                 {
                     return RedirectToAction("AutomaticPayment");
                 }
-                generalLogger.Warn(addCard.ResponseMessage.ErrorMessage, "Error calling 'SaveCard' from MobilExpress client");
+                generalLogger.Error($"Subscription ID : {User.GiveUserId()} . | {addCard.ResponseMessage.ErrorMessage}.Error calling 'SaveCard' from MobilExpress client");
                 TempData["generic-error"] = CMS.Localization.Errors.GeneralError;
                 return View(viewName: "CreditCardRegister", model: card);
             }
@@ -344,6 +344,7 @@ namespace CustomerManagementSystem.Controllers
             });
             if (removeCardSms.ResponseMessage.ErrorCode != 0)
             {
+                generalLogger.Error($"Subscription ID : {User.GiveUserId()}. | Message : {removeCardSms.ResponseMessage.ErrorMessage}.Error calling 'SaveCard' from MobilExpress client");
                 return RedirectToAction("BillsAndPayments");
             }
             TempData["smsCode"] = removeCardSms.SMSCode;

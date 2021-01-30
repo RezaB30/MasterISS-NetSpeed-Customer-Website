@@ -11,16 +11,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="shortcut icon" href="/Content/assets/media/logos/favicon.ico" />
+    @*<script src="https://www.google.com/recaptcha/api.js" async defer></script>*@
     @Styles.Render("~/bundles/logincss")
+    <style>
+        .loading-screen {
+            position: absolute;
+            width: 100%;
+            display: block;
+            height: 100%;
+            z-index: 1;
+            background-color: #3b0658a8;
+            margin: auto;
+        }
+
+            .loading-screen > img {
+                top: 50%;
+                position: absolute;
+                left: 50%;
+                display: inline-block;
+                transform: translate(-50%, -50%);
+            }
+    </style>
 </head>
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+    <div class="d-none loading-screen">
+        <img src="/Content/img/spinner-loading.gif" />
+    </div>
     <div class="login login-6 login-signin-on login-signin-on d-flex flex-column-fluid" id="kt_login">
         <div class="d-flex flex-column flex-lg-row flex-row-fluid " style="background-color: #3b0658;">
             <div class="d-flex w-100 flex-center p-15 overflow-hidden">
                 <div class="login-wrapper">
                     @RenderBody()
-                </div>                
+                </div>
             </div>
         </div>
     </div>

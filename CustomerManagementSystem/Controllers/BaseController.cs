@@ -20,10 +20,13 @@ namespace CustomerManagementSystem.Controllers
         // GET: Base
         private static Logger logger = LogManager.GetLogger("main");
         private static Logger requestLogger = LogManager.GetLogger("requestLogger");
+        private static Logger exceptionLogger = LogManager.GetLogger("exceptions");
 
         protected override void OnException(ExceptionContext filterContext)
         {
-            logger.Error(filterContext.Exception);
+            exceptionLogger.Error(filterContext.Exception);
+            var routeData = string.Join("|", filterContext.RouteData.Values.Select(r => $"{r.Key} : {r.Value}"));
+            exceptionLogger.Error($"RouteData > {routeData}");
             if (filterContext.ExceptionHandled)
             {
                 return;
