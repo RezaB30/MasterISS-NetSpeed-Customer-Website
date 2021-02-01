@@ -237,7 +237,6 @@ namespace CustomerManagementSystem.Controllers
         }
         internal static void SignInUser(string ValidDisplayName, string ID, string SubscriberNo, IEnumerable<string> relatedCustomers, IOwinContext context)
         {
-            Session.Remove("HasCustomCaptcha");
             var subscriptionId = Convert.ToInt64(ID);
             var customer = new ServiceUtilities().GetCustomerInfo(subscriptionId).GetCustomerInfoResponse;
             var isNotActive = customer == null || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.PreRegisterd || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Registered || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Reserved)));
