@@ -1809,6 +1809,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doğrulama Kodu.
+        /// </summary>
+        public static string ValidationCode {
+            get {
+                return ResourceManager.GetString("ValidationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bekliyor.
         /// </summary>
         public static string Waiting {

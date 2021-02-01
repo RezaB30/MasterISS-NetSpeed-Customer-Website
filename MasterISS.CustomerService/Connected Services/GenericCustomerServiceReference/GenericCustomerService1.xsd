@@ -266,6 +266,9 @@
       <xs:element minOccurs="0" name="FileMaxSize" type="xs:long" />
       <xs:element minOccurs="0" name="HasAnyTelekomDomains" type="xs:boolean" />
       <xs:element minOccurs="0" name="MobilExpressIsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecaptchaClientKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecaptchaServerKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseGoogleRecaptcha" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GenericAppSettingsResponse" nillable="true" type="tns:GenericAppSettingsResponse" />

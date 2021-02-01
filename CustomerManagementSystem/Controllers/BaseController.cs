@@ -27,15 +27,15 @@ namespace CustomerManagementSystem.Controllers
             exceptionLogger.Error(filterContext.Exception);
             var routeData = string.Join("|", filterContext.RouteData.Values.Select(r => $"{r.Key} : {r.Value}"));
             exceptionLogger.Error($"RouteData > {routeData}");
-            if (filterContext.ExceptionHandled)
-            {
-                return;
-            }
-            filterContext.Result = new ViewResult
-            {
-                ViewName = "~/Views/Shared/Error.cshtml"
-            };
-            filterContext.ExceptionHandled = true;
+            //if (filterContext.ExceptionHandled)
+            //{
+            //    return;
+            //}
+            //filterContext.Result = new ViewResult
+            //{
+            //    ViewName = "~/Views/Shared/Error.cshtml"
+            //};
+            //filterContext.ExceptionHandled = true;
         }
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
@@ -105,26 +105,6 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.WebSite = Settings.Default.WebSite;
             ViewBag.CompanyTitle = Settings.Default.CompanyTitle;
             return base.BeginExecuteCore(callback, state);
-        }
-        private bool WebServiceState()
-        {
-            try
-            {
-                MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient client = new MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient();
-                var webServiceRequest = (HttpWebRequest)WebRequest.Create(client.Endpoint.ListenUri);
-                var response = (HttpWebResponse)webServiceRequest.GetResponse();
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    return true;
-                }
-                return false;
-
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex, $"Error while connection web service");
-                return false;
-            }
         }
         [AllowAnonymous]
         [HttpGet, ActionName("Language")]

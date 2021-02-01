@@ -19,12 +19,45 @@ namespace CustomerManagementSystem.Controllers
         // GET: Account
         public ActionResult Login()
         {
+            Session.Remove("HasCustomCaptcha");
+            var googleRecaptcha = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            ViewBag.clientCaptchaKey = googleRecaptcha.GenericAppSettings == null ? "" : googleRecaptcha.GenericAppSettings.RecaptchaClientKey;
+            if (googleRecaptcha.GenericAppSettings != null && !googleRecaptcha.GenericAppSettings.UseGoogleRecaptcha)
+            {
+                Session["HasCustomCaptcha"] = true;
+            }
             return View();
         }
         [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Login(LoginViewModel login)
         {
+            var invalidCaptcha = Session["HasCustomCaptcha"];
+            if (invalidCaptcha != null)
+            {
+                var customCaptcha = Request.Form["customCaptcha"];
+                var loginCaptcha = Session["LoginCaptcha"] as string;
+                if (customCaptcha != loginCaptcha)
+                {
+                    return Json(new { invalidCaptcha = true, valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                var googleRecaptcha = new ServiceUtilities().CustomerWebsiteGenericSettings();
+                var recaptchaServerkey = googleRecaptcha.GenericAppSettings == null ? "" : googleRecaptcha.GenericAppSettings.RecaptchaServerKey;
+                var captchaResponseKey = Request.Form["g-Recaptcha-Response"];
+                var captcha = RezaB.Web.Captcha.GoogleRecaptchaValidator.Check(recaptchaServerkey, captchaResponseKey);
+                // captcha control end
+                if (captcha == RezaB.Web.Captcha.GoogleRecaptchaResultType.Fail)
+                {
+                    return Json(new { valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+                if (captcha == RezaB.Web.Captcha.GoogleRecaptchaResultType.NotWorking)
+                {
+                    return Json(new { invalidCaptcha = true, valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+            }
             ModelState.Remove("SMSPassword");
             if (!ModelState.IsValid)
             {
@@ -37,20 +70,63 @@ namespace CustomerManagementSystem.Controllers
             var result = new ServiceUtilities().AuthenticationWithPassword(login.CustomerCode, login.Password);
             if (result.ResponseMessage.ErrorCode != 0)
             {
+                if (invalidCaptcha != null)
+                {
+                    return Json(new { invalidCaptcha = true, valid = result.ResponseMessage.ErrorMessage }, JsonRequestBehavior.AllowGet);
+                }
                 return Json(new { valid = result.ResponseMessage.ErrorMessage }, JsonRequestBehavior.AllowGet);
             }
             // sign in
+            Session.Remove("HasCustomCaptcha");
+            Utilities.CacheManager.RemoveCachekey(login.CustomerCode);
             SignInUser(result.AuthenticationWithPasswordResult.ValidDisplayName, result.AuthenticationWithPasswordResult.ID.ToString(), result.AuthenticationWithPasswordResult.SubscriberNo, result.AuthenticationWithPasswordResult.RelatedCustomers, Request.GetOwinContext());
-            return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+            if (invalidCaptcha == null)
+            {
+                return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { valid = "", invalidCaptcha = true }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult DirectLogin()
         {
+            var googleRecaptcha = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            ViewBag.clientCaptchaKey = googleRecaptcha.GenericAppSettings == null ? "" : googleRecaptcha.GenericAppSettings.RecaptchaClientKey;
+            if (googleRecaptcha.GenericAppSettings != null && !googleRecaptcha.GenericAppSettings.UseGoogleRecaptcha)
+            {
+                Session["HasCustomCaptcha"] = true;
+            }
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult DirectLogin([Bind(Include = "CustomerCode")] LoginViewModel login)
         {
+            Session.Remove("HasCustomCaptcha");
+            var invalidCaptcha = Session["HasCustomCaptcha"];
+            if (invalidCaptcha != null)
+            {
+                var customCaptcha = Request.Form["customCaptcha"];
+                var loginCaptcha = Session["LoginCaptcha"] as string;
+                if (customCaptcha != loginCaptcha)
+                {
+                    return Json(new { invalidCaptcha = true, valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            else
+            {
+                var googleRecaptcha = new ServiceUtilities().CustomerWebsiteGenericSettings();
+                var recaptchaServerkey = googleRecaptcha.GenericAppSettings == null ? "" : googleRecaptcha.GenericAppSettings.RecaptchaServerKey;
+                var captchaResponseKey = Request.Form["g-Recaptcha-Response"];
+                var captcha = RezaB.Web.Captcha.GoogleRecaptchaValidator.Check(recaptchaServerkey, captchaResponseKey);
+                // captcha control end
+                if (captcha == RezaB.Web.Captcha.GoogleRecaptchaResultType.Fail)
+                {
+                    return Json(new { valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+                if (captcha == RezaB.Web.Captcha.GoogleRecaptchaResultType.NotWorking)
+                {
+                    return Json(new { invalidCaptcha = true, valid = CMS.Localization.Errors.InvalidCaptcha }, JsonRequestBehavior.AllowGet);
+                }
+            }
             ModelState.Remove("SMSPassword");
             ModelState.Remove("Password");
             if (ModelState.IsValid)
@@ -76,7 +152,11 @@ namespace CustomerManagementSystem.Controllers
                 });
                 if (result.ResponseMessage.ErrorCode == 0)
                 {
-                    return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+                    if (invalidCaptcha == null)
+                    {
+                        return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+                    }
+                    return Json(new { valid = "", invalidCaptcha = true }, JsonRequestBehavior.AllowGet);
                     //return View("SMSConfirm", login);
                 }
                 else
@@ -92,6 +172,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult CustomerLogin([Bind(Include = "CustomerCode,SMSPassword")] LoginViewModel login)
         {
+            var invalidCaptcha = Session["HasCustomCaptcha"];
             ModelState.Remove("Password");
             if (ModelState.IsValid)
             {
@@ -114,18 +195,32 @@ namespace CustomerManagementSystem.Controllers
                 if (result.ResponseMessage.ErrorCode == 0)
                 {
                     // sign in
+                    Session.Remove("HasCustomCaptcha");
                     SignInUser(result.AuthenticationSMSConfirmResponse.ValidDisplayName, result.AuthenticationSMSConfirmResponse.ID.ToString(), result.AuthenticationSMSConfirmResponse.SubscriberNo, result.AuthenticationSMSConfirmResponse.RelatedCustomers, Request.GetOwinContext());
-                    return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
-                    //return Redirect(GetRedirectUrl(Request.QueryString["ReturnUrl"]));
+                    if (invalidCaptcha == null)
+                    {
+                        return Json(new { valid = "" }, JsonRequestBehavior.AllowGet);
+                        //return Redirect(GetRedirectUrl(Request.QueryString["ReturnUrl"]));
+                    }
+                    return Json(new { valid = "", invalidCaptcha = true }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
                     return Json(new { valid = result.ResponseMessage.ErrorMessage }, JsonRequestBehavior.AllowGet);
-                    //ModelState.AddModelError("CustomerCode", result.ResponseMessage.ErrorMessage);
                 }
-
             }
             return Json(new { valid = CMS.Localization.Errors.SMSPasswordWrong }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult GetCustomCaptcha()
+        {
+            Session["HasCustomCaptcha"] = true;
+            var img = $"<div class='form-group py-2 m-0' style='padding-top:0 !important;padding-bottom:0 !important;'><img src='{Url.Action("LoginCaptcha", "Captcha", new { id = DateTime.Now.Ticks })}' class='custom-captcha form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg' /></div>";
+            var input = $"<div class='form-group py-2  m-0'><input autocomplete='off' type='text' name='customCaptcha' id='customCaptcha' " +
+                $"class='form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg' placeholder='{CMS.Localization.Common.ValidationCode}' /></div>";
+            var content = img + input;
+
+            return Content(content);
         }
         public ActionResult Logout()
         {
@@ -142,6 +237,7 @@ namespace CustomerManagementSystem.Controllers
         }
         internal static void SignInUser(string ValidDisplayName, string ID, string SubscriberNo, IEnumerable<string> relatedCustomers, IOwinContext context)
         {
+            Session.Remove("HasCustomCaptcha");
             var subscriptionId = Convert.ToInt64(ID);
             var customer = new ServiceUtilities().GetCustomerInfo(subscriptionId).GetCustomerInfoResponse;
             var isNotActive = customer == null || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.PreRegisterd || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Registered || (customer.CustomerState == (int)CMS.Localization.Enums.CustomerState.Reserved)));

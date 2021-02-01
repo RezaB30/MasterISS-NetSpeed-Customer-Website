@@ -90,8 +90,8 @@
     <Reference Include="RezaB.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RezaB.Data.1.0.1\lib\net452\RezaB.Data.dll</HintPath>
     </Reference>
-    <Reference Include="RezaB.Web, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RezaB.Web.1.1.1\lib\net452\RezaB.Web.dll</HintPath>
+    <Reference Include="RezaB.Web, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Web.1.1.5\lib\net472\RezaB.Web.dll</HintPath>
     </Reference>
     <Reference Include="RezaB.Web.Helpers, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RezaB.Web.Helpers.1.0.3\lib\net452\RezaB.Web.Helpers.dll</HintPath>
@@ -179,6 +179,7 @@
     <Compile Include="Auth\Identity.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CaptchaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfrastructureController.cs" />
     <Compile Include="Controllers\InitializeController.cs" />
@@ -194,6 +195,7 @@
     </Compile>
     <Compile Include="Helper\MyExtensions.cs" />
     <Compile Include="LanguageLinkHelper.cs" />
+    <Compile Include="Utilities\CacheManager.cs" />
     <Compile Include="Utilities\DomainCache.cs" />
     <Compile Include="Utilities\InternalUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2578,6 +2580,7 @@
     <Folder Include="Scripts\assets\plugins\custom\prismjs\" />
     <Folder Include="Scripts\assets\plugins\global\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Captcha\" />
     <Folder Include="Views\Infrastructure\" />
     <Folder Include="Views\Initialize\" />
   </ItemGroup>

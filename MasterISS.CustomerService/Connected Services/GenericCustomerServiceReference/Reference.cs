@@ -8037,6 +8037,15 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool MobilExpressIsActiveField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecaptchaClientKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecaptchaServerKeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseGoogleRecaptchaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -8095,6 +8104,45 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((this.MobilExpressIsActiveField.Equals(value) != true)) {
                     this.MobilExpressIsActiveField = value;
                     this.RaisePropertyChanged("MobilExpressIsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecaptchaClientKey {
+            get {
+                return this.RecaptchaClientKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecaptchaClientKeyField, value) != true)) {
+                    this.RecaptchaClientKeyField = value;
+                    this.RaisePropertyChanged("RecaptchaClientKey");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecaptchaServerKey {
+            get {
+                return this.RecaptchaServerKeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecaptchaServerKeyField, value) != true)) {
+                    this.RecaptchaServerKeyField = value;
+                    this.RaisePropertyChanged("RecaptchaServerKey");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseGoogleRecaptcha {
+            get {
+                return this.UseGoogleRecaptchaField;
+            }
+            set {
+                if ((this.UseGoogleRecaptchaField.Equals(value) != true)) {
+                    this.UseGoogleRecaptchaField = value;
+                    this.RaisePropertyChanged("UseGoogleRecaptcha");
                 }
             }
         }

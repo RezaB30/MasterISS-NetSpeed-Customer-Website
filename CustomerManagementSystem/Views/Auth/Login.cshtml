@@ -38,7 +38,22 @@
                         @Html.ValidationMessageFor(m => m.Password, null, new { @class = "fv-help-block" })
                     </div>
                 </div>
-                @*<div class="g-recaptcha" data-sitekey="6LemlQwaAAAAAFqlAuPzuuBF-gF0HrNBeelSS2xJ"></div>*@
+
+                if (Session["HasCustomCaptcha"] != null)
+                {
+                    <div class="form-group py-2 m-0" style="padding-top:0 !important;padding-bottom:0 !important;">
+                        <img src="@Url.Action("LoginCaptcha", "Captcha", new { id = DateTime.Now.Ticks })}" class="custom-captcha form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg" />
+                    </div>
+                    <div class="form-group py-2  m-0">
+                        <input autocomplete="off" type="text" name="customCaptcha" id="customCaptcha" class="form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg" placeholder="@CMS.Localization.Common.ValidationCode" />
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group py-2  m-0">
+                        <div class="g-recaptcha" data-sitekey="@ViewBag.clientCaptchaKey" data-error-callback="RecaptchaError"></div>
+                    </div>
+                }
                 <div class="text-center mt-5">
                     <button type="submit" class="btn btn-block btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">@Common.Login</button>
                 </div>
@@ -48,11 +63,19 @@
 </div>
 @section scripts{
     <script>
+        function RecaptchaError() {
+            GetCustomCaptcha('@Url.Action("GetCustomCaptcha","Auth")');
+        }
         function LoginResult(data, status) {
             DisableLoadingScreen();
             if (data.responseJSON) {
                 var result = data.responseJSON;
                 if (result.valid) {
+                    if (result.invalidCaptcha) {
+                        GetCustomCaptcha('@Url.Action("GetCustomCaptcha","Auth")');
+                    } else {
+                        grecaptcha.reset();
+                    }
                     swal.fire({
                         icon: 'error',
                         title: '',

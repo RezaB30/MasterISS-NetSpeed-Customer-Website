@@ -156,6 +156,9 @@
   <data name="InternalErrorDescription" xml:space="preserve">
     <value>İşleminiz gerçekleştirilirken bir hata oluştu.</value>
   </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Doğrulama kodu hatalı. Lütfen tekrar deneyiniz.</value>
+  </data>
   <data name="InvalidReferenceNo" xml:space="preserve">
     <value>Lütfen geçerli bir referans numarası giriniz.</value>
   </data>

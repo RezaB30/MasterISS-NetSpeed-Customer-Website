@@ -699,6 +699,9 @@
   <data name="ValidationAndSave" xml:space="preserve">
     <value>Validation and Save</value>
   </data>
+  <data name="ValidationCode" xml:space="preserve">
+    <value>Validation Code</value>
+  </data>
   <data name="Waiting" xml:space="preserve">
     <value>Waiting</value>
   </data>

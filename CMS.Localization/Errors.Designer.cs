@@ -178,6 +178,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doğrulama kodu hatalı. Lütfen tekrar deneyiniz..
+        /// </summary>
+        public static string InvalidCaptcha {
+            get {
+                return ResourceManager.GetString("InvalidCaptcha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lütfen geçerli bir referans numarası giriniz..
         /// </summary>
         public static string InvalidReferenceNo {

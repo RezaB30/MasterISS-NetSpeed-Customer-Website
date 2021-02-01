@@ -701,6 +701,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="ValidationAndSave" xml:space="preserve">
     <value>Doğrulama ve Kaydetme</value>
   </data>
+  <data name="ValidationCode" xml:space="preserve">
+    <value>Doğrulama Kodu</value>
+  </data>
   <data name="Waiting" xml:space="preserve">
     <value>Bekliyor</value>
   </data>

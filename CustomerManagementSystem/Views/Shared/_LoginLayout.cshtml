@@ -11,9 +11,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="shortcut icon" href="/Content/assets/media/logos/favicon.ico" />
-    @*<script src="https://www.google.com/recaptcha/api.js" async defer></script>*@
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     @Styles.Render("~/bundles/logincss")
     <style>
+        .custom-captcha {
+            height: 3em !important;
+            padding: 0 !important;
+        }
+
+        @@media screen and (max-height: 575px) {
+            #rc-imageselect, .g-recaptcha {
+                transform: scale(0.77);
+                -webkit-transform: scale(0.77);
+                transform-origin: 0 0;
+                -webkit-transform-origin: 0 0;
+            }
+        }
+
+        #rc-imageselect {
+            transform: scale(0.77);
+            -webkit-transform: scale(0.77);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+        }
+
+        .g-recaptcha {
+            transform: scale(0.77);
+            -webkit-transform: scale(0.77);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+        }
+
+            .g-recaptcha > div {
+                width: 128% !important;
+            }
+    </style>
+    <style>
+
         .loading-screen {
             position: absolute;
             width: 100%;
@@ -52,6 +86,11 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/loginjs")
+    <script>
+        $(document).ready(function () {
+            $('iframe').find('body').find("#rc-anchor-container").css("width", "100% !important");
+        })
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 <!--end::Body-->

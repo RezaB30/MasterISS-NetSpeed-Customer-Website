@@ -156,6 +156,9 @@
   <data name="InternalErrorDescription" xml:space="preserve">
     <value>An error occurred while processing your transaction</value>
   </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Invalid validation code. Please try again.</value>
+  </data>
   <data name="InvalidReferenceNo" xml:space="preserve">
     <value>Please enter valid reference number.</value>
   </data>
