@@ -660,7 +660,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceEArchivePDFMailResponse EArchivePDFMail(long? billId , long? subscriptionId)
+        public CustomerServiceEArchivePDFMailResponse EArchivePDFMail(long? billId, long? subscriptionId)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.EArchivePDFMail(new CustomerServiceEArchivePDFRequest()
@@ -673,6 +673,41 @@ namespace CustomerManagementSystem
                 {
                     BillId = billId,
                     SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
+        public CustomerServiceChangeClientInfoConfirmResponse ChangeClientInfoConfirm(long? subscriptionId, string phoneNo, string email)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.ChangeClientInfoConfirm(new CustomerServiceChangeClientInfoConfirmRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                ChangeClientInfoConfirmRequest = new ChangeClientInfoConfirmRequest()
+                {
+                    ContactPhoneNo = phoneNo,
+                    Email = email,
+                    SubscriptionId = subscriptionId
+                }
+            });
+            return result;
+        }
+        public CustomerServiceChangeClientInfoResponse ChangeClientInfoSMSCheck(string phoneNo, long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.ChangeClientInfoSMSCheck(new CustomerServiceChangeClientInfoRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                ChangeClientInfoRequest = new ChangeClientInfoRequest()
+                {
+                    SubscriptionId = subscriptionId,
+                    ContactPhoneNo = phoneNo
                 }
             });
             return result;

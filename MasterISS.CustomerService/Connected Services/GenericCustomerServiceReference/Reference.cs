@@ -80,6 +80,10 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAuthenticationWithPasswordRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfSaveClientAttachmentRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSaveClientAttachmentRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientInfoRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServicePaymentTypeListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaPackagesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsRequest))]
@@ -1179,6 +1183,68 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((object.ReferenceEquals(this.SaveClientAttachmentParametersField, value) != true)) {
                     this.SaveClientAttachmentParametersField = value;
                     this.RaisePropertyChanged("SaveClientAttachmentParameters");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfChangeClientInfoRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest))]
+    public partial class BaseRequestOfChangeClientInfoRequestSHA1CuT410mT : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceChangeClientInfoRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceChangeClientInfoRequest : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientInfoRequestSHA1CuT410mT {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoRequest ChangeClientInfoRequestField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoRequest ChangeClientInfoRequest {
+            get {
+                return this.ChangeClientInfoRequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeClientInfoRequestField, value) != true)) {
+                    this.ChangeClientInfoRequestField = value;
+                    this.RaisePropertyChanged("ChangeClientInfoRequest");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest))]
+    public partial class BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceChangeClientInfoConfirmRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceChangeClientInfoConfirmRequest : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoConfirmRequest ChangeClientInfoConfirmRequestField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoConfirmRequest ChangeClientInfoConfirmRequest {
+            get {
+                return this.ChangeClientInfoConfirmRequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeClientInfoConfirmRequestField, value) != true)) {
+                    this.ChangeClientInfoConfirmRequestField = value;
+                    this.RaisePropertyChanged("ChangeClientInfoConfirmRequest");
                 }
             }
         }
@@ -3664,6 +3730,144 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeClientInfoRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class ChangeClientInfoRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContactPhoneNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> SubscriptionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContactPhoneNo {
+            get {
+                return this.ContactPhoneNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactPhoneNoField, value) != true)) {
+                    this.ContactPhoneNoField = value;
+                    this.RaisePropertyChanged("ContactPhoneNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> SubscriptionId {
+            get {
+                return this.SubscriptionIdField;
+            }
+            set {
+                if ((this.SubscriptionIdField.Equals(value) != true)) {
+                    this.SubscriptionIdField = value;
+                    this.RaisePropertyChanged("SubscriptionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeClientInfoConfirmRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class ChangeClientInfoConfirmRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContactPhoneNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> SubscriptionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContactPhoneNo {
+            get {
+                return this.ContactPhoneNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactPhoneNoField, value) != true)) {
+                    this.ContactPhoneNoField = value;
+                    this.RaisePropertyChanged("ContactPhoneNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> SubscriptionId {
+            get {
+                return this.SubscriptionIdField;
+            }
+            set {
+                if ((this.SubscriptionIdField.Equals(value) != true)) {
+                    this.SubscriptionIdField = value;
+                    this.RaisePropertyChanged("SubscriptionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfSHA1o_Pr6u_PMh", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfGetCustomerBillInfoSHA1m7dItXwX))]
@@ -3697,6 +3901,7 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSaveClientAttachmentResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse))]
@@ -3753,6 +3958,8 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfGetClientPDFFormResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetClientPDFFormResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfChangeClientInfoResponseSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfGetCustomerInfoResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerInfoResponse))]
     public partial class BaseResponseOfSHA1o_Pr6u_PMh : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4369,6 +4576,7 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSaveClientAttachmentResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse))]
@@ -4423,6 +4631,29 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((this.SaveClientAttachmentResultField.Equals(value) != true)) {
                     this.SaveClientAttachmentResultField = value;
                     this.RaisePropertyChanged("SaveClientAttachmentResult");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceChangeClientInfoConfirmResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceChangeClientInfoConfirmResponse : MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfNullableOfbooleanSHA1qBRhzOKh {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> ChangeClientInfoConfirmResultField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> ChangeClientInfoConfirmResult {
+            get {
+                return this.ChangeClientInfoConfirmResultField;
+            }
+            set {
+                if ((this.ChangeClientInfoConfirmResultField.Equals(value) != true)) {
+                    this.ChangeClientInfoConfirmResultField = value;
+                    this.RaisePropertyChanged("ChangeClientInfoConfirmResult");
                 }
             }
         }
@@ -5403,6 +5634,37 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((object.ReferenceEquals(this.GetClientPDFFormResultField, value) != true)) {
                     this.GetClientPDFFormResultField = value;
                     this.RaisePropertyChanged("GetClientPDFFormResult");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfChangeClientInfoResponseSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse))]
+    public partial class BaseResponseOfChangeClientInfoResponseSHA1KVWl_PpN3 : MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceChangeClientInfoResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceChangeClientInfoResponse : MasterISS.CustomerService.GenericCustomerServiceReference.BaseResponseOfChangeClientInfoResponseSHA1KVWl_PpN3 {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoResponse ChangeClientInfoResponseField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientInfoResponse ChangeClientInfoResponse {
+            get {
+                return this.ChangeClientInfoResponseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeClientInfoResponseField, value) != true)) {
+                    this.ChangeClientInfoResponseField = value;
+                    this.RaisePropertyChanged("ChangeClientInfoResponse");
                 }
             }
         }
@@ -9848,6 +10110,51 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeClientInfoResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class ChangeClientInfoResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SMSCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SMSCode {
+            get {
+                return this.SMSCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SMSCodeField, value) != true)) {
+                    this.SMSCodeField = value;
+                    this.RaisePropertyChanged("SMSCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GenericCustomerServiceReference.IGenericCustomerService")]
     public interface IGenericCustomerService {
@@ -10225,6 +10532,18 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/EArchivePDFMail", ReplyAction="http://tempuri.org/IGenericCustomerService/EArchivePDFMailResponse")]
         System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFMailResponse> EArchivePDFMailAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheck", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheckResponse")]
+        MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse ChangeClientInfoSMSCheck(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheck", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheckResponse")]
+        System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse> ChangeClientInfoSMSCheckAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirmResponse")]
+        MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse ChangeClientInfoConfirm(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirmResponse")]
+        System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientInfoConfirmAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10740,6 +11059,22 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         
         public System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFMailResponse> EArchivePDFMailAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFRequest request) {
             return base.Channel.EArchivePDFMailAsync(request);
+        }
+        
+        public MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse ChangeClientInfoSMSCheck(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest request) {
+            return base.Channel.ChangeClientInfoSMSCheck(request);
+        }
+        
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse> ChangeClientInfoSMSCheckAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest request) {
+            return base.Channel.ChangeClientInfoSMSCheckAsync(request);
+        }
+        
+        public MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse ChangeClientInfoConfirm(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request) {
+            return base.Channel.ChangeClientInfoConfirm(request);
+        }
+        
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientInfoConfirmAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request) {
+            return base.Channel.ChangeClientInfoConfirmAsync(request);
         }
     }
 }

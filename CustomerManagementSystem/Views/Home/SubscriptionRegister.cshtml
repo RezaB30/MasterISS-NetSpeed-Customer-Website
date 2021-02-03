@@ -53,8 +53,12 @@
     @Scripts.Render("~/Scripts/Custom/get-infrastructure.js")
     @Scripts.Render("~/Content/assets/js/pages/features/miscellaneous/sweetalert2.js")
     @Scripts.Render("~/Scripts/Custom/display-message-box.js")
+    @Scripts.Render("~/Scripts/Custom/force-numeric-input.js")
 
-    <script>
+    <script>        
+        $("#SetupAddress_Floor").ForceNumericOnly();
+        $('#SetupAddress_PostalCode').ForceNumericOnly();
+
         $(document).ready(function () {
             if ($('#SetupAddress_ApartmentID').val()) {
                 $('#SetupAddress_ApartmentID').trigger("change");

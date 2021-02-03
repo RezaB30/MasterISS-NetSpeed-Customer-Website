@@ -255,7 +255,8 @@ namespace CustomerManagementSystem.Controllers
                 });
                 if (addCardSms.ResponseMessage.ErrorCode != 0)
                 {
-                    return RedirectToAction("BillsAndPayments");
+                    //error message
+                    return RedirectToAction("AutomaticPayment");
                 }
                 TempData["smsCode"] = addCardSms.SMSCode;
                 return View(viewName: "AddCardSMSCheck", model: card);
@@ -528,7 +529,7 @@ namespace CustomerManagementSystem.Controllers
                 if (dbBills.ResponseMessage.ErrorCode != 0)
                 {
                     generalLogger.Error($"Error calling 'get bills' from web service. Code : {dbBills.ResponseMessage.ErrorCode} - Message : {dbBills.ResponseMessage.ErrorMessage}");
-                    return RedirectToAction("BillsAndPayments");
+                    return ReturnMessageUrl(Url.Action("BillsAndPayments"), CMS.Localization.Errors.InternalErrorDescription, false);
                 }
                 var billIDs = id.HasValue ? new[] { id.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.PaymentTypeID == (short)CMS.Localization.Enums.PaymentType.None).Select(b => b.ID).ToArray(); // enum paymentType
                 if (billIDs.Any())
@@ -537,7 +538,7 @@ namespace CustomerManagementSystem.Controllers
                     generalLogger.Debug($"Payment selection 'Pay Bills' web service result. Code : {payBills.ResponseMessage.ErrorCode}");
                     if (payBills.ResponseMessage.ErrorCode != 0)
                     {
-                        return RedirectToAction("BillsAndPayments");
+                        return ReturnMessageUrl(Url.Action("BillsAndPayments"), CMS.Localization.Errors.InternalErrorDescription, false);
                     }
                 }
 
@@ -628,10 +629,9 @@ namespace CustomerManagementSystem.Controllers
             if (mobileExpressPayBill.ResponseMessage.ErrorCode != 0)
             {
                 generalLogger.Error($"Error calling 'Mobile express pay bill' from web service. Code : {mobileExpressPayBill.ResponseMessage.ErrorCode} ");
-                return RedirectToAction("PaymentSelection");
+                return ReturnMessageUrl(Url.Action("PaymentSelection"), CMS.Localization.Errors.InternalErrorDescription, false);
             }
-
-            return RedirectToAction("BillsAndPayments");
+            return ReturnMessageUrl(Url.Action("BillsAndPayments"), mobileExpressPayBill.ResponseMessage.ErrorMessage, true);
         }
 
         [HttpGet]

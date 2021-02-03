@@ -154,7 +154,9 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <form class="form">
+                            @using (Html.BeginForm("ChangeAccountInfo", "Home", FormMethod.Post, new { @class = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
                                 <div class="card-body">
                                     <label class="col-xl-2"></label>
                                     <div class="col-lg-9 col-xl-6"></div>
@@ -165,24 +167,24 @@
                                     </h3>
 
                                     @*<div class="form-group row align-items-center">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">
-                                            @Common.ContactPrefer
-                                        </label>
-                                        <div class="col-lg-9 col-xl-6">
-                                            <div class="row bg-gray-100 py-5 font-weight-bold text-center">
-                                                <div class="col-8 text-left checkbox-inline">
-                                                    <label class="checkbox">
-                                                        @Html.CheckBoxFor(m => m.ChooseMail, new { @checked = "checked" })
-                                                        <span></span>@Html.DisplayNameFor(m => m.ChooseMail)
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        @Html.CheckBoxFor(m => m.ChooseSMS, new { @checked = "checked" })
-                                                        <span></span>@Html.DisplayNameFor(m => m.ChooseSMS)
-                                                    </label>
+                                            <label class="col-xl-3 col-lg-3 col-form-label">
+                                                @Common.ContactPrefer
+                                            </label>
+                                            <div class="col-lg-9 col-xl-6">
+                                                <div class="row bg-gray-100 py-5 font-weight-bold text-center">
+                                                    <div class="col-8 text-left checkbox-inline">
+                                                        <label class="checkbox">
+                                                            @Html.CheckBoxFor(m => m.ChooseMail, new { @checked = "checked" })
+                                                            <span></span>@Html.DisplayNameFor(m => m.ChooseMail)
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            @Html.CheckBoxFor(m => m.ChooseSMS, new { @checked = "checked" })
+                                                            <span></span>@Html.DisplayNameFor(m => m.ChooseSMS)
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>*@
+                                        </div>*@
                                     <div class="form-group row align-items-center">
                                         <label class="col-xl-3 col-lg-3 col-form-label">
                                             @Html.DisplayNameFor(m => m.ContactPhoneNo)
@@ -194,7 +196,7 @@
                                                         <i class="la la-phone"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder , @readonly = "readonly" } })
+                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder, @maxlength = "11", @autocomplete = "off" } })
                                             </div>
                                         </div>
                                     </div>
@@ -207,38 +209,23 @@
                                                         <i class="la la-at"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder, @readonly = "readonly" } })
+                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder , @autocomplete = "off" } })
                                             </div>
                                         </div>
                                     </div>
-                                    @*<div class="form-group row">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">
-                                            @Html.DisplayNameFor(m => m.CustomerServicePassword)
-                                        </label>
-                                        <div class="col-lg-9 col-xl-6">
-                                            <div class="row input-group input-group-lg input-group-solid">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">
-                                                        <i class="la la-unlock-alt"></i>
-                                                    </span>
-                                                </div>
-                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder , @readonly = "readonly" } })
-                                            </div>
-                                        </div>
-                                    </div>*@
-                                    @*<div class="d-flex justify-content-between border-top pt-10 mt-15">
+                                    <div class="d-flex justify-content-between border-top pt-10 mt-15">
                                         <div class="mr-2"></div>
                                         <div>
-                                            <button type="reset" class="btn btn-light-primary mr-2">
+                                            <button type="submit" class="btn btn-light-primary mr-2">
                                                 @Common.ChangeAndSave
                                             </button>
-                                            <button type="reset" class="btn btn-light-danger">
+                                            <button type="button" onclick="window.location.reload();" class="btn btn-light-danger">
                                                 @Common.Cancel
                                             </button>
                                         </div>
-                                    </div>*@
+                                    </div>
                                 </div>
-                            </form>
+                            }
                         </div>
                     </div>
                 </div>
@@ -249,16 +236,8 @@
 
 @section scripts{
     @Scripts.Render("~/Content/assets/js/pages/features/custom/spinners.js")
+    @Scripts.Render("~/Scripts/Custom/force-numeric-input.js")
     <script>
-        $('#ContactPhoneNo').keypress(function () {
-            var reg = /^\d+$/;
-            var res = reg.test($(this).val());
-            if (!res) {
-                $(this).val($(this).val().slice(0, $(this).val().length - 1));
-            }
-        });
-        $('#ContactPhoneNo').change(function () {
-            $('#ContactPhoneNo').trigger("keypress");
-        });
+        $('#ContactPhoneNo').ForceNumericOnly();
     </script>
 }

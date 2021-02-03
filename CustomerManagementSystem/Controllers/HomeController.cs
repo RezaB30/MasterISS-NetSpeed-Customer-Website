@@ -170,6 +170,55 @@ namespace CustomerManagementSystem.Controllers
             return View(account);
         }
         [Authorize(Roles = "Customer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangeAccountInfo(MyAccountViewModel account)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errorMessages = ModelState.Values.Where(m => m.Errors != null).Select(m => m.Errors);
+                return ReturnMessageUrl(Url.Action("MyAccount", "Home"), string.Join(Environment.NewLine, errorMessages.Select(e => string.Join(Environment.NewLine, e.Select(er => er.ErrorMessage)))), false);
+            }
+            var sendSMS = new ServiceUtilities().ChangeClientInfoSMSCheck(account.ContactPhoneNo, User.GiveUserId());
+            if (sendSMS.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("MyAccount", "Home"), sendSMS.ResponseMessage.ErrorMessage, false);
+            }
+            // send sms for change account
+            TempData["smsCode"] = sendSMS.ChangeClientInfoResponse.SMSCode;
+            return View(viewName: "ChangeAccountInfo", model: account);
+        }
+        [Authorize(Roles = "Customer")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangeAccountInfoSMSCheck(MyAccountViewModel account, string smsCode)
+        {
+            if (!TempData.ContainsKey("smsCode"))
+            {
+                return View(viewName: "ChangeAccountInfo", model: account);
+            }
+            if (smsCode != TempData["smsCode"].ToString())
+            {
+                var retries = TempData.ContainsKey("smsRetries") ? TempData["smsRetries"] as int? ?? 0 : 0;
+                retries++;
+                if (retries > 3)
+                    return RedirectToAction("MyAccount", "Home");
+                TempData.Keep("smsCode");
+                TempData["smsRetries"] = retries;
+                TempData["WrongPassword"] = CMS.Localization.Errors.SMSPasswordWrong;
+                return View(viewName: "ChangeAccountInfo", model: account);
+            }
+            TempData.Remove("smsRetries");
+            var changeClient = new ServiceUtilities().ChangeClientInfoConfirm(User.GiveUserId(), account.ContactPhoneNo, account.Mail);
+            if (changeClient.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("MyAccount", "Home"), changeClient.ResponseMessage.ErrorMessage, false);
+            }
+            return ReturnMessageUrl(Url.Action("MyAccount", "Home"), changeClient.ResponseMessage.ErrorMessage, true);
+            //change client info web service
+
+        }
+        [Authorize(Roles = "Customer")]
         public ActionResult MyServices() //hizmetlerim.html
         {
             return RedirectToAction("Index", "Home");

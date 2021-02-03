@@ -387,6 +387,18 @@
   <wsdl:message name="IGenericCustomerService_EArchivePDFMail_OutputMessage">
     <wsdl:part name="parameters" element="tns:EArchivePDFMailResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientInfoSMSCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientInfoSMSCheck" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientInfoSMSCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientInfoSMSCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientInfoConfirm_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientInfoConfirm" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientInfoConfirm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientInfoConfirmResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetKeyFragment">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/GetKeyFragment" message="tns:IGenericCustomerService_GetKeyFragment_InputMessage" />
@@ -631,6 +643,14 @@
     <wsdl:operation name="EArchivePDFMail">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/EArchivePDFMail" message="tns:IGenericCustomerService_EArchivePDFMail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/EArchivePDFMailResponse" message="tns:IGenericCustomerService_EArchivePDFMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientInfoSMSCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheck" message="tns:IGenericCustomerService_ChangeClientInfoSMSCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheckResponse" message="tns:IGenericCustomerService_ChangeClientInfoSMSCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientInfoConfirm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm" message="tns:IGenericCustomerService_ChangeClientInfoConfirm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirmResponse" message="tns:IGenericCustomerService_ChangeClientInfoConfirm_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -1178,6 +1198,24 @@
     </wsdl:operation>
     <wsdl:operation name="EArchivePDFMail">
       <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/EArchivePDFMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientInfoSMSCheck">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoSMSCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientInfoConfirm">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

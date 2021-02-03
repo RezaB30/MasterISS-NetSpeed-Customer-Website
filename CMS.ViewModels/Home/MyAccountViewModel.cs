@@ -39,8 +39,13 @@ namespace CMS.ViewModels.Home
         [Display(Name = "Email", ResourceType = typeof(CMS.Localization.Models.Models))]
         public bool ChooseMail { get; set; }
         [Display(Name = "ContactPhoneNo", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [StringLength(11, MinimumLength = 10, ErrorMessageResourceName = "NotValid", ErrorMessageResourceType = typeof(CMS.Localization.Errors))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
         public string ContactPhoneNo { get; set; }
         [Display(Name = "Email", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", ErrorMessageResourceName = "NotValid", ErrorMessageResourceType = typeof(CMS.Localization.Errors))]
+        //[Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
+        [StringLength(50, ErrorMessageResourceName = "NotValid", ErrorMessageResourceType = typeof(CMS.Localization.Errors))]
         public string Mail { get; set; }
         [Display(Name = "CustomerServicePassword", ResourceType = typeof(CMS.Localization.Models.Models))]
         public string CustomerServicePassword { get; set; }

@@ -2478,6 +2478,7 @@
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\Custom\current-subscription.js" />
     <Content Include="Scripts\Custom\display-message-box.js" />
+    <Content Include="Scripts\Custom\force-numeric-input.js" />
     <Content Include="Scripts\Custom\get-infrastructure.js" />
     <Content Include="Scripts\Custom\login-screen-loading.js" />
     <Content Include="Scripts\Custom\resource-displayText.js" />
@@ -2513,7 +2514,7 @@
     <Content Include="Views\Support\NewRequests.cshtml" />
     <Content Include="Views\Home\MyServices.cshtml" />
     <Content Include="Views\Payment\AddNewCard.cshtml" />
-    <Content Include="Views\Payment\RegisteredCards.cshtml" />
+    <Content Include="Views\Payment\PaymentSelection.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Auth\DirectLogin.cshtml" />
@@ -2565,6 +2566,7 @@
     <Content Include="Views\Shared\DisplayPartials\SvgTypes\_Waiting.cshtml" />
     <Content Include="Views\Shared\DisplayPartials\SvgTypes\_Passive.cshtml" />
     <Content Include="web.config" />
+    <Content Include="Views\Home\ChangeAccountInfo.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

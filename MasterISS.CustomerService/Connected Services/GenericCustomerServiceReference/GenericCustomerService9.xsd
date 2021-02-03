@@ -287,4 +287,39 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SaveClientAttachmentRequest" nillable="true" type="tns:SaveClientAttachmentRequest" />
+  <xs:complexType name="CustomerServiceChangeClientInfoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q20:BaseRequestOfChangeClientInfoRequestSHA1CuT410mT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChangeClientInfoRequest" nillable="true" type="tns:ChangeClientInfoRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceChangeClientInfoRequest" nillable="true" type="tns:CustomerServiceChangeClientInfoRequest" />
+  <xs:complexType name="ChangeClientInfoRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactPhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeClientInfoRequest" nillable="true" type="tns:ChangeClientInfoRequest" />
+  <xs:complexType name="CustomerServiceChangeClientInfoConfirmRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q21:BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChangeClientInfoConfirmRequest" nillable="true" type="tns:ChangeClientInfoConfirmRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceChangeClientInfoConfirmRequest" nillable="true" type="tns:CustomerServiceChangeClientInfoConfirmRequest" />
+  <xs:complexType name="ChangeClientInfoConfirmRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactPhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeClientInfoConfirmRequest" nillable="true" type="tns:ChangeClientInfoConfirmRequest" />
 </xs:schema>

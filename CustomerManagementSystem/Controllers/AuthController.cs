@@ -88,6 +88,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult DirectLogin()
         {
+            Session.Remove("HasCustomCaptcha");
             var googleRecaptcha = new ServiceUtilities().CustomerWebsiteGenericSettings();
             ViewBag.clientCaptchaKey = googleRecaptcha.GenericAppSettings == null ? "" : googleRecaptcha.GenericAppSettings.RecaptchaClientKey;
             if (googleRecaptcha.GenericAppSettings != null && !googleRecaptcha.GenericAppSettings.UseGoogleRecaptcha)
@@ -99,8 +100,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult DirectLogin([Bind(Include = "CustomerCode")] LoginViewModel login)
-        {
-            Session.Remove("HasCustomCaptcha");
+        {            
             var invalidCaptcha = Session["HasCustomCaptcha"];
             if (invalidCaptcha != null)
             {

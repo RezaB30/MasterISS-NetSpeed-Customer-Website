@@ -516,4 +516,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GetClientPDFFormResponse" nillable="true" type="tns:GetClientPDFFormResponse" />
+  <xs:complexType name="CustomerServiceChangeClientInfoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q29:BaseResponseOfChangeClientInfoResponseSHA1KVWl_PpN3">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChangeClientInfoResponse" nillable="true" type="tns:ChangeClientInfoResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceChangeClientInfoResponse" nillable="true" type="tns:CustomerServiceChangeClientInfoResponse" />
+  <xs:complexType name="ChangeClientInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SMSCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeClientInfoResponse" nillable="true" type="tns:ChangeClientInfoResponse" />
+  <xs:complexType name="CustomerServiceChangeClientInfoConfirmResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q30:BaseResponseOfNullableOfbooleanSHA1qBRhzOKh">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChangeClientInfoConfirmResult" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceChangeClientInfoConfirmResponse" nillable="true" type="tns:CustomerServiceChangeClientInfoConfirmResponse" />
 </xs:schema>
