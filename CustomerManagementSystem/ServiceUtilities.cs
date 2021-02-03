@@ -351,7 +351,7 @@ namespace CustomerManagementSystem
             });
             return response;
         }
-        public CustomerServiceNameValuePair GetProvinces()
+        public CustomerServiceNameValuePair1 GetProvinces()
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetProvinces(new CustomerServiceProvincesRequest()
@@ -363,7 +363,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetProvinceDistricts(long? code)
+        public CustomerServiceNameValuePair1 GetProvinceDistricts(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetProvinceDistricts(new CustomerServiceNameValuePairRequest()
@@ -376,7 +376,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetDistrictRuralRegions(long? code)
+        public CustomerServiceNameValuePair1 GetDistrictRuralRegions(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetDistrictRuralRegions(new CustomerServiceNameValuePairRequest()
@@ -389,7 +389,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetRuralRegionNeighbourhoods(long? code)
+        public CustomerServiceNameValuePair1 GetRuralRegionNeighbourhoods(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetRuralRegionNeighbourhoods(new CustomerServiceNameValuePairRequest()
@@ -402,7 +402,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetNeighbourhoodStreets(long? code)
+        public CustomerServiceNameValuePair1 GetNeighbourhoodStreets(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetNeighbourhoodStreets(new CustomerServiceNameValuePairRequest()
@@ -415,7 +415,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetStreetBuildings(long? code)
+        public CustomerServiceNameValuePair1 GetStreetBuildings(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetStreetBuildings(new CustomerServiceNameValuePairRequest()
@@ -428,7 +428,7 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceNameValuePair GetBuildingApartments(long? code)
+        public CustomerServiceNameValuePair1 GetBuildingApartments(long? code)
         {
             var baseRequest = new GenericServiceSettings();
             var result = client.GetBuildingApartments(new CustomerServiceNameValuePairRequest()

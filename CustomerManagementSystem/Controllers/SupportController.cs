@@ -120,6 +120,10 @@ namespace CustomerManagementSystem.Controllers
             }
             ViewBag.RequestTypes = new ServiceUtilities().GetSupportTypes();
             ViewBag.SubRequestTypes = new SelectList(Enumerable.Empty<object>());
+            var genericAppSetting = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
+            var fileMaxSize = genericAppSetting.GenericAppSettings == null ? 5242880 : genericAppSetting.GenericAppSettings.FileMaxSize;
+            ViewBag.FileMaxSize = fileMaxSize;
             return View();
         }
         [HttpPost]
@@ -131,17 +135,31 @@ namespace CustomerManagementSystem.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult NewRequests(NewRequestViewModel request) //yeni-talep.html
+        public ActionResult NewRequests(NewRequestViewModel request, HttpPostedFileBase[] attachments) //yeni-talep.html
         {
             if (request.Description != null)
                 request.Description = request.Description.Trim(new char[] { ' ', '\n', '\r' });
+            attachments = attachments != null ? attachments.Where(att => att != null).FirstOrDefault() == null ? null : attachments : attachments;
+            if (attachments != null)
+            {
+                if (string.IsNullOrEmpty(request.Description))
+                    request.Description = CMS.Localization.Common.FileAdded;
+            }
             ModelState.Clear();
             TryValidateModel(request);
+            var genericAppSetting = new ServiceUtilities().CustomerWebsiteGenericSettings();
+            var fileMaxSize = genericAppSetting.GenericAppSettings == null ? 5242880 : genericAppSetting.GenericAppSettings.FileMaxSize;
+            var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
             if (!ModelState.IsValid)
             {
                 ViewBag.RequestTypes = new ServiceUtilities().GetSupportTypes(request.RequestTypeId);
                 ViewBag.SubRequestTypes = new ServiceUtilities().GetSupportSubTypes(request.RequestTypeId, request.SubRequestTypeId);
+                ViewBag.FileMaxSize = fileMaxSize;
                 return View(request);
+            }            
+            if (attachments != null && attachments.Where(att => att.ContentLength > fileMaxSize).FirstOrDefault() != null)
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
             }
             var hasActiveRequest = new ServiceUtilities().HasOpenRequest(User.GiveUserId());
             if (hasActiveRequest.ResponseMessage.ErrorCode != 0)
@@ -157,6 +175,40 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, false);
             }
+            //add file
+            if (attachments != null && attachments.Count() != 0 && attachments.Count() <= fileMaxCount)
+            {
+                var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
+                if (supportRequests.ResponseMessage.ErrorCode != 0)
+                {
+                    requestsLogger.Error(supportRequests.ResponseMessage.ErrorMessage);
+                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+                }
+                var supportDetails = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), supportRegister.SupportRegisterResponse.SupportId);
+                if (supportDetails.ResponseMessage.ErrorCode != 0)
+                {
+                    requestsLogger.Error(supportDetails.ResponseMessage.ErrorMessage);
+                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+                }
+                if (supportDetails.SupportDetailMessagesResponse == null || supportDetails.SupportDetailMessagesResponse.SupportMessages == null)
+                {
+                    requestsLogger.Error($"Support Message List Not Found. Subscription Id : {User.GiveUserId()} - Support Id : {supportRegister.SupportRegisterResponse.SupportId}");
+                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+                }
+                var stageId = supportDetails.SupportDetailMessagesResponse.SupportMessages.FirstOrDefault().StageId;
+                // save attachment
+                foreach (var item in attachments)
+                {
+                    using (var binaryReader = new BinaryReader(item.InputStream))
+                    {
+                        var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+                        FileInfo fileInfo = new FileInfo(item.FileName);
+                        var fileExtension = fileInfo.Extension.Replace(".", "");
+                        var saveAttachment = new ServiceUtilities().SaveSupportAttachment(stageId, item.FileName, attachmentByte, fileExtension, supportRegister.SupportRegisterResponse.SupportId);
+                        requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+                    }
+                }
+            }           
             return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, true);
         }
         public ActionResult SupportRequestTable()
@@ -212,13 +264,19 @@ namespace CustomerManagementSystem.Controllers
                 if (string.IsNullOrEmpty(requestMessage.Message))
                     requestMessage.Message = CMS.Localization.Common.ProblemSolved;
             }
+            attachments = attachments != null ? attachments.Where(att => att != null).FirstOrDefault() == null ? null : attachments : attachments;
+            if (attachments != null)
+            {
+                if (string.IsNullOrEmpty(requestMessage.Message))
+                    requestMessage.Message = CMS.Localization.Common.FileAdded;
+            }
             ModelState.Clear();
             TryValidateModel(requestMessage);
             if (!ModelState.IsValid)
             {
                 return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), ModelErrorMessages(ModelState), false);
             }
-            attachments = attachments != null ? attachments.Where(att => att != null).FirstOrDefault() == null ? null : attachments : attachments;
+
             var genericAppSetting = new ServiceUtilities().CustomerWebsiteGenericSettings();
             var fileMaxSize = genericAppSetting.GenericAppSettings == null ? 5242880 : genericAppSetting.GenericAppSettings.FileMaxSize;
             if (attachments != null && attachments.Where(att => att.ContentLength > fileMaxSize).FirstOrDefault() != null)

@@ -27,6 +27,9 @@ namespace CMS.ViewModels.Home
         [Display(Name = "TotalUpload", ResourceType = typeof(CMS.Localization.Models.Models))]
         [UIHint("FormattedBytes")]
         public decimal TotalUpload { get; set; }
+        [Display(Name = "TotalUsage", ResourceType = typeof(CMS.Localization.Models.Models))]
+        [UIHint("FormattedBytes")]
+        public decimal TotalUsage => TotalUpload + TotalDownload;
         public bool IsQuota { get; set; }
         public decimal? TotalQuota { get; set; }
         [UIHint("Month")]

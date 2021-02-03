@@ -557,6 +557,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dosya Eklendi.
+        /// </summary>
+        public static string FileAdded {
+            get {
+                return ResourceManager.GetString("FileAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dondurulmuş.
         /// </summary>
         public static string Freeze {

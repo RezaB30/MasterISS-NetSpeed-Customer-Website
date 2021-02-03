@@ -135,6 +135,12 @@
                                                             @Html.DisplayFor(m => item.TotalUpload)
                                                         </span>
                                                     </div>
+                                                    <div class="mr-12 d-flex flex-column mb-7">
+                                                        <span class="d-block font-weight-bold mb-4">@Html.DisplayNameFor(m => item.TotalUsage)</span>
+                                                        <span class="btn btn-light-info btn-sm font-weight-bold btn-upper btn-text">
+                                                            @Html.DisplayFor(m => item.TotalUsage)
+                                                        </span>
+                                                    </div>
                                                     @if (item.IsQuota)
                                                     {
                                                         <div class="flex-row-fluid mb-7">

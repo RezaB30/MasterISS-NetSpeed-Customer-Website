@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = Common.NewRequest;
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var FileMaxSize = (long)ViewBag.FileMaxSize;
 }
 
 <div class="container">
@@ -29,7 +30,10 @@
             </div>
             <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
                 <div class="col-xl-12 col-xxl-7">
-                    @using (Html.BeginForm("NewRequests", "Support", new { @class = "form fv-plugins-bootstrap fv-plugins-framework", @id = "kt_projects_add_form" }))
+                    @using (Html.BeginForm("NewRequests", "Support", FormMethod.Post, new
+                    {
+                        @class = "form fv-plugins-bootstrap fv-plugins-framework",@*@id = "kt_projects_add_form",*@ enctype = "multipart/form-data"
+                    }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="row">
@@ -69,6 +73,9 @@
                                             <span class="form-text text-muted">
                                                 @Common.SupportRequestExplainText
                                             </span>
+                                            <div class="mt-1" style="color:mediumpurple">
+                                                @string.Format(Errors.FileSizeError, (FileMaxSize / 1000000))
+                                            </div>
                                         </div>
                                         <div class="fv-plugins-message-container">@Html.ValidationMessageFor(m => m.Description, null, new { @class = "text-danger" })</div>
                                     </div>
@@ -82,6 +89,11 @@
                                 <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-10 py-2 action-submit">
                                     @Common.Send
                                 </button>
+                                <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
+                                    <i class="flaticon2-clip-symbol"></i>
+                                </span>
+                                <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple />
+                                <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
                             </div>
                         </div>
                     }
@@ -94,6 +106,7 @@
 </div>
 @section scripts{
     @Scripts.Render("~/Content/assets/js/pages/features/miscellaneous/sweetalert2.js")
+    @Scripts.Render("~/Scripts/Custom/support-attachment.js")
 
     <script>
         $('#RequestTypeId').change(function () {

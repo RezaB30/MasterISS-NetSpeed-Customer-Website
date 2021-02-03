@@ -282,6 +282,9 @@
   <data name="Fiber" xml:space="preserve">
     <value>FIBER</value>
   </data>
+  <data name="FileAdded" xml:space="preserve">
+    <value>File Added</value>
+  </data>
   <data name="Freeze" xml:space="preserve">
     <value>Freezed</value>
   </data>

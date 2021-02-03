@@ -283,6 +283,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="Fiber" xml:space="preserve">
     <value>FIBER</value>
   </data>
+  <data name="FileAdded" xml:space="preserve">
+    <value>Dosya Eklendi</value>
+  </data>
   <data name="Freeze" xml:space="preserve">
     <value>Dondurulmuş</value>
   </data>

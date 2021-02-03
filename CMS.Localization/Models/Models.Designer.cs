@@ -691,6 +691,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Toplam Kullanım.
+        /// </summary>
+        public static string TotalUsage {
+            get {
+                return ResourceManager.GetString("TotalUsage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload Noise Margin.
         /// </summary>
         public static string UploadNoiseMargin {

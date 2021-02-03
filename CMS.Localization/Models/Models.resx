@@ -327,6 +327,9 @@
   <data name="TotalUpload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="TotalUsage" xml:space="preserve">
+    <value>Toplam Kullanım</value>
+  </data>
   <data name="UploadNoiseMargin" xml:space="preserve">
     <value>Upload Noise Margin</value>
   </data>

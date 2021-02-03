@@ -93,9 +93,6 @@ namespace CustomerManagementSystem.Controllers
                     PercentQuota = tariffInfo.BaseQuota != null ? 100 - ((item.TotalUpload + item.TotalDownload) * 100 / tariffInfo.BaseQuota.Value) : 0
                 });
             }
-            //recipe.CommitmentType = "TAAHHÜTSÜZ";
-            //recipe.QuotaType = "LİMİTSİZ";
-            //recipe.TariffAmount = "66 TL";
             recipe.TariffName = tariffInfo.ServiceName;
             recipe.RecipeUsage = recipeList.OrderByDescending(r => r.Year).ThenByDescending(r => r.Month).ToArray();
 
@@ -333,8 +330,8 @@ namespace CustomerManagementSystem.Controllers
             }
             var provinces = new ServiceUtilities().GetProvinces();
             ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
-            var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
-            ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
+            //var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
+            //ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             return View();
         }
         [Authorize(Roles = "Customer")]
