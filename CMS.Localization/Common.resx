@@ -443,6 +443,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="NewSubscriptionRegister" xml:space="preserve">
     <value>Yeni Abonelik Başvurusu</value>
   </data>
+  <data name="NewSubscriptionRegisterDescription" xml:space="preserve">
+    <value>Altyapınızı sorulayabilir ve yeni abonelik başvurusu yapabilirsiniz.</value>
+  </data>
   <data name="NewSupportNotification" xml:space="preserve">
     <value>Yeni destek bildiriminiz var</value>
   </data>
@@ -454,6 +457,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>Tamam</value>
+  </data>
+  <data name="OnlinePasswordLengthDescription" xml:space="preserve">
+    <value>Şifre Uzunluğu {0} karakter olmalıdır. Şifre sadece harf ve sayılardan oluşmalıdır.</value>
   </data>
   <data name="OnlinePayBill" xml:space="preserve">
     <value>Online Fatura Ödeme</value>
@@ -507,7 +513,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Telefon</value>
   </data>
   <data name="PleaseWait" xml:space="preserve">
-    <value>İşleniyor... Lütfen Bekleyin..</value>
+    <value>Kontrol Ediliyor... Lütfen Bekleyin..</value>
   </data>
   <data name="POSSuccessMessage" xml:space="preserve">
     <value>Ödeme başarılı.</value>
@@ -535,6 +541,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="RecipeUsageInfo" xml:space="preserve">
     <value>Tarife ve Kullanım Bilgileriniz</value>
+  </data>
+  <data name="Redirecting" xml:space="preserve">
+    <value>Yönlendiriliyor... Lütfen Bekleyiniz..</value>
   </data>
   <data name="ReferenceCode" xml:space="preserve">
     <value>Davet Kodu</value>

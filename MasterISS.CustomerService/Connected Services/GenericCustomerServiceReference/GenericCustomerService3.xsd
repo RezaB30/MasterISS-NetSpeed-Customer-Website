@@ -889,4 +889,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ChangeClientOnlinePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q125:CustomerServiceChangeClientOnlinePasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeClientOnlinePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="ChangeClientOnlinePasswordResult" nillable="true" type="q126:CustomerServiceChangeClientInfoConfirmResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

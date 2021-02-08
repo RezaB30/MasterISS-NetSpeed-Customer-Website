@@ -400,6 +400,12 @@
   <wsdl:message name="IGenericCustomerService_ChangeClientInfoConfirm_OutputMessage">
     <wsdl:part name="parameters" element="tns:ChangeClientInfoConfirmResponse" />
   </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientOnlinePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientOnlinePassword" />
+  </wsdl:message>
+  <wsdl:message name="IGenericCustomerService_ChangeClientOnlinePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientOnlinePasswordResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGenericCustomerService">
     <wsdl:operation name="GetProvinces">
       <wsdl:input wsaw:Action="http://tempuri.org/ITelekomInfrastructureService/GetProvinces" message="tns:IGenericCustomerService_GetProvinces_InputMessage" />
@@ -652,6 +658,10 @@
     <wsdl:operation name="ChangeClientInfoConfirm">
       <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm" message="tns:IGenericCustomerService_ChangeClientInfoConfirm_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirmResponse" message="tns:IGenericCustomerService_ChangeClientInfoConfirm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientOnlinePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePassword" message="tns:IGenericCustomerService_ChangeClientOnlinePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePasswordResponse" message="tns:IGenericCustomerService_ChangeClientOnlinePassword_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IGenericCustomerService" type="tns:IGenericCustomerService">
@@ -1217,6 +1227,15 @@
     </wsdl:operation>
     <wsdl:operation name="ChangeClientInfoConfirm">
       <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientOnlinePassword">
+      <soap12:operation soapAction="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePassword" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

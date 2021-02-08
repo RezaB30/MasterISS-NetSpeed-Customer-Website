@@ -195,7 +195,7 @@ namespace CustomerManagementSystem
             {
                 return new SelectList(Enumerable.Empty<object>());
             }
-            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
+            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }).OrderBy(pair=>pair.Name), "Value", "Name", selectedValue);
         }
         public SelectList GetSupportSubTypes(int? SupportTypeId, object selectedValue = null)
         {
@@ -216,7 +216,7 @@ namespace CustomerManagementSystem
             {
                 return new SelectList(Enumerable.Empty<object>());
             }
-            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }), "Value", "Name", selectedValue);
+            return new SelectList(response.ValueNamePairList.Select(pair => new { Name = pair.Name, Value = pair.Value }).OrderBy(pair => pair.Name), "Value", "Name", selectedValue);
         }
         public CustomerServiceSupportRegisterResponse SupportRegister(CMS.ViewModels.Supports.NewRequestViewModel request, long? subscriptionId)
         {
@@ -708,6 +708,23 @@ namespace CustomerManagementSystem
                 {
                     SubscriptionId = subscriptionId,
                     ContactPhoneNo = phoneNo
+                }
+            });
+            return result;
+        }
+        public CustomerServiceChangeClientInfoConfirmResponse ChangeClientOnlinePassword(string onlinePassword, long? subscriptionId)
+        {
+            var baseRequest = new GenericServiceSettings();
+            var result = client.ChangeClientOnlinePassword(new CustomerServiceChangeClientOnlinePasswordRequest()
+            {
+                Username = baseRequest.Username,
+                Culture = baseRequest.Culture,
+                Hash = baseRequest.Hash,
+                Rand = baseRequest.Rand,
+                ChangeClientOnlinePasswordParameters = new ChangeClientOnlinePasswordRequest()
+                {
+                    OnlinePassword = onlinePassword,
+                    SubscriptionId = subscriptionId
                 }
             });
             return result;

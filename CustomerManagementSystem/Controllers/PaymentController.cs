@@ -202,6 +202,8 @@ namespace CustomerManagementSystem.Controllers
             {
                 card.HasAutoPayments = autoPayments.Where(ap => ap.Card != null).Any(ap => ap.Card.Token == card.Token);
             }
+            ViewBag.HasCards = cards == null ? false : cards.Count() == 0 ? false : true;
+            ViewBag.HasAutoPayments = autoPayments == null ? false : autoPayments.Count() == 0 ? false : autoPayments.Where(ap=> ap.Card != null).Any();
             return View(new CustomerAutomaticPaymentViewModel()
             {
                 Cards = cards,
@@ -673,7 +675,7 @@ namespace CustomerManagementSystem.Controllers
             ViewBag.POSForm = VPOSFormResponse.VPOSFormResponse.HtmlForm;
             return View(viewName: "3DHostPayment");
         }
-        [HttpPost]
+
         [AllowAnonymous]
         public ActionResult VPOSSuccess(string id)
         {
@@ -830,7 +832,6 @@ namespace CustomerManagementSystem.Controllers
             return RedirectToAction("BillsAndPayments");
         }
 
-        [HttpPost]
         [AllowAnonymous]
         public ActionResult VPOSFail(string id)
         {

@@ -93,8 +93,8 @@
 
             @if (ViewBag.ServiceError != null)
             {
-                <div class="card-header py-3">
-                    <div class="card-toolbar">
+                <div class="card-header py-3 bg-warning-o-15">
+                    <div class="card-toolbar text-warning font-weight-bold">
                         @ViewBag.ServiceError
                     </div>
                 </div>
@@ -102,16 +102,16 @@
 
             @if (!string.IsNullOrEmpty(POSSuccessMessage))
             {
-                <div class="card-header py-3">
-                    <div class="card-toolbar">
+                <div class="card-header py-3 bg-success-o-15">
+                    <div class="card-toolbar text-success font-weight-bold">
                         @POSSuccessMessage
                     </div>
                 </div>
             }
             else if (!string.IsNullOrEmpty(POSErrorMessage))
             {
-                <div class="card-header py-3">
-                    <div class="card-toolbar">
+                <div class="card-header py-3 bg-warning-o-15">
+                    <div class="card-toolbar text-warning font-weight-bold">
                         @POSErrorMessage
                     </div>
                 </div>

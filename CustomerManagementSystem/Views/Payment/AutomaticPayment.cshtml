@@ -29,104 +29,31 @@
             </div>
         </div>
     </div>
-    <div class="card card-custom">
-        <div class="card-body py-12">
-            <div class="row">
-                <div class="form-group fv-plugins-icon-container">
-                    <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
-                        <div class="alert-icon">
-                            <span class="svg-icon svg-icon-danger svg-icon-2x">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none"
-                                       fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <rect fill="#000000" opacity="0.3" x="2" y="5"
-                                              width="20" height="14" rx="2"></rect>
-                                        <rect fill="#000000" x="2" y="8" width="20" height="3">
-                                        </rect>
-                                        <rect fill="#000000" opacity="0.3" x="16" y="14"
-                                              width="4" height="2" rx="1"></rect>
-                                    </g>
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="alert-text card-label font-weight-bold">
-                            @Common.MyRegisteredCreditCards
-                        </div>
-                    </div>
-                    <div class="row">
-                        @foreach (var item in Model.Cards.Where(c => !c.HasAutoPayments).ToArray())
-                        {
-                            <div class="@Html.Raw(string.Format("col-lg-{0}",Model.Cards.Where(c => !c.HasAutoPayments).Count() < 4 ? (12/Model.Cards.Where(c => !c.HasAutoPayments).Count()) : 4))">
-                                <div class="option">
-                                    <!-- label -->
-                                    <span class="option-label">
-                                        <span class="option-head">
-                                            <span class="option-title">@Html.DisplayFor(m => item.MaskedCardNo)</span>
-                                            <span class="option-focus">
-                                                <span class="alert-icon">
-                                                    <span class="svg-icon svg-icon-dark svg-icon-2x">
-                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                             xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                             width="24px" height="24px"
-                                                             viewBox="0 0 24 24" version="1.1">
-                                                            <g stroke="none" stroke-width="1"
-                                                               fill="none" fill-rule="evenodd">
-                                                                <rect x="0" y="0" width="24"
-                                                                      height="24"></rect>
-                                                                <rect fill="#000000" opacity="0.3"
-                                                                      x="2" y="5" width="20"
-                                                                      height="14" rx="2"></rect>
-                                                                <rect fill="#000000" x="2" y="8"
-                                                                      width="20" height="3"></rect>
-                                                                <rect fill="#000000" opacity="0.3"
-                                                                      x="16" y="14" width="4"
-                                                                      height="2" rx="1"></rect>
-                                                            </g>
-                                                        </svg>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <span class="option-body">
-                                            @*@Common.InvoiceWillPayWithThisCard*@
-                                        </span>
-                                        <span class="card-toolbar">
-                                            <br>
-                                            @using (Html.BeginForm("ActivateAutomaticPayment", "Payment", FormMethod.Post, new { @style = "display:contents", @class = "form" }))
-                                            {
-                                                @Html.AntiForgeryToken()
-                                                @Html.Hidden("token", item.Token)
-                                                <input type="submit" value="@Common.ActivateAutomaticPayment" class="btn btn-sm btn-light-success font-weight-bold mr-2" />
-                                            }
-                                            @using (Html.BeginForm("RemoveCard", "Payment", FormMethod.Post, new { @style = "display:contents", @class = "form" }))
-                                            {
-                                                @Html.AntiForgeryToken()
-                                                @Html.Hidden("id", item.Token)
-                                                <input type="submit" value="@Common.DeleteCard" class="btn btn-sm btn-light-danger font-weight-bold mr-2" />
-                                            }
-                                            @*<a href="" class="btn btn-sm btn-light-danger font-weight-bold mr-2">
-                                                    @Common.DeleteCard
-                                                </a>*@
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                        }
-                    </div> <br>
+    @if (ViewBag.ServiceError != null)
+    {
+        <div class="card card-custom">
+            <div class="card-body py-12">
+                @ViewBag.ServiceError
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card card-custom">
+            <div class="card-body py-12">
+                <div class="row">
                     <div class="form-group fv-plugins-icon-container">
-                        <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
-                             role="alert">
+                        <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
                             <div class="alert-icon">
-                                <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                <span class="svg-icon svg-icon-danger svg-icon-2x">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                         <g stroke="none" stroke-width="1" fill="none"
                                            fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24"></rect>
                                             <rect fill="#000000" opacity="0.3" x="2" y="5"
                                                   width="20" height="14" rx="2"></rect>
-                                            <rect fill="#000000" x="2" y="8" width="20"
-                                                  height="3"></rect>
+                                            <rect fill="#000000" x="2" y="8" width="20" height="3">
+                                            </rect>
                                             <rect fill="#000000" opacity="0.3" x="16" y="14"
                                                   width="4" height="2" rx="1"></rect>
                                         </g>
@@ -134,24 +61,23 @@
                                 </span>
                             </div>
                             <div class="alert-text card-label font-weight-bold">
-                                @Common.MyCardInAutoPayment
+                                @Common.MyRegisteredCreditCards
                             </div>
                         </div>
                         <div class="row">
-                            @foreach (var item in Model.AutomaticPayments)
+                            @if (ViewBag.HasCards)
                             {
-                                if (item.Card != null)
+                                foreach (var item in Model.Cards.Where(c => !c.HasAutoPayments).ToArray())
                                 {
-                                    <div class="@Html.Raw(string.Format("col-lg-{0}",Model.AutomaticPayments.Where(a=>a.Card != null).Count() < 4 ? (12/Model.AutomaticPayments.Where(a=>a.Card != null).Count()) : 4))">
+                                    <div class="@Html.Raw(string.Format("col-lg-{0}",Model.Cards.Where(c => !c.HasAutoPayments).Count() < 4 ? (12/Model.Cards.Where(c => !c.HasAutoPayments).Count()) : 4))">
                                         <div class="option">
+                                            <!-- label -->
                                             <span class="option-label">
                                                 <span class="option-head">
-                                                    <span class="option-title">
-                                                        @Html.DisplayFor(m => item.Card.MaskedCardNo)
-                                                    </span>
+                                                    <span class="option-title">@Html.DisplayFor(m => item.MaskedCardNo)</span>
                                                     <span class="option-focus">
                                                         <span class="alert-icon">
-                                                            <span class="svg-icon svg-icon-success svg-icon-2x">
+                                                            <span class="svg-icon svg-icon-dark svg-icon-2x">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                      xmlns:xlink="http://www.w3.org/1999/xlink"
                                                                      width="24px" height="24px"
@@ -160,17 +86,14 @@
                                                                        fill="none" fill-rule="evenodd">
                                                                         <rect x="0" y="0" width="24"
                                                                               height="24"></rect>
-                                                                        <rect fill="#000000"
-                                                                              opacity="0.3" x="2" y="5"
-                                                                              width="20" height="14"
-                                                                              rx="2"></rect>
+                                                                        <rect fill="#000000" opacity="0.3"
+                                                                              x="2" y="5" width="20"
+                                                                              height="14" rx="2"></rect>
                                                                         <rect fill="#000000" x="2" y="8"
-                                                                              width="20" height="3">
-                                                                        </rect>
-                                                                        <rect fill="#000000"
-                                                                              opacity="0.3" x="16" y="14"
-                                                                              width="4" height="2" rx="1">
-                                                                        </rect>
+                                                                              width="20" height="3"></rect>
+                                                                        <rect fill="#000000" opacity="0.3"
+                                                                              x="16" y="14" width="4"
+                                                                              height="2" rx="1"></rect>
                                                                     </g>
                                                                 </svg>
                                                             </span>
@@ -178,31 +101,140 @@
                                                     </span>
                                                 </span>
                                                 <span class="option-body">
-                                                    @Common.SubscriberNo : @Html.DisplayFor(m => item.SubscriberNo)
+                                                    @*@Common.InvoiceWillPayWithThisCard*@
                                                 </span>
                                                 <span class="card-toolbar">
                                                     <br>
-                                                    @*<a href="" class="btn btn-sm btn-light-success font-weight-bold mr-2">
-                                                            @Common.ActivateAutoPayment
-                                                        </a>*@
-                                                    @using (Html.BeginForm("DeactivateAutomaticPayment", "Payment", FormMethod.Post))
+                                                    @using (Html.BeginForm("ActivateAutomaticPayment", "Payment", FormMethod.Post, new { @style = "display:contents", @class = "form" }))
                                                     {
                                                         @Html.AntiForgeryToken()
-                                                        @Html.Hidden("id", item.SubscriberID)
-                                                        <input value="@Common.Cancel" type="submit" class="btn btn-sm btn-light-warning font-weight-bold mr-2" />
+                                                        @Html.Hidden("token", item.Token)
+                                                        <input type="submit" value="@Common.ActivateAutomaticPayment" class="btn btn-sm btn-light-success font-weight-bold mr-2" />
                                                     }
+                                                    @using (Html.BeginForm("RemoveCard", "Payment", FormMethod.Post, new { @style = "display:contents", @class = "form" }))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        @Html.Hidden("id", item.Token)
+                                                        <input type="submit" value="@Common.DeleteCard" class="btn btn-sm btn-light-danger font-weight-bold mr-2" />
+                                                    }
+                                                    @*<a href="" class="btn btn-sm btn-light-danger font-weight-bold mr-2">
+                                                            @Common.DeleteCard
+                                                        </a>*@
                                                 </span>
                                             </span>
                                         </div>
                                     </div>
                                 }
-
                             }
+                            else
+                            {
+                                <div class="col-lg-12">
+                                    <div class="option justify-content-center">
+                                        @CMS.Localization.Errors.RegisteredCardsNotFound
+                                    </div>
+                                </div>
+                            }
+                        </div> <br>
+                        <div class="form-group fv-plugins-icon-container">
+                            <div class=" bg-light-primary alert alert-custom alert-white alert-shadow fade show gutter-b"
+                                 role="alert">
+                                <div class="alert-icon">
+                                    <span class="svg-icon svg-icon-primary svg-icon-2x">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none"
+                                               fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <rect fill="#000000" opacity="0.3" x="2" y="5"
+                                                      width="20" height="14" rx="2"></rect>
+                                                <rect fill="#000000" x="2" y="8" width="20"
+                                                      height="3"></rect>
+                                                <rect fill="#000000" opacity="0.3" x="16" y="14"
+                                                      width="4" height="2" rx="1"></rect>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="alert-text card-label font-weight-bold">
+                                    @Common.MyCardInAutoPayment
+                                </div>
+                            </div>
+                            <div class="row">
+                                @if (ViewBag.HasAutoPayments)
+                                {
+                                    foreach (var item in Model.AutomaticPayments)
+                                    {
+                                        if (item.Card != null)
+                                        {
+                                            <div class="@Html.Raw(string.Format("col-lg-{0}",Model.AutomaticPayments.Where(a=>a.Card != null).Count() < 4 ? (12/Model.AutomaticPayments.Where(a=>a.Card != null).Count()) : 4))">
+                                                <div class="option">
+                                                    <span class="option-label">
+                                                        <span class="option-head">
+                                                            <span class="option-title">
+                                                                @Html.DisplayFor(m => item.Card.MaskedCardNo)
+                                                            </span>
+                                                            <span class="option-focus">
+                                                                <span class="alert-icon">
+                                                                    <span class="svg-icon svg-icon-success svg-icon-2x">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                             width="24px" height="24px"
+                                                                             viewBox="0 0 24 24" version="1.1">
+                                                                            <g stroke="none" stroke-width="1"
+                                                                               fill="none" fill-rule="evenodd">
+                                                                                <rect x="0" y="0" width="24"
+                                                                                      height="24"></rect>
+                                                                                <rect fill="#000000"
+                                                                                      opacity="0.3" x="2" y="5"
+                                                                                      width="20" height="14"
+                                                                                      rx="2"></rect>
+                                                                                <rect fill="#000000" x="2" y="8"
+                                                                                      width="20" height="3">
+                                                                                </rect>
+                                                                                <rect fill="#000000"
+                                                                                      opacity="0.3" x="16" y="14"
+                                                                                      width="4" height="2" rx="1">
+                                                                                </rect>
+                                                                            </g>
+                                                                        </svg>
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <span class="option-body">
+                                                            @Common.SubscriberNo : @Html.DisplayFor(m => item.SubscriberNo)
+                                                        </span>
+                                                        <span class="card-toolbar">
+                                                            <br>
+                                                            @*<a href="" class="btn btn-sm btn-light-success font-weight-bold mr-2">
+                                                                    @Common.ActivateAutoPayment
+                                                                </a>*@
+                                                            @using (Html.BeginForm("DeactivateAutomaticPayment", "Payment", FormMethod.Post))
+                                                            {
+                                                                @Html.AntiForgeryToken()
+                                                                @Html.Hidden("id", item.SubscriberID)
+                                                                <input value="@Common.Cancel" type="submit" class="btn btn-sm btn-light-warning font-weight-bold mr-2" />
+                                                            }
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        }
 
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="col-lg-12">
+                                        <div class="option justify-content-center">
+                                            @CMS.Localization.Errors.RegisteredCardsNotFound
+                                        </div>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
 </div>

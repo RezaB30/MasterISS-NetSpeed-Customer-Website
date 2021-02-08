@@ -11,7 +11,7 @@ namespace CustomerManagementSystem
     public static class AuthenticationExtentions
     {
         public static string GiveClientSubscriberNo(this IPrincipal user)
-        {
+        {            
             return (user.Identity as ClaimsIdentity).Claims.FirstOrDefault(c => c.Type == ClaimTypes.SerialNumber).Value;
         }
         public static string GiveSubscriberName(this IPrincipal user)

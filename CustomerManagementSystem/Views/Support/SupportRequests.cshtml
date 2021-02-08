@@ -189,11 +189,6 @@
                     <div id="paged" class="d-flex flex-wrap mr-3">
                         @Html.PagedList((int)ViewBag.PageCount, 5)
                     </div>
-                    @*<div class="d-flex align-items-center">
-                            <span class="text-muted">
-                                @string.Format(Common.Pagination, Model.TotalItemCount, Model.FirstItemOnPage, Model.LastItemOnPage)
-                            </span>
-                        </div>*@
                 }
             </div>
         </div>
@@ -202,5 +197,25 @@
 @section scripts{
     @Scripts.Render("~/Content/assets/js/pages/features/miscellaneous/sweetalert2.js")
     @Scripts.Render("~/Scripts/Custom/display-message-box.js")
-
+<script>
+    var pagination = $('.table-pages > span').text();
+    $('.table-pages > span').remove();
+    $('.table-pages').append('<div class="d-flex align-items-center"><span class="text-muted"> ' + pagination + '</span></div>');
+    $('.table-pages > a').each(function () {
+        var classes = $(this).attr("class");
+        var IsPassive = $(this).attr("title");
+        var hasHref = $(this).attr("href");
+        if (IsPassive) {
+            $(this).removeClass("disabled page-link");
+            $(this).addClass("btn btn-icon btn-sm btn-light-primary mr-2 my-1");
+        } else {
+            $(this).removeClass("disabled page-link");
+            if (!IsPassive && hasHref.includes("javascript")) {
+                $(this).addClass("btn btn-icon btn-sm border-0 btn-hover-primary active mr-2 my-1");
+            } else {
+                $(this).addClass("btn btn-icon btn-sm border-0 btn-hover-primary mr-2 my-1");
+            } 
+        }
+    });
+</script>
 }

@@ -232,11 +232,29 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Geçersiz şifre uzunluğu.
+        /// </summary>
+        public static string NotValidLength {
+            get {
+                return ResourceManager.GetString("NotValidLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Şifre Gerekli.
         /// </summary>
         public static string PasswordRequired {
             get {
                 return ResourceManager.GetString("PasswordRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıtlı Kart Bulunamadı.
+        /// </summary>
+        public static string RegisteredCardsNotFound {
+            get {
+                return ResourceManager.GetString("RegisteredCardsNotFound", resourceCulture);
             }
         }
         

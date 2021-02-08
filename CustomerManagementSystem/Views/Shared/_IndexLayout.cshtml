@@ -215,7 +215,7 @@
                                          id="kt_quick_user_toggle">
                                         <div class="d-flex text-right pr-3">
                                             <span class="text-white opacity-50 font-weight-bold font-size-sm d-none d-md-inline mr-1">@Common.Hi,</span>
-                                            <span class="text-white font-weight-bolder font-size-sm d-none d-md-inline">@User.Identity.Name.ToUpper()</span>
+                                            <span class="text-white font-weight-bolder font-size-sm d-none d-md-inline">@User.Identity.Name.ToUpper().Split(' ')[0]</span>
                                         </div>
                                         <span class="svg-icon svg-icon-success svg-icon-2x">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">

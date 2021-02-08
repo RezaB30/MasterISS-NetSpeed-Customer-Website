@@ -72,9 +72,16 @@
                                             @Html.TextAreaFor(m => m.Description, new { @class = "form-control form-control-solid form-control-lg", @rows = "3", @maxlength = "500" })
                                             <span class="form-text text-muted">
                                                 @Common.SupportRequestExplainText
-                                            </span>
-                                            <div class="mt-1" style="color:mediumpurple">
-                                                @string.Format(Errors.FileSizeError, (FileMaxSize / 1000000))
+                                            </span>                                            
+                                            <div class="mt-1">
+                                                <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
+                                                    <i class="flaticon2-clip-symbol"></i>
+                                                </span>
+                                                <span style="color:mediumpurple">
+                                                    @string.Format(Errors.FileSizeError, (FileMaxSize / 1000000))
+                                                </span>                                                
+                                                <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple />
+                                                <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
                                             </div>
                                         </div>
                                         <div class="fv-plugins-message-container">@Html.ValidationMessageFor(m => m.Description, null, new { @class = "text-danger" })</div>
@@ -88,12 +95,7 @@
                             <div>
                                 <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-10 py-2 action-submit">
                                     @Common.Send
-                                </button>
-                                <span class="btn btn-icon btn-sm btn-clean mr-2 dz-clickable" id="support-attachment-id">
-                                    <i class="flaticon2-clip-symbol"></i>
-                                </span>
-                                <input class="upload-attachments" name="attachments" type="file" style="visibility:hidden;" multiple />
-                                <ul class="list upload-attachment-list list-unstyled mt-2"></ul>
+                                </button>                                
                             </div>
                         </div>
                     }

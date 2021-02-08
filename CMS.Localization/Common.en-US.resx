@@ -441,6 +441,9 @@
   <data name="NewSubscriptionRegister" xml:space="preserve">
     <value>New Subscription Register</value>
   </data>
+  <data name="NewSubscriptionRegisterDescription" xml:space="preserve">
+    <value>You can learn your infrastructure and make a new subscription application.</value>
+  </data>
   <data name="NewSupportNotification" xml:space="preserve">
     <value>You have new notification about support request</value>
   </data>
@@ -452,6 +455,9 @@
   </data>
   <data name="OK" xml:space="preserve">
     <value>Okay</value>
+  </data>
+  <data name="OnlinePasswordLengthDescription" xml:space="preserve">
+    <value>Password length must be {0} characters. The password should only contain letters and numbers.</value>
   </data>
   <data name="OnlinePayBill" xml:space="preserve">
     <value>Online Pay Bill</value>
@@ -533,6 +539,9 @@
   </data>
   <data name="RecipeUsageInfo" xml:space="preserve">
     <value>Tariff and Usage Information</value>
+  </data>
+  <data name="Redirecting" xml:space="preserve">
+    <value>Redirecting... Please wait..</value>
   </data>
   <data name="ReferenceCode" xml:space="preserve">
     <value>Reference Code</value>

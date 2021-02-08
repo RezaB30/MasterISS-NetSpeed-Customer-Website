@@ -1,12 +1,20 @@
-﻿@using RezaB.Web.VPOS
-
-@{
+﻿@{
     ViewBag.Title = CMS.Localization.Common.InvoicePayments;
 }
-
+<style>
+    .vpos-redirect-container {
+        visibility: hidden
+    }
+</style>
 <div class="container" style="text-align: center; color: orange;">
     <div class="card">
         <div class="card-body text-center">
+            @if (ViewBag.POSForm != null)
+            {
+                <span class="text-info">
+                    @CMS.Localization.Common.Redirecting
+                </span>
+            }
             @Html.Raw(ViewBag.POSForm)
         </div>
     </div>

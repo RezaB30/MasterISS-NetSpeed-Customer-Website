@@ -1035,6 +1035,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Altyapınızı sorulayabilir ve yeni abonelik başvurusu yapabilirsiniz..
+        /// </summary>
+        public static string NewSubscriptionRegisterDescription {
+            get {
+                return ResourceManager.GetString("NewSubscriptionRegisterDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Yeni destek bildiriminiz var.
         /// </summary>
         public static string NewSupportNotification {
@@ -1067,6 +1076,15 @@ namespace CMS.Localization {
         public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Şifre Uzunluğu {0} karakter olmalıdır. Şifre sadece harf ve sayılardan oluşmalıdır..
+        /// </summary>
+        public static string OnlinePasswordLengthDescription {
+            get {
+                return ResourceManager.GetString("OnlinePasswordLengthDescription", resourceCulture);
             }
         }
         
@@ -1224,7 +1242,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to İşleniyor... Lütfen Bekleyin...
+        ///   Looks up a localized string similar to Kontrol Ediliyor... Lütfen Bekleyin...
         /// </summary>
         public static string PleaseWait {
             get {
@@ -1310,6 +1328,15 @@ namespace CMS.Localization {
         public static string RecipeUsageInfo {
             get {
                 return ResourceManager.GetString("RecipeUsageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yönlendiriliyor... Lütfen Bekleyiniz...
+        /// </summary>
+        public static string Redirecting {
+            get {
+                return ResourceManager.GetString("Redirecting", resourceCulture);
             }
         }
         

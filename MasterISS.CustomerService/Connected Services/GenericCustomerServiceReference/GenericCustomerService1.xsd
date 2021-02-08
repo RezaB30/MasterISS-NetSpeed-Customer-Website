@@ -278,4 +278,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ChangeClientInfoConfirmRequest" nillable="true" type="tns:ChangeClientInfoConfirmRequest" />
+  <xs:complexType name="CustomerServiceChangeClientOnlinePasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q18:BaseRequestOfChangeClientOnlinePasswordRequestSHA1CuT410mT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChangeClientOnlinePasswordParameters" nillable="true" type="tns:ChangeClientOnlinePasswordRequest" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceChangeClientOnlinePasswordRequest" nillable="true" type="tns:CustomerServiceChangeClientOnlinePasswordRequest" />
+  <xs:complexType name="ChangeClientOnlinePasswordRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OnlinePassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubscriptionId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeClientOnlinePasswordRequest" nillable="true" type="tns:ChangeClientOnlinePasswordRequest" />
 </xs:schema>

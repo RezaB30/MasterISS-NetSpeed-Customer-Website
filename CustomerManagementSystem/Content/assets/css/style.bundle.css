@@ -8200,7 +8200,7 @@ button.bg-white:focus {
 
 .pr-5,
 .px-5 {
-  padding-right: 1.25rem !important; }
+  padding-right: 1rem !important; }
 
 .pb-5,
 .py-5 {
@@ -8208,7 +8208,7 @@ button.bg-white:focus {
 
 .pl-5,
 .px-5 {
-  padding-left: 1.25rem !important; }
+  padding-left: 1rem !important; }
 
 .p-6 {
   padding: 1.5rem !important; }
@@ -8291,7 +8291,7 @@ button.bg-white:focus {
 
 .pt-10,
 .py-10 {
-  padding-top: 2.5rem !important; }
+  padding-top: 1rem !important; }
 
 .pr-10,
 .px-10 {
@@ -8299,7 +8299,7 @@ button.bg-white:focus {
 
 .pb-10,
 .py-10 {
-  padding-bottom: 2.5rem !important; }
+  padding-bottom: 1rem !important; }
 
 .pl-10,
 .px-10 {
@@ -33728,7 +33728,7 @@ a.text-hover-muted,
   font-size: 1.25rem !important; }
 
 .font-size-h6 {
-  font-size: 1.175rem !important; }
+  font-size: 1rem !important; }
 
 .display1 {
   font-size: 5.5rem !important; }

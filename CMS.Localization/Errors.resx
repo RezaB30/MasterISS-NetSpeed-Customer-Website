@@ -174,8 +174,14 @@
   <data name="NotValid" xml:space="preserve">
     <value>Lütfen geçerli bir {0} girin.</value>
   </data>
+  <data name="NotValidLength" xml:space="preserve">
+    <value>Geçersiz şifre uzunluğu</value>
+  </data>
   <data name="PasswordRequired" xml:space="preserve">
     <value>Şifre Gerekli</value>
+  </data>
+  <data name="RegisteredCardsNotFound" xml:space="preserve">
+    <value>Kayıtlı Kart Bulunamadı</value>
   </data>
   <data name="Required" xml:space="preserve">
     <value>{0} gerekli</value>

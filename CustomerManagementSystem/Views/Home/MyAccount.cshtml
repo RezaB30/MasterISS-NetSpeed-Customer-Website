@@ -36,47 +36,47 @@
                             <table class="table table-light table-light-primary">
                                 <thead>
                                     <tr>
-                                        <th class="table-center">@Common.InfoServices</th>
-                                        <th class="table-center">@Common.Description</th>
+                                        <th class="table-center">@Common.InfoServices.ToUpper()</th>
+                                        <th class="table-center">@Common.Description.ToUpper()</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">@Html.DisplayNameFor(m => m.FullName)</td>
+                                        <td class="font-weight-bold table-row-title text-uppercase">@Html.DisplayNameFor(m => m.FullName)</td>
                                         <td class="table-center">@Html.DisplayFor(m => m.FullName)</td>
                                     </tr>
                                     <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.SubscriberNo)
                                         </td>
                                         <td class="table-center">@Html.DisplayFor(m => m.SubscriberNo)</td>
                                     </tr>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.XDSLNo)
                                         </td>
                                         <td class="table-center">@Html.DisplayFor(m => m.XDSLNo)</td>
                                     </tr>
                                     <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.ModemUsername)
                                         </td>
                                         <td class="table-center">@Html.DisplayFor(m => m.ModemUsername)</td>
                                     </tr>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.ModemPassword)
                                         </td>
                                         <td class="table-center">@Html.DisplayFor(m => m.ModemPassword)</td>
                                     </tr>
                                     <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.StaticIP)
                                         </td>
                                         <td class="table-center">@Html.DisplayFor(m => m.StaticIP)</td>
                                     </tr>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.SubscriptionState)
                                         </td>
                                         <td class="table-center">
@@ -84,7 +84,7 @@
                                         </td>
                                     </tr>
                                     <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.AutomaticPaymentInstruction)
                                         </td>
                                         <td class="table-center">
@@ -106,7 +106,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.LineAddress)
                                         </td>
                                         <td class="table-center">
@@ -114,7 +114,7 @@
                                         </td>
                                     </tr>
                                     <tr class="bg-gray-100">
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.PassedInvoice)
                                         </td>
                                         <td class="table-center">
@@ -145,7 +145,7 @@
 
                                     </tr>
                                     <tr>
-                                        <td class="font-weight-bold table-row-title">
+                                        <td class="font-weight-bold table-row-title text-uppercase">
                                             @Html.DisplayNameFor(m => m.SpecialOfferReferenceCode)
                                         </td>
                                         <td class="table-center">
@@ -186,7 +186,7 @@
                                             </div>
                                         </div>*@
                                     <div class="form-group row align-items-center">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">
+                                        <label class="col-xl-3 col-lg-3 col-form-label text-uppercase">
                                             @Html.DisplayNameFor(m => m.ContactPhoneNo)
                                         </label>
                                         <div class="col-lg-9 col-xl-6">
@@ -196,12 +196,12 @@
                                                         <i class="la la-phone"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder, @maxlength = "11", @autocomplete = "off" } })
+                                                @Html.EditorFor(m => m.ContactPhoneNo, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PhonePlaceholder, @maxlength = "11", @autocomplete = "off", @readonly = "readonly" } })
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-xl-3 col-lg-3 col-form-label">@Html.DisplayNameFor(m => m.Mail)</label>
+                                        <label class="col-xl-3 col-lg-3 col-form-label text-uppercase">@Html.DisplayNameFor(m => m.Mail)</label>
                                         <div class="col-lg-9 col-xl-6">
                                             <div class="row input-group input-group-lg input-group-solid">
                                                 <div class="input-group-prepend">
@@ -209,8 +209,22 @@
                                                         <i class="la la-at"></i>
                                                     </span>
                                                 </div>
-                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder , @autocomplete = "off" } })
+                                                @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.MailPlaceholder, @autocomplete = "off", @readonly = "readonly" } })
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-xl-3 col-lg-3 col-form-label text-uppercase">@Html.DisplayNameFor(m => m.CustomerServicePassword)</label>
+                                        <div class="col-lg-9 col-xl-6">
+                                            <div class="row input-group input-group-lg input-group-solid">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="la la-info"></i>
+                                                    </span>
+                                                </div>
+                                                @Html.EditorFor(m => m.CustomerServicePassword, new { htmlAttributes = new { @class = "form-control form-control-lg form-control-solid", @placeholder = Common.PasswordPlaceholder, @autocomplete = "off", @maxlength = "6" } })
+                                            </div>
+                                            <div class="row my-2 text-info">@string.Format(CMS.Localization.Common.OnlinePasswordLengthDescription, 6)</div>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between border-top pt-10 mt-15">
@@ -235,9 +249,5 @@
 </div>
 
 @section scripts{
-    @Scripts.Render("~/Content/assets/js/pages/features/custom/spinners.js")
-    @Scripts.Render("~/Scripts/Custom/force-numeric-input.js")
-    <script>
-        $('#ContactPhoneNo').ForceNumericOnly();
-    </script>
+
 }

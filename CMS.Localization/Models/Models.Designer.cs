@@ -709,7 +709,7 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uplod Hızı.
+        ///   Looks up a localized string similar to Upload Hızı.
         /// </summary>
         public static string UploadSpeed {
             get {

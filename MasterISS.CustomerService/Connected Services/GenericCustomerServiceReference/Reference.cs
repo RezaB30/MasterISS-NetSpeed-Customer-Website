@@ -86,6 +86,8 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientInfoConfirmRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientOnlinePasswordRequestSHA1CuT410mT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaPackagesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceVPOSErrorParameterNameRequest))]
@@ -1276,6 +1278,37 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((object.ReferenceEquals(this.ChangeClientInfoConfirmRequestField, value) != true)) {
                     this.ChangeClientInfoConfirmRequestField = value;
                     this.RaisePropertyChanged("ChangeClientInfoConfirmRequest");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfChangeClientOnlinePasswordRequestSHA1CuT410mT", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest))]
+    public partial class BaseRequestOfChangeClientOnlinePasswordRequestSHA1CuT410mT : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceChangeClientOnlinePasswordRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceChangeClientOnlinePasswordRequest : MasterISS.CustomerService.GenericCustomerServiceReference.BaseRequestOfChangeClientOnlinePasswordRequestSHA1CuT410mT {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientOnlinePasswordRequest ChangeClientOnlinePasswordParametersField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.GenericCustomerServiceReference.ChangeClientOnlinePasswordRequest ChangeClientOnlinePasswordParameters {
+            get {
+                return this.ChangeClientOnlinePasswordParametersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ChangeClientOnlinePasswordParametersField, value) != true)) {
+                    this.ChangeClientOnlinePasswordParametersField = value;
+                    this.RaisePropertyChanged("ChangeClientOnlinePasswordParameters");
                 }
             }
         }
@@ -3839,6 +3872,67 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
                 if ((object.ReferenceEquals(this.EmailField, value) != true)) {
                     this.EmailField = value;
                     this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> SubscriptionId {
+            get {
+                return this.SubscriptionIdField;
+            }
+            set {
+                if ((this.SubscriptionIdField.Equals(value) != true)) {
+                    this.SubscriptionIdField = value;
+                    this.RaisePropertyChanged("SubscriptionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeClientOnlinePasswordRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class ChangeClientOnlinePasswordRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OnlinePasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> SubscriptionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OnlinePassword {
+            get {
+                return this.OnlinePasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OnlinePasswordField, value) != true)) {
+                    this.OnlinePasswordField = value;
+                    this.RaisePropertyChanged("OnlinePassword");
                 }
             }
         }
@@ -10640,6 +10734,12 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirm", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientInfoConfirmResponse")]
         System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientInfoConfirmAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePassword", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePasswordResponse")]
+        MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse ChangeClientOnlinePassword(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePassword", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePasswordResponse")]
+        System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientOnlinePasswordAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11171,6 +11271,14 @@ namespace MasterISS.CustomerService.GenericCustomerServiceReference {
         
         public System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientInfoConfirmAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmRequest request) {
             return base.Channel.ChangeClientInfoConfirmAsync(request);
+        }
+        
+        public MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse ChangeClientOnlinePassword(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request) {
+            return base.Channel.ChangeClientOnlinePassword(request);
+        }
+        
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientOnlinePasswordAsync(MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request) {
+            return base.Channel.ChangeClientOnlinePasswordAsync(request);
         }
     }
 }
