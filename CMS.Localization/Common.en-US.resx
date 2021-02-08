@@ -285,6 +285,9 @@
   <data name="FileAdded" xml:space="preserve">
     <value>File Added</value>
   </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
   <data name="Freeze" xml:space="preserve">
     <value>Freezed</value>
   </data>
@@ -341,6 +344,9 @@
   </data>
   <data name="InvoiceWillPayWithThisCard" xml:space="preserve">
     <value>Your bill payments will be made with this card you have previously saved.</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
   </data>
   <data name="LastLogin" xml:space="preserve">
     <value>Last Login</value>
@@ -468,6 +474,9 @@
   <data name="Optional" xml:space="preserve">
     <value>Optional</value>
   </data>
+  <data name="PageSummary" xml:space="preserve">
+    <value>Showing page {0} / Total Page {1}</value>
+  </data>
   <data name="Pagination" xml:space="preserve">
     <value>Total row is {0}. Rows between {1} and {2} are shown on this page.</value>
   </data>
@@ -517,6 +526,9 @@
     <value>Payment is successful</value>
   </data>
   <data name="Prev" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
     <value>Previous</value>
   </data>
   <data name="ProblemSolved" xml:space="preserve">

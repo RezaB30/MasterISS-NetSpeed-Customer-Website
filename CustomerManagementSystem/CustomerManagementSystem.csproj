@@ -190,7 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helper\MyExtensions.cs" />
+    <Compile Include="Helper\PagedListHelper.cs" />
     <Compile Include="LanguageLinkHelper.cs" />
     <Compile Include="Utilities\CacheManager.cs" />
     <Compile Include="Utilities\DomainCache.cs" />

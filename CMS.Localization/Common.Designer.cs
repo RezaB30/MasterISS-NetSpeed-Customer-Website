@@ -566,6 +566,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İlk.
+        /// </summary>
+        public static string First {
+            get {
+                return ResourceManager.GetString("First", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dondurulmuş.
         /// </summary>
         public static string Freeze {
@@ -733,6 +742,15 @@ namespace CMS.Localization {
         public static string InvoiceWillPayWithThisCard {
             get {
                 return ResourceManager.GetString("InvoiceWillPayWithThisCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son.
+        /// </summary>
+        public static string Last {
+            get {
+                return ResourceManager.GetString("Last", resourceCulture);
             }
         }
         
@@ -1116,6 +1134,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Sayfa gösteriliyor / Toplam {1} Sayfa.
+        /// </summary>
+        public static string PageSummary {
+            get {
+                return ResourceManager.GetString("PageSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toplam {0} kayıt bulundu. Bu sayfada {1} ile {2} arası kayıtlar gösteriliyor..
         /// </summary>
         public static string Pagination {
@@ -1265,6 +1292,15 @@ namespace CMS.Localization {
         public static string Prev {
             get {
                 return ResourceManager.GetString("Prev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geri.
+        /// </summary>
+        public static string Previous {
+            get {
+                return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
         

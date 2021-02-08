@@ -286,6 +286,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="FileAdded" xml:space="preserve">
     <value>Dosya Eklendi</value>
   </data>
+  <data name="First" xml:space="preserve">
+    <value>İlk</value>
+  </data>
   <data name="Freeze" xml:space="preserve">
     <value>Dondurulmuş</value>
   </data>
@@ -342,6 +345,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="InvoiceWillPayWithThisCard" xml:space="preserve">
     <value>Fatura ödemeleriniz daha önce kaydetmiş olduğunuz bu kart ile gerçekleşecektir.</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Son</value>
   </data>
   <data name="LastLogin" xml:space="preserve">
     <value>Son Giriş</value>
@@ -470,6 +476,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="Optional" xml:space="preserve">
     <value>İsteğe bağlı</value>
   </data>
+  <data name="PageSummary" xml:space="preserve">
+    <value>{0} Sayfa gösteriliyor / Toplam {1} Sayfa</value>
+  </data>
   <data name="Pagination" xml:space="preserve">
     <value>Toplam {0} kayıt bulundu. Bu sayfada {1} ile {2} arası kayıtlar gösteriliyor.</value>
   </data>
@@ -520,6 +529,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="Prev" xml:space="preserve">
     <value>Önceki</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Geri</value>
   </data>
   <data name="ProblemSolved" xml:space="preserve">
     <value>Sorunum Çözüldü</value>
