@@ -71,7 +71,7 @@
                     <div class="card-toolbar">
                         @if (hasUnpaidBills)
                         {
-                            <a href="@Url.Action("PaymentSelection","Payment")" class="btn btn-sm btn-light-danger font-weight-bold mr-2">
+                            <a href="@Url.Action("PaymentDescription","Payment")" class="btn btn-sm btn-light-danger font-weight-bold mr-2">
                                 @Common.PayAll
                             </a>
                         }
@@ -216,7 +216,7 @@
                             {
                                 if (item.CanBePaid)
                                 {
-                                    <a href="@Url.Action("PaymentSelection","Payment",new { ID = item.ID })" class="btn btn-block btn-sm btn-danger font-weight-bolder  mr-2">
+                                    <a href="@Url.Action("PaymentDescription","Payment",new { id = item.ID })" class="btn btn-block btn-sm btn-danger font-weight-bolder  mr-2">
                                         @Common.QuickPay
                                     </a>
                                 }
@@ -253,9 +253,7 @@
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     @if (Model.Count() > 0)
                     {
-                        <div id="paged" class="d-flex flex-wrap mr-3">
-                            @Html.PagedList((int)ViewBag.PageCount, 5)
-                        </div>
+                        @Html.PagedList((int)ViewBag.PageCount, 5)
                     }
                 </div>
             </div>

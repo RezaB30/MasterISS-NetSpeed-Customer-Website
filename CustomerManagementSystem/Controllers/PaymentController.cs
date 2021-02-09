@@ -188,7 +188,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 generalLogger.Warn($"Error calling 'remove invalid cards' from web service. Code : {autoPaymentList.ResponseMessage.ErrorCode} - Message : {autoPaymentList.ResponseMessage.ErrorMessage}");
             }
-            var autoPayments = autoPaymentList.AutoPaymentListResult.Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
+            var autoPayments = autoPaymentList.AutoPaymentListResult?.Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
             {
                 SubscriberID = s.SubscriberID,
                 SubscriberNo = s.SubscriberNo,
@@ -203,7 +203,7 @@ namespace CustomerManagementSystem.Controllers
                 card.HasAutoPayments = autoPayments.Where(ap => ap.Card != null).Any(ap => ap.Card.Token == card.Token);
             }
             ViewBag.HasCards = cards == null ? false : cards.Count() == 0 ? false : true;
-            ViewBag.HasAutoPayments = autoPayments == null ? false : autoPayments.Count() == 0 ? false : autoPayments.Where(ap=> ap.Card != null).Any();
+            ViewBag.HasAutoPayments = autoPayments == null ? false : autoPayments.Count() == 0 ? false : autoPayments.Where(ap => ap.Card != null).Any();
             return View(new CustomerAutomaticPaymentViewModel()
             {
                 Cards = cards,
@@ -961,11 +961,17 @@ namespace CustomerManagementSystem.Controllers
             }
             return ReturnMessageUrl(Url.Action("BillsAndPayments", "Payment"), response.ResponseMessage.ErrorMessage, true);
         }
-
-        //public ActionResult RegisteredCards()
-        //{
-        //    return View();
-        //}
+        public ActionResult PaymentDescription(long? id)
+        {
+            var payableAmount = GetPayableAmount(User.GiveUserId(), id);
+            if (payableAmount == 0)
+            {
+                paymentLogger.Error($"Payable amount not found. Bill Id : {id}");
+                return RedirectToAction("BillsAndPayments", "Payment");
+            }
+            ViewBag.PayableAmount = payableAmount;
+            return View(id);
+        }
 
         #region
         private CustomerServiceGenericAppSettingsResponse GenericAppSettings()

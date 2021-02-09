@@ -150,6 +150,9 @@
   <data name="AllSupportRequests" xml:space="preserve">
     <value>Tüm Destek Kayıtlarım</value>
   </data>
+  <data name="AllTaxesIncluded" xml:space="preserve">
+    <value>Tüm Vergiler Dahil</value>
+  </data>
   <data name="Amount" xml:space="preserve">
     <value>Tutar</value>
   </data>
@@ -497,6 +500,9 @@ gerçekleştirebilirsiniz.</value>
   <data name="PayAll" xml:space="preserve">
     <value>Tümünü Öde</value>
   </data>
+  <data name="PayingAmount" xml:space="preserve">
+    <value>Ödenecek Tutar</value>
+  </data>
   <data name="PayingBills" xml:space="preserve">
     <value>Fatura Ödeme</value>
   </data>
@@ -505,6 +511,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="PaymentSecureDescription" xml:space="preserve">
     <value>Güvenliğiniz sebebi ile ödeme işleminiz &lt;strong&gt;3D secure&lt;/strong&gt; ile gerçekleşecektir.</value>
+  </data>
+  <data name="PaymentSecureText" xml:space="preserve">
+    <value>Gönder butonuna bastıktan sonra sistemimiz sizi 3D güvenli ödeme alanına yönlendirecektir. Telefonunuza gelecek olan SMS de yer alan güvenlik şifresini girerek faturanızın ödemesini yapabilirsiniz.</value>
   </data>
   <data name="PaymentWithCardNotAvailable" xml:space="preserve">
     <value>Kredi kartları alınamadı. Lütfen daha sonra tekrar deneyiniz.</value>

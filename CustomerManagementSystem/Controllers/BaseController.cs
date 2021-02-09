@@ -115,8 +115,8 @@ namespace CustomerManagementSystem.Controllers
             Dictionary<string, object> responseParams = new Dictionary<string, object>();
             Request.QueryString.CopyTo(responseParams);
             responseParams.Add("lang", culture);
-
-            return RedirectToAction(sender, new RouteValueDictionary(responseParams));
+            return RedirectToAction("Index", "Home");
+            //return RedirectToAction(sender, new RouteValueDictionary(responseParams));
         }
         public virtual ActionResult ReturnMessageUrl(string url, string message = null, bool? IsSuccess = null)
         {

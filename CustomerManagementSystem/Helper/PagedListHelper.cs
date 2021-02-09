@@ -125,13 +125,12 @@ namespace CustomerManagementSystem.Helper
                 prevLink.ToString(TagRenderMode.Normal) +
                 pageLinks +
                 nextLink.ToString(TagRenderMode.Normal) +
-                lastLink.ToString(TagRenderMode.Normal) +
-                pageSummaryParent.ToString(TagRenderMode.Normal);
-            //wrapper.InnerHtml += pagesSummary.ToString(TagRenderMode.Normal)
-            //    + firstLink.ToString(TagRenderMode.Normal)
-            //    + prevLink.ToString(TagRenderMode.Normal);
-            //return the result
-            return new MvcHtmlString(wrapper.ToString(TagRenderMode.Normal));
+                lastLink.ToString(TagRenderMode.Normal);
+            TagBuilder paged = new TagBuilder("div");
+            paged.AddCssClass("d-flex flex-wrap mr-3");
+            paged.GenerateId("paged");
+            paged.InnerHtml = wrapper.ToString(TagRenderMode.Normal);
+            return new MvcHtmlString(paged.ToString(TagRenderMode.Normal) + pageSummaryParent.ToString(TagRenderMode.Normal));
         }
     }
 }

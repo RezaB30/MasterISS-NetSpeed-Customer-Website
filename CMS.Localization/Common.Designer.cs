@@ -160,6 +160,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tüm Vergiler Dahil.
+        /// </summary>
+        public static string AllTaxesIncluded {
+            get {
+                return ResourceManager.GetString("AllTaxesIncluded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tutar.
         /// </summary>
         public static string Amount {
@@ -1197,6 +1206,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ödenecek Tutar.
+        /// </summary>
+        public static string PayingAmount {
+            get {
+                return ResourceManager.GetString("PayingAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fatura Ödeme.
         /// </summary>
         public static string PayingBills {
@@ -1220,6 +1238,15 @@ namespace CMS.Localization {
         public static string PaymentSecureDescription {
             get {
                 return ResourceManager.GetString("PaymentSecureDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gönder butonuna bastıktan sonra sistemimiz sizi 3D güvenli ödeme alanına yönlendirecektir. Telefonunuza gelecek olan SMS de yer alan güvenlik şifresini girerek faturanızın ödemesini yapabilirsiniz..
+        /// </summary>
+        public static string PaymentSecureText {
+            get {
+                return ResourceManager.GetString("PaymentSecureText", resourceCulture);
             }
         }
         

@@ -150,6 +150,9 @@
   <data name="AllSupportRequests" xml:space="preserve">
     <value>All Support Requests</value>
   </data>
+  <data name="AllTaxesIncluded" xml:space="preserve">
+    <value>All Taxes Included</value>
+  </data>
   <data name="Amount" xml:space="preserve">
     <value>Amount</value>
   </data>
@@ -495,6 +498,9 @@
   <data name="PayAll" xml:space="preserve">
     <value>Pay All</value>
   </data>
+  <data name="PayingAmount" xml:space="preserve">
+    <value>Paying Amount</value>
+  </data>
   <data name="PayingBills" xml:space="preserve">
     <value>Paying Bills</value>
   </data>
@@ -503,6 +509,9 @@
   </data>
   <data name="PaymentSecureDescription" xml:space="preserve">
     <value>For your security, your payment will be made with &lt;strong&gt; 3D secure &lt;/strong&gt;.</value>
+  </data>
+  <data name="PaymentSecureText" xml:space="preserve">
+    <value>After clicking the send button, our system will direct you to the 3D secure payment area. You can pay your bill by entering the security code in the SMS sent to your phone.</value>
   </data>
   <data name="PaymentWithCardNotAvailable" xml:space="preserve">
     <value>Credit cards could not be received. Please try again later.</value>

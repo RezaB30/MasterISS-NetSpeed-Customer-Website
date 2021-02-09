@@ -2564,6 +2564,7 @@
     <Content Include="Views\Shared\DisplayPartials\SvgTypes\_Passive.cshtml" />
     <Content Include="web.config" />
     <Content Include="Views\Home\ChangeAccountInfo.cshtml" />
+    <Content Include="Views\Payment\PaymentDescription.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
