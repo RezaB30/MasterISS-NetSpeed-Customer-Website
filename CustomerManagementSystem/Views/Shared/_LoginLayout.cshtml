@@ -18,33 +18,14 @@
             height: 3em !important;
             padding: 0 !important;
         }
-
-        @@media screen and (max-height: 575px) {
-            #rc-imageselect, .g-recaptcha {
-                transform: scale(0.77);
-                -webkit-transform: scale(0.77);
+        @@media (max-width: 576px) {
+            .g-recaptcha {
+                transform: scale(0.85);
+                -webkit-transform: scale(0.85);
                 transform-origin: 0 0;
                 -webkit-transform-origin: 0 0;
             }
         }
-
-        #rc-imageselect {
-            transform: scale(0.77);
-            -webkit-transform: scale(0.77);
-            transform-origin: 0 0;
-            -webkit-transform-origin: 0 0;
-        }
-
-        .g-recaptcha {
-            transform: scale(0.77);
-            -webkit-transform: scale(0.77);
-            transform-origin: 0 0;
-            -webkit-transform-origin: 0 0;
-        }
-
-            .g-recaptcha > div {
-                width: 128% !important;
-            }
     </style>
     <style>
 
@@ -68,7 +49,7 @@
     </style>
 </head>
 
-<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+<body id="kt_body" class="header-mobile-fixed subheader-enabled page-loading">
     <div class="d-none loading-screen">
         <img src="/Content/img/spinner-loading.gif" />
     </div>

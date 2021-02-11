@@ -9,28 +9,24 @@
     @using (Html.BeginForm(FormMethod.Post))
     {
         @Html.AntiForgeryToken()
-        <div class="container">
-            <div class="flex-row-fluid ">
-                <div class="card card-custom card-stretch">
-                    <div class="card-header py-3">
-                        <div class="card-title align-items-start flex-column">
-                            <h3 class="card-label font-weight-bolder text-dark">@CMS.Localization.Common.NewRegister</h3>
-                            <span class="text-muted font-weight-bold font-size-sm mt-1">
-                                @CMS.Localization.Common.NewSubscriptionRegisterDescription
-                            </span>
-                        </div>
-                        <div class="card-toolbar">
-                            <a href="/" class="btn btn-icon btn-sm btn-light-info">
-                                <i class="flaticon-home-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row"> <br> </div>
-                    <div class="container">
-                        <div class="row ">
-                            <br>
-                        </div>
-                    </div>
+        <div class="card card-custom card-stretch">
+            <div class="card-header py-3">
+                <div class="card-title align-items-start flex-column">
+                    <h3 class="card-label font-weight-bolder text-dark">@CMS.Localization.Common.NewRegister</h3>
+                    <span class="text-muted font-weight-bold font-size-sm mt-1">
+                        @CMS.Localization.Common.NewSubscriptionRegisterDescription
+                    </span>
+                </div>
+                <div class="card-toolbar">
+                    <a href="/" class="btn btn-icon btn-sm btn-light-info">
+                        <i class="flaticon-home-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row"> <br> </div>
+            <div class="container">
+                <div class="row ">
+                    <br>
                 </div>
             </div>
         </div>
@@ -75,7 +71,8 @@
     @Scripts.Render("~/Scripts/Custom/display-message-box.js")
     @Scripts.Render("~/Scripts/Custom/force-numeric-input.js")
 
-    <script>        
+    <script>
+
         $("#SetupAddress_Floor").ForceNumericOnly();
         $('#SetupAddress_PostalCode').ForceNumericOnly();
 
