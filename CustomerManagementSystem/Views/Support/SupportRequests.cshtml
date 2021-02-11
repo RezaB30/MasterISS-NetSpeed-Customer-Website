@@ -102,7 +102,7 @@
                                         }
                                     </div>
                                     <div class="d-flex flex-column">
-                                        <a href="javascript:void();" class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
+                                        <a href="javascript:void(0);" class="text-dark font-weight-bold text-hover-primary font-size-h4 mb-0">
                                             @Html.DisplayFor(m => item.SupportRequestType)
                                         </a>
                                         <span class="text-muted font-weight-bold">
@@ -116,15 +116,15 @@
                                             <span class="text-dark-75 font-weight-bolder mr-2">
                                                 @Html.DisplayNameFor(m => m.SupportNo)
                                             </span>
-                                            <a href="javascript:void();" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.SupportNo)</a>
+                                            <a href="javascript:void(0);" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.SupportNo)</a>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Date)</span>
-                                            <a href="javascript:void();" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.Date)</a>
+                                            <a href="javascript:void(0);" class="text-muted text-hover-primary">@Html.DisplayFor(m => item.Date)</a>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-cente my-1">
                                             <span class="text-dark-75 font-weight-bolder mr-2">@Html.DisplayNameFor(m => m.Department)</span>
-                                            <a href="javascript:void();" class="text-muted text-hover-primary">
+                                            <a href="javascript:void(0);" class="text-muted text-hover-primary">
                                                 @Html.DisplayFor(m => item.Department)
                                             </a>
                                         </div>
@@ -156,7 +156,7 @@
                                 @if (item.SupportDisplayType == CMS.ViewModels.Supports.SupportRequestDisplayTypes.NoneDisplay)
                                 {
                                     <div class="card-toolbar">
-                                        <a href="javascript:void();" class="btn btn-block btn-sm btn-light-success font-weight-bold mr-2 disabled ">
+                                        <a href="javascript:void(0);" class="btn btn-block btn-sm btn-light-success font-weight-bold mr-2 disabled ">
                                             @Common.Completed
                                         </a>
                                         <a href="@Url.Action("SupportResults","Support",new { ID = item.SupportId })" class="btn btn-block btn-sm btn-light-primary font-weight-bold ">
