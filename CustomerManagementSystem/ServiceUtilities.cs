@@ -1,7 +1,7 @@
 ﻿using CMS.ViewModels.Home;
 using CMS.ViewModels.Supports;
 //using CustomerManagementSystem.GenericCustomerServiceReference;
-using MasterISS.CustomerService.GenericCustomerServiceReference;
+using MasterISS.CustomerService.NetspeedCustomerServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace CustomerManagementSystem
 {
     public class ServiceUtilities
     {
-        GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+        NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
         public CustomerServiceSubscriptionBasicInformationResponse GetSubscriptionInfo(long? id)
         {
             var subBaseRequest = new GenericServiceSettings();
@@ -322,11 +322,11 @@ namespace CustomerManagementSystem
                     RegistrationInfo = new RegistrationInfo()
                     {
                         ServiceID = selectedTariff?.TariffID,
-                        ReferralDiscount = register.ReferralDiscount == null ? null : new MasterISS.CustomerService.GenericCustomerServiceReference.ReferralDiscountInfo()
+                        ReferralDiscount = register.ReferralDiscount == null ? null : new MasterISS.CustomerService.NetspeedCustomerServiceReference.ReferralDiscountInfo()
                         {
                             ReferenceNo = register.ReferralDiscount.ReferenceNo
                         },
-                        SetupAddress = new MasterISS.CustomerService.GenericCustomerServiceReference.AddressInfo()
+                        SetupAddress = new MasterISS.CustomerService.NetspeedCustomerServiceReference.AddressInfo()
                         {
                             AddressNo = register.SetupAddress.AddressNo,
                             AddressText = register.SetupAddress.AddressText,
@@ -677,41 +677,41 @@ namespace CustomerManagementSystem
             });
             return result;
         }
-        public CustomerServiceChangeClientInfoConfirmResponse ChangeClientInfoConfirm(long? subscriptionId, string phoneNo, string email)
-        {
-            var baseRequest = new GenericServiceSettings();
-            var result = client.ChangeClientInfoConfirm(new CustomerServiceChangeClientInfoConfirmRequest()
-            {
-                Username = baseRequest.Username,
-                Culture = baseRequest.Culture,
-                Hash = baseRequest.Hash,
-                Rand = baseRequest.Rand,
-                ChangeClientInfoConfirmRequest = new ChangeClientInfoConfirmRequest()
-                {
-                    ContactPhoneNo = phoneNo,
-                    Email = email,
-                    SubscriptionId = subscriptionId
-                }
-            });
-            return result;
-        }
-        public CustomerServiceChangeClientInfoResponse ChangeClientInfoSMSCheck(string phoneNo, long? subscriptionId)
-        {
-            var baseRequest = new GenericServiceSettings();
-            var result = client.ChangeClientInfoSMSCheck(new CustomerServiceChangeClientInfoRequest()
-            {
-                Username = baseRequest.Username,
-                Culture = baseRequest.Culture,
-                Hash = baseRequest.Hash,
-                Rand = baseRequest.Rand,
-                ChangeClientInfoRequest = new ChangeClientInfoRequest()
-                {
-                    SubscriptionId = subscriptionId,
-                    ContactPhoneNo = phoneNo
-                }
-            });
-            return result;
-        }
+        //public CustomerServiceChangeClientInfoConfirmResponse ChangeClientInfoConfirm(long? subscriptionId, string phoneNo, string email)
+        //{
+        //    var baseRequest = new GenericServiceSettings();
+        //    var result = client.ChangeClientInfoConfirm(new CustomerServiceChangeClientInfoConfirmRequest()
+        //    {
+        //        Username = baseRequest.Username,
+        //        Culture = baseRequest.Culture,
+        //        Hash = baseRequest.Hash,
+        //        Rand = baseRequest.Rand,
+        //        ChangeClientInfoConfirmRequest = new ChangeClientInfoConfirmRequest()
+        //        {
+        //            ContactPhoneNo = phoneNo,
+        //            Email = email,
+        //            SubscriptionId = subscriptionId
+        //        }
+        //    });
+        //    return result;
+        //}
+        //public CustomerServiceChangeClientInfoResponse ChangeClientInfoSMSCheck(string phoneNo, long? subscriptionId)
+        //{
+        //    var baseRequest = new GenericServiceSettings();
+        //    var result = client.ChangeClientInfoSMSCheck(new CustomerServiceChangeClientInfoRequest()
+        //    {
+        //        Username = baseRequest.Username,
+        //        Culture = baseRequest.Culture,
+        //        Hash = baseRequest.Hash,
+        //        Rand = baseRequest.Rand,
+        //        ChangeClientInfoRequest = new ChangeClientInfoRequest()
+        //        {
+        //            SubscriptionId = subscriptionId,
+        //            ContactPhoneNo = phoneNo
+        //        }
+        //    });
+        //    return result;
+        //}
         public CustomerServiceChangeClientInfoConfirmResponse ChangeClientOnlinePassword(string onlinePassword, long? subscriptionId)
         {
             var baseRequest = new GenericServiceSettings();

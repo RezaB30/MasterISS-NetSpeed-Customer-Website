@@ -407,6 +407,12 @@ gerçekleştirebilirsiniz.</value>
   <data name="Message" xml:space="preserve">
     <value>Mesaj</value>
   </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>Giriş yaparak hizmetlerinizi inceleyebilir ve faturalarınızı ödeyebilirsiniz.</value>
+  </data>
+  <data name="MetaTitle" xml:space="preserve">
+    <value>Netspeed Online İşlem Merkezi</value>
+  </data>
   <data name="Month" xml:space="preserve">
     <value>Ay</value>
   </data>

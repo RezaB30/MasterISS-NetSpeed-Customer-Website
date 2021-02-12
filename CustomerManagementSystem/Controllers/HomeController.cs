@@ -155,8 +155,8 @@ namespace CustomerManagementSystem.Controllers
                 FullName = customer.ValidDisplayName,
                 LineAddress = customer.InstallationAddress,
                 Mail = customer.EMail,
-                ModemPassword = customer.Username,
-                ModemUsername = customer.Password,
+                ModemPassword = customer.Password,
+                ModemUsername = customer.Username,
                 PassedInvoice = billCount,
                 SpecialOfferReferenceCode = customer.ReferenceNo,
                 StaticIP = customer.StaticIP,
@@ -327,9 +327,9 @@ namespace CustomerManagementSystem.Controllers
                 return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
             }
             var provinces = new ServiceUtilities().GetProvinces();
-            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
+            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             //var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
-            //ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name");
+            //ViewBag.CommitmentLengthList = new SelectList(commitmentLengthList.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             return View();
         }
         [Authorize(Roles = "Customer")]
@@ -406,13 +406,13 @@ namespace CustomerManagementSystem.Controllers
             var streets = new ServiceUtilities().GetNeighbourhoodStreets(register.SetupAddress.NeighbourhoodID);
             var buildings = new ServiceUtilities().GetStreetBuildings(register.SetupAddress.StreetID);
             var apartments = new ServiceUtilities().GetBuildingApartments(register.SetupAddress.DoorID);
-            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ProvinceID);
-            ViewBag.DistrictList = new SelectList(districts.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DistrictID);
-            ViewBag.RuralList = new SelectList(rurals.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.RuralCode);
-            ViewBag.NeighbourhoodList = new SelectList(neighbourhoods.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.NeighbourhoodID);
-            ViewBag.StreetList = new SelectList(streets.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.StreetID);
-            ViewBag.BuildingList = new SelectList(buildings.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DoorID);
-            ViewBag.ApartmentList = new SelectList(apartments.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.GenericCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ApartmentID);
+            ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ProvinceID);
+            ViewBag.DistrictList = new SelectList(districts.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DistrictID);
+            ViewBag.RuralList = new SelectList(rurals.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.RuralCode);
+            ViewBag.NeighbourhoodList = new SelectList(neighbourhoods.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.NeighbourhoodID);
+            ViewBag.StreetList = new SelectList(streets.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.StreetID);
+            ViewBag.BuildingList = new SelectList(buildings.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.DoorID);
+            ViewBag.ApartmentList = new SelectList(apartments.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name", register.SetupAddress.ApartmentID);
             return View(register);
         }
         public ActionResult RegisterTracking()

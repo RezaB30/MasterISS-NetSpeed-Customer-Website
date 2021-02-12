@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3c24bff6-5e4e-4042-9cab-7e44d7ef4731" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56365/NetspeedCustomerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NetspeedCustomerService.xsd" MetadataType="Schema" ID="6bbc7062-064d-4b72-8bbf-ffe6b54bf962" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd8" />
+    <MetadataFile FileName="NetspeedCustomerService1.xsd" MetadataType="Schema" ID="7eb1f281-331d-4e8b-81da-cc2de0bc60d1" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd7" />
+    <MetadataFile FileName="NetspeedCustomerService2.xsd" MetadataType="Schema" ID="2865f589-b845-4a98-b6c8-e2f2a90a5f00" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NetspeedCustomerService3.xsd" MetadataType="Schema" ID="8fec0f98-0b5f-4375-abc4-dee6e72db6fd" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd10" />
+    <MetadataFile FileName="NetspeedCustomerService4.xsd" MetadataType="Schema" ID="d9121c3a-67f9-4fca-ba19-9d7ff97cc2d3" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NetspeedCustomerService.disco" MetadataType="Disco" ID="3fc61dab-2cbb-44fa-b915-b28e0fc4a2e5" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?disco" />
+    <MetadataFile FileName="NetspeedCustomerService5.xsd" MetadataType="Schema" ID="e7d4f3ac-75fb-4127-bcf2-d87b022c06fb" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NetspeedCustomerService6.xsd" MetadataType="Schema" ID="c244a71e-982a-4bbe-abab-cd7502f2bb20" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NetspeedCustomerService7.xsd" MetadataType="Schema" ID="359b3fd9-df05-4ec5-9b4a-4e4ca7cc8705" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd6" />
+    <MetadataFile FileName="NetspeedCustomerService8.xsd" MetadataType="Schema" ID="e631abdb-2b33-4e1b-9a0d-67bffbba2ec8" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd9" />
+    <MetadataFile FileName="NetspeedCustomerService.wsdl" MetadataType="Wsdl" ID="55d85253-cdf2-45a7-b8fb-cdcd0d491c20" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?wsdl" />
+    <MetadataFile FileName="NetspeedCustomerService9.xsd" MetadataType="Schema" ID="fd4f8bd5-4e7b-4a86-9c2b-1b3fffd6a64c" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NetspeedCustomerService10.xsd" MetadataType="Schema" ID="e9c90264-a6d1-4d6b-a922-948946722527" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

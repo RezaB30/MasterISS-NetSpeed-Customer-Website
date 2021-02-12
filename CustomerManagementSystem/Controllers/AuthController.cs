@@ -1,6 +1,6 @@
 ﻿using CMS.ViewModels.Auth;
-using MasterISS.CustomerService.GenericCustomerServiceReference;
-//using CustomerManagementSystem.GenericCustomerServiceReference;
+using MasterISS.CustomerService.NetspeedCustomerServiceReference;
+//using CustomerManagementSystem.NetspeedCustomerServiceReference;
 using Microsoft.Owin;
 using RezaB.Web.Authentication;
 using System;
@@ -15,7 +15,7 @@ namespace CustomerManagementSystem.Controllers
     [AllowAnonymous]
     public class AuthController : BaseController
     {
-        GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+        NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
         // GET: Account
         public ActionResult Login()
         {
@@ -139,13 +139,13 @@ namespace CustomerManagementSystem.Controllers
                     login.CustomerCode = login.CustomerCode.TrimStart('0');
 
                 var baseRequest = new GenericServiceSettings();
-                var result = client.CustomerAuthentication(new MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAuthenticationRequest()
+                var result = client.CustomerAuthentication(new MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAuthenticationRequest()
                 {
                     Culture = baseRequest.Culture,
                     Rand = baseRequest.Rand,
                     Username = baseRequest.Username,
                     Hash = baseRequest.Hash,
-                    AuthenticationParameters = new MasterISS.CustomerService.GenericCustomerServiceReference.AuthenticationRequest()
+                    AuthenticationParameters = new MasterISS.CustomerService.NetspeedCustomerServiceReference.AuthenticationRequest()
                     {
                         CustomerCode = login.CustomerCode,
                     }
@@ -180,13 +180,13 @@ namespace CustomerManagementSystem.Controllers
                     login.CustomerCode = login.CustomerCode.TrimStart('0');
 
                 var baseRequest = new GenericServiceSettings();
-                var result = client.AuthenticationSMSConfirm(new MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmRequest()
+                var result = client.AuthenticationSMSConfirm(new MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmRequest()
                 {
                     Culture = baseRequest.Culture,
                     Hash = baseRequest.Hash,
                     Rand = baseRequest.Rand,
                     Username = baseRequest.Username,
-                    AuthenticationSMSConfirmParameters = new MasterISS.CustomerService.GenericCustomerServiceReference.AuthenticationSMSConfirmRequest()
+                    AuthenticationSMSConfirmParameters = new MasterISS.CustomerService.NetspeedCustomerServiceReference.AuthenticationSMSConfirmRequest()
                     {
                         CustomerCode = login.CustomerCode,
                         SMSPassword = login.SMSPassword
@@ -258,7 +258,7 @@ namespace CustomerManagementSystem.Controllers
 
         internal static void SignInCurrentUserAgain(IOwinContext context)
         {
-            GenericCustomerServiceClient serviceClient = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient serviceClient = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var subId = context.Authentication.User.GiveUserId();
             var result = serviceClient.SubscriptionBasicInfo(new CustomerServiceBaseRequest()

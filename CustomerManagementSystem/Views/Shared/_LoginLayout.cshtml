@@ -7,7 +7,12 @@
     <base href="">
     <meta charset="utf-8" />
     <title>@Common.HeadTitle</title>
-    <meta name="description" content="Login page example" />
+    <meta property="og:title" content="@Common.MetaTitle" />
+    <meta property="og:description" content="@Common.MetaDescription" />
+    <meta property="og:image" content="@($"{Request.Url.Scheme}://{Request.Url.Host}{Url.Content("~/Content/assets/media/logos/logo-letter-1.png")}")" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="130" />
+    <meta property="og:image:height" content="26" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link rel="shortcut icon" href="/Content/assets/media/logos/favicon.ico" />
@@ -18,6 +23,7 @@
             height: 3em !important;
             padding: 0 !important;
         }
+
         @@media (max-width: 576px) {
             .g-recaptcha {
                 transform: scale(0.85);

@@ -11,7 +11,7 @@ namespace CustomerManagementSystem
 {
     public class GenericServiceSettings
     {
-        MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient client = new MasterISS.CustomerService.GenericCustomerServiceReference.GenericCustomerServiceClient();
+        MasterISS.CustomerService.NetspeedCustomerServiceReference.NetspeedCustomerServiceClient client = new MasterISS.CustomerService.NetspeedCustomerServiceReference.NetspeedCustomerServiceClient();
         public string Culture { get; set; }
         public string Rand { get; set; }
         public string Username { get; set; }

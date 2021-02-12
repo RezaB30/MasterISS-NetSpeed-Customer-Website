@@ -27,7 +27,7 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group py-2 m-0">
-                    @Html.EditorFor(m => m.CustomerCode, new { htmlAttributes = new { @class = "form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg", placeholder = Common.LoginUsernamePlaceholder, autocomplete = "off" } })
+                    @Html.EditorFor(m => m.CustomerCode, new { htmlAttributes = new { @maxlength="11", @class = "form-control h-auto font-size-h5 border-0 px-0 text-dark py-4 px-8 rounded-lg", placeholder = Common.LoginUsernamePlaceholder, autocomplete = "off" } })
                     <div class="fv-plugins-message-container">
                         @Html.ValidationMessageFor(m => m.CustomerCode, null, new { @class = "fv-help-block" })
                     </div>

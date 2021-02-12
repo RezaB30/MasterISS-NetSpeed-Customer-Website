@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\GenericCustomerServiceReference\Reference.cs">
+    <Compile Include="Connected Services\NetspeedCustomerServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -55,220 +55,217 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.wsdl" />
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceActivateAutomaticPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAddCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAddCardSMSValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAddressDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAutoPaymentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBillPayableAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeSubClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceConnectionStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceCustomerAuthenticationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceDeactivateAutomaticPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceEArchivePDFMailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceEArchivePDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExternalTariffResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGenericAppSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetClientAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetClientPDFFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerBillsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSpecialOffersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerTariffAndTrafficInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceHasActiveRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceMobilexpressPayBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceNameValuePair.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceNameValuePair1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServicePayBillsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServicePaymentSystemLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServicePaymentTypeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceQuotaPackagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceQuotaSaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceRegisteredCardsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceRemoveCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceRemoveCardSMSValidationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSaveClientAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSaveSupportAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSendSupportMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceServiceAvailabilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriptionBasicInformationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceVPOSErrorParameterNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceVPOSFormResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServicGetSupportAttachmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.wsdl" />
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService1.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService10.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService2.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService3.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService4.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService5.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService6.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService7.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService8.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService9.xsd">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService9.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceActivateAutomaticPaymentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAddCardResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAddCardSMSValidationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAddressDetailsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceAutoPaymentListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceBillPayableAmountResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceCanHaveQuotaSaleResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeClientInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceChangeSubClientResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceConnectionStatusResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceCustomerAuthenticationWithPasswordResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceDeactivateAutomaticPaymentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFMailResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceEArchivePDFResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceExternalTariffResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGenericAppSettingsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetClientAttachmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetClientPDFFormResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerBillsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerFileResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerSpecialOffersResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetCustomerTariffAndTrafficInfoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceGetSupportAttachmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceHasActiveRequestResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceMobilexpressPayBillResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceNameValuePair.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceNameValuePair1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServicePayBillsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServicePaymentSystemLogResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServicePaymentTypeListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaPackagesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceQuotaSaleResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceRegisteredCardsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceRemoveCardResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceRemoveCardSMSValidationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSaveClientAttachmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSaveSupportAttachmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSendSupportMessageResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceServiceAvailabilityResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSubscriptionBasicInformationResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSupportRegisterResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceSupportStatusResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceVPOSErrorParameterNameResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServiceVPOSFormResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GenericCustomerServiceReference\MasterISS.CustomerService.GenericCustomerServiceReference.CustomerServicGetSupportAttachmentListResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\GenericCustomerServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\NetspeedCustomerServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GenericCustomerServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GenericCustomerServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\GenericCustomerServiceReference\Reference.svcmap">
+    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\GenericCustomerServiceReference\GenericCustomerService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

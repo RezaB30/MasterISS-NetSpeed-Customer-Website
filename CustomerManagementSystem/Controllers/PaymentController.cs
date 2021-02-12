@@ -1,6 +1,6 @@
 ﻿using CMS.ViewModels.Payment;
 //using CustomerManagementSystem.GenericCustomerServiceReference;
-using MasterISS.CustomerService.GenericCustomerServiceReference;
+using MasterISS.CustomerService.NetspeedCustomerServiceReference;
 using CustomerManagementSystem.VPOSToken;
 using NLog;
 using PagedList;
@@ -76,7 +76,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult BuyQuota(int id)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.QuotaPackageList(new CustomerServiceQuotaPackagesRequest()
             {
@@ -136,7 +136,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult AutomaticPayment()
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var settings = GenericAppSettings();
             if (settings.ResponseMessage.ErrorCode != 0 || !settings.GenericAppSettings.MobilExpressIsActive)
             {
@@ -242,7 +242,7 @@ namespace CustomerManagementSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+                NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
                 var baseRequest = new GenericServiceSettings();
                 var addCardSms = client.AddCardSMSCheck(new CustomerServiceBaseRequest()
                 {
@@ -288,7 +288,7 @@ namespace CustomerManagementSystem.Controllers
 
             if (ModelState.IsValid)
             {
-                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+                NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
                 var baseRequest = new GenericServiceSettings();
                 var addCard = client.AddCard(new CustomerServiceAddCardRequest()
                 {
@@ -331,7 +331,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult RemoveCard(string id)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var removeCardSms = client.RemoveCardSMSCheck(new CustomerServiceRemoveCardSMSCheckRequest()
             {
@@ -375,7 +375,7 @@ namespace CustomerManagementSystem.Controllers
                 return View(model: id);
             }
             TempData.Remove("smsRetries");
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var removeCard = client.RemoveCard(new CustomerServiceRemoveCardRequest()
             {
@@ -443,7 +443,7 @@ namespace CustomerManagementSystem.Controllers
                 {
                     return RedirectToAction("AutomaticPayment");
                 }
-                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+                NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
                 var activateBaseRequest = new GenericServiceSettings();
                 var activateAutomaticPayment = client.ActivateAutomaticPayment(new CustomerServiceActivateAutomaticPaymentRequest()
                 {
@@ -476,7 +476,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult DeactivateAutomaticPayment(long id)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var settingRequest = new GenericServiceSettings();
             var settings = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
             {
@@ -518,7 +518,7 @@ namespace CustomerManagementSystem.Controllers
         [HttpGet]
         public ActionResult PaymentSelection(long? id)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var settings = GenericAppSettings();
             if (settings.ResponseMessage.ErrorCode != 0 || !settings.GenericAppSettings.MobilExpressIsActive)
             {
@@ -607,7 +607,7 @@ namespace CustomerManagementSystem.Controllers
             var payableAmount = GetPayableAmount(User.GiveUserId(), id);
             if (payableAmount == 0m)
                 return RedirectToAction("PaymentSelection");
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var mobileExpressPayBill = client.MobilexpressPayBill(new CustomerServiceMobilexpressPayBillRequest()
             {
@@ -653,7 +653,7 @@ namespace CustomerManagementSystem.Controllers
                 AuthController.SignoutUser(Request.GetOwinContext());
                 AuthController.SignInCurrentUserAgain(Request.GetOwinContext());
             }
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var VPOSFormResponse = client.GetVPOSForm(new CustomerServiceVPOSFormRequest()
             {
                 Culture = baseRequest.Culture,
@@ -685,7 +685,7 @@ namespace CustomerManagementSystem.Controllers
                 Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
                 return RedirectToAction("BillsAndPayments");
             }
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var dbSubscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
             {
@@ -841,7 +841,7 @@ namespace CustomerManagementSystem.Controllers
                 Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
                 return RedirectToAction("BillsAndPayments");
             }
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var subscriptionBaseRequest = new GenericServiceSettings();
             var subscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
             {
@@ -929,7 +929,7 @@ namespace CustomerManagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EArchivePDF(long id)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.EArchivePDF(new CustomerServiceEArchivePDFRequest()
             {
@@ -976,7 +976,7 @@ namespace CustomerManagementSystem.Controllers
         #region
         private CustomerServiceGenericAppSettingsResponse GenericAppSettings()
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var settings = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
             {
@@ -989,7 +989,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private string GetErrorMessage()
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var getVPOSError = client.GetVPOSErrorParameterName(new CustomerServiceVPOSErrorParameterNameRequest()
             {
@@ -1002,7 +1002,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private CustomerServicePayBillsResponse PayBills(long[] billIds, short? subscriptionPaidType, long? subscriptionId, int? paymentType, int? accountantType)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var payBillBaseRequest = new GenericServiceSettings();
             var payBills = client.PayBills(new CustomerServicePayBillsRequest()
             {
@@ -1023,7 +1023,7 @@ namespace CustomerManagementSystem.Controllers
         }
         private decimal GetPayableAmount(long? subscriptionId, long? billId)
         {
-            GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var baseRequest = new GenericServiceSettings();
             var response = client.BillPayableAmount(new CustomerServiceBillPayableAmountRequest()
             {

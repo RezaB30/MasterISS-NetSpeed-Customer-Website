@@ -385,7 +385,7 @@
     <value>GSM No or TCK No</value>
   </data>
   <data name="LoginDescription" xml:space="preserve">
-    <value>You can display your services and you can pay your bill after login</value>
+    <value>You can review your services and you can pay your bill after login</value>
   </data>
   <data name="LoginSMSPassword" xml:space="preserve">
     <value>SMS Code</value>
@@ -404,6 +404,12 @@
   </data>
   <data name="Message" xml:space="preserve">
     <value>Message</value>
+  </data>
+  <data name="MetaDescription" xml:space="preserve">
+    <value>You can review your services and you can pay your bill after login</value>
+  </data>
+  <data name="MetaTitle" xml:space="preserve">
+    <value>Netspeed Customer Website</value>
   </data>
   <data name="Month" xml:space="preserve">
     <value>Month</value>

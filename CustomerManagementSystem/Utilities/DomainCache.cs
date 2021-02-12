@@ -1,4 +1,4 @@
-﻿using MasterISS.CustomerService.GenericCustomerServiceReference;
+﻿using MasterISS.CustomerService.NetspeedCustomerServiceReference;
 //using CustomerManagementSystem.GenericCustomerServiceReference;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace CustomerManagementSystem.Utilities
         {
             get
             {
-                GenericCustomerServiceClient client = new GenericCustomerServiceClient();
+                NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
                 var baseRequest = new GenericServiceSettings();
                 var response = client.GenericAppSettings(new CustomerServiceGenericAppSettingsRequest()
                 {

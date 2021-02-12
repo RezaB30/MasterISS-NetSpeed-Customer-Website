@@ -927,6 +927,24 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Giriş yaparak hizmetlerinizi inceleyebilir ve faturalarınızı ödeyebilirsiniz..
+        /// </summary>
+        public static string MetaDescription {
+            get {
+                return ResourceManager.GetString("MetaDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Netspeed Online İşlem Merkezi.
+        /// </summary>
+        public static string MetaTitle {
+            get {
+                return ResourceManager.GetString("MetaTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ay.
         /// </summary>
         public static string Month {

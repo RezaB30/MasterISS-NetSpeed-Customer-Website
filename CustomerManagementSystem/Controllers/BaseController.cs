@@ -199,21 +199,18 @@ namespace CustomerManagementSystem.Controllers
                     supportIds = statusResponse.SupportStatusResponse.SupportRequestIds.ToArray();
                 }
                 var notifications = new List<CMS.ViewModels.Supports.NotificationViewModel>();
-                var lang = RouteData.Values.Where(r => r.Key == "lang").Select(r => r.Value).FirstOrDefault();
-                var controller = RouteData.Values.Where(r => r.Key == "controller").Select(r => r.Value).FirstOrDefault();
                 foreach (var item in supportIds)
                 {
                     if (Request.Cookies["Notification_" + item.ToString()] == null)
                     {
-                        var url = $"{lang}/Support/SupportResults/{item}";
+                        var url = Url.Action("SupportResults", "Support", new { ID = item });
                         notifications.Add(new CMS.ViewModels.Supports.NotificationViewModel()
                         {
-                            Url = $"{lang}/{controller}/RedirectNotification?url={HttpUtility.UrlEncode(url)}&uniqueId={item}",
+                            Url = Url.Action("RedirectNotification",new { url = url , uniqueId = item }),
                             Content = CMS.Localization.Common.NewSupportNotification,
                             Type = CMS.ViewModels.Supports.NotificationType.Info
                         });
                     }
-
                 }
                 return PartialView("_Notifications", notifications);
             }
@@ -230,7 +227,7 @@ namespace CustomerManagementSystem.Controllers
             };
             var response = HttpContext.Response;
             response.Cookies.Add(cookie);
-            return Redirect("~/" + HttpUtility.UrlDecode(url));
+            return Redirect(url);
         }
     }
 }
