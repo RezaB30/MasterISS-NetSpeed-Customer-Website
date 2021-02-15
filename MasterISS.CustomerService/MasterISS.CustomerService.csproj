@@ -193,6 +193,9 @@
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceServiceAvailabilityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriptionBasicInformationResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

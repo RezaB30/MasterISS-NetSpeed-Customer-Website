@@ -3848,6 +3848,8 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceHasClientPreRegisterResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfGetClientPDFFormResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetClientPDFFormResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfArrayOfSubscriptionKeyValueSHA1KVWl_PpN3))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfArrayOfKeyValueOfstringstringSHA1PGu3YCeQ))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfArrayOfValueNamePairSHA1hidXLCfi))]
@@ -5524,6 +5526,37 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 if ((object.ReferenceEquals(this.GetClientPDFFormResultField, value) != true)) {
                     this.GetClientPDFFormResultField = value;
                     this.RaisePropertyChanged("GetClientPDFFormResult");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfArrayOfSubscriptionKeyValueSHA1KVWl_PpN3", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse))]
+    public partial class BaseResponseOfArrayOfSubscriptionKeyValueSHA1KVWl_PpN3 : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceSubscriberListResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceSubscriberListResponse : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfArrayOfSubscriptionKeyValueSHA1KVWl_PpN3 {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.NetspeedCustomerServiceReference.SubscriptionKeyValue[] SubscriptionListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.SubscriptionKeyValue[] SubscriptionList {
+            get {
+                return this.SubscriptionListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubscriptionListField, value) != true)) {
+                    this.SubscriptionListField = value;
+                    this.RaisePropertyChanged("SubscriptionList");
                 }
             }
         }
@@ -10061,6 +10094,83 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SubscriptionKeyValue", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class SubscriptionKeyValue : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long SubscriptionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StateName {
+            get {
+                return this.StateNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateNameField, value) != true)) {
+                    this.StateNameField = value;
+                    this.RaisePropertyChanged("StateName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long SubscriptionId {
+            get {
+                return this.SubscriptionIdField;
+            }
+            set {
+                if ((this.SubscriptionIdField.Equals(value) != true)) {
+                    this.SubscriptionIdField = value;
+                    this.RaisePropertyChanged("SubscriptionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="NetspeedCustomerServiceReference.INetspeedCustomerService")]
     public interface INetspeedCustomerService {
@@ -10440,6 +10550,12 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePassword", ReplyAction="http://tempuri.org/IGenericCustomerService/ChangeClientOnlinePasswordResponse")]
         System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientOnlinePasswordAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/GetSubscriptionList", ReplyAction="http://tempuri.org/IGenericCustomerService/GetSubscriptionListResponse")]
+        MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse GetSubscriptionList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/GetSubscriptionList", ReplyAction="http://tempuri.org/IGenericCustomerService/GetSubscriptionListResponse")]
+        System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse> GetSubscriptionListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegister", ReplyAction="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegisterResponse")]
         MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse ExistingCustomerRegister(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest request);
@@ -10961,6 +11077,14 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         
         public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientInfoConfirmResponse> ChangeClientOnlinePasswordAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest request) {
             return base.Channel.ChangeClientOnlinePasswordAsync(request);
+        }
+        
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse GetSubscriptionList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request) {
+            return base.Channel.GetSubscriptionList(request);
+        }
+        
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSubscriberListResponse> GetSubscriptionListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request) {
+            return base.Channel.GetSubscriptionListAsync(request);
         }
         
         public MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse ExistingCustomerRegister(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest request) {

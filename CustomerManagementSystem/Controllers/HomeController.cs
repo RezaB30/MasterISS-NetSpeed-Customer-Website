@@ -390,8 +390,32 @@ namespace CustomerManagementSystem.Controllers
                     }
                     else
                     {
+                        var currentSubscription = new ServiceUtilities().GetSubscriptionList(User.GiveUserId());
+                        if (currentSubscription.ResponseMessage.ErrorCode == 0)
+                        {
+                            var preRegisteredSub = currentSubscription.SubscriptionList?.Where(s => s.State == (int)CMS.Localization.Enums.CustomerState.PreRegisterd).FirstOrDefault();
+                            if (preRegisteredSub == null)
+                            {
+                                TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
+                                return RedirectToAction("Index");
+                            }
+                            var targetId = Convert.ToInt64(preRegisteredSub.SubscriptionId);
+                            var response = new ServiceUtilities().ChangeSubClient(User.GiveUserId(), targetId);
+                            if (response.ResponseMessage.ErrorCode != 0)
+                            {
+                                TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
+                                //log
+                                return RedirectToAction("Index", "Home");
+                            }
+                            AuthController.SignoutUser(Request.GetOwinContext());
+                            AuthController.SignInUser(response.ChangeSubClientResponse.ValidDisplayName,
+                                response.ChangeSubClientResponse.ID.ToString(),
+                                response.ChangeSubClientResponse.SubscriberNo,
+                                response.ChangeSubClientResponse.RelatedCustomers,
+                                Request.GetOwinContext());
+                        }
                         TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("SubscriptionRegister");
+                        return RedirectToAction("RegisterTracking");
                     }
                 }
                 else

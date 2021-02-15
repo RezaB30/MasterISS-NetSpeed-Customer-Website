@@ -534,16 +534,16 @@ namespace CustomerManagementSystem.Controllers
                     return ReturnMessageUrl(Url.Action("BillsAndPayments"), CMS.Localization.Errors.InternalErrorDescription, false);
                 }
                 var billIDs = id.HasValue ? new[] { id.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.PaymentTypeID == (short)CMS.Localization.Enums.PaymentType.None).Select(b => b.ID).ToArray(); // enum paymentType
-                if (billIDs.Any())
+                if (!billIDs.Any())
                 {
-                    var payBills = PayBills(billIDs, (short)CMS.Localization.Enums.SubscriptionPaidType.Billing, User.GiveUserId(), (int)CMS.Localization.Enums.PaymentType.Cash, (int)CMS.Localization.Enums.AccountantType.Admin);
-                    generalLogger.Debug($"Payment selection 'Pay Bills' web service result. Code : {payBills.ResponseMessage.ErrorCode}");
-                    if (payBills.ResponseMessage.ErrorCode != 0)
-                    {
-                        return ReturnMessageUrl(Url.Action("BillsAndPayments"), CMS.Localization.Errors.InternalErrorDescription, false);
-                    }
+                    return RedirectToAction("BillsAndPayments");
                 }
-
+                var payBills = PayBills(billIDs, (short)CMS.Localization.Enums.SubscriptionPaidType.Billing, User.GiveUserId(), (int)CMS.Localization.Enums.PaymentType.Cash, (int)CMS.Localization.Enums.AccountantType.Admin);
+                generalLogger.Debug($"Payment selection 'Pay Bills' web service result. Code : {payBills.ResponseMessage.ErrorCode}");
+                if (payBills.ResponseMessage.ErrorCode != 0)
+                {
+                    return ReturnMessageUrl(Url.Action("BillsAndPayments"), CMS.Localization.Errors.InternalErrorDescription, false);
+                }
                 // log - need web service
 
                 var logBaseRequest = new GenericServiceSettings();

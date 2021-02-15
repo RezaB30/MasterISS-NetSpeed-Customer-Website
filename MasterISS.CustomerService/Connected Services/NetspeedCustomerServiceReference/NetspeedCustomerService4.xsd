@@ -861,17 +861,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSubscriptionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q121:CustomerServiceBaseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubscriptionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="GetSubscriptionListResult" nillable="true" type="q122:CustomerServiceSubscriberListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ExistingCustomerRegister">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q121:CustomerServiceExistingCustomerRegisterRequest" />
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q123:CustomerServiceExistingCustomerRegisterRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ExistingCustomerRegisterResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="ExistingCustomerRegisterResult" nillable="true" type="q122:CustomerServiceExistingCustomerRegisterResponse" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="ExistingCustomerRegisterResult" nillable="true" type="q124:CustomerServiceExistingCustomerRegisterResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
