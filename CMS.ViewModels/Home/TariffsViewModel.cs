@@ -14,5 +14,7 @@ namespace CMS.ViewModels.Home
         [UIHint("Currency")]
         public string Price { get; set; }
         public string Speed { get; set; }
+        [UIHint("FormattedSpeed")]
+        public int? AvailabilitySpeed { get; set; }
     }
 }

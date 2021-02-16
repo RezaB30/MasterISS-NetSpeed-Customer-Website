@@ -180,6 +180,9 @@
   <data name="AutoPaymentAndRemoveCard" xml:space="preserve">
     <value>Automatic Payment - Delete Cards</value>
   </data>
+  <data name="AvailabilityMaximumSpeed" xml:space="preserve">
+    <value>Availability Maximum Speed</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>

@@ -180,6 +180,9 @@
   <data name="AutoPaymentAndRemoveCard" xml:space="preserve">
     <value>Otomatik Ödeme Talimatı - Kartı Sil</value>
   </data>
+  <data name="AvailabilityMaximumSpeed" xml:space="preserve">
+    <value>Alabileceğiniz Maksimum Hız</value>
+  </data>
   <data name="Back" xml:space="preserve">
     <value>Geri</value>
   </data>
@@ -447,7 +450,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Tarifem</value>
   </data>
   <data name="NewRegister" xml:space="preserve">
-    <value>Yeni Başvuru</value>
+    <value>Yeni Başvuru ve Takibi</value>
   </data>
   <data name="NewRequest" xml:space="preserve">
     <value>Yeni Destek Kaydı</value>

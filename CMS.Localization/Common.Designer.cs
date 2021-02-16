@@ -250,6 +250,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alabileceğiniz Maksimum Hız.
+        /// </summary>
+        public static string AvailabilityMaximumSpeed {
+            get {
+                return ResourceManager.GetString("AvailabilityMaximumSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Geri.
         /// </summary>
         public static string Back {
@@ -1044,7 +1053,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yeni Başvuru.
+        ///   Looks up a localized string similar to Yeni Başvuru ve Takibi.
         /// </summary>
         public static string NewRegister {
             get {

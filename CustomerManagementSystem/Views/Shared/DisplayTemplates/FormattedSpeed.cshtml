@@ -1,0 +1,11 @@
+﻿@model int?
+
+@if (Model == null)
+{
+    @: -
+}
+else
+{
+    var result = Model.Value / 1024;
+    @: @result MBPS
+}

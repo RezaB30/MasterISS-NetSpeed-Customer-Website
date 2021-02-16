@@ -61,6 +61,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3 class=&quot;font-weight-bolder text-dark-50 font-size-h3&quot;&gt;Altyapınızda uygun port bulunmamaktadır.&lt;/h3&gt;.
+        /// </summary>
+        public static string AvailabilityPortNotFound {
+            get {
+                return ResourceManager.GetString("AvailabilityPortNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3 class=&quot;font-weight-bolder text-dark-50 font-size-h3&quot;&gt;Altyapınıza uygun tarife bulunamadı.&lt;/h3&gt;.
         /// </summary>
         public static string AvailabilityTariffNotFoundDescription {

@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<CMS.ViewModels.Home.TariffsViewModel>
+@using CMS.Localization;
 
+<h5 class="font-weight-bolder text-info font-size-h2">@Common.AvailabilityMaximumSpeed <strong>@Html.DisplayFor(m => m.FirstOrDefault().AvailabilitySpeed)</strong></h5>
+<hr class="my-4">
 <div class="row">
     @foreach (var item in Model)
     {

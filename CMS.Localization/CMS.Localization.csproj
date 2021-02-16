@@ -58,6 +58,7 @@
     <Compile Include="Enums\ClientAttachmentTypes.cs" />
     <Compile Include="Enums\CustomerState.cs" />
     <Compile Include="Enums\PaymentType.cs" />
+    <Compile Include="Enums\PortState.cs" />
     <Compile Include="Enums\RegisterTrackingTypes.cs" />
     <Compile Include="Enums\SubscriptionPaidType.cs" />
     <Compile Include="Errors.en-US.Designer.cs">

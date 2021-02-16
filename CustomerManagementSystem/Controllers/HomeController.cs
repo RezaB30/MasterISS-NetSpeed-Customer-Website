@@ -307,14 +307,25 @@ namespace CustomerManagementSystem.Controllers
             var externalTariffs = new ServiceUtilities().GetTariffList();
             if (availability.ServiceAvailabilityResponse.FIBER.HasInfrastructureFiber)
             {
-                var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasFiber).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
-
+                if (availability.ServiceAvailabilityResponse.FIBER.PortState != (int)CMS.Localization.Enums.PortState.Available)
+                {
+                    return Content(CMS.Localization.Errors.AvailabilityPortNotFound);
+                }
+                var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasFiber).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { AvailabilitySpeed = availability.ServiceAvailabilityResponse.FIBER.FiberSpeed, TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
                 return PartialView("_TariffListPartial", tariffList);
             }
             if (availability.ServiceAvailabilityResponse.VDSL.HasInfrastructureVdsl || availability.ServiceAvailabilityResponse.ADSL.HasInfrastructureAdsl)
             {
-                var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasXDSL).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
-                return PartialView("_TariffListPartial", tariffList);
+                if (availability.ServiceAvailabilityResponse.VDSL.PortState == (int)CMS.Localization.Enums.PortState.Available || availability.ServiceAvailabilityResponse.ADSL.PortState == (int)CMS.Localization.Enums.PortState.Available)
+                {
+                    var availabilitySpeed = availability.ServiceAvailabilityResponse.VDSL.VdslSpeed > 24 ? availability.ServiceAvailabilityResponse.VDSL.VdslSpeed : availability.ServiceAvailabilityResponse.ADSL.AdslSpeed;
+                    var tariffList = externalTariffs.ExternalTariffList?.Where(t => t.HasXDSL).Select(t => new CMS.ViewModels.Home.TariffsViewModel() { AvailabilitySpeed = availabilitySpeed, TariffName = t.DisplayName, TariffID = t.TariffID, Price = t.Price.ToString(), Speed = t.Speed });
+                    return PartialView("_TariffListPartial", tariffList);
+                }
+                else
+                {
+                    return Content(CMS.Localization.Errors.AvailabilityPortNotFound);
+                }
             }
             return Content(CMS.Localization.Errors.AvailabilityTariffNotFoundDescription);
         }
@@ -324,7 +335,32 @@ namespace CustomerManagementSystem.Controllers
             var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
             if (hasRegister.HasClientPreRegister == null || hasRegister.HasClientPreRegister.HasPreRegister == true)
             {
-                return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
+                var currentSubscription = new ServiceUtilities().GetSubscriptionList(User.GiveUserId());
+                if (currentSubscription.ResponseMessage.ErrorCode == 0)
+                {
+                    var preRegisteredSub = currentSubscription.SubscriptionList?.Where(s => s.State == (int)CMS.Localization.Enums.CustomerState.PreRegisterd).FirstOrDefault();
+                    if (preRegisteredSub == null)
+                    {
+                        // not found new register
+                        return RedirectToAction("Index");
+                    }
+                    var targetId = Convert.ToInt64(preRegisteredSub.SubscriptionId);
+                    var response = new ServiceUtilities().ChangeSubClient(User.GiveUserId(), targetId);
+                    if (response.ResponseMessage.ErrorCode != 0)
+                    {
+                        //TempData["generic-success"] = registerResponse.ResponseMessage.ErrorMessage;
+                        //log
+                        return RedirectToAction("Index", "Home");
+                    }
+                    AuthController.SignoutUser(Request.GetOwinContext());
+                    AuthController.SignInUser(response.ChangeSubClientResponse.ValidDisplayName,
+                        response.ChangeSubClientResponse.ID.ToString(),
+                        response.ChangeSubClientResponse.SubscriberNo,
+                        response.ChangeSubClientResponse.RelatedCustomers,
+                        Request.GetOwinContext());
+                }
+                return RedirectToAction("Index", "Home");
+                //return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
             }
             var provinces = new ServiceUtilities().GetProvinces();
             ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name");
@@ -476,11 +512,22 @@ namespace CustomerManagementSystem.Controllers
             }
             else
             {
-                applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
-                checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
-                activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
-                connectionStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
-                completedStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                if (customer.GetCustomerInfoResponse != null && customer.GetCustomerInfoResponse.CustomerState == (short)CMS.Localization.Enums.CustomerState.Active)
+                {
+                    AuthController.SignoutUser(Request.GetOwinContext());
+                    AuthController.SignInCurrentUserAgain(Request.GetOwinContext());
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AuthController.SignoutUser(Request.GetOwinContext());
+                    return RedirectToAction("Index");
+                }
+                //applicationRegisteredStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                //checkingDocumentsStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                //activationStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                //connectionStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
+                //completedStage = CMS.Localization.Enums.RegisterTrackingTypes.Success;
             }
             ViewBag.ApplicationRegisteredStage = applicationRegisteredStage;
             ViewBag.CheckingDocumentsStage = checkingDocumentsStage;

@@ -6086,6 +6086,9 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private bool HasInfrastructureAdslField;
             
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int PortStateField;
+            
             public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
                 get {
                     return this.extensionDataField;
@@ -6160,6 +6163,19 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 }
             }
             
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int PortState {
+                get {
+                    return this.PortStateField;
+                }
+                set {
+                    if ((this.PortStateField.Equals(value) != true)) {
+                        this.PortStateField = value;
+                        this.RaisePropertyChanged("PortState");
+                    }
+                }
+            }
+            
             public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
             
             protected void RaisePropertyChanged(string propertyName) {
@@ -6193,6 +6209,9 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private bool HasInfrastructureFiberField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int PortStateField;
             
             public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
                 get {
@@ -6268,6 +6287,19 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 }
             }
             
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int PortState {
+                get {
+                    return this.PortStateField;
+                }
+                set {
+                    if ((this.PortStateField.Equals(value) != true)) {
+                        this.PortStateField = value;
+                        this.RaisePropertyChanged("PortState");
+                    }
+                }
+            }
+            
             public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
             
             protected void RaisePropertyChanged(string propertyName) {
@@ -6289,6 +6321,9 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private bool HasInfrastructureVdslField;
+            
+            [System.Runtime.Serialization.OptionalFieldAttribute()]
+            private int PortStateField;
             
             [System.Runtime.Serialization.OptionalFieldAttribute()]
             private System.Nullable<int> VdslDistanceField;
@@ -6320,6 +6355,19 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                     if ((this.HasInfrastructureVdslField.Equals(value) != true)) {
                         this.HasInfrastructureVdslField = value;
                         this.RaisePropertyChanged("HasInfrastructureVdsl");
+                    }
+                }
+            }
+            
+            [System.Runtime.Serialization.DataMemberAttribute()]
+            public int PortState {
+                get {
+                    return this.PortStateField;
+                }
+                set {
+                    if ((this.PortStateField.Equals(value) != true)) {
+                        this.PortStateField = value;
+                        this.RaisePropertyChanged("PortState");
                     }
                 }
             }
