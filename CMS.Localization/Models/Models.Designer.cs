@@ -70,6 +70,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Başvuru Türü.
+        /// </summary>
+        public static string ApplicationType {
+            get {
+                return ResourceManager.GetString("ApplicationType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Otomatik Ödeme Talimatı.
         /// </summary>
         public static string AutomaticPaymentInstruction {
@@ -457,6 +466,15 @@ namespace CMS.Localization.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ev Telefon Numarası.
+        /// </summary>
+        public static string PSTN {
+            get {
+                return ResourceManager.GetString("PSTN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referans No.
         /// </summary>
         public static string ReferenceNo {
@@ -741,6 +759,15 @@ namespace CMS.Localization.Models {
         public static string XDSLNo {
             get {
                 return ResourceManager.GetString("XDSLNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mevcut Hizmet Numarası.
+        /// </summary>
+        public static string XDSLNumber {
+            get {
+                return ResourceManager.GetString("XDSLNumber", resourceCulture);
             }
         }
         

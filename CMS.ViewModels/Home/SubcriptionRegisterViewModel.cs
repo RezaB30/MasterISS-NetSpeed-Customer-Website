@@ -16,6 +16,17 @@ namespace CMS.ViewModels.Home
         //public int? BillingPeriod { get; set; }
         //public CustomerCommitmentInfo CommitmentInfo { get; set; }
         public ReferralDiscountInfo ReferralDiscount { get; set; }
+        public ExtraInfo ExtraInfo { get; set; }
+    }
+    public class ExtraInfo
+    {
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Localization.Errors))]
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "ApplicationType")]
+        public int ApplicationType { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "XDSLNumber")]
+        public string ServiceNo { get; set; }
+        [Display(ResourceType = typeof(CMS.Localization.Models.Models), Name = "PSTN")]
+        public string PSTN { get; set; }
     }
     //public class CustomerCommitmentInfo
     //{

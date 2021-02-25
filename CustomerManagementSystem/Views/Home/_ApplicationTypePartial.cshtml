@@ -1,0 +1,54 @@
+﻿@model CMS.ViewModels.Home.SubcriptionRegisterViewModel
+@using CMS.Localization
+@{ ViewBag.ApplicationType = ViewBag.ApplicationType ?? new SelectList(Enumerable.Empty<SelectListItem>());}
+<!--begin: Wizard Step 4-->
+<div class="pb-5" data-wizard-type="step-content">
+    <div class="separator separator-dashed my-3"></div>
+    <div class="pb-10 pb-lg-5 text-center">
+        <h5 class="font-weight-bolder text-dark-50 font-size-h2">@Common.ApplicationInfoes</h5><hr class="my-4">
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.ExtraInfo.ApplicationType)</label>
+                @Html.DropDownListFor(m => m.ExtraInfo.ApplicationType, (SelectList)ViewBag.ApplicationType, Common.Choose, new { @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6" })
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.ExtraInfo.ApplicationType, null, new { @class = "fv-help-block" })
+                </div>
+            </div>
+        </div>
+        <!--end::Form Group-->
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.ExtraInfo.PSTN)</label>
+                @Html.EditorFor(m => m.ExtraInfo.PSTN, new { htmlAttributes = new { @maxlength = 10 ,@class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6", @placeholder = Html.DisplayNameFor(m => m.ExtraInfo.PSTN), @autocomplete = "off" } })
+                <div class="fv-plugins-message-container text-muted font-weight-bold">
+                    @Common.HomePhoneDescription
+                </div>
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.ExtraInfo.PSTN, null, new { @class = "fv-help-block" })
+                </div>
+                <!--end::Form Group-->
+            </div>
+        </div>
+    </div>
+    <div class="row" style="visibility:hidden;">
+        <div id="change-operator-selector" class="col-lg-12 col-md-12">
+            <div class="form-group">
+                <label class="font-size-h6 font-weight-bolder m-2 text-dark">@Html.DisplayNameFor(m => m.ExtraInfo.ServiceNo)</label>
+                @Html.EditorFor(m => m.ExtraInfo.ServiceNo, new { htmlAttributes = new { @maxlength = 10, @class = "form-control h-auto p-3 border-0 rounded-lg font-size-h6", @placeholder = Html.DisplayNameFor(m => m.ExtraInfo.ServiceNo), @autocomplete = "off" } })
+                <div class="fv-plugins-message-container text-muted font-weight-bold">
+                    @Common.XDSLNumberDescription
+                </div>
+                <div class="fv-plugins-message-container">
+                    @Html.ValidationMessageFor(m => m.ExtraInfo.ServiceNo, null, new { @class = "fv-help-block" })
+                </div>
+                <!--end::Form Group-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--end: Wizard Step 4-->

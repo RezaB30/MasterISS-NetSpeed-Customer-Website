@@ -142,6 +142,15 @@ namespace CMS.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adres Bilgileriniz.
+        /// </summary>
+        public static string AddressInfoes {
+            get {
+                return ResourceManager.GetString("AddressInfoes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Müşteri Temsilcisi.
         /// </summary>
         public static string Agent {
@@ -183,6 +192,15 @@ namespace CMS.Localization {
         public static string ApplicationCompletedDescription {
             get {
                 return ResourceManager.GetString("ApplicationCompletedDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başvuru Bİlgileriniz.
+        /// </summary>
+        public static string ApplicationInfoes {
+            get {
+                return ResourceManager.GetString("ApplicationInfoes", resourceCulture);
             }
         }
         
@@ -670,6 +688,15 @@ namespace CMS.Localization {
         public static string Homepage {
             get {
                 return ResourceManager.GetString("Homepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ev Telefonunuz yoksa boş bırakabilirsiniz.
+        /// </summary>
+        public static string HomePhoneDescription {
+            get {
+                return ResourceManager.GetString("HomePhoneDescription", resourceCulture);
             }
         }
         
@@ -2013,6 +2040,15 @@ namespace CMS.Localization {
         public static string WriteNote {
             get {
                 return ResourceManager.GetString("WriteNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mevcut Hizmet Numaranızı bilmiyorsanız, mevcut operatörünüzden öğrenebilirsiniz.
+        /// </summary>
+        public static string XDSLNumberDescription {
+            get {
+                return ResourceManager.GetString("XDSLNumberDescription", resourceCulture);
             }
         }
         

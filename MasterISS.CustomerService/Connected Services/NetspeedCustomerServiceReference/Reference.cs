@@ -3282,6 +3282,9 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.NetspeedCustomerServiceReference.ExtraInfo ExtraInfoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private MasterISS.CustomerService.NetspeedCustomerServiceReference.RegistrationInfo RegistrationInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3294,6 +3297,19 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.ExtraInfo ExtraInfo {
+            get {
+                return this.ExtraInfoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtraInfoField, value) != true)) {
+                    this.ExtraInfoField = value;
+                    this.RaisePropertyChanged("ExtraInfo");
+                }
             }
         }
         
@@ -3319,6 +3335,83 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 if ((this.SubscriberIDField.Equals(value) != true)) {
                     this.SubscriberIDField = value;
                     this.RaisePropertyChanged("SubscriberID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExtraInfo", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class ExtraInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ApplicationTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PSTNField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string XDSLNoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ApplicationType {
+            get {
+                return this.ApplicationTypeField;
+            }
+            set {
+                if ((this.ApplicationTypeField.Equals(value) != true)) {
+                    this.ApplicationTypeField = value;
+                    this.RaisePropertyChanged("ApplicationType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PSTN {
+            get {
+                return this.PSTNField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PSTNField, value) != true)) {
+                    this.PSTNField = value;
+                    this.RaisePropertyChanged("PSTN");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string XDSLNo {
+            get {
+                return this.XDSLNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.XDSLNoField, value) != true)) {
+                    this.XDSLNoField = value;
+                    this.RaisePropertyChanged("XDSLNo");
                 }
             }
         }

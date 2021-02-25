@@ -219,11 +219,20 @@
   <xs:element name="CustomerServiceExistingCustomerRegisterRequest" nillable="true" type="tns:CustomerServiceExistingCustomerRegisterRequest" />
   <xs:complexType name="ExistingCustomerRegisterRequest">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ExtraInfo" nillable="true" type="tns:ExtraInfo" />
       <xs:element minOccurs="0" name="RegistrationInfo" nillable="true" type="tns:RegistrationInfo" />
       <xs:element minOccurs="0" name="SubscriberID" nillable="true" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ExistingCustomerRegisterRequest" nillable="true" type="tns:ExistingCustomerRegisterRequest" />
+  <xs:complexType name="ExtraInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PSTN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XDSLNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtraInfo" nillable="true" type="tns:ExtraInfo" />
   <xs:complexType name="RegistrationInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="ReferralDiscount" nillable="true" type="tns:ReferralDiscountInfo" />

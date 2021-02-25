@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using CMS.ViewModels.Home;
 using NLog;
+using RezaB.Data.Localization;
 using RezaB.Web.Authentication;
 
 namespace CustomerManagementSystem.Controllers
@@ -362,6 +363,8 @@ namespace CustomerManagementSystem.Controllers
                 return RedirectToAction("Index", "Home");
                 //return ReturnMessageUrl(Url.Action("Index", "Home"), CMS.Localization.Errors.HasPreRegisterInProgress, false);
             }
+            var applicationTypeList = new LocalizedList<RadiusR.DB.Enums.SubscriptionRegistrationType, RadiusR.Localization.Lists.SubscriptionRegistrationType>().GenericList;
+            ViewBag.ApplicationType = new SelectList(applicationTypeList.Where(a => a.ID != (int)RadiusR.DB.Enums.SubscriptionRegistrationType.Transfer).Select(a => new { Text = a.Name, Value = a.ID }).ToArray(), "Value", "Text");
             var provinces = new ServiceUtilities().GetProvinces();
             ViewBag.ProvinceList = new SelectList(provinces.ValueNamePairList ?? Enumerable.Empty<MasterISS.CustomerService.NetspeedCustomerServiceReference.ValueNamePair>(), "Value", "Name");
             //var commitmentLengthList = new ServiceUtilities().GetCommitmentLengths();
@@ -373,6 +376,22 @@ namespace CustomerManagementSystem.Controllers
         [HttpPost]
         public ActionResult SubscriptionRegister(SubcriptionRegisterViewModel register)
         {
+            if (register.ExtraInfo.ApplicationType == (int)RadiusR.DB.Enums.SubscriptionRegistrationType.Transition)
+            {
+                if (string.IsNullOrEmpty(register.ExtraInfo.ServiceNo))
+                {
+                    ModelState.AddModelError("ExtraInfo.ServiceNo", string.Format(CMS.Localization.Errors.Required, CMS.Localization.Models.Models.XDSLNumber));
+                }
+                else if (register.ExtraInfo.ServiceNo.Length != 10)
+                {
+                    ModelState.AddModelError("ExtraInfo.ServiceNo", string.Format(CMS.Localization.Errors.NotValid, CMS.Localization.Models.Models.XDSLNumber));
+                }
+            }
+            if (!string.IsNullOrEmpty(register.ExtraInfo.PSTN) && register.ExtraInfo.PSTN.Length != 10)
+            {
+                ModelState.AddModelError("ExtraInfo.PSTN", string.Format(CMS.Localization.Errors.NotValid, CMS.Localization.Models.Models.PSTN));
+            }
+
             if (ModelState.IsValid)
             {
                 var hasRegister = new ServiceUtilities().HasClientPreRegister(User.GiveUserId());
@@ -386,6 +405,12 @@ namespace CustomerManagementSystem.Controllers
                     var getAddress = address.AddressDetailsResponse;
                     var existingRegister = new SubcriptionRegisterViewModel()
                     {
+                        ExtraInfo = new ExtraInfo()
+                        {
+                            ApplicationType = register.ExtraInfo.ApplicationType,
+                            PSTN = register.ExtraInfo.PSTN,
+                            ServiceNo = register.ExtraInfo.ApplicationType == (int)RadiusR.DB.Enums.SubscriptionRegistrationType.NewRegistration ? null : register.ExtraInfo.ServiceNo
+                        },
                         SetupAddress = new AddressInfo()
                         {
                             AddressNo = getAddress.AddressNo,
@@ -459,6 +484,8 @@ namespace CustomerManagementSystem.Controllers
                     TempData["generic-error"] = address.ResponseMessage.ErrorMessage;
                 }
             }
+            var applicationTypeList = new LocalizedList<RadiusR.DB.Enums.SubscriptionRegistrationType, RadiusR.Localization.Lists.SubscriptionRegistrationType>().GenericList;
+            ViewBag.ApplicationType = new SelectList(applicationTypeList.Where(a => a.ID != (int)RadiusR.DB.Enums.SubscriptionRegistrationType.Transfer).Select(a => new { Text = a.Name, Value = a.ID }).ToArray(), "Value", "Text");
             var provinces = new ServiceUtilities().GetProvinces();
             var districts = new ServiceUtilities().GetProvinceDistricts(register.SetupAddress.ProvinceID);
             var rurals = new ServiceUtilities().GetDistrictRuralRegions(register.SetupAddress.DistrictID);

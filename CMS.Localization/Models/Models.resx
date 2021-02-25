@@ -120,6 +120,9 @@
   <data name="ApartmentID" xml:space="preserve">
     <value>Daire No</value>
   </data>
+  <data name="ApplicationType" xml:space="preserve">
+    <value>Başvuru Türü</value>
+  </data>
   <data name="AutomaticPaymentInstruction" xml:space="preserve">
     <value>Otomatik Ödeme Talimatı</value>
   </data>
@@ -249,6 +252,9 @@
   <data name="ProvinceID" xml:space="preserve">
     <value>Şehir</value>
   </data>
+  <data name="PSTN" xml:space="preserve">
+    <value>Ev Telefon Numarası</value>
+  </data>
   <data name="ReferenceNo" xml:space="preserve">
     <value>Referans No</value>
   </data>
@@ -344,6 +350,9 @@
   </data>
   <data name="XDSLNo" xml:space="preserve">
     <value>Devre Numarası</value>
+  </data>
+  <data name="XDSLNumber" xml:space="preserve">
+    <value>Mevcut Hizmet Numarası</value>
   </data>
   <data name="XDSLType" xml:space="preserve">
     <value>Bağlantı Tipi</value>

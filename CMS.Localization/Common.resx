@@ -144,6 +144,9 @@
   <data name="AddNote" xml:space="preserve">
     <value>Not Ekle</value>
   </data>
+  <data name="AddressInfoes" xml:space="preserve">
+    <value>Adres Bilgileriniz</value>
+  </data>
   <data name="Agent" xml:space="preserve">
     <value>Müşteri Temsilcisi</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="ApplicationCompletedDescription" xml:space="preserve">
     <value>Memnuniyet duyacağınızı düşündüğümüz ve ihtiyaç duyduğunuz internet gereksinimlerinizi en iyi şekilde karşılayacağına inandığımız hizmetimizi size sunmaktan mutluluk duyacağız. Bizi tercih ettiğiniz için teşekkür ederiz.</value>
+  </data>
+  <data name="ApplicationInfoes" xml:space="preserve">
+    <value>Başvuru Bİlgileriniz</value>
   </data>
   <data name="ApplicationRegister" xml:space="preserve">
     <value>Başvur</value>
@@ -321,6 +327,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>Ana Sayfa</value>
+  </data>
+  <data name="HomePhoneDescription" xml:space="preserve">
+    <value>Ev Telefonunuz yoksa boş bırakabilirsiniz</value>
   </data>
   <data name="IDCardDropDescription" xml:space="preserve">
     <value>Kimlik fotokopinizi buraya sürükleyin veya gözatmak için tıklayın</value>
@@ -770,6 +779,9 @@ gerçekleştirebilirsiniz.</value>
   </data>
   <data name="WriteNote" xml:space="preserve">
     <value>Not Yazın</value>
+  </data>
+  <data name="XDSLNumberDescription" xml:space="preserve">
+    <value>Mevcut Hizmet Numaranızı bilmiyorsanız, mevcut operatörünüzden öğrenebilirsiniz</value>
   </data>
   <data name="YourApplicationState" xml:space="preserve">
     <value>Başvuru Durumunuz</value>

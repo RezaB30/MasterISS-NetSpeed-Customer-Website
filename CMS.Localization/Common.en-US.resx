@@ -144,6 +144,9 @@
   <data name="AddNote" xml:space="preserve">
     <value>Add Note</value>
   </data>
+  <data name="AddressInfoes" xml:space="preserve">
+    <value>Your Address Info</value>
+  </data>
   <data name="Agent" xml:space="preserve">
     <value>Customer Representative</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="ApplicationCompletedDescription" xml:space="preserve">
     <value>We will be happy to offer you our service, which we think you will be pleased with and that we believe will best meet your internet needs. Thank you for choosing us.</value>
+  </data>
+  <data name="ApplicationInfoes" xml:space="preserve">
+    <value>Your Application Info</value>
   </data>
   <data name="ApplicationRegister" xml:space="preserve">
     <value>Register</value>
@@ -320,6 +326,9 @@
   </data>
   <data name="Homepage" xml:space="preserve">
     <value>Homepage</value>
+  </data>
+  <data name="HomePhoneDescription" xml:space="preserve">
+    <value>If you don't have a home phone, you can leave it blank</value>
   </data>
   <data name="IDCardDropDescription" xml:space="preserve">
     <value>Drag your ID Card copy here or click to browse</value>
@@ -767,6 +776,9 @@
   </data>
   <data name="WriteNote" xml:space="preserve">
     <value>Write Note</value>
+  </data>
+  <data name="XDSLNumberDescription" xml:space="preserve">
+    <value>If you don't know your service number , you can learn from your operator</value>
   </data>
   <data name="YourApplicationState" xml:space="preserve">
     <value>Application Status</value>

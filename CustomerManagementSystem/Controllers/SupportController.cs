@@ -156,7 +156,7 @@ namespace CustomerManagementSystem.Controllers
                 ViewBag.SubRequestTypes = new ServiceUtilities().GetSupportSubTypes(request.RequestTypeId, request.SubRequestTypeId);
                 ViewBag.FileMaxSize = fileMaxSize;
                 return View(request);
-            }            
+            }
             if (attachments != null && attachments.Where(att => att.ContentLength > fileMaxSize).FirstOrDefault() != null)
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
@@ -208,7 +208,7 @@ namespace CustomerManagementSystem.Controllers
                         requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
                     }
                 }
-            }           
+            }
             return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, true);
         }
         public ActionResult SupportRequestTable()

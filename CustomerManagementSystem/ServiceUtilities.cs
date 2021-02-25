@@ -387,6 +387,12 @@ namespace CustomerManagementSystem
                     Username = baseRequest.Username,
                     ExistingCustomerRegister = new ExistingCustomerRegisterRequest()
                     {
+                        ExtraInfo = new MasterISS.CustomerService.NetspeedCustomerServiceReference.ExtraInfo()
+                        {
+                            ApplicationType = register.ExtraInfo.ApplicationType,
+                            PSTN = register.ExtraInfo.PSTN,
+                            XDSLNo = register.ExtraInfo.ServiceNo
+                        },
                         SubscriberID = subscriptionId,
                         RegistrationInfo = new RegistrationInfo()
                         {
