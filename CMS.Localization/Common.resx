@@ -163,7 +163,7 @@
     <value>Memnuniyet duyacağınızı düşündüğümüz ve ihtiyaç duyduğunuz internet gereksinimlerinizi en iyi şekilde karşılayacağına inandığımız hizmetimizi size sunmaktan mutluluk duyacağız. Bizi tercih ettiğiniz için teşekkür ederiz.</value>
   </data>
   <data name="ApplicationInfoes" xml:space="preserve">
-    <value>Başvuru Bİlgileriniz</value>
+    <value>Başvuru Bilgileriniz</value>
   </data>
   <data name="ApplicationRegister" xml:space="preserve">
     <value>Başvur</value>
@@ -781,7 +781,7 @@ gerçekleştirebilirsiniz.</value>
     <value>Not Yazın</value>
   </data>
   <data name="XDSLNumberDescription" xml:space="preserve">
-    <value>Mevcut Hizmet Numaranızı bilmiyorsanız, mevcut operatörünüzden öğrenebilirsiniz</value>
+    <value>10 Haneli Hizmet Numaranızı mevcut operatörünüzün faturasından veya online işlem merkezine giriş yaparak öğrenebilirsiniz.</value>
   </data>
   <data name="YourApplicationState" xml:space="preserve">
     <value>Başvuru Durumunuz</value>

@@ -196,7 +196,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Başvuru Bİlgileriniz.
+        ///   Looks up a localized string similar to Başvuru Bilgileriniz.
         /// </summary>
         public static string ApplicationInfoes {
             get {
@@ -2044,7 +2044,7 @@ namespace CMS.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mevcut Hizmet Numaranızı bilmiyorsanız, mevcut operatörünüzden öğrenebilirsiniz.
+        ///   Looks up a localized string similar to 10 Haneli Hizmet Numaranızı mevcut operatörünüzün faturasından veya online işlem merkezine giriş yaparak öğrenebilirsiniz..
         /// </summary>
         public static string XDSLNumberDescription {
             get {
