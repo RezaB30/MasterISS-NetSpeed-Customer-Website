@@ -181,9 +181,6 @@
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSaveClientAttachmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSaveSupportAttachmentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSendSubscriberSMSResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

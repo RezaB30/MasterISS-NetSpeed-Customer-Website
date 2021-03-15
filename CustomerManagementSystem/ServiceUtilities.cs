@@ -264,7 +264,7 @@ namespace CustomerManagementSystem
             }
 
         }
-        public CustomerServiceSupportRegisterResponse SupportRegister(CMS.ViewModels.Supports.NewRequestViewModel request, long? subscriptionId)
+        public CustomerServiceSupportRegisterResponse SupportRegister(CMS.ViewModels.Supports.NewRequestViewModel request,List<Attachment> attachments, long? subscriptionId)
         {
             var baseRequest = new GenericServiceSettings();
             using (var client = new NetspeedCustomerServiceClient())
@@ -279,7 +279,8 @@ namespace CustomerManagementSystem
                         Description = request.Description,
                         RequestTypeId = request.RequestTypeId,
                         SubRequestTypeId = request.SubRequestTypeId,
-                        SubscriptionId = subscriptionId
+                        SubscriptionId = subscriptionId,
+                        Attachments = attachments.ToArray()
                     },
                     Username = baseRequest.Username
                 });
@@ -287,7 +288,7 @@ namespace CustomerManagementSystem
             }
 
         }
-        public CustomerServiceSendSupportMessageResponse SendSupportMessage(RequestSupportMessage requestMessage, long? subscriptionId)
+        public CustomerServiceSendSupportMessageResponse SendSupportMessage(RequestSupportMessage requestMessage, List<Attachment> attachments, long? subscriptionId)
         {
             var baseRequest = new GenericServiceSettings();
             using (var client = new NetspeedCustomerServiceClient())
@@ -300,6 +301,7 @@ namespace CustomerManagementSystem
                     Username = baseRequest.Username,
                     SendSupportMessageParameters = new SendSupportMessageRequest()
                     {
+                        Attachments = attachments.ToArray(),
                         Message = requestMessage.Message,
                         SubscriptionId = subscriptionId,
                         SupportId = requestMessage.ID,
@@ -657,30 +659,30 @@ namespace CustomerManagementSystem
             }
 
         }
-        public CustomerServiceSaveSupportAttachmentResponse SaveSupportAttachment(long stageId, string fileName, byte[] fileContent, string fileExtention, long? supportRequestId)
-        {
-            var baseRequest = new GenericServiceSettings();
-            using (var client = new NetspeedCustomerServiceClient())
-            {
-                var result = client.SaveSupportAttachment(new CustomerServiceSaveSupportAttachmentRequest()
-                {
-                    Culture = baseRequest.Culture,
-                    Hash = baseRequest.Hash,
-                    Rand = baseRequest.Rand,
-                    Username = baseRequest.Username,
-                    SaveSupportAttachmentParameters = new SaveSupportAttachmentRequest()
-                    {
-                        FileContent = fileContent,
-                        FileExtention = fileExtention,
-                        FileName = fileName,
-                        StageId = stageId,
-                        SupportRequestId = supportRequestId
-                    }
-                });
-                return result;
-            }
+        //public CustomerServiceSaveSupportAttachmentResponse SaveSupportAttachment(long stageId, string fileName, byte[] fileContent, string fileExtention, long? supportRequestId)
+        //{
+        //    var baseRequest = new GenericServiceSettings();
+        //    using (var client = new NetspeedCustomerServiceClient())
+        //    {
+        //        var result = client.SaveSupportAttachment(new CustomerServiceSaveSupportAttachmentRequest()
+        //        {
+        //            Culture = baseRequest.Culture,
+        //            Hash = baseRequest.Hash,
+        //            Rand = baseRequest.Rand,
+        //            Username = baseRequest.Username,
+        //            SaveSupportAttachmentParameters = new SaveSupportAttachmentRequest()
+        //            {
+        //                FileContent = fileContent,
+        //                FileExtention = fileExtention,
+        //                FileName = fileName,
+        //                StageId = stageId,
+        //                SupportRequestId = supportRequestId
+        //            }
+        //        });
+        //        return result;
+        //    }
 
-        }
+        //}
         public CustomerServicGetSupportAttachmentListResponse GetSupportAttachmentList(long? supportId)
         {
             var baseRequest = new GenericServiceSettings();

@@ -159,7 +159,7 @@ namespace CustomerManagementSystem.Controllers
             }
             if (attachments != null && attachments.Where(att => att.ContentLength > fileMaxSize).FirstOrDefault() != null)
             {
-                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
+                return ReturnMessageUrl(Url.Action("NewRequests", "Support"), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
             }
             var hasActiveRequest = new ServiceUtilities().HasOpenRequest(User.GiveUserId());
             if (hasActiveRequest.ResponseMessage.ErrorCode != 0)
@@ -170,33 +170,9 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.HasActiveRequest, false);
             }
-            var supportRegister = new ServiceUtilities().SupportRegister(request, User.GiveUserId());
-            if (supportRegister.ResponseMessage.ErrorCode != 0)
-            {
-                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, false);
-            }
-            //add file
+            List<MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment> attachmentList = new List<MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment>();
             if (attachments != null && attachments.Count() != 0 && attachments.Count() <= fileMaxCount)
             {
-                var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
-                if (supportRequests.ResponseMessage.ErrorCode != 0)
-                {
-                    requestsLogger.Error(supportRequests.ResponseMessage.ErrorMessage);
-                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
-                }
-                var supportDetails = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), supportRegister.SupportRegisterResponse.SupportId);
-                if (supportDetails.ResponseMessage.ErrorCode != 0)
-                {
-                    requestsLogger.Error(supportDetails.ResponseMessage.ErrorMessage);
-                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
-                }
-                if (supportDetails.SupportDetailMessagesResponse == null || supportDetails.SupportDetailMessagesResponse.SupportMessages == null)
-                {
-                    requestsLogger.Error($"Support Message List Not Found. Subscription Id : {User.GiveUserId()} - Support Id : {supportRegister.SupportRegisterResponse.SupportId}");
-                    return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
-                }
-                var stageId = supportDetails.SupportDetailMessagesResponse.SupportMessages.FirstOrDefault().StageId;
-                // save attachment
                 foreach (var item in attachments)
                 {
                     using (var binaryReader = new BinaryReader(item.InputStream))
@@ -204,11 +180,54 @@ namespace CustomerManagementSystem.Controllers
                         var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
                         FileInfo fileInfo = new FileInfo(item.FileName);
                         var fileExtension = fileInfo.Extension.Replace(".", "");
-                        var saveAttachment = new ServiceUtilities().SaveSupportAttachment(stageId, item.FileName, attachmentByte, fileExtension, supportRegister.SupportRegisterResponse.SupportId);
-                        requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+                        attachmentList.Add(new MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment()
+                        {
+                            FileContent = attachmentByte,
+                            FileExtention = fileExtension,
+                            FileName = item.FileName
+                        });
                     }
                 }
             }
+            var supportRegister = new ServiceUtilities().SupportRegister(request, attachmentList, User.GiveUserId());
+            if (supportRegister.ResponseMessage.ErrorCode != 0)
+            {
+                return ReturnMessageUrl(Url.Action("NewRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, false);
+            }
+            //add file
+            //if (attachments != null && attachments.Count() != 0 && attachments.Count() <= fileMaxCount)
+            //{
+            //    var supportRequests = new ServiceUtilities().GetSupportRequests(User.GiveUserId());
+            //    if (supportRequests.ResponseMessage.ErrorCode != 0)
+            //    {
+            //        requestsLogger.Error(supportRequests.ResponseMessage.ErrorMessage);
+            //        return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+            //    }
+            //    var supportDetails = new ServiceUtilities().GetSupportDetails(User.GiveUserId(), supportRegister.SupportRegisterResponse.SupportId);
+            //    if (supportDetails.ResponseMessage.ErrorCode != 0)
+            //    {
+            //        requestsLogger.Error(supportDetails.ResponseMessage.ErrorMessage);
+            //        return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+            //    }
+            //    if (supportDetails.SupportDetailMessagesResponse == null || supportDetails.SupportDetailMessagesResponse.SupportMessages == null)
+            //    {
+            //        requestsLogger.Error($"Support Message List Not Found. Subscription Id : {User.GiveUserId()} - Support Id : {supportRegister.SupportRegisterResponse.SupportId}");
+            //        return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), CMS.Localization.Errors.InternalErrorDescription, false);
+            //    }
+            //    var stageId = supportDetails.SupportDetailMessagesResponse.SupportMessages.FirstOrDefault().StageId;
+            //    // save attachment
+            //    foreach (var item in attachments)
+            //    {
+            //        using (var binaryReader = new BinaryReader(item.InputStream))
+            //        {
+            //            var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+            //            FileInfo fileInfo = new FileInfo(item.FileName);
+            //            var fileExtension = fileInfo.Extension.Replace(".", "");
+            //            var saveAttachment = new ServiceUtilities().SaveSupportAttachment(stageId, item.FileName, attachmentByte, fileExtension, supportRegister.SupportRegisterResponse.SupportId);
+            //            requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+            //        }
+            //    }
+            //}
             return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), supportRegister.ResponseMessage.ErrorMessage, true);
         }
         public ActionResult SupportRequestTable()
@@ -283,12 +302,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), string.Format(CMS.Localization.Errors.FileSizeError, (fileMaxSize / 1000000)), false);
             }
-            var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, User.GiveUserId());
-            requestsLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
-            if (newMessageResponse.ResponseMessage.ErrorCode == 5) // has active request
-            {
-                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
-            }
+            List<MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment> attachmentList = new List<MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment>();
             if (attachments != null && attachments.Count() != 0)
             {
                 var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
@@ -296,19 +310,21 @@ namespace CustomerManagementSystem.Controllers
                 if (attachmentsList.GetSupportAttachmentList == null || attachmentsList.GetSupportAttachmentList.Count() == 0
                     || (attachments.Count() + attachmentsList.GetSupportAttachmentList.Count()) <= fileMaxCount)
                 {
-                    if (newMessageResponse.ResponseMessage.ErrorCode == 0)
+                    foreach (var item in attachments)
                     {
-                        // save attachment
-                        foreach (var item in attachments)
+                        using (var binaryReader = new BinaryReader(item.InputStream))
                         {
-                            using (var binaryReader = new BinaryReader(item.InputStream))
+                            var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+                            FileInfo fileInfo = new FileInfo(item.FileName);
+                            var fileExtension = fileInfo.Extension.Replace(".", "");
+                            attachmentList.Add(new MasterISS.CustomerService.NetspeedCustomerServiceReference.Attachment()
                             {
-                                var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
-                                FileInfo fileInfo = new FileInfo(item.FileName);
-                                var fileExtension = fileInfo.Extension.Replace(".", "");
-                                var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
-                                requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
-                            }
+                                FileContent = attachmentByte,
+                                FileExtention = fileExtension,
+                                FileName = item.FileName
+                            });
+                            //var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
+                            //requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
                         }
                     }
                 }
@@ -317,6 +333,40 @@ namespace CustomerManagementSystem.Controllers
                     return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), CMS.Localization.Errors.FileUploadError, false);
                 }
             }
+            var newMessageResponse = new ServiceUtilities().SendSupportMessage(requestMessage, attachmentList, User.GiveUserId());
+            requestsLogger.Debug($"NewSupportMessage response -> ErrorCode : {newMessageResponse.ResponseMessage.ErrorCode} - Error Message : {newMessageResponse.ResponseMessage.ErrorMessage}");
+            if (newMessageResponse.ResponseMessage.ErrorCode == 5) // has active request
+            {
+                return ReturnMessageUrl(Url.Action("SupportRequests", "Support"), newMessageResponse.ResponseMessage.ErrorMessage, false);
+            }
+            //if (attachments != null && attachments.Count() != 0)
+            //{
+            //    var fileMaxCount = genericAppSetting.GenericAppSettings == null ? 20 : genericAppSetting.GenericAppSettings.FileMaxCount;
+            //    var attachmentsList = new ServiceUtilities().GetSupportAttachmentList(requestMessage.ID);
+            //    if (attachmentsList.GetSupportAttachmentList == null || attachmentsList.GetSupportAttachmentList.Count() == 0
+            //        || (attachments.Count() + attachmentsList.GetSupportAttachmentList.Count()) <= fileMaxCount)
+            //    {
+            //        if (newMessageResponse.ResponseMessage.ErrorCode == 0)
+            //        {
+            //            // save attachment
+            //            foreach (var item in attachments)
+            //            {
+            //                using (var binaryReader = new BinaryReader(item.InputStream))
+            //                {
+            //                    var attachmentByte = binaryReader.ReadBytes(item.ContentLength);
+            //                    FileInfo fileInfo = new FileInfo(item.FileName);
+            //                    var fileExtension = fileInfo.Extension.Replace(".", "");
+            //                    var saveAttachment = new ServiceUtilities().SaveSupportAttachment(newMessageResponse.SendSupportMessageResponse.Value, item.FileName, attachmentByte, fileExtension, requestMessage.ID);
+            //                    requestsLogger.Info($"Save Attachment Service Response | Error Code : {saveAttachment.ResponseMessage.ErrorCode} - Error Message : {saveAttachment.ResponseMessage.ErrorMessage}");
+            //                }
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), CMS.Localization.Errors.FileUploadError, false);
+            //    }
+            //}
 
             return ReturnMessageUrl(Url.Action("SupportResults", "Support", new { requestMessage.ID }), newMessageResponse.ResponseMessage.ErrorMessage, true);
         }
