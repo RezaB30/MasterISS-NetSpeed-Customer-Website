@@ -87,14 +87,14 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="RadiusR.DB, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RadiusR.DB.1.2.2\lib\net452\RadiusR.DB.dll</HintPath>
+    <Reference Include="RadiusR.DB, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RadiusR.DB.1.2.4\lib\net472\RadiusR.DB.dll</HintPath>
     </Reference>
-    <Reference Include="RadiusR.Localization.Lists, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RadiusR.Localization.Lists.1.0.8\lib\net452\RadiusR.Localization.Lists.dll</HintPath>
+    <Reference Include="RadiusR.Localization.Lists, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RadiusR.Localization.Lists.1.0.11\lib\net472\RadiusR.Localization.Lists.dll</HintPath>
     </Reference>
-    <Reference Include="RezaB.Data, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RezaB.Data.1.0.1\lib\net452\RezaB.Data.dll</HintPath>
+    <Reference Include="RezaB.Data, Version=1.0.2.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Data.1.0.2\lib\net452\RezaB.Data.dll</HintPath>
     </Reference>
     <Reference Include="RezaB.DBUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RezaB.DBUtilities.1.0.0\lib\net452\RezaB.DBUtilities.dll</HintPath>

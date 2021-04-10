@@ -21,6 +21,7 @@ namespace CustomerManagementSystem.Controllers
         private static Logger logger = LogManager.GetLogger("main");
         private static Logger requestLogger = LogManager.GetLogger("requestLogger");
         private static Logger exceptionLogger = LogManager.GetLogger("exceptions");
+        private static Logger failedRequestLogger = LogManager.GetLogger("failedRequestLogger");
 
         protected override void OnException(ExceptionContext filterContext)
         {
@@ -55,7 +56,8 @@ namespace CustomerManagementSystem.Controllers
                 eventLog.Properties["httpMethod"] = Request.HttpMethod;
                 eventLog.Properties["userHostAddress"] = Request.UserHostAddress;
                 eventLog.Properties["userCookies"] = string.Join(Environment.NewLine, cookies);
-                requestLogger.Log(eventLog);
+                var log = string.Join(Environment.NewLine, eventLog.Properties.Select(ev => $"{ev.Key} : {ev.Value}").ToArray());
+                requestLogger.Info(log);
             }
             else
             {
@@ -71,7 +73,8 @@ namespace CustomerManagementSystem.Controllers
                 eventLog.Properties["httpMethod"] = Request.HttpMethod;
                 eventLog.Properties["userHostAddress"] = Request.UserHostAddress;
                 eventLog.Properties["userCookies"] = string.Join(Environment.NewLine, cookies);
-                requestLogger.Log(eventLog);
+                var log = string.Join(Environment.NewLine, eventLog.Properties.Select(ev => $"{ev.Key} : {ev.Value}").ToArray());
+                failedRequestLogger.Info(log);
             }
         }
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
@@ -206,7 +209,7 @@ namespace CustomerManagementSystem.Controllers
                         var url = Url.Action("SupportResults", "Support", new { ID = item });
                         notifications.Add(new CMS.ViewModels.Supports.NotificationViewModel()
                         {
-                            Url = Url.Action("RedirectNotification",new { url = url , uniqueId = item }),
+                            Url = Url.Action("RedirectNotification", new { url = url, uniqueId = item }),
                             Content = CMS.Localization.Common.NewSupportNotification,
                             Type = CMS.ViewModels.Supports.NotificationType.Info
                         });

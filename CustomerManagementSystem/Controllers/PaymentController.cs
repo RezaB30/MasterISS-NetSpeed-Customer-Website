@@ -188,7 +188,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 generalLogger.Warn($"Error calling 'remove invalid cards' from web service. Code : {autoPaymentList.ResponseMessage.ErrorCode} - Message : {autoPaymentList.ResponseMessage.ErrorMessage}");
             }
-            var autoPayments = autoPaymentList.AutoPaymentListResult?.Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
+            var autoPayments = autoPaymentList.AutoPaymentListResult?.Where(s=>s.SubscriberID == User.GiveUserId()).Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
             {
                 SubscriberID = s.SubscriberID,
                 SubscriberNo = s.SubscriberNo,
