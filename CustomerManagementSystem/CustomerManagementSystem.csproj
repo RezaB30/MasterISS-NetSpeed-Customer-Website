@@ -189,6 +189,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InfrastructureController.cs" />
     <Compile Include="Controllers\InitializeController.cs" />
+    <Compile Include="Controllers\MobilePaymentController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="CustomAttributes\CardCVV.cs" />
@@ -212,6 +213,7 @@
     </Compile>
     <Compile Include="ServiceUtilities.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\PaymentUtilities.cs" />
     <Compile Include="VPOSToken\BillPaymentToken.cs" />
     <Compile Include="VPOSToken\PaymentTokenBase.cs" />
     <Compile Include="VPOSToken\PaymentTokenType.cs" />
@@ -2595,6 +2597,7 @@
     <Folder Include="Views\Captcha\" />
     <Folder Include="Views\Infrastructure\" />
     <Folder Include="Views\Initialize\" />
+    <Folder Include="Views\MobilePayment\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

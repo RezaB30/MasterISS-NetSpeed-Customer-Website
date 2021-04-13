@@ -143,7 +143,7 @@ namespace CustomerManagementSystem.Controllers
             var unpaidBills = bills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == (short)CMS.Localization.Enums.BillState.Unpaid).Select(bill => new CMS.ViewModels.Layout.BillsLayoutViewModel.BillList()
             {
                 Amount = bill.Total.ToString("###,##0.00"),
-                IssueDate = bill.BillDate
+                IssueDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(bill.BillDate)
             });
             var TotalAmount = bills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == (short)CMS.Localization.Enums.BillState.Unpaid).Sum(bill => bill.Total);
             var results = new CMS.ViewModels.Layout.BillsLayoutViewModel()

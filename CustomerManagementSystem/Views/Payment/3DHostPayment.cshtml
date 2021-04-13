@@ -1,5 +1,7 @@
 ﻿@{
     ViewBag.Title = CMS.Localization.Common.InvoicePayments;
+
+    ViewBag.POSForm = ViewBag.POSForm == null ? TempData["POSForm"] : ViewBag.POSForm;
 }
 <style>
     .vpos-redirect-container {

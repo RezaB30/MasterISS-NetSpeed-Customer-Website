@@ -1,2 +1,7 @@
 ﻿v 1.0.0 2021-02-11
 - first release
+v 1.0.1 2021-04-13
+- change datetime types
+- fixed payment id issue
+- added new function for mobile payment
+- payment and vpos result functions changed as generic function

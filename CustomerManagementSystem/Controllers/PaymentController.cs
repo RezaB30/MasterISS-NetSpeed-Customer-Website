@@ -32,8 +32,8 @@ namespace CustomerManagementSystem.Controllers
             {
                 ID = bill.ID,
                 ServiceName = bill.ServiceName,
-                BillDate = bill.BillDate,
-                LastPaymentDate = bill.LastPaymentDate,
+                BillDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(bill.BillDate).Value,
+                LastPaymentDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(bill.LastPaymentDate).Value,
                 Total = bill.Total.ToString("###,##0.00"),
                 Status = bill.Status,
                 CanBePaid = bill.CanBePaid,
@@ -188,7 +188,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 generalLogger.Warn($"Error calling 'remove invalid cards' from web service. Code : {autoPaymentList.ResponseMessage.ErrorCode} - Message : {autoPaymentList.ResponseMessage.ErrorMessage}");
             }
-            var autoPayments = autoPaymentList.AutoPaymentListResult?.Where(s=>s.SubscriberID == User.GiveUserId()).Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
+            var autoPayments = autoPaymentList.AutoPaymentListResult?.Where(s => s.SubscriberID == User.GiveUserId()).Select(s => new CustomerAutomaticPaymentViewModel.AutomaticPaymentViewModel()
             {
                 SubscriberID = s.SubscriberID,
                 SubscriberNo = s.SubscriberNo,
@@ -303,7 +303,7 @@ namespace CustomerManagementSystem.Controllers
                         CardNo = card.CardNo,
                         ExpirationMonth = card.ExpirationMonth,
                         ExpirationYear = card.ExpirationYear,
-                        SMSCode = "",
+                        //SMSCode = "",
                         SubscriptionId = User.GiveUserId(),
                     },
                     Culture = baseRequest.Culture,
@@ -639,292 +639,302 @@ namespace CustomerManagementSystem.Controllers
         [HttpGet]
         public ActionResult Payment(long? id)
         {
-            var baseRequest = new GenericServiceSettings();
-            var tokenKey = VPOSTokenManager.RegisterPaymentToken(new BillPaymentToken()
+            //var baseRequest = new GenericServiceSettings();
+            //var tokenKey = VPOSTokenManager.RegisterPaymentToken(new BillPaymentToken()
+            //{
+            //    SubscriberId = User.GiveUserId().Value,
+            //    BillID = id
+            //});
+            //if (GetPayableAmount(User.GiveUserId(), id) == 0m)
+            //{
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            //{
+            //    AuthController.SignoutUser(Request.GetOwinContext());
+            //    AuthController.SignInCurrentUserAgain(Request.GetOwinContext());
+            //}
+            //NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
+            //var VPOSFormResponse = client.GetVPOSForm(new CustomerServiceVPOSFormRequest()
+            //{
+            //    Culture = baseRequest.Culture,
+            //    Hash = baseRequest.Hash,
+            //    Rand = baseRequest.Rand,
+            //    Username = baseRequest.Username,
+            //    VPOSFormParameters = new VPOSFormRequest()
+            //    {
+            //        FailUrl = Url.Action("VPOSFail", null, new { id = tokenKey }, Request.Url.Scheme),
+            //        OkUrl = Url.Action("VPOSSuccess", null, new { id = tokenKey }, Request.Url.Scheme),
+            //        PayableAmount = GetPayableAmount(User.GiveUserId(), id),
+            //        SubscriptionId = User.GiveUserId()
+            //    }
+            //});
+            //if (VPOSFormResponse.ResponseMessage.ErrorCode != 0)
+            //{
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            var response = Utilities.PaymentUtilities.Payment(id, User.GiveUserId().Value);
+            if (!response.IsSuccess)
             {
-                SubscriberId = User.GiveUserId().Value,
-                BillID = id
-            });
-            if (GetPayableAmount(User.GiveUserId(), id) == 0m)
-            {
-                return RedirectToAction("BillsAndPayments");
+                return RedirectToAction(response.ActionName);
             }
-            {
-                AuthController.SignoutUser(Request.GetOwinContext());
-                AuthController.SignInCurrentUserAgain(Request.GetOwinContext());
-            }
-            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
-            var VPOSFormResponse = client.GetVPOSForm(new CustomerServiceVPOSFormRequest()
-            {
-                Culture = baseRequest.Culture,
-                Hash = baseRequest.Hash,
-                Rand = baseRequest.Rand,
-                Username = baseRequest.Username,
-                VPOSFormParameters = new VPOSFormRequest()
-                {
-                    FailUrl = Url.Action("VPOSFail", null, new { id = tokenKey }, Request.Url.Scheme),
-                    OkUrl = Url.Action("VPOSSuccess", null, new { id = tokenKey }, Request.Url.Scheme),
-                    PayableAmount = GetPayableAmount(User.GiveUserId(), id),
-                    SubscriptionId = User.GiveUserId()
-                }
-            });
-            if (VPOSFormResponse.ResponseMessage.ErrorCode != 0)
-            {
-                return RedirectToAction("BillsAndPayments");
-            }
-            ViewBag.POSForm = VPOSFormResponse.VPOSFormResponse.HtmlForm;
+
+            ViewBag.POSForm = response.HtmlForm; //VPOSFormResponse.VPOSFormResponse.HtmlForm;
             return View(viewName: "3DHostPayment");
         }
 
         [AllowAnonymous]
         public ActionResult VPOSSuccess(string id)
         {
-            var paymentToken = VPOSTokenManager.RetrievePaymentToken(id);
-            if (paymentToken == null)
-            {
-                Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
-                return RedirectToAction("BillsAndPayments");
-            }
-            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
-            var baseRequest = new GenericServiceSettings();
-            var dbSubscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
-            {
-                Username = baseRequest.Username,
-                Culture = baseRequest.Culture,
-                Hash = baseRequest.Hash,
-                Rand = baseRequest.Rand,
-                SubscriptionParameters = new BaseSubscriptionRequest()
-                {
-                    SubscriptionId = paymentToken.SubscriberId
-                }
-            });
-            if (dbSubscription.ResponseMessage.ErrorCode != 0)
-            {
-                Session["POSErrorMessage"] = CMS.Localization.Common.SubscriberNotFound;
-                return RedirectToAction("BillsAndPayments");
-            }
-            //----------- bill paymnet ------------
-            if (paymentToken is BillPaymentToken)
-            {
-                var billPaymentToken = (BillPaymentToken)paymentToken;
-
-                var payableAmount = GetPayableAmount(dbSubscription.SubscriptionBasicInformationResponse.ID, billPaymentToken.BillID);
-                // billed sub
-                if (dbSubscription.SubscriptionBasicInformationResponse.HasBilling)
-                {
-                    var billBaseRequest = new GenericServiceSettings();
-                    var dbBills = client.GetCustomerBills(new CustomerServiceBaseRequest()
-                    {
-                        Culture = billBaseRequest.Culture,
-                        Hash = billBaseRequest.Hash,
-                        Rand = billBaseRequest.Rand,
-                        Username = billBaseRequest.Username,
-                        SubscriptionParameters = new BaseSubscriptionRequest()
-                        {
-                            SubscriptionId = paymentToken.SubscriberId
-                        }
-                    });
-                    if (dbBills.ResponseMessage.ErrorCode != 0)
-                    {
-                        Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("BillsAndPayments");
-                    }
-                    var billIds = billPaymentToken.BillID.HasValue ? new[] { billPaymentToken.BillID.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.Status == 1).Select(b => b.ID).ToArray();
-                    paymentLogger.Debug("Received successfull payment for clientId= {1}, billId= {2} with total of {3}:" + Environment.NewLine + "{0}",
-                                            string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
-                                            dbSubscription.SubscriptionBasicInformationResponse.SubscriberNo,
-                                            billPaymentToken.BillID.HasValue ? billPaymentToken.BillID.Value.ToString() : string.Join(",", billIds),
-                                            payableAmount.ToString());
-                    var unpaidBills = dbBills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).ToList(); // 1 = unpaid enum
-                    if (billPaymentToken.BillID.HasValue)
-                        unpaidBills = unpaidBills.Where(b => b.ID == billPaymentToken.BillID).ToList();
-
-                    var payBills = PayBills(unpaidBills.Select(bill => bill.ID).ToArray(), (short)CMS.Localization.Enums.SubscriptionPaidType.Billing,
-                        dbSubscription.SubscriptionBasicInformationResponse.ID, (int)CMS.Localization.Enums.PaymentType.VirtualPos, (int)CMS.Localization.Enums.AccountantType.Seller);
-                    if (payBills.ResponseMessage.ErrorCode != 0)
-                    {
-                        Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("BillsAndPayments");
-                    }
-                    var smsBaseRequest = new GenericServiceSettings();
-                    var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
-                    {
-                        Culture = smsBaseRequest.Culture,
-                        Username = smsBaseRequest.Username,
-                        Hash = smsBaseRequest.Hash,
-                        Rand = smsBaseRequest.Rand,
-                        SendSubscriberSMS = new SendSubscriberSMSRequest()
-                        {
-                            BillIds = billIds,
-                            PayableAmount = payableAmount,
-                            SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID,
-                            SubscriptionPaidType = 1
-                        }
-                    });
-                    if (SendSubscriberSMS.ResponseMessage.ErrorCode != 0)
-                    {
-                        Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("BillsAndPayments");
-                    }
-                }
-                //pre paid sub
-                else
-                {
-                    paymentLogger.Debug("Received successfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
-                                            string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
-                                            dbSubscription.SubscriptionBasicInformationResponse.SubscriberNo,
-                                            payableAmount.ToString());
-
-                    var payBills = PayBills(null, (short)CMS.Localization.Enums.SubscriptionPaidType.PrePaid,
-                        dbSubscription.SubscriptionBasicInformationResponse.ID, (int)CMS.Localization.Enums.PaymentType.VirtualPos, (int)CMS.Localization.Enums.AccountantType.Admin);
-                    if (payBills.ResponseMessage.ErrorCode != 0)
-                    {
-                        Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("BillsAndPayments");
-                    }
-                    var smsBaseRequest = new GenericServiceSettings();
-                    var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
-                    {
-                        Culture = smsBaseRequest.Culture,
-                        Username = smsBaseRequest.Username,
-                        Hash = smsBaseRequest.Hash,
-                        Rand = smsBaseRequest.Rand,
-                        SendSubscriberSMS = new SendSubscriberSMSRequest()
-                        {
-                            SubscriptionPaidType = 2,
-                            BillIds = null,
-                            PayableAmount = payableAmount,
-                            SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID
-                        }
-                    });
-                    if (SendSubscriberSMS.ResponseMessage.ErrorCode != 0)
-                    {
-                        Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
-                        return RedirectToAction("BillsAndPayments");
-                    }
-                }
-            }
-            //------------ quota sale ---------------
-            else if (paymentToken is QuotaSaleToken)
-            {
-                var quotaSaleToken = (QuotaSaleToken)paymentToken;
-                var quotaBaseRequest = new GenericServiceSettings();
-                var quotaSale = client.QuotaSale(new CustomerServiceQuotaSaleRequest()
-                {
-                    Culture = quotaBaseRequest.Culture,
-                    Hash = quotaBaseRequest.Hash,
-                    Username = quotaBaseRequest.Username,
-                    Rand = quotaBaseRequest.Rand,
-                    QuotaSaleParameters = new QuotaSaleRequest()
-                    {
-                        SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID,
-                        PackageId = quotaSaleToken.PackageID
-                    }
-                });
-                if (quotaSale.ResponseMessage.ErrorCode != 0)
-                {
-                    Session["POSSuccessMessage"] = quotaSale.ResponseMessage.ErrorMessage;
-                    return RedirectToAction("BillsAndPayments");
-                }
-            }
-
-            Session["POSSuccessMessage"] = CMS.Localization.Common.POSSuccessMessage;
+            var response = Utilities.PaymentUtilities.VPOSSuccess(id);
             return RedirectToAction("BillsAndPayments");
+            //var paymentToken = VPOSTokenManager.RetrievePaymentToken(id);
+            //if (paymentToken == null)
+            //{
+            //    Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            //NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
+            //var baseRequest = new GenericServiceSettings();
+            //var dbSubscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
+            //{
+            //    Username = baseRequest.Username,
+            //    Culture = baseRequest.Culture,
+            //    Hash = baseRequest.Hash,
+            //    Rand = baseRequest.Rand,
+            //    SubscriptionParameters = new BaseSubscriptionRequest()
+            //    {
+            //        SubscriptionId = paymentToken.SubscriberId
+            //    }
+            //});
+            //if (dbSubscription.ResponseMessage.ErrorCode != 0)
+            //{
+            //    Session["POSErrorMessage"] = CMS.Localization.Common.SubscriberNotFound;
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            ////----------- bill paymnet ------------
+            //if (paymentToken is BillPaymentToken)
+            //{
+            //    var billPaymentToken = (BillPaymentToken)paymentToken;
+
+            //    var payableAmount = GetPayableAmount(dbSubscription.SubscriptionBasicInformationResponse.ID, billPaymentToken.BillID);
+            //    // billed sub
+            //    if (dbSubscription.SubscriptionBasicInformationResponse.HasBilling)
+            //    {
+            //        var billBaseRequest = new GenericServiceSettings();
+            //        var dbBills = client.GetCustomerBills(new CustomerServiceBaseRequest()
+            //        {
+            //            Culture = billBaseRequest.Culture,
+            //            Hash = billBaseRequest.Hash,
+            //            Rand = billBaseRequest.Rand,
+            //            Username = billBaseRequest.Username,
+            //            SubscriptionParameters = new BaseSubscriptionRequest()
+            //            {
+            //                SubscriptionId = paymentToken.SubscriberId
+            //            }
+            //        });
+            //        if (dbBills.ResponseMessage.ErrorCode != 0)
+            //        {
+            //            Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
+            //            return RedirectToAction("BillsAndPayments");
+            //        }
+            //        var billIds = billPaymentToken.BillID.HasValue ? new[] { billPaymentToken.BillID.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.Status == 1).Select(b => b.ID).ToArray();
+            //        paymentLogger.Debug("Received successfull payment for clientId= {1}, billId= {2} with total of {3}:" + Environment.NewLine + "{0}",
+            //                                string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
+            //                                dbSubscription.SubscriptionBasicInformationResponse.SubscriberNo,
+            //                                billPaymentToken.BillID.HasValue ? billPaymentToken.BillID.Value.ToString() : string.Join(",", billIds),
+            //                                payableAmount.ToString());
+            //        var unpaidBills = dbBills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).ToList(); // 1 = unpaid enum
+            //        if (billPaymentToken.BillID.HasValue)
+            //            unpaidBills = unpaidBills.Where(b => b.ID == billPaymentToken.BillID).ToList();
+
+            //        var payBills = PayBills(unpaidBills.Select(bill => bill.ID).ToArray(), (short)CMS.Localization.Enums.SubscriptionPaidType.Billing,
+            //            dbSubscription.SubscriptionBasicInformationResponse.ID, (int)CMS.Localization.Enums.PaymentType.VirtualPos, (int)CMS.Localization.Enums.AccountantType.Seller);
+            //        if (payBills.ResponseMessage.ErrorCode != 0)
+            //        {
+            //            Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
+            //            return RedirectToAction("BillsAndPayments");
+            //        }
+            //        var smsBaseRequest = new GenericServiceSettings();
+            //        var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
+            //        {
+            //            Culture = smsBaseRequest.Culture,
+            //            Username = smsBaseRequest.Username,
+            //            Hash = smsBaseRequest.Hash,
+            //            Rand = smsBaseRequest.Rand,
+            //            SendSubscriberSMS = new SendSubscriberSMSRequest()
+            //            {
+            //                BillIds = billIds,
+            //                PayableAmount = payableAmount,
+            //                SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID,
+            //                SubscriptionPaidType = 1
+            //            }
+            //        });
+            //        if (SendSubscriberSMS.ResponseMessage.ErrorCode != 0)
+            //        {
+            //            Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
+            //            return RedirectToAction("BillsAndPayments");
+            //        }
+            //    }
+            //    //pre paid sub
+            //    else
+            //    {
+            //        paymentLogger.Debug("Received successfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
+            //                                string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
+            //                                dbSubscription.SubscriptionBasicInformationResponse.SubscriberNo,
+            //                                payableAmount.ToString());
+
+            //        var payBills = PayBills(null, (short)CMS.Localization.Enums.SubscriptionPaidType.PrePaid,
+            //            dbSubscription.SubscriptionBasicInformationResponse.ID, (int)CMS.Localization.Enums.PaymentType.VirtualPos, (int)CMS.Localization.Enums.AccountantType.Admin);
+            //        if (payBills.ResponseMessage.ErrorCode != 0)
+            //        {
+            //            Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
+            //            return RedirectToAction("BillsAndPayments");
+            //        }
+            //        var smsBaseRequest = new GenericServiceSettings();
+            //        var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
+            //        {
+            //            Culture = smsBaseRequest.Culture,
+            //            Username = smsBaseRequest.Username,
+            //            Hash = smsBaseRequest.Hash,
+            //            Rand = smsBaseRequest.Rand,
+            //            SendSubscriberSMS = new SendSubscriberSMSRequest()
+            //            {
+            //                SubscriptionPaidType = 2,
+            //                BillIds = null,
+            //                PayableAmount = payableAmount,
+            //                SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID
+            //            }
+            //        });
+            //        if (SendSubscriberSMS.ResponseMessage.ErrorCode != 0)
+            //        {
+            //            Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
+            //            return RedirectToAction("BillsAndPayments");
+            //        }
+            //    }
+            //}
+            ////------------ quota sale ---------------
+            //else if (paymentToken is QuotaSaleToken)
+            //{
+            //    var quotaSaleToken = (QuotaSaleToken)paymentToken;
+            //    var quotaBaseRequest = new GenericServiceSettings();
+            //    var quotaSale = client.QuotaSale(new CustomerServiceQuotaSaleRequest()
+            //    {
+            //        Culture = quotaBaseRequest.Culture,
+            //        Hash = quotaBaseRequest.Hash,
+            //        Username = quotaBaseRequest.Username,
+            //        Rand = quotaBaseRequest.Rand,
+            //        QuotaSaleParameters = new QuotaSaleRequest()
+            //        {
+            //            SubscriptionId = dbSubscription.SubscriptionBasicInformationResponse.ID,
+            //            PackageId = quotaSaleToken.PackageID
+            //        }
+            //    });
+            //    if (quotaSale.ResponseMessage.ErrorCode != 0)
+            //    {
+            //        Session["POSSuccessMessage"] = quotaSale.ResponseMessage.ErrorMessage;
+            //        return RedirectToAction("BillsAndPayments");
+            //    }
+            //}
+
+            //Session["POSSuccessMessage"] = CMS.Localization.Common.POSSuccessMessage;
+            //return RedirectToAction("BillsAndPayments");
         }
 
         [AllowAnonymous]
         public ActionResult VPOSFail(string id)
         {
-            var paymentToken = VPOSTokenManager.RetrievePaymentToken(id);
-            if (paymentToken == null)
-            {
-                Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
-                return RedirectToAction("BillsAndPayments");
-            }
-            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
-            var subscriptionBaseRequest = new GenericServiceSettings();
-            var subscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
-            {
-                SubscriptionParameters = new BaseSubscriptionRequest()
-                {
-                    SubscriptionId = paymentToken.SubscriberId,
-                },
-                Culture = subscriptionBaseRequest.Culture,
-                Hash = subscriptionBaseRequest.Hash,
-                Rand = subscriptionBaseRequest.Rand,
-                Username = subscriptionBaseRequest.Username
-            });
-            if (subscription.ResponseMessage.ErrorCode != 0)
-            {
-                Session["POSErrorMessage"] = subscription.ResponseMessage.ErrorMessage;
-                return RedirectToAction("BillsAndPayments");
-            }
-            //--------- bill payment ---------
-            if (paymentToken is BillPaymentToken)
-            {
-                var billPaymentToken = (BillPaymentToken)paymentToken;
-                var billBaseRequest = new GenericServiceSettings();
-                var dbBills = client.GetCustomerBills(new CustomerServiceBaseRequest()
-                {
-                    Culture = billBaseRequest.Culture,
-                    Hash = billBaseRequest.Hash,
-                    Rand = billBaseRequest.Rand,
-                    Username = billBaseRequest.Username,
-                    SubscriptionParameters = new BaseSubscriptionRequest()
-                    {
-                        SubscriptionId = paymentToken.SubscriberId
-                    }
-                });
-                if (dbBills.ResponseMessage.ErrorCode != 0)
-                {
-                    Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
-                    return RedirectToAction("BillsAndPayments");
-                }
-                var unpaidBills = dbBills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).ToList(); // unpaid billstatus enum
-                if (billPaymentToken.BillID.HasValue)
-                {
-                    unpaidBills = unpaidBills.Where(bill => bill.ID == billPaymentToken.BillID).ToList();
-                }
-                var clientCredits = dbBills.GetCustomerBillsResponse.SubscriptionCredits;
-                var amount = unpaidBills.Sum(bill => bill.Total) - clientCredits;
-                if (!subscription.SubscriptionBasicInformationResponse.HasBilling)
-                {
-                    amount = subscription.SubscriptionBasicInformationResponse.SubscriptionService.Price.Value;
-                }
-                // make changes to database
-                unpaidLogger.Debug("Unsuccessfull payment for clientId= {1}, billId= {2} with total of {3}:" + Environment.NewLine + "{0}",
-                    string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
-                    subscription.SubscriptionBasicInformationResponse.SubscriberNo,
-                    billPaymentToken.BillID.HasValue ? billPaymentToken.BillID.Value.ToString() : string.Join(",", unpaidBills.Select(bill => bill.ID.ToString())),
-                    amount.ToString());
-            }
-            //------- quota sale -------------
-            else if (paymentToken is QuotaSaleToken)
-            {
-                var quotaSaleToken = (QuotaSaleToken)paymentToken;
-                var quotaBaseRequest = new GenericServiceSettings();
-                var dbQuota = client.QuotaPackageList(new CustomerServiceQuotaPackagesRequest()
-                {
-                    Culture = quotaBaseRequest.Culture,
-                    Hash = quotaBaseRequest.Hash,
-                    Rand = quotaBaseRequest.Rand,
-                    Username = quotaBaseRequest.Username
-                });
-                if (dbQuota.ResponseMessage.ErrorCode != 0)
-                {
-                    unpaidLogger.Debug("Unsuccessfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
-                                            string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
-                                            subscription.SubscriptionBasicInformationResponse.SubscriberNo,
-                                            dbQuota.ResponseMessage.ErrorMessage);
-                }
-                var dbQuotaPrice = dbQuota.QuotaPackageListResponse.Where(q => q.ID.ToString() == id).FirstOrDefault();
-                unpaidLogger.Debug("Unsuccessfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
-                        string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
-                        subscription.SubscriptionBasicInformationResponse.SubscriberNo,
-                        dbQuotaPrice == null ? "-" : dbQuotaPrice.Price.ToString());
-            }
-            Session["POSErrorMessage"] = GetErrorMessage();
+            var response = Utilities.PaymentUtilities.VPOSFail(id);
             return RedirectToAction("BillsAndPayments");
+            //var paymentToken = VPOSTokenManager.RetrievePaymentToken(id);
+            //if (paymentToken == null)
+            //{
+            //    Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            //NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
+            //var subscriptionBaseRequest = new GenericServiceSettings();
+            //var subscription = client.SubscriptionBasicInfo(new CustomerServiceBaseRequest()
+            //{
+            //    SubscriptionParameters = new BaseSubscriptionRequest()
+            //    {
+            //        SubscriptionId = paymentToken.SubscriberId,
+            //    },
+            //    Culture = subscriptionBaseRequest.Culture,
+            //    Hash = subscriptionBaseRequest.Hash,
+            //    Rand = subscriptionBaseRequest.Rand,
+            //    Username = subscriptionBaseRequest.Username
+            //});
+            //if (subscription.ResponseMessage.ErrorCode != 0)
+            //{
+            //    Session["POSErrorMessage"] = subscription.ResponseMessage.ErrorMessage;
+            //    return RedirectToAction("BillsAndPayments");
+            //}
+            ////--------- bill payment ---------
+            //if (paymentToken is BillPaymentToken)
+            //{
+            //    var billPaymentToken = (BillPaymentToken)paymentToken;
+            //    var billBaseRequest = new GenericServiceSettings();
+            //    var dbBills = client.GetCustomerBills(new CustomerServiceBaseRequest()
+            //    {
+            //        Culture = billBaseRequest.Culture,
+            //        Hash = billBaseRequest.Hash,
+            //        Rand = billBaseRequest.Rand,
+            //        Username = billBaseRequest.Username,
+            //        SubscriptionParameters = new BaseSubscriptionRequest()
+            //        {
+            //            SubscriptionId = paymentToken.SubscriberId
+            //        }
+            //    });
+            //    if (dbBills.ResponseMessage.ErrorCode != 0)
+            //    {
+            //        Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
+            //        return RedirectToAction("BillsAndPayments");
+            //    }
+            //    var unpaidBills = dbBills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).ToList(); // unpaid billstatus enum
+            //    if (billPaymentToken.BillID.HasValue)
+            //    {
+            //        unpaidBills = unpaidBills.Where(bill => bill.ID == billPaymentToken.BillID).ToList();
+            //    }
+            //    var clientCredits = dbBills.GetCustomerBillsResponse.SubscriptionCredits;
+            //    var amount = unpaidBills.Sum(bill => bill.Total) - clientCredits;
+            //    if (!subscription.SubscriptionBasicInformationResponse.HasBilling)
+            //    {
+            //        amount = subscription.SubscriptionBasicInformationResponse.SubscriptionService.Price.Value;
+            //    }
+            //    // make changes to database
+            //    unpaidLogger.Debug("Unsuccessfull payment for clientId= {1}, billId= {2} with total of {3}:" + Environment.NewLine + "{0}",
+            //        string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
+            //        subscription.SubscriptionBasicInformationResponse.SubscriberNo,
+            //        billPaymentToken.BillID.HasValue ? billPaymentToken.BillID.Value.ToString() : string.Join(",", unpaidBills.Select(bill => bill.ID.ToString())),
+            //        amount.ToString());
+            //}
+            ////------- quota sale -------------
+            //else if (paymentToken is QuotaSaleToken)
+            //{
+            //    var quotaSaleToken = (QuotaSaleToken)paymentToken;
+            //    var quotaBaseRequest = new GenericServiceSettings();
+            //    var dbQuota = client.QuotaPackageList(new CustomerServiceQuotaPackagesRequest()
+            //    {
+            //        Culture = quotaBaseRequest.Culture,
+            //        Hash = quotaBaseRequest.Hash,
+            //        Rand = quotaBaseRequest.Rand,
+            //        Username = quotaBaseRequest.Username
+            //    });
+            //    if (dbQuota.ResponseMessage.ErrorCode != 0)
+            //    {
+            //        unpaidLogger.Debug("Unsuccessfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
+            //                                string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
+            //                                subscription.SubscriptionBasicInformationResponse.SubscriberNo,
+            //                                dbQuota.ResponseMessage.ErrorMessage);
+            //    }
+            //    var dbQuotaPrice = dbQuota.QuotaPackageListResponse.Where(q => q.ID.ToString() == id).FirstOrDefault();
+            //    unpaidLogger.Debug("Unsuccessfull payment for clientId= {1} with total of {2}:" + Environment.NewLine + "{0}",
+            //            string.Join(Environment.NewLine, Request.Form.AllKeys.Select(key => key + ": " + Request.Form[key])),
+            //            subscription.SubscriptionBasicInformationResponse.SubscriberNo,
+            //            dbQuotaPrice == null ? "-" : dbQuotaPrice.Price.ToString());
+            //}
+            //Session["POSErrorMessage"] = GetErrorMessage();
+            //return RedirectToAction("BillsAndPayments");
         }
         [ValidateAntiForgeryToken]
         public ActionResult EArchivePDF(long id)

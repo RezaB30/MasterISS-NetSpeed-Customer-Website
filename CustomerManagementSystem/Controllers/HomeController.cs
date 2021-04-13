@@ -232,7 +232,7 @@ namespace CustomerManagementSystem.Controllers
             }
             var specialOfflerList = customerSpecialOffer.GetCustomerSpecialOffersResponse.Select(s => new SpecialOfferList()
             {
-                StartDate = s.StartDate,
+                StartDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.StartDate).Value,
                 IsCancelled = s.IsCancelled,
                 MissedCount = s.MissedCount,
                 ReferenceNo = s.ReferenceNo,

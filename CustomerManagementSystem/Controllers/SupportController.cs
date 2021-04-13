@@ -49,8 +49,8 @@ namespace CustomerManagementSystem.Controllers
             {
                 SupportDisplayType = (SupportRequestDisplayTypes)keyValuePairs.Where(dic => dic.Key == s.ID).FirstOrDefault().Value.SupportDisplayType,
                 SupportId = s.ID,
-                Date = s.Date,
-                ApprovalDate = s.ApprovalDate,
+                Date = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.Date).Value,
+                ApprovalDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.ApprovalDate),
                 SupportNo = s.SupportNo,
                 State = s.StateText,
                 StateId = s.State,
@@ -91,7 +91,7 @@ namespace CustomerManagementSystem.Controllers
                 Department = supportDetails.SupportDetailMessagesResponse.SupportRequestName,
                 SupportNo = supportDetails.SupportDetailMessagesResponse.SupportNo,
                 State = supportDetails.SupportDetailMessagesResponse.State.StateName,
-                SupportDate = supportDetails.SupportDetailMessagesResponse.SupportDate,
+                SupportDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(supportDetails.SupportDetailMessagesResponse.SupportDate).Value,
                 ID = ID,
                 StateId = supportDetails.SupportDetailMessagesResponse.State.StateId,
                 SupportMessageList = supportDetails.SupportDetailMessagesResponse.SupportMessages.Select(s => new SupportMessageList()
@@ -101,7 +101,7 @@ namespace CustomerManagementSystem.Controllers
                     SenderName = s.IsCustomer ? User.Identity.Name.Length > 20 ? User.Identity.Name.Substring(0, 20) + "..." : User.Identity.Name
                           : CMS.Localization.Common.Agent,
                     Message = s.Message,
-                    MessageDate = s.MessageDate,
+                    MessageDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.MessageDate).Value,
                     StageId = s.StageId
                 })
             };
@@ -258,8 +258,8 @@ namespace CustomerManagementSystem.Controllers
             var supportRequestList = supportRequests.GetCustomerSupportListResponse != null ? supportRequests.GetCustomerSupportListResponse.OrderByDescending(s => s.Date).Take(Properties.Settings.Default.SupportTableRow).Select(s => new SupportRequestsViewModel()
             {
                 SupportId = s.ID,
-                Date = s.Date,
-                ApprovalDate = s.ApprovalDate,
+                Date = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.Date).Value,
+                ApprovalDate = Utilities.InternalUtilities.DateTimeConverter.ParseDateTime(s.ApprovalDate),
                 SupportNo = s.SupportNo,
                 State = s.StateText,
                 StateId = s.State,
