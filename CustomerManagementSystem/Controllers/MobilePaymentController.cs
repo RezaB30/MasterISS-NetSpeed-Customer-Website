@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,30 +10,21 @@ namespace CustomerManagementSystem.Controllers
     [AllowAnonymous]
     public class MobilePaymentController : BaseController
     {
+        Logger paymentLogger = LogManager.GetLogger("payments");
+        Logger unpaidLogger = LogManager.GetLogger("unpaid");
         // GET: MobilePayment
         public ActionResult Index(long? id, long subscriptionId)
         {
             var response = Utilities.PaymentUtilities.Payment(id, subscriptionId);
             if (!response.IsSuccess)
             {
-                return new ViewResult()
-                {
-                    ViewName = "~/Views/Shared/Error.cshtml",
-                };
+                return Content(response.ResponseMessage);
             }
-            ViewBag.POSForm = response.HtmlForm; //VPOSFormResponse.VPOSFormResponse.HtmlForm;            
-            TempData["POSForm"] = response.HtmlForm;
-            var temp = new TempDataDictionary();
-            temp.Add("POSForm", response.HtmlForm);
-            return new ViewResult()
-            {
-                ViewName = "~/Views/Payment/3DHostPayment.cshtml",
-                TempData = temp
-            };
-            //return View(viewName: "3DHostPayment");
+            return Content(response.HtmlForm);
         }
         public ActionResult VPOSSuccess(string id)
         {
+            paymentLogger.Debug("Mobile Payment");
             var response = Utilities.PaymentUtilities.VPOSSuccess(id);
             return RedirectToAction("Successful");
         }
@@ -46,6 +38,7 @@ namespace CustomerManagementSystem.Controllers
         }
         public ActionResult VPOSFail(string id)
         {
+            unpaidLogger.Debug("Mobile Payment");
             var response = Utilities.PaymentUtilities.VPOSFail(id);
             return RedirectToAction("Fail");
         }

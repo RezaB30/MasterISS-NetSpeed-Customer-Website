@@ -41,7 +41,6 @@ namespace CustomerManagementSystem.Utilities
             {
                 HttpContext.Current.Session["POSErrorMessage"] = CMS.Localization.Common.SubscriberNotFound;
                 return false;
-                //return RedirectToAction("BillsAndPayments");
             }
             //----------- bill paymnet ------------
             if (paymentToken is BillPaymentToken)
@@ -68,7 +67,6 @@ namespace CustomerManagementSystem.Utilities
                     {
                         HttpContext.Current.Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
                         return false;
-                        //return RedirectToAction("BillsAndPayments");
                     }
                     var billIds = billPaymentToken.BillID.HasValue ? new[] { billPaymentToken.BillID.Value } : dbBills.GetCustomerBillsResponse.CustomerBills.Where(b => b.Status == 1).Select(b => b.ID).ToArray();
                     paymentLogger.Debug("Received successfull payment for clientId= {1}, billId= {2} with total of {3}:" + Environment.NewLine + "{0}",
@@ -86,7 +84,6 @@ namespace CustomerManagementSystem.Utilities
                     {
                         HttpContext.Current.Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
                         return false;
-                        //return RedirectToAction("BillsAndPayments");
                     }
                     var smsBaseRequest = new GenericServiceSettings();
                     var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
@@ -107,7 +104,6 @@ namespace CustomerManagementSystem.Utilities
                     {
                         HttpContext.Current.Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
                         return false;
-                        //return RedirectToAction("BillsAndPayments");
                     }
                 }
                 //pre paid sub
@@ -124,7 +120,6 @@ namespace CustomerManagementSystem.Utilities
                     {
                         HttpContext.Current.Session["POSErrorMessage"] = payBills.ResponseMessage.ErrorMessage;
                         return false;
-                        //return RedirectToAction("BillsAndPayments");
                     }
                     var smsBaseRequest = new GenericServiceSettings();
                     var SendSubscriberSMS = client.SendSubscriberSMS(new CustomerServiceSendSubscriberSMSRequest()
@@ -145,7 +140,6 @@ namespace CustomerManagementSystem.Utilities
                     {
                         HttpContext.Current.Session["POSSuccessMessage"] = SendSubscriberSMS.ResponseMessage.ErrorMessage;
                         return false;
-                        //return RedirectToAction("BillsAndPayments");
                     }
                 }
             }
@@ -170,13 +164,11 @@ namespace CustomerManagementSystem.Utilities
                 {
                     HttpContext.Current.Session["POSSuccessMessage"] = quotaSale.ResponseMessage.ErrorMessage;
                     return false;
-                    //return RedirectToAction("BillsAndPayments");
                 }
             }
 
             HttpContext.Current.Session["POSSuccessMessage"] = CMS.Localization.Common.POSSuccessMessage;
             return true;
-            //return RedirectToAction("BillsAndPayments");
         }
         public static bool VPOSFail(string id)
         {
@@ -185,7 +177,6 @@ namespace CustomerManagementSystem.Utilities
             {
                 HttpContext.Current.Session["POSErrorMessage"] = CMS.Localization.Common.InvalidTokenKey;
                 return false;
-                //return RedirectToAction("BillsAndPayments");
             }
             NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
             var subscriptionBaseRequest = new GenericServiceSettings();
@@ -203,8 +194,7 @@ namespace CustomerManagementSystem.Utilities
             if (subscription.ResponseMessage.ErrorCode != 0)
             {
                 HttpContext.Current.Session["POSErrorMessage"] = subscription.ResponseMessage.ErrorMessage;
-                return false;
-                //return RedirectToAction("BillsAndPayments");
+                return false;                
             }
             //--------- bill payment ---------
             if (paymentToken is BillPaymentToken)
@@ -224,8 +214,7 @@ namespace CustomerManagementSystem.Utilities
                 });
                 if (dbBills.ResponseMessage.ErrorCode != 0)
                 {
-                    HttpContext.Current.Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;
-                    //return RedirectToAction("BillsAndPayments");
+                    HttpContext.Current.Session["POSErrorMessage"] = dbBills.ResponseMessage.ErrorMessage;                    
                 }
                 var unpaidBills = dbBills.GetCustomerBillsResponse.CustomerBills.Where(bill => bill.Status == 1).ToList(); // unpaid billstatus enum
                 if (billPaymentToken.BillID.HasValue)
@@ -286,10 +275,8 @@ namespace CustomerManagementSystem.Utilities
                 return new PaymentUtilitiesResponse()
                 {
                     IsSuccess = false,
-                    ActionName = "BillsAndPayments",
-                    ControllerName = "Payment"
+                    ResponseMessage = CMS.Localization.Common.NoHaveUnpaidBills
                 };
-                //return RedirectToAction("BillsAndPayments");
             }
             {
                 AuthController.SignoutUser(HttpContext.Current.GetOwinContext());
@@ -317,8 +304,7 @@ namespace CustomerManagementSystem.Utilities
                 return new PaymentUtilitiesResponse()
                 {
                     IsSuccess = false,
-                    ActionName = "BillsAndPayments",
-                    ControllerName = "Payment"
+                    ResponseMessage = VPOSFormResponse.ResponseMessage.ErrorMessage
                 };
             }
             return new PaymentUtilitiesResponse()
@@ -387,8 +373,7 @@ namespace CustomerManagementSystem.Utilities
     public class PaymentUtilitiesResponse
     {
         public bool IsSuccess { get; set; }
-        public string ControllerName { get; set; }
-        public string ActionName { get; set; }
+        public string ResponseMessage { get; set; }
         public string HtmlForm { get; set; }
     }
 }

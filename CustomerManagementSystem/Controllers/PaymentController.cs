@@ -385,7 +385,7 @@ namespace CustomerManagementSystem.Controllers
                 RemoveCardParameters = new RemoveCardRequest()
                 {
                     CardToken = id,
-                    SMSCode = "",
+                    //SMSCode = "",
                     SubscriptionId = User.GiveUserId(),
                     HttpContextParameters = new HttpContextParameters()
                     {
@@ -501,7 +501,7 @@ namespace CustomerManagementSystem.Controllers
                 return RedirectToAction("AutomaticPayment");
             }
             var deactivateBaseRequest = new GenericServiceSettings();
-            var deactiveAutomaticPayment = client.DeativateAutomaticPayment(new CustomerServiceBaseRequest()
+            var deactiveAutomaticPayment = client.DeactivateAutomaticPayment(new CustomerServiceBaseRequest()
             {
                 Culture = deactivateBaseRequest.Culture,
                 Hash = deactivateBaseRequest.Hash,
@@ -559,7 +559,7 @@ namespace CustomerManagementSystem.Controllers
                         PaymentType = (int)CMS.Localization.Enums.PaymentType.Cash,
                         SubscriberNo = User.GiveClientSubscriberNo(),
                         SubscriptionId = User.GiveUserId(),
-                        UserId = null
+                        //UserId = null
                     }
                 });
                 if (systemLog.ResponseMessage.ErrorCode != 0)
@@ -615,7 +615,7 @@ namespace CustomerManagementSystem.Controllers
                 Hash = baseRequest.Hash,
                 Rand = baseRequest.Rand,
                 Username = baseRequest.Username,
-                MobileExpressPayBillParameters = new MobilexpressPayBillRequest()
+                MobilexpressPayBillParameters = new MobilexpressPayBillRequest()
                 {
                     BillId = id,
                     PayableAmount = payableAmount,
@@ -675,7 +675,7 @@ namespace CustomerManagementSystem.Controllers
             var response = Utilities.PaymentUtilities.Payment(id, User.GiveUserId().Value);
             if (!response.IsSuccess)
             {
-                return RedirectToAction(response.ActionName);
+                return RedirectToAction("BillsAndPayments");
             }
 
             ViewBag.POSForm = response.HtmlForm; //VPOSFormResponse.VPOSFormResponse.HtmlForm;
@@ -997,19 +997,19 @@ namespace CustomerManagementSystem.Controllers
             });
             return settings;
         }
-        private string GetErrorMessage()
-        {
-            NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
-            var baseRequest = new GenericServiceSettings();
-            var getVPOSError = client.GetVPOSErrorParameterName(new CustomerServiceVPOSErrorParameterNameRequest()
-            {
-                Culture = baseRequest.Culture,
-                Hash = baseRequest.Hash,
-                Rand = baseRequest.Rand,
-                Username = baseRequest.Username
-            });
-            return Request.Form[getVPOSError.ResponseMessage.ErrorCode != 0 ? string.Empty : getVPOSError.VPOSErrorParameterName];
-        }
+        //private string GetErrorMessage()
+        //{
+        //    NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
+        //    var baseRequest = new GenericServiceSettings();
+        //    var getVPOSError = client.GetVPOSErrorParameterName(new CustomerServiceVPOSErrorParameterNameRequest()
+        //    {
+        //        Culture = baseRequest.Culture,
+        //        Hash = baseRequest.Hash,
+        //        Rand = baseRequest.Rand,
+        //        Username = baseRequest.Username
+        //    });
+        //    return Request.Form[getVPOSError.ResponseMessage.ErrorCode != 0 ? string.Empty : getVPOSError.VPOSErrorParameterName];
+        //}
         private CustomerServicePayBillsResponse PayBills(long[] billIds, short? subscriptionPaidType, long? subscriptionId, int? paymentType, int? accountantType)
         {
             NetspeedCustomerServiceClient client = new NetspeedCustomerServiceClient();
