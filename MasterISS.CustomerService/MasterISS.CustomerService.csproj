@@ -214,6 +214,17 @@
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServicGetSupportAttachmentListResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\NetspeedCustomerServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.wsdl" />
     <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.xsd">
       <SubType>Designer</SubType>
@@ -248,20 +259,6 @@
     <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService9.xsd">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\NetspeedCustomerServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NetspeedCustomerServiceReference\NetspeedCustomerService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\NetspeedCustomerServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Connected Services\NetspeedCustomerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

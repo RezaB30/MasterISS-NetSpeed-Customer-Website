@@ -19,22 +19,21 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:56365/NetspeedCustomerService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:56365/NetspeedCustomerService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="NetspeedCustomerService.xsd" MetadataType="Schema" ID="6bbc7062-064d-4b72-8bbf-ffe6b54bf962" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd8" />
-    <MetadataFile FileName="NetspeedCustomerService1.xsd" MetadataType="Schema" ID="7eb1f281-331d-4e8b-81da-cc2de0bc60d1" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd7" />
-    <MetadataFile FileName="NetspeedCustomerService2.xsd" MetadataType="Schema" ID="2865f589-b845-4a98-b6c8-e2f2a90a5f00" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="NetspeedCustomerService3.xsd" MetadataType="Schema" ID="8fec0f98-0b5f-4375-abc4-dee6e72db6fd" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd10" />
-    <MetadataFile FileName="NetspeedCustomerService4.xsd" MetadataType="Schema" ID="d9121c3a-67f9-4fca-ba19-9d7ff97cc2d3" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="NetspeedCustomerService.disco" MetadataType="Disco" ID="3fc61dab-2cbb-44fa-b915-b28e0fc4a2e5" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?disco" />
-    <MetadataFile FileName="NetspeedCustomerService5.xsd" MetadataType="Schema" ID="e7d4f3ac-75fb-4127-bcf2-d87b022c06fb" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="NetspeedCustomerService6.xsd" MetadataType="Schema" ID="c244a71e-982a-4bbe-abab-cd7502f2bb20" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd4" />
-    <MetadataFile FileName="NetspeedCustomerService7.xsd" MetadataType="Schema" ID="359b3fd9-df05-4ec5-9b4a-4e4ca7cc8705" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd6" />
-    <MetadataFile FileName="NetspeedCustomerService8.xsd" MetadataType="Schema" ID="e631abdb-2b33-4e1b-9a0d-67bffbba2ec8" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd9" />
-    <MetadataFile FileName="NetspeedCustomerService.wsdl" MetadataType="Wsdl" ID="55d85253-cdf2-45a7-b8fb-cdcd0d491c20" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?wsdl" />
-    <MetadataFile FileName="NetspeedCustomerService9.xsd" MetadataType="Schema" ID="fd4f8bd5-4e7b-4a86-9c2b-1b3fffd6a64c" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd3" />
-    <MetadataFile FileName="NetspeedCustomerService10.xsd" MetadataType="Schema" ID="e9c90264-a6d1-4d6b-a922-948946722527" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NetspeedCustomerService.xsd" MetadataType="Schema" ID="b0642124-a1dd-47da-80c7-d89e55eb5917" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd8" />
+    <MetadataFile FileName="NetspeedCustomerService1.xsd" MetadataType="Schema" ID="072114df-1e09-47e9-9d7d-43ab6ce04069" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd7" />
+    <MetadataFile FileName="NetspeedCustomerService2.xsd" MetadataType="Schema" ID="43bec2d2-00ea-44d0-ac54-67c7729b5435" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd6" />
+    <MetadataFile FileName="NetspeedCustomerService3.xsd" MetadataType="Schema" ID="8ac9f002-6361-478b-b312-04390748a3d6" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd10" />
+    <MetadataFile FileName="NetspeedCustomerService4.xsd" MetadataType="Schema" ID="a9207645-cba0-4721-bc87-d79d07d6cf12" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NetspeedCustomerService5.xsd" MetadataType="Schema" ID="6f7ac136-b563-4c5d-acc0-9518263f3bdf" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NetspeedCustomerService6.xsd" MetadataType="Schema" ID="5c025212-7c0e-44e4-a76e-070b2cfbdb7c" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NetspeedCustomerService7.xsd" MetadataType="Schema" ID="afe9f1a3-a0e9-4783-97bd-f97b5080a781" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NetspeedCustomerService8.xsd" MetadataType="Schema" ID="01350fea-2cfc-4557-afda-3e861971c65e" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd9" />
+    <MetadataFile FileName="NetspeedCustomerService.wsdl" MetadataType="Wsdl" ID="e3c16266-e500-457c-8602-988ef0299e9a" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?wsdl" />
+    <MetadataFile FileName="NetspeedCustomerService9.xsd" MetadataType="Schema" ID="5cdf7149-3362-4bf3-9c6d-f1e8b3c21191" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NetspeedCustomerService10.xsd" MetadataType="Schema" ID="d7a736b4-d950-4f16-a4e5-259b1d708ba3" SourceId="1" SourceUrl="http://localhost:56365/NetspeedCustomerService.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
