@@ -9,7 +9,7 @@
 {
     <div class="form-group fv-plugins-icon-container">
         <label>@Common.ChooseSubscriberNo</label>
-        @Html.DropDownListFor(m => m.CurrentSubscriberNo, (SelectList)Model.SubscriptionList, new { @class = "form-control form-control-solid form-control-lg", @onchange = "" })
+        @Html.DropDownListFor(m => m.CurrentSubscriberNo, (SelectList)Model.SubscriptionList, Common.Choose, new { @class = "form-control form-control-solid form-control-lg", @onchange = "" })
         <div class="fv-plugins-message-container"></div>
     </div>
 }
