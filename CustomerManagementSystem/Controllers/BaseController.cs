@@ -199,7 +199,7 @@ namespace CustomerManagementSystem.Controllers
                 long[] supportIds = { };
                 if (statusResponse.ResponseMessage.ErrorCode == 0 && statusResponse.SupportStatusResponse != null)
                 {
-                    supportIds = statusResponse.SupportStatusResponse.SupportRequestIds.ToArray();
+                    supportIds = new long[] { statusResponse.SupportStatusResponse.StageId.GetValueOrDefault(0) };
                 }
                 var notifications = new List<CMS.ViewModels.Supports.NotificationViewModel>();
                 foreach (var item in supportIds)
