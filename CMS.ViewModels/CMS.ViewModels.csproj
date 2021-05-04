@@ -59,8 +59,8 @@
     <Reference Include="RadiusR.Localization.Lists, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RadiusR.Localization.Lists.1.0.11\lib\net472\RadiusR.Localization.Lists.dll</HintPath>
     </Reference>
-    <Reference Include="RezaB.Web, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RezaB.Web.1.1.5\lib\net472\RezaB.Web.dll</HintPath>
+    <Reference Include="RezaB.Web, Version=1.1.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RezaB.Web.1.1.6\lib\net472\RezaB.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
