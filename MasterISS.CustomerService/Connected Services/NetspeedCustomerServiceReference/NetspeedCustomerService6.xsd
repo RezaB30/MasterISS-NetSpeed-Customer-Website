@@ -269,4 +269,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AddressInfo" nillable="true" type="tns:AddressInfo" />
+  <xs:complexType name="CustomerServiceAppLogRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q17:BaseRequestOfstringSHA1Miy85_SUl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LogDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceAppLogRequest" nillable="true" type="tns:CustomerServiceAppLogRequest" />
 </xs:schema>

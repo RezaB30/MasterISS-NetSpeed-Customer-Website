@@ -158,13 +158,13 @@ namespace CustomerManagementSystem
             var subBaseRequest = new GenericServiceSettings();
             using (var client = new NetspeedCustomerServiceClient())
             {
-                var getSupportlist = client.GetSupportList(new CustomerServiceBaseRequest()
+                var getSupportlist = client.GetSupportList(new CustomerServiceGetSupportListRequest()
                 {
                     Culture = subBaseRequest.Culture,
                     Hash = subBaseRequest.Hash,
                     Rand = subBaseRequest.Rand,
                     Username = subBaseRequest.Username,
-                    SubscriptionParameters = new BaseSubscriptionRequest()
+                    GetSupportList = new GetSupportListRequest()
                     {
                         SubscriptionId = id
                     }

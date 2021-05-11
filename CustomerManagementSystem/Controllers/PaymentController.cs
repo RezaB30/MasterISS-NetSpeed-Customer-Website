@@ -414,7 +414,7 @@ namespace CustomerManagementSystem.Controllers
             }
             var paymentTypes = new ServiceUtilities().PaymentTypeList();
 
-            ViewBag.PaymentTypes = paymentTypes.PaymentTypes == null ? new SelectList(Enumerable.Empty<Dictionary<int, string>>(), "Key", "Value") : new SelectList(paymentTypes.PaymentTypes, "Key", "Value");
+            ViewBag.PaymentTypes = paymentTypes.PaymentTypes == null ? new SelectList(Enumerable.Empty<Dictionary<int, string>>(), "Value", "Name") : new SelectList(paymentTypes.PaymentTypes, "Value", "Name");
             return View(new ActivateAutomaticPaymentViewModel()
             {
                 CardToken = token,

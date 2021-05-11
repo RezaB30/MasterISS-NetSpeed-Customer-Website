@@ -197,7 +197,7 @@ namespace CustomerManagementSystem.Controllers
             {
                 var statusResponse = new ServiceUtilities().SupportStatus(User.GiveUserId());
                 long[] supportIds = { };
-                if (statusResponse.ResponseMessage.ErrorCode == 0 && statusResponse.SupportStatusResponse != null)
+                if (statusResponse.ResponseMessage.ErrorCode == 0 && statusResponse.SupportStatusResponse != null && statusResponse.SupportStatusResponse.StageId != null)
                 {
                     supportIds = new long[] { statusResponse.SupportStatusResponse.StageId.GetValueOrDefault(0) };
                 }

@@ -248,7 +248,7 @@
   <xs:element name="GetSupportList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q33:CustomerServiceBaseRequest" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.Support" minOccurs="0" name="request" nillable="true" type="q33:CustomerServiceGetSupportListRequest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -872,6 +872,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="ExistingCustomerRegisterResult" nillable="true" type="q122:CustomerServiceExistingCustomerRegisterResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests" minOccurs="0" name="request" nillable="true" type="q123:CustomerServiceAppLogRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AppLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses" minOccurs="0" name="AppLogResult" nillable="true" type="q124:CustomerServiceAppLogResponse" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

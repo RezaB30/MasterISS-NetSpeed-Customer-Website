@@ -36,6 +36,8 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportTypesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSupportSubTypesRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportSubTypesRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfGetSupportListRequestSHA1Owyew9Fe))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSupportDetailMessagesRequestSHA1Owyew9Fe))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportDetailMessagesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSupportRegisterRequestSHA1Owyew9Fe))]
@@ -88,6 +90,8 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceChangeClientOnlinePasswordRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfExistingCustomerRegisterRequestSHA1CuT410mT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfstringSHA1Miy85_SUl))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceProvincesRequest))]
     public partial class BaseRequestOfSHA1o_Pr6u_PMh : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -428,6 +432,38 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 if ((object.ReferenceEquals(this.SupportSubTypesParametersField, value) != true)) {
                     this.SupportSubTypesParametersField = value;
                     this.RaisePropertyChanged("SupportSubTypesParameters");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfGetSupportListRequestSHA1Owyew9Fe", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest))]
+    public partial class BaseRequestOfGetSupportListRequestSHA1Owyew9Fe : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceGetSupportListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceGetSupportListRequest : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfGetSupportListRequestSHA1Owyew9Fe {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MasterISS.CustomerService.NetspeedCustomerServiceReference.GetSupportListRequest GetSupportListField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.GetSupportListRequest GetSupportList {
+            get {
+                return this.GetSupportListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GetSupportListField, value) != true)) {
+                    this.GetSupportListField = value;
+                    this.RaisePropertyChanged("GetSupportList");
                 }
             }
         }
@@ -1259,6 +1295,37 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BaseRequestOfstringSHA1Miy85_SUl", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest))]
+    public partial class BaseRequestOfstringSHA1Miy85_SUl : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAppLogRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceAppLogRequest : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfstringSHA1Miy85_SUl {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LogDescriptionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LogDescription {
+            get {
+                return this.LogDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LogDescriptionField, value) != true)) {
+                    this.LogDescriptionField = value;
+                    this.RaisePropertyChanged("LogDescription");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceProvincesRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.TelekomInfrastructureService")]
     [System.SerializableAttribute()]
     public partial class CustomerServiceProvincesRequest : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseRequestOfSHA1o_Pr6u_PMh {
@@ -1313,6 +1380,7 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseSubscriptionRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.GetSupportListRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.SupportDetailMessagesRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.SupportRegisterRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.SendSubscriberSMSRequest))]
@@ -1364,6 +1432,30 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GetSupportListRequest", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Requests.S" +
+        "upport")]
+    [System.SerializableAttribute()]
+    public partial class GetSupportListRequest : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseSubscriptionRequest {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> RowCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> RowCount {
+            get {
+                return this.RowCountField;
+            }
+            set {
+                if ((this.RowCountField.Equals(value) != true)) {
+                    this.RowCountField = value;
+                    this.RaisePropertyChanged("RowCount");
+                }
             }
         }
     }
@@ -3796,6 +3888,7 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportRegisterResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfbooleanSHA1Miy85_SUl))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSendSupportMessageResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfGetCustomerConnectionStatusResponseSHA1KVWl_PpN3))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceConnectionStatusResponse))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfEArchivePDFResponseSHA1m7dItXwX))]
@@ -4403,6 +4496,7 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseResponseOfbooleanSHA1Miy85_SUl", Namespace="http://schemas.datacontract.org/2004/07/RezaB.API.WebService")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSendSupportMessageResponse))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse))]
     public partial class BaseResponseOfbooleanSHA1Miy85_SUl : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfSHA1o_Pr6u_PMh {
     }
     
@@ -4424,6 +4518,29 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
                 if ((this.SendSupportMessageResponseField.Equals(value) != true)) {
                     this.SendSupportMessageResponseField = value;
                     this.RaisePropertyChanged("SendSupportMessageResponse");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerServiceAppLogResponse", Namespace="http://schemas.datacontract.org/2004/07/RadiusR.API.CustomerWebService.Responses")]
+    [System.SerializableAttribute()]
+    public partial class CustomerServiceAppLogResponse : MasterISS.CustomerService.NetspeedCustomerServiceReference.BaseResponseOfbooleanSHA1Miy85_SUl {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AppLogResultField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AppLogResult {
+            get {
+                return this.AppLogResultField;
+            }
+            set {
+                if ((this.AppLogResultField.Equals(value) != true)) {
+                    this.AppLogResultField = value;
+                    this.RaisePropertyChanged("AppLogResult");
                 }
             }
         }
@@ -10299,10 +10416,10 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceNameValuePair> GetSupportSubTypesAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportSubTypesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/GetSupportList", ReplyAction="http://tempuri.org/IGenericCustomerService/GetSupportListResponse")]
-        MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse GetSupportList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request);
+        MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse GetSupportList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/GetSupportList", ReplyAction="http://tempuri.org/IGenericCustomerService/GetSupportListResponse")]
-        System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse> GetSupportListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request);
+        System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse> GetSupportListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGenericCustomerService/GetSupportDetailMessages", ReplyAction="http://tempuri.org/IGenericCustomerService/GetSupportDetailMessagesResponse")]
         MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportDetailMessagesResponse GetSupportDetailMessages(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceSupportDetailMessagesRequest request);
@@ -10573,6 +10690,12 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegister", ReplyAction="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegisterResponse")]
         System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse> ExistingCustomerRegisterAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INetspeedCustomerService/AppLog", ReplyAction="http://tempuri.org/INetspeedCustomerService/AppLogResponse")]
+        MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse AppLog(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INetspeedCustomerService/AppLog", ReplyAction="http://tempuri.org/INetspeedCustomerService/AppLogResponse")]
+        System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse> AppLogAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10738,11 +10861,11 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
             return base.Channel.GetSupportSubTypesAsync(request);
         }
         
-        public MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse GetSupportList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request) {
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse GetSupportList(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest request) {
             return base.Channel.GetSupportList(request);
         }
         
-        public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse> GetSupportListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceBaseRequest request) {
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetCustomerSupportListResponse> GetSupportListAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceGetSupportListRequest request) {
             return base.Channel.GetSupportListAsync(request);
         }
         
@@ -11096,6 +11219,14 @@ namespace MasterISS.CustomerService.NetspeedCustomerServiceReference {
         
         public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterResponse> ExistingCustomerRegisterAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceExistingCustomerRegisterRequest request) {
             return base.Channel.ExistingCustomerRegisterAsync(request);
+        }
+        
+        public MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse AppLog(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest request) {
+            return base.Channel.AppLog(request);
+        }
+        
+        public System.Threading.Tasks.Task<MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse> AppLogAsync(MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogRequest request) {
+            return base.Channel.AppLogAsync(request);
         }
     }
 }

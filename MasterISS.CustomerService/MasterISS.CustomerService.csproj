@@ -67,6 +67,9 @@
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAddressDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAppLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\NetspeedCustomerServiceReference\MasterISS.CustomerService.NetspeedCustomerServiceReference.CustomerServiceAuthenticationSMSConfirmResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

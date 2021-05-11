@@ -470,4 +470,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="CustomerServiceExistingCustomerRegisterResponse" nillable="true" type="tns:CustomerServiceExistingCustomerRegisterResponse" />
+  <xs:complexType name="CustomerServiceAppLogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/RezaB.API.WebService" base="q29:BaseResponseOfbooleanSHA1Miy85_SUl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppLogResult" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerServiceAppLogResponse" nillable="true" type="tns:CustomerServiceAppLogResponse" />
 </xs:schema>

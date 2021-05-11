@@ -7,3 +7,4 @@ v 1.0.1 2021-04-13
 - payment and vpos result functions changed as generic function
 v 1.0.2 2021-05-04
 - updated modules
+- changed GetSupportList web servcie function request parameters

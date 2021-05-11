@@ -394,6 +394,12 @@
   <wsdl:message name="INetspeedCustomerService_ExistingCustomerRegister_OutputMessage">
     <wsdl:part name="parameters" element="tns:ExistingCustomerRegisterResponse" />
   </wsdl:message>
+  <wsdl:message name="INetspeedCustomerService_AppLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppLog" />
+  </wsdl:message>
+  <wsdl:message name="INetspeedCustomerService_AppLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppLogResponse" />
+  </wsdl:message>
   <wsdl:portType name="INetspeedCustomerService">
     <wsdl:operation name="GetProvinces">
       <wsdl:input wsaw:Action="http://tempuri.org/ITelekomInfrastructureService/GetProvinces" message="tns:INetspeedCustomerService_GetProvinces_InputMessage" />
@@ -642,6 +648,10 @@
     <wsdl:operation name="ExistingCustomerRegister">
       <wsdl:input wsaw:Action="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegister" message="tns:INetspeedCustomerService_ExistingCustomerRegister_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegisterResponse" message="tns:INetspeedCustomerService_ExistingCustomerRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/INetspeedCustomerService/AppLog" message="tns:INetspeedCustomerService_AppLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INetspeedCustomerService/AppLogResponse" message="tns:INetspeedCustomerService_AppLog_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_INetspeedCustomerService" type="tns:INetspeedCustomerService">
@@ -1198,6 +1208,15 @@
     </wsdl:operation>
     <wsdl:operation name="ExistingCustomerRegister">
       <soap12:operation soapAction="http://tempuri.org/INetspeedCustomerService/ExistingCustomerRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppLog">
+      <soap12:operation soapAction="http://tempuri.org/INetspeedCustomerService/AppLog" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
